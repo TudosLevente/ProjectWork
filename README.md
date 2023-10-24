@@ -4,8 +4,8 @@ Our project work.
 
 # Documentation
 
-Dokumentum-adatbázis kereső weblap
-A Közbeszerzési Hatóság adatbázisa mintájára
+**Dokumentum-adatbázis kereső weblap**
+**A Közbeszerzési Hatóság adatbázisa mintájára**
 
 ### I.	Bevezetés:
 
@@ -17,32 +17,32 @@ A mai digitális korban a dokumentumok hatékony hozzáférésének és keresés
 2.	Kiemelkedő keresési lehetőségek 
 3.	Valós idejű indexelés
 
-Felhasználóbarát felület: Projektünk szívét-lelkét a felhasználói felület képezi, amely gondosan tervezett és felhasználóbarát. Ez az interfész biztosítja a zökkenőmentes és hatékony keresési folyamatot, amely mind a felhasználóknak, mind a további fejlesztőknek megfelelő.
++ Felhasználóbarát felület: Projektünk szívét-lelkét a felhasználói felület képezi, amely gondosan tervezett és felhasználóbarát. Ez az interfész biztosítja a zökkenőmentes és hatékony keresési folyamatot, amely mind a felhasználóknak, mind a további fejlesztőknek megfelelő.
 
-Kiemelkedő keresési lehetőségek: Kiemelkedő keresési lehetőségeket alkalmaztunk, beleértve a kulcsszavas keresést, dátumintervallum-szűrőket és dokumentumtípus-szűrőket. Ez lehetővé teszi a felhasználók számára, hogy pontosan szabják az igényeikhez a kereséseket, és találjanak dokumentumokat szinte tökéletes pontossággal.
++ Kiemelkedő keresési lehetőségek: Kiemelkedő keresési lehetőségeket alkalmaztunk, beleértve a kulcsszavas keresést, dátumintervallum-szűrőket és dokumentumtípus-szűrőket. Ez lehetővé teszi a felhasználók számára, hogy pontosan szabják az igényeikhez a kereséseket, és találjanak dokumentumokat szinte tökéletes pontossággal.
 
-Valós idejű indexelés: Annak érdekében, hogy a keresési eredmények mindig naprakészek legyenek, alkalmazásunk valós idejű indexelést alkalmaz. Ez azt jelenti, hogy a felhasználók mindig a legfrissebb információkat kapják a keresésük folyamán. 
++ Valós idejű indexelés: Annak érdekében, hogy a keresési eredmények mindig naprakészek legyenek, alkalmazásunk valós idejű indexelést alkalmaz. Ez azt jelenti, hogy a felhasználók mindig a legfrissebb információkat kapják a keresésük folyamán. 
 
 ### III. A weboldal előnyei:
 
 1.	Javított hatékonyság a dokumentumok megtalálásában
 2.	Időmegtakarító funkciók 
 3.	Adatok felvitele
-Javított hatékonyság: Projektünkben jelentősen javítva van a dokumentumok megtalálásának hatékonysága nagy adatbázisokban. A felhasználóknak már nem kell széles körű archívumokon átszűrni, köszönhetően a keresési funkcionalitásunknak.
++ Javított hatékonyság: Projektünkben jelentősen javítva van a dokumentumok megtalálásának hatékonysága nagy adatbázisokban. A felhasználóknak már nem kell széles körű archívumokon átszűrni, köszönhetően a keresési funkcionalitásunknak.
 
-Időmegtakarító funkciók: Beágyaztunk időmegtakarító funkciókat is, például automatikus befejezési javaslatokat és a keresések mentésének lehetőségét. Ezek a funkciók felgyorsítják a keresési folyamatot, és lehetővé teszik a felhasználók számára, hogy ott folytassák, ahol abbahagyták.
++ Időmegtakarító funkciók: Beágyaztunk időmegtakarító funkciókat is, például automatikus befejezési javaslatokat és a keresések mentésének lehetőségét. Ezek a funkciók felgyorsítják a keresési folyamatot, és lehetővé teszik a felhasználók számára, hogy ott folytassák, ahol abbahagyták.
 
-Adatok felvitele: Egy jól kivitelezett és felhasználóbarát adatfeltöltő funkciót is beépítettünk a weboldalba, hiszen egy adatbázisnál fontos hogy a felhasználó nem csak lekérhet adatokat vagy dokumentumokat hanem fel is tölthet.
++ Adatok felvitele: Egy jól kivitelezett és felhasználóbarát adatfeltöltő funkciót is beépítettünk a weboldalba, hiszen egy adatbázisnál fontos hogy a felhasználó nem csak lekérhet adatokat vagy dokumentumokat hanem fel is tölthet.
 
 ### IV.	A weblap műszaki megvalósítása:
 
 1.	Erős háttértámogatás alkalmazása
 2.	Hatékony algoritmusok használata
 3.	Biztonságos hitelesítési mechanizmusok
-Erős háttértámogatás: A weblapot egy erős háttértámogatás támogatja, amely képes kezelni nagy adatmennyiségeket. Ez biztosítja, hogy az adatbázis bővülésével a rendszer teljesítménye követi azt.
++ Erős háttértámogatás: A weblapot egy erős háttértámogatás támogatja, amely képes kezelni nagy adatmennyiségeket. Ez biztosítja, hogy az adatbázis bővülésével a rendszer teljesítménye követi azt.
 Hatékony algoritmusok: A gyors lekérdezés feldolgozása érdekében hatékony algoritmusokat alkalmaztunk. A felhasználók minimális késedelmet tapasztalhatnak a keresések során.
 
-Biztonságos hitelesítés: A felhasználói biztonság kulcsfontosságú. Biztonságos hitelesítési mechanizmusokat alkalmaztunk az adatok védelme érdekében, amelyek megakadályozzák a jogosulatlan hozzáférést és biztosítják az adatvédelmet.
++ Biztonságos hitelesítés: A felhasználói biztonság kulcsfontosságú. Biztonságos hitelesítési mechanizmusokat alkalmaztunk az adatok védelme érdekében, amelyek megakadályozzák a jogosulatlan hozzáférést és biztosítják az adatvédelmet.
 
 ### V.	Zárszó:
 
@@ -52,5 +52,5 @@ Ezeken a területeken úgy gondoljuk, hogy még további fejlesztési lehetősé
 
 Készítők és tervezők:
 
-Tüdős Levente	2/14sz  -> Backend programozás
-Budai Bence   	2/14sz  -> Frontend programozás
+***Tüdős Levente	2/14sz  -> Backend programozás***
+***Budai Bence   	2/14sz  -> Frontend programozás***

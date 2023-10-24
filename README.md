@@ -1,8 +1,8 @@
 # Documentation
 
 <p align="center">
-    **Dokumentum-adatbázis kereső weblap** <br />
-    **A Közbeszerzési Hatóság adatbázisa mintájára**
+    Dokumentum-adatbázis kereső weblap** <br />
+    A Közbeszerzési Hatóság adatbázisa mintájára
 </p>
 
 ### I. Bevezetés:

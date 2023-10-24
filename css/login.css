@@ -78,7 +78,7 @@ nav .wrapper .btn .close-btn {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
-.login-box .cb {
+.login-box #checkbox {
   color: #fff;
 }
 .login-box h2 {
@@ -217,4 +217,4 @@ nav .wrapper .btn .close-btn {
   50%, 100% {
     bottom: 100%;
   }
-}/*# sourceMappingURL=pr.css.map */
+}/*# sourceMappingURL=login.css.map */

@@ -11,7 +11,7 @@ A Közbeszerzési Hatóság adatbázisa mintájára
 
 A mai digitális korban a dokumentumok hatékony hozzáférésének és keresésének képessége kiemelkedő fontosságú. A dokumentum-adatbázisok a modern információkezelés alapjává váltak, rugalmas tárolási és visszakeresési képességeikkel. Ez a projekt, a "Dokumentum-adatbázis kereső weblap," azt a szükségletet kívánja kielégíteni. Felhasználóbarát felületet kínál, amely lehetővé teszi a felhasználók számára egy átfogó dokumentum-adatbázis elérését, beleértve különböző keresési lehetőségeket, amelyek elengedhetetlenek az hatékony dokumentumhozzáférés és -visszakeresés szempontjából. A Közbeszerzési Hatóság adatbázisát felhasználva készítettük el a weblapot és a keresés funkciókat.
 
-II.	A weblap funkcionalitása és jellemzői:
+## II.	A weblap funkcionalitása és jellemzői:
 
 1.	Felhasználóbarát felület 
 2.	Kiemelkedő keresési lehetőségek 
@@ -23,7 +23,7 @@ Kiemelkedő keresési lehetőségek: Kiemelkedő keresési lehetőségeket alkal
 
 Valós idejű indexelés: Annak érdekében, hogy a keresési eredmények mindig naprakészek legyenek, alkalmazásunk valós idejű indexelést alkalmaz. Ez azt jelenti, hogy a felhasználók mindig a legfrissebb információkat kapják a keresésük folyamán. 
 
-## II. A weboldal előnyei:
+## III. A weboldal előnyei:
 
 1.	Javított hatékonyság a dokumentumok megtalálásában
 2.	Időmegtakarító funkciók 
@@ -34,7 +34,7 @@ Időmegtakarító funkciók: Beágyaztunk időmegtakarító funkciókat is, pél
 
 Adatok felvitele: Egy jól kivitelezett és felhasználóbarát adatfeltöltő funkciót is beépítettünk a weboldalba, hiszen egy adatbázisnál fontos hogy a felhasználó nem csak lekérhet adatokat vagy dokumentumokat hanem fel is tölthet.
 
-## III.	A weblap műszaki megvalósítása:
+## IV.	A weblap műszaki megvalósítása:
 
 1.	Erős háttértámogatás alkalmazása
 2.	Hatékony algoritmusok használata
@@ -44,7 +44,7 @@ Hatékony algoritmusok: A gyors lekérdezés feldolgozása érdekében hatékony
 
 Biztonságos hitelesítés: A felhasználói biztonság kulcsfontosságú. Biztonságos hitelesítési mechanizmusokat alkalmaztunk az adatok védelme érdekében, amelyek megakadályozzák a jogosulatlan hozzáférést és biztosítják az adatvédelmet.
 
-## IV.	Zárszó:
+## V.	Zárszó:
 
 Összefoglalva a "Dokumentum-adatbázis kereső weblap" kulcsfontosságú kellékként szolgál a dokumentum visszakereséshez. Felhasználóbarát felülettel, fejlett keresési képességekkel és valós idejű indexeléssel nagy mértékben növeli a hatékonyságot a dokumentumok megtalálása során az adatbázisban. Emellett a automatikus kiegészítés és a keresések mentése tovább növeli az értékét a felhasználók számára, időmegtakarítást és általános élményjavulást biztosítva.
 Az alkalmazás technikai megvalósítása, beleértve a hatékony algoritmusokat és biztonságos hitelesítési mechanizmusokat, biztosítja, hogy a weblap erőteljes és biztonságos legyen.

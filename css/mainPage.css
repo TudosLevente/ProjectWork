@@ -1,0 +1,394 @@
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  zoom: 90%;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(172, 147, 104, 0.7);
+  /* Transparent color of the thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(77, 104, 111);
+  /* Transparent color of the track */
+}
+
+/* Optional: Add some glow effect to the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(172, 147, 104, 1);
+  /* Adjust the color on hover */
+  box-shadow: 0 0 10px rgba(172, 147, 104, 0.8);
+  /* Add a subtle glow effect */
+}
+
+a,
+button,
+input,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  appearance: none;
+  background: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main-page-login,
+.main-page-login * {
+  box-sizing: border-box;
+}
+
+.main-page-login {
+  background: #4d686f;
+  width: 1920px;
+  height: 1524px;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 101%;
+  height: 101%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.container {
+  background: rgba(77, 104, 111, 0);
+  width: 1440px;
+  height: 1482px;
+  position: absolute;
+  left: 240px;
+  top: 0px;
+  overflow: hidden;
+}
+
+.tartalom {
+  position: absolute;
+  inset: 0;
+}
+
+.rectangle-1 {
+  background: #ac9368;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 426px;
+  height: 705px;
+  position: absolute;
+  left: 307px;
+  top: 237px;
+}
+
+.rectangle-3 {
+  background: rgba(172, 147, 104, 0.9);
+  border-radius: 10px;
+  width: 355px;
+  height: 352px;
+  position: absolute;
+  left: 1257px;
+  top: 237px;
+}
+
+.rectangle-4 {
+  background: rgba(172, 147, 104, 0.9);
+  width: 363px;
+  height: 129px;
+  position: absolute;
+  left: 778px;
+  top: 363px;
+}
+
+.dokument-ci-let-lt-se {
+  color: #000000;
+  text-align: center;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: absolute;
+  left: 816px;
+  top: 396px;
+  width: 291px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legut-bbi-fejleszt-sek {
+  color: #000000;
+  text-align: center;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: absolute;
+  left: 324px;
+  top: 245px;
+  width: 398px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle-8 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 73px;
+  position: absolute;
+  left: 324px;
+  top: 303px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-10 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 72px;
+  position: absolute;
+  left: 324px;
+  top: 383px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-11 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 72px;
+  position: absolute;
+  left: 324px;
+  top: 463px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-12 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 73px;
+  position: absolute;
+  left: 324px;
+  top: 542px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-13 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 73px;
+  position: absolute;
+  left: 324px;
+  top: 622px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-14 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 72px;
+  position: absolute;
+  left: 324px;
+  top: 702px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-15 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 72px;
+  position: absolute;
+  left: 324px;
+  top: 782px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-16 {
+  background: rgba(172, 147, 104, 0.7);
+  width: 398px;
+  height: 73px;
+  position: absolute;
+  left: 324px;
+  top: 861px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sign-up-login-auto-layout {
+  background: #353f42;
+  padding: 15px 17px 15px 17px;
+  width: 100%; /* Use 100% to fill the entire width of the viewport */
+  height: 100px;
+  position: fixed; /* Change to fixed */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.frame-5 {
+  display: flex;
+  flex-direction: row;
+  gap: 231px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 528px;
+  position: fixed;
+  left: 17px; /* Adjust the left position as needed */
+  top: 15px;
+}
+.database-1 {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  overflow: visible;
+}
+.doku-dzsungel {
+  color: #ffffff;
+  text-align: left;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: relative;
+}
+.frame-4 {
+  display: flex;
+  flex-direction: row;
+  gap: 65px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 714px;
+  position: fixed;
+  right: 17px; /* Adjust the right position as needed */
+  top: 15px;
+}
+.f-men {
+  color: #ffffff;
+  text-align: left;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: relative;
+}
+.adatb-zis2 {
+  color: #ffffff;
+  text-align: left;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: relative;
+}
+.visszajelz-s {
+  color: #ffffff;
+  text-align: left;
+  font: 400 30px "Inter-Regular", sans-serif;
+  position: relative;
+}
+.frame-2 {
+  background: #ffffff;
+  border-radius: 40px;
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+}
+.log-in-1 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 23px;
+  top: 23px;
+  overflow: visible;
+}
+
+.about-us {
+  width: 1920px;
+  height: 300px;
+  position: absolute;
+  left: 0px;
+  top: 1182px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rectangle-5 {
+  background: rgba(77, 104, 111, 0.62);
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  width: 100%;
+  bottom: 0%;
+  top: 0%;
+  height: 100%;
+}
+
+.rectangle-6 {
+  background: #d9d9d9;
+  position: absolute;
+  right: 12.5%;
+  left: 77.08%;
+  width: 10.42%;
+  bottom: 16.67%;
+  top: 16.67%;
+  height: 66.67%;
+}
+
+.rectangle-7 {
+  background: #d9d9d9;
+  position: absolute;
+  right: 77.08%;
+  left: 12.5%;
+  width: 10.42%;
+  bottom: 16.67%;
+  top: 16.67%;
+  height: 66.67%;
+}
+
+.budai-bence {
+  color: #ffffff;
+  text-align: left;
+  font: 400 2rem "Inter-Regular", sans-serif;
+  position: absolute;
+  right: 60.31%;
+  left: 23.91%;
+  width: 15.78%;
+  bottom: 72%;
+  top: 16.67%;
+  height: 11.33%;
+}
+
+.t-d-s-levente {
+  color: #ffffff;
+  text-align: right;
+  font: 400 2rem "Inter-Regular", sans-serif;
+  position: absolute;
+  right: 23.96%;
+  left: 60.26%;
+  width: 15.78%;
+  bottom: 72%;
+  top: 16.67%;
+  height: 11.33%;
+}
+
+.keress-minket-az-erd-ben-d-dokudzsungel-gmail-com {
+  color: #ffffff;
+  text-align: center;
+  font: 400 2rem "Inter-Regular", sans-serif;
+  position: absolute;
+  right: 32.66%;
+  left: 37.76%;
+  width: 29.58%;
+  bottom: 10.67%;
+  top: 64%;
+  height: 25.33%;
+}

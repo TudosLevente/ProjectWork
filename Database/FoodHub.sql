@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Ingredients;
 DROP TABLE IF EXISTS Recipe_Ingredients;
 
--- Create tables --
+-- Create Users table
 CREATE TABLE IF NOT EXISTS Users (
     User_ID INT AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(255) NOT NULL,
@@ -22,26 +22,32 @@ CREATE TABLE IF NOT EXISTS Users (
     Password VARCHAR(255) NOT NULL
 );
 
+-- Function to generate a salt
+DElIMITER // 
+CREATE FUNCTION `salt`() RETURNS VARCHAR(255)
+BEGIN
+  DECLARE random_string VARCHAR(255);
+  SET random_string = MD5(RAND());
+  RETURN random_string;
+END;
+//
+DELIMITER ;
+
+-- Trigger to hash the password before insertion
+DELIMITER //
+CREATE TRIGGER `password_hash` BEFORE INSERT ON `Users` FOR EACH ROW
+BEGIN
+  DECLARE salt_value VARCHAR(255);
+  SET salt_value = salt();
+  SET NEW.Password = CONCAT(PASSWORD(CONCAT(NEW.Password, salt_value)), ':', salt_value);
+END;
+//
+DELIMITER ;
+
 CREATE TABLE IF NOT EXISTS Ingredients (
     Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
     Ingredient_Name VARCHAR(255) NOT NULL,
     Ingredient_Category VARCHAR(30)
-);
-
-CREATE TABLE IF NOT EXISTS Recipe_Ingredients (
-    Recipe_Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Ingredient_ID INT,
-    Quantity INT,
-    Measurement VArCHAR(30),
-    FOREIGN KEY (Ingredient_ID)
-        REFERENCES Ingredients (Ingredient_ID)
-);
-
-CREATE TABLE IF NOT EXISTS Time (
-    Time_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Time_Prep_Type VARCHAR(30),
-    Time_Quantity INT,
-    Time_Type VARCHAR(30)
 );
 
 CREATE TABLE IF NOT EXISTS Recipes (
@@ -50,19 +56,33 @@ CREATE TABLE IF NOT EXISTS Recipes (
     Picture_file_name VARCHAR(255),
     Title VARCHAR(255) NOT NULL,
     Description TEXT,
-    Recipe_Ingredient_ID INT,
     Instructions TEXT,
-    Time_ID INT,
     Serving INT,
     Difficulty_Level VARCHAR(30),
     Food_Category VARCHAR(30),
     Date_Created DATE,
     FOREIGN KEY (User_ID)
-        REFERENCES Users (User_ID),
-    FOREIGN KEY (Time_ID)
-        REFERENCES Time (Time_ID),
-    FOREIGN KEY (Recipe_Ingredient_ID)
-        REFERENCES Recipe_Ingredients (Recipe_Ingredient_ID)
+        REFERENCES Users (User_ID)
+);
+
+CREATE TABLE IF NOT EXISTS Time (
+    Recipe_ID INT,
+    Time_Prep_Type VARCHAR(30),
+    Time_Quantity INT,
+    Time_Type VARCHAR(30),
+    FOREIGN KEY (Recipe_ID)
+		REFERENCES Recipes (Recipe_ID)
+);
+
+CREATE TABLE IF NOT EXISTS Recipe_Ingredients (
+    Recipe_ID INT ,
+    Ingredient_ID INT,
+    Quantity INT,
+    Measurement VArCHAR(30),
+    FOREIGN KEY (Ingredient_ID)
+        REFERENCES Ingredients (Ingredient_ID),
+	FOREIGN KEY (Recipe_ID)
+		REFERENCES Recipes (Recipe_ID)
 );
 
 CREATE TABLE IF NOT EXISTS Favorites (

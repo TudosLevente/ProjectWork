@@ -1,3 +1,4 @@
+-- Active: 1701431087077@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -106,3 +107,25 @@ CREATE TABLE IF NOT EXISTS Comments (
     FOREIGN KEY (Recipe_ID)
         REFERENCES Recipes (Recipe_ID)
 );
+
+DELIMITER //
+
+drop procedure userLogin;
+
+CREATE PROCEDURE if not EXISTS userLogin(IN mail Varchar(50), pwd varchar(50))
+BEGIN
+    SELECT user_id, name, email FROM users WHERE users.email = mail And users.password = pwd;
+END;
+
+DELIMITER ;
+
+DELIMITER //
+
+drop PROCEDURE userUpdateToken;
+
+CREATE PROCEDURE if not EXISTS userUpdateToken(IN id int, token Text)
+BEGIN
+    UPDATE users SET users.token = token WHERE users.user_id = id;     
+END;
+
+DELIMITER ;

@@ -1,394 +1,790 @@
-body {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100%;
-  margin: 0;
-  zoom: 90%;
+.fooldal {
+    background-color: #d6bf9b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
-/* For WebKit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-  width: 12px;
-  border-radius: 10px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
+.fooldal .div {
+    background-color: #d6bf9b;
+    overflow: hidden;
+    width: 1920px;
+    height: 5127px;
+    position: relative;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(172, 147, 104, 0.7);
-  /* Transparent color of the thumb */
-  border-radius: 10px;
+.fooldal .footer {
+    position: absolute;
+    width: 1920px;
+    height: 251px;
+    top: 4876px;
+    left: 0;
+    background-color: #bb5900;
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgb(77, 104, 111);
-  /* Transparent color of the track */
+.fooldal .text-wrapper {
+    position: absolute;
+    top: 25px;
+    left: 281px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 55px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
-/* Optional: Add some glow effect to the thumb */
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(172, 147, 104, 1);
-  /* Adjust the color on hover */
-  box-shadow: 0 0 10px rgba(172, 147, 104, 0.8);
-  /* Add a subtle glow effect */
+.fooldal .felhasz-feltet {
+    position: absolute;
+    top: 123px;
+    left: 281px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
 }
 
-a,
-button,
-input,
-select,
-h1,
-h2,
-h3,
-h4,
-h5,
-* {
-  margin: 0;
-  padding: 0;
-  border: none;
-  text-decoration: none;
-  appearance: none;
-  background: none;
-  -webkit-font-smoothing: antialiased;
+.fooldal .facebook {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 118px;
+    left: 1424px;
 }
 
-.main-page-login,
-.main-page-login * {
-  box-sizing: border-box;
+.fooldal .twitter {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 118px;
+    left: 1498px;
 }
 
-.main-page-login {
-  background: #4d686f;
-  width: 1920px;
-  height: 1524px;
-  position: relative;
-  overflow: hidden;
+.fooldal .instagram {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 118px;
+    left: 1572px;
 }
 
-.background-image {
-  width: 101%;
-  height: 101%;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
+.fooldal .text-wrapper-2 {
+    position: absolute;
+    top: 128px;
+    left: 753px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
 }
 
-.container {
-  background: rgba(77, 104, 111, 0);
-  width: 1440px;
-  height: 1482px;
-  position: absolute;
-  left: 240px;
-  top: 0px;
-  overflow: hidden;
+.fooldal .foodhub-logo {
+    position: absolute;
+    width: 268px;
+    height: 214px;
+    top: 22px;
+    left: 1116px;
+    object-fit: cover;
 }
 
-.tartalom {
-  position: absolute;
-  inset: 0;
+.fooldal .kapcsolat {
+    position: absolute;
+    width: 1917px;
+    height: 500px;
+    top: 4312px;
+    left: 0;
+    background-color: #d6bf9b;
 }
 
-.rectangle-1 {
-  background: #ac9368;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px;
-  width: 426px;
-  height: 705px;
-  position: absolute;
-  left: 307px;
-  top: 237px;
+.fooldal .overlap-group {
+    position: relative;
+    width: 1412px;
+    height: 480px;
+    top: 12px;
+    left: 269px;
 }
 
-.rectangle-3 {
-  background: rgba(172, 147, 104, 0.9);
-  border-radius: 10px;
-  width: 355px;
-  height: 352px;
-  position: absolute;
-  left: 1257px;
-  top: 237px;
+.fooldal .feedback-cim {
+    position: absolute;
+    top: 33px;
+    left: 20px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
-.rectangle-4 {
-  background: rgba(172, 147, 104, 0.9);
-  width: 363px;
-  height: 129px;
-  position: absolute;
-  left: 778px;
-  top: 363px;
+.fooldal .feeback-leiras {
+    position: absolute;
+    width: 528px;
+    height: 129px;
+    top: 153px;
+    left: 46px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 34px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
-.dokument-ci-let-lt-se {
-  color: #000000;
-  text-align: center;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: absolute;
-  left: 816px;
-  top: 396px;
-  width: 291px;
-  height: 66px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.fooldal .feedback {
+    position: absolute;
+    width: 699px;
+    height: 373px;
+    top: 80px;
+    left: 678px;
 }
 
-.legut-bbi-fejleszt-sek {
-  color: #000000;
-  text-align: center;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: absolute;
-  left: 324px;
-  top: 245px;
-  width: 398px;
-  height: 41px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.fooldal .nev {
+    width: 339px;
+    height: 116px;
+    top: 0;
+    position: absolute;
+    left: 0;
 }
 
-.rectangle-8 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 73px;
-  position: absolute;
-  left: 324px;
-  top: 303px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .frame-wrapper {
+    width: 337px;
+    height: 75px;
+    top: 41px;
+    background-color: #ad7c33;
+    position: absolute;
+    left: 0;
 }
 
-.rectangle-10 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 72px;
-  position: absolute;
-  left: 324px;
-  top: 383px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .frame {
+    display: flex;
+    width: 337px;
+    height: 75px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
 }
 
-.rectangle-11 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 72px;
-  position: absolute;
-  left: 324px;
-  top: 463px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .text-wrapper-3 {
+    color: #d9d9d9;
+    font-size: 24px;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
-.rectangle-12 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 73px;
-  position: absolute;
-  left: 324px;
-  top: 542px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .nev-2 {
+    width: 337px;
+    top: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    left: 0;
 }
 
-.rectangle-13 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 73px;
-  position: absolute;
-  left: 324px;
-  top: 622px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .uzenet {
+    width: 701px;
+    height: 169px;
+    top: 129px;
+    position: absolute;
+    left: 0;
 }
 
-.rectangle-14 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 72px;
-  position: absolute;
-  left: 324px;
-  top: 702px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .div-wrapper {
+    width: 699px;
+    height: 133px;
+    top: 36px;
+    background-color: #ad7c33;
+    position: absolute;
+    left: 0;
 }
 
-.rectangle-15 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 72px;
-  position: absolute;
-  left: 324px;
-  top: 782px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .pelda-uzenet-wrapper {
+    display: flex;
+    width: 699px;
+    height: 133px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
 }
 
-.rectangle-16 {
-  background: rgba(172, 147, 104, 0.7);
-  width: 398px;
-  height: 73px;
-  position: absolute;
-  left: 324px;
-  top: 861px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .pelda-uzenet {
+    margin-top: -1px;
+    color: #d9d9d9;
+    font-size: 24px;
+    line-height: 40px;
+    white-space: nowrap;
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    letter-spacing: 0;
 }
 
-.sign-up-login-auto-layout {
-  background: #353f42;
-  padding: 15px 17px 15px 17px;
-  width: 100%; /* Use 100% to fill the entire width of the viewport */
-  height: 100px;
-  position: fixed; /* Change to fixed */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Ensure it's above other content */
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.frame-5 {
-  display: flex;
-  flex-direction: row;
-  gap: 231px;
-  align-items: center;
-  justify-content: flex-start;
-  width: 528px;
-  position: fixed;
-  left: 17px; /* Adjust the left position as needed */
-  top: 15px;
-}
-.database-1 {
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  position: relative;
-  overflow: visible;
-}
-.doku-dzsungel {
-  color: #ffffff;
-  text-align: left;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: relative;
-}
-.frame-4 {
-  display: flex;
-  flex-direction: row;
-  gap: 65px;
-  align-items: center;
-  justify-content: flex-start;
-  width: 714px;
-  position: fixed;
-  right: 17px; /* Adjust the right position as needed */
-  top: 15px;
-}
-.f-men {
-  color: #ffffff;
-  text-align: left;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: relative;
-}
-.adatb-zis2 {
-  color: #ffffff;
-  text-align: left;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: relative;
-}
-.visszajelz-s {
-  color: #ffffff;
-  text-align: left;
-  font: 400 30px "Inter-Regular", sans-serif;
-  position: relative;
-}
-.frame-2 {
-  background: #ffffff;
-  border-radius: 40px;
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  position: relative;
-  overflow: hidden;
-}
-.log-in-1 {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  left: 23px;
-  top: 23px;
-  overflow: visible;
+.fooldal .uzenet-2 {
+    width: 699px;
+    top: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    left: 0;
 }
 
-.about-us {
-  width: 1920px;
-  height: 300px;
-  position: absolute;
-  left: 0px;
-  top: 1182px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.fooldal .email {
+    position: absolute;
+    width: 352px;
+    height: 116px;
+    top: 0;
+    left: 348px;
 }
 
-.rectangle-5 {
-  background: rgba(77, 104, 111, 0.62);
-  position: absolute;
-  right: 0%;
-  left: 0%;
-  width: 100%;
-  bottom: 0%;
-  top: 0%;
-  height: 100%;
+.fooldal .email-2 {
+    position: absolute;
+    width: 350px;
+    height: 75px;
+    top: 41px;
+    left: 0;
+    background-color: #ad7c33;
 }
 
-.rectangle-6 {
-  background: #d9d9d9;
-  position: absolute;
-  right: 12.5%;
-  left: 77.08%;
-  width: 10.42%;
-  bottom: 16.67%;
-  top: 16.67%;
-  height: 66.67%;
+.fooldal .pelda-email-wrapper {
+    display: flex;
+    width: 350px;
+    height: 75px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
 }
 
-.rectangle-7 {
-  background: #d9d9d9;
-  position: absolute;
-  right: 77.08%;
-  left: 12.5%;
-  width: 10.42%;
-  bottom: 16.67%;
-  top: 16.67%;
-  height: 66.67%;
+.fooldal .e-mail-cim {
+    position: absolute;
+    width: 350px;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
-.budai-bence {
-  color: #ffffff;
-  text-align: left;
-  font: 400 2rem "Inter-Regular", sans-serif;
-  position: absolute;
-  right: 60.31%;
-  left: 23.91%;
-  width: 15.78%;
-  bottom: 72%;
-  top: 16.67%;
-  height: 11.33%;
+.fooldal .gomb {
+    position: absolute;
+    width: 165px;
+    height: 62px;
+    top: 311px;
+    left: 512px;
+    background-color: #ff9900;
 }
 
-.t-d-s-levente {
-  color: #ffffff;
-  text-align: right;
-  font: 400 2rem "Inter-Regular", sans-serif;
-  position: absolute;
-  right: 23.96%;
-  left: 60.26%;
-  width: 15.78%;
-  bottom: 72%;
-  top: 16.67%;
-  height: 11.33%;
+.fooldal .text-wrapper-4 {
+    position: absolute;
+    top: 13px;
+    left: 38px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
-.keress-minket-az-erd-ben-d-dokudzsungel-gmail-com {
-  color: #ffffff;
-  text-align: center;
-  font: 400 2rem "Inter-Regular", sans-serif;
-  position: absolute;
-  right: 32.66%;
-  left: 37.76%;
-  width: 29.58%;
-  bottom: 10.67%;
-  top: 64%;
-  height: 25.33%;
+.fooldal .rectangle {
+    width: 1412px;
+    height: 480px;
+    left: 0;
+    border: 5px dashed;
+    border-color: transparent;
+    border-image: linear-gradient(to bottom, rgb(238, 163, 37), rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%) 1;
+    position: absolute;
+    top: 0;
+}
+
+.fooldal .frame-2 {
+    position: absolute;
+    width: 707px;
+    height: 709px;
+    top: 3347px;
+    left: 586px;
+    background-color: #613400;
+}
+
+.fooldal .food {
+    position: absolute;
+    width: 707px;
+    height: 558px;
+    top: 0;
+    left: 0;
+}
+
+.fooldal .ajanlat-etel-title {
+    position: absolute;
+    top: 600px;
+    left: 238px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .overlap-wrapper {
+    position: absolute;
+    width: 709px;
+    height: 709px;
+    top: 3347px;
+    left: -307px;
+}
+
+.fooldal .overlap {
+    position: relative;
+    width: 471px;
+    height: 709px;
+    left: 238px;
+}
+
+.fooldal .rectangle-2 {
+    width: 402px;
+    height: 709px;
+    left: 69px;
+    background-color: #613400;
+    border-radius: 0px 45px 0px 0px;
+    position: absolute;
+    top: 0;
+}
+
+.fooldal .img {
+    width: 400px;
+    left: 69px;
+    position: absolute;
+    height: 558px;
+    top: 0;
+}
+
+.fooldal .ajanlat-etel-title-2 {
+    left: 0;
+    position: absolute;
+    top: 600px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .frame-3 {
+    position: absolute;
+    width: 156px;
+    height: 182px;
+    top: 3585px;
+    left: 415px;
+}
+
+.fooldal .frame-4 {
+    position: absolute;
+    width: 156px;
+    height: 182px;
+    top: 3585px;
+    left: 1309px;
+}
+
+.fooldal .overlap-group-wrapper {
+    position: absolute;
+    width: 708px;
+    height: 709px;
+    top: 3347px;
+    left: 1479px;
+}
+
+.fooldal .overlap-2 {
+    position: relative;
+    width: 471px;
+    height: 709px;
+}
+
+.fooldal .rectangle-3 {
+    width: 441px;
+    height: 709px;
+    left: 0;
+    background-color: #613400;
+    border-radius: 0px 0px 45px 0px;
+    transform: rotate(-180deg);
+    position: absolute;
+    top: 0;
+}
+
+.fooldal .food-2 {
+    width: 440px;
+    left: 1px;
+    position: absolute;
+    height: 558px;
+    top: 0;
+}
+
+.fooldal .ajanlat-etel-title-3 {
+    left: 239px;
+    position: absolute;
+    top: 600px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .galeria-gomb-text-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 29px 11px;
+    position: absolute;
+    top: 4108px;
+    left: 794px;
+    background-color: #613400;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fooldal .galeria-gomb-text {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 34px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .ajanlat-text {
+    position: absolute;
+    top: 3174px;
+    left: 373px;
+    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .etel-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1440px;
+    height: 1702px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 60px;
+    position: absolute;
+    top: 1345px;
+    left: 240px;
+    border: 5px dashed;
+    border-color: transparent;
+    border-image: linear-gradient(to bottom, rgb(238, 163, 37), rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%) 1;
+}
+
+.fooldal .etel-pic {
+    position: relative;
+    width: 318px;
+    height: 351px;
+    background-color: #613400;
+}
+
+.fooldal .food-3 {
+    position: absolute;
+    width: 318px;
+    height: 350px;
+    top: 1px;
+    left: 0;
+    object-fit: cover;
+}
+
+.fooldal .pelda-title {
+    color: #000000;
+    font-size: 38px;
+    line-height: normal;
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.fooldal .gomb-text-wrapper {
+    position: relative;
+    width: 212px;
+    height: 84px;
+    background-color: #ff9900;
+}
+
+.fooldal .gomb-text {
+    position: absolute;
+    height: 68px;
+    top: 9px;
+    left: 36px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .frame-preview {
+    display: flex;
+    flex-direction: column;
+    width: 356px;
+    height: 403px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.fooldal .overlap-3 {
+    position: absolute;
+    width: 1920px;
+    height: 1284px;
+    top: 0;
+    left: 0;
+}
+
+.fooldal .receptek-text {
+    position: absolute;
+    width: 513px;
+    top: 1188px;
+    left: 686px;
+    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .image {
+    position: absolute;
+    width: 1920px;
+    height: 1194px;
+    top: 0;
+    left: 0;
+}
+
+.fooldal .frame-17 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 541px;
+    left: 655px;
+}
+
+.fooldal .text-wrapper-5 {
+    margin-top: -10px;
+    -webkit-text-stroke: 9px transparent;
+    font-size: 128px;
+    position: relative;
+    width: fit-content;
+    text-shadow: 0px 4px 4px #00000040;
+    background-image: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    background-clip: text;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .slogen {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .nav-bar {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    padding: 29px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #bb5900;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    opacity: 0.95;
+}
+
+.fooldal .frame-18 {
+    display: flex;
+    width: 1920px;
+    align-items: center;
+    justify-content: center;
+    gap: 107px;
+    padding: 0px 35px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.fooldal .text-wrapper-6 {
+    width: 276px;
+    height: 77px;
+    position: absolute;
+    height: 77px;
+    top: 0px;
+    left: 0px;
+    text-shadow: 0px 4px 4px #00000040;
+    -webkit-text-stroke: 10px transparent;
+    background-image: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    background-clip: text;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: transparent;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .frame-19 {
+    position: relative;
+    width: 1005px;
+    height: 75px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 2px solid;
+    border-color: #ffffff;
+}
+
+.fooldal .search-wrapper {
+    display: flex;
+    width: 955px;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+    left: 22px;
+    color: transparent;
+    background-color: transparent;
+}
+
+.fooldal .search {
+    position: relative;
+    width: 953px;
+    height: 70px;
+    margin-top: -8.5px;
+    margin-bottom: -6.5px;
+    margin-left: -9px;
+    margin-right: -9px;
+    opacity: 0.7;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+.fooldal .login-user-icon {
+    position: relative;
+    width: 287px;
+    height: 60px;
+}
+
+.fooldal .user {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    top: 0;
+    left: -1px;
+}
+
+.fooldal .login {
+    position: absolute;
+    top: 11px;
+    left: 74px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.fooldal .navbar {
+    display: flex;
+    width: 1911px;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.fooldal .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
 }

@@ -1,790 +1,113 @@
-.fooldal {
-    background-color: #d6bf9b;
+body {
+    background-color: #D7BF9C;
+    /* overflow: hidden; */
+    background-image: url("../images/mainPage/image-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    background: #bb5a00;
+    opacity: 0.93;
+    padding: 19px 0px 19px 0px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    overflow: hidden;
     width: 100%;
 }
 
-.fooldal .div {
-    background-color: #d6bf9b;
-    overflow: hidden;
-    width: 1920px;
-    height: 5127px;
-    position: relative;
-}
+.nav-bottom {}
 
-.fooldal .footer {
-    position: absolute;
-    width: 1920px;
-    height: 251px;
-    top: 4876px;
-    left: 0;
-    background-color: #bb5900;
-}
+.nav-top {}
 
-.fooldal .text-wrapper {
-    position: absolute;
-    top: 25px;
-    left: 281px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
+.login-text {
     color: #ffffff;
-    font-size: 55px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .felhasz-feltet {
-    position: absolute;
-    top: 123px;
-    left: 281px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 35px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.fooldal .facebook {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 118px;
-    left: 1424px;
-}
-
-.fooldal .twitter {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 118px;
-    left: 1498px;
-}
-
-.fooldal .instagram {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 118px;
-    left: 1572px;
-}
-
-.fooldal .text-wrapper-2 {
-    position: absolute;
-    top: 128px;
-    left: 753px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 30px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.fooldal .foodhub-logo {
-    position: absolute;
-    width: 268px;
-    height: 214px;
-    top: 22px;
-    left: 1116px;
-    object-fit: cover;
-}
-
-.fooldal .kapcsolat {
-    position: absolute;
-    width: 1917px;
-    height: 500px;
-    top: 4312px;
-    left: 0;
-    background-color: #d6bf9b;
-}
-
-.fooldal .overlap-group {
-    position: relative;
-    width: 1412px;
-    height: 480px;
-    top: 12px;
-    left: 269px;
-}
-
-.fooldal .feedback-cim {
-    position: absolute;
-    top: 33px;
-    left: 20px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 48px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .feeback-leiras {
-    position: absolute;
-    width: 528px;
-    height: 129px;
-    top: 153px;
-    left: 46px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 34px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .feedback {
-    position: absolute;
-    width: 699px;
-    height: 373px;
-    top: 80px;
-    left: 678px;
-}
-
-.fooldal .nev {
-    width: 339px;
-    height: 116px;
-    top: 0;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .frame-wrapper {
-    width: 337px;
-    height: 75px;
-    top: 41px;
-    background-color: #ad7c33;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .frame {
-    display: flex;
-    width: 337px;
-    height: 75px;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-}
-
-.fooldal .text-wrapper-3 {
-    color: #d9d9d9;
+    text-align: left;
+    font-family: 'Inter-Regular', sans-serif;
     font-size: 24px;
-    line-height: normal;
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
-    letter-spacing: 0;
-}
-
-.fooldal .nev-2 {
-    width: 337px;
-    top: 0;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .uzenet {
-    width: 701px;
-    height: 169px;
-    top: 129px;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .div-wrapper {
-    width: 699px;
-    height: 133px;
-    top: 36px;
-    background-color: #ad7c33;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .pelda-uzenet-wrapper {
-    display: flex;
-    width: 699px;
-    height: 133px;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
     position: relative;
 }
 
-.fooldal .pelda-uzenet {
-    margin-top: -1px;
-    color: #d9d9d9;
-    font-size: 24px;
-    line-height: 40px;
-    white-space: nowrap;
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    letter-spacing: 0;
+.login-div a,
+.navmenuitems a {
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
 }
 
-.fooldal .uzenet-2 {
-    width: 699px;
-    top: 0;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    left: 0;
-}
-
-.fooldal .email {
-    position: absolute;
-    width: 352px;
-    height: 116px;
-    top: 0;
-    left: 348px;
-}
-
-.fooldal .email-2 {
-    position: absolute;
-    width: 350px;
-    height: 75px;
-    top: 41px;
-    left: 0;
-    background-color: #ad7c33;
-}
-
-.fooldal .pelda-email-wrapper {
-    display: flex;
-    width: 350px;
-    height: 75px;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-}
-
-.fooldal .e-mail-cim {
-    position: absolute;
-    width: 350px;
-    top: 0;
-    left: 0;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 24px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .gomb {
-    position: absolute;
-    width: 165px;
-    height: 62px;
-    top: 311px;
-    left: 512px;
-    background-color: #ff9900;
-}
-
-.fooldal .text-wrapper-4 {
-    position: absolute;
-    top: 13px;
-    left: 38px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 28px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .rectangle {
-    width: 1412px;
-    height: 480px;
-    left: 0;
-    border: 5px dashed;
-    border-color: transparent;
-    border-image: linear-gradient(to bottom, rgb(238, 163, 37), rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%) 1;
-    position: absolute;
-    top: 0;
-}
-
-.fooldal .frame-2 {
-    position: absolute;
-    width: 707px;
-    height: 709px;
-    top: 3347px;
-    left: 586px;
-    background-color: #613400;
-}
-
-.fooldal .food {
-    position: absolute;
-    width: 707px;
-    height: 558px;
-    top: 0;
-    left: 0;
-}
-
-.fooldal .ajanlat-etel-title {
-    position: absolute;
-    top: 600px;
-    left: 238px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 48px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .overlap-wrapper {
-    position: absolute;
-    width: 709px;
-    height: 709px;
-    top: 3347px;
-    left: -307px;
-}
-
-.fooldal .overlap {
-    position: relative;
-    width: 471px;
-    height: 709px;
-    left: 238px;
-}
-
-.fooldal .rectangle-2 {
-    width: 402px;
-    height: 709px;
-    left: 69px;
-    background-color: #613400;
-    border-radius: 0px 45px 0px 0px;
-    position: absolute;
-    top: 0;
-}
-
-.fooldal .img {
-    width: 400px;
-    left: 69px;
-    position: absolute;
-    height: 558px;
-    top: 0;
-}
-
-.fooldal .ajanlat-etel-title-2 {
-    left: 0;
-    position: absolute;
-    top: 600px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 48px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .frame-3 {
-    position: absolute;
-    width: 156px;
-    height: 182px;
-    top: 3585px;
-    left: 415px;
-}
-
-.fooldal .frame-4 {
-    position: absolute;
-    width: 156px;
-    height: 182px;
-    top: 3585px;
-    left: 1309px;
-}
-
-.fooldal .overlap-group-wrapper {
-    position: absolute;
-    width: 708px;
-    height: 709px;
-    top: 3347px;
-    left: 1479px;
-}
-
-.fooldal .overlap-2 {
-    position: relative;
-    width: 471px;
-    height: 709px;
-}
-
-.fooldal .rectangle-3 {
-    width: 441px;
-    height: 709px;
-    left: 0;
-    background-color: #613400;
-    border-radius: 0px 0px 45px 0px;
-    transform: rotate(-180deg);
-    position: absolute;
-    top: 0;
-}
-
-.fooldal .food-2 {
-    width: 440px;
-    left: 1px;
-    position: absolute;
-    height: 558px;
-    top: 0;
-}
-
-.fooldal .ajanlat-etel-title-3 {
-    left: 239px;
-    position: absolute;
-    top: 600px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 48px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .galeria-gomb-text-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 29px 11px;
-    position: absolute;
-    top: 4108px;
-    left: 794px;
-    background-color: #613400;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.fooldal .galeria-gomb-text {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 34px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .ajanlat-text {
-    position: absolute;
-    top: 3174px;
-    left: 373px;
-    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
-    -webkit-background-clip: text !important;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-family: "Inter-Medium", Helvetica;
-    font-weight: 500;
-    color: transparent;
-    font-size: 80px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .etel-galeria {
-    display: flex;
-    flex-wrap: wrap;
-    width: 1440px;
-    height: 1702px;
-    align-items: center;
-    justify-content: center;
-    gap: 5px 60px;
-    position: absolute;
-    top: 1345px;
-    left: 240px;
-    border: 5px dashed;
-    border-color: transparent;
-    border-image: linear-gradient(to bottom, rgb(238, 163, 37), rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%) 1;
-}
-
-.fooldal .etel-pic {
-    position: relative;
-    width: 318px;
-    height: 351px;
-    background-color: #613400;
-}
-
-.fooldal .food-3 {
-    position: absolute;
-    width: 318px;
-    height: 350px;
-    top: 1px;
-    left: 0;
-    object-fit: cover;
-}
-
-.fooldal .pelda-title {
-    color: #000000;
-    font-size: 38px;
-    line-height: normal;
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    letter-spacing: 0;
-}
-
-.fooldal .gomb-text-wrapper {
-    position: relative;
-    width: 212px;
-    height: 84px;
-    background-color: #ff9900;
-}
-
-.fooldal .gomb-text {
-    position: absolute;
-    height: 68px;
-    top: 9px;
-    left: 36px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 28px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .frame-preview {
-    display: flex;
-    flex-direction: column;
-    width: 356px;
-    height: 403px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    position: relative;
-    z-index: 10;
-}
-
-.fooldal .overlap-3 {
-    position: absolute;
-    width: 1920px;
-    height: 1284px;
-    top: 0;
-    left: 0;
-}
-
-.fooldal .receptek-text {
-    position: absolute;
-    width: 513px;
-    top: 1188px;
-    left: 686px;
-    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
-    -webkit-background-clip: text !important;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: transparent;
-    font-size: 80px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .image {
-    position: absolute;
-    width: 1920px;
-    height: 1194px;
-    top: 0;
-    left: 0;
-}
-
-.fooldal .frame-17 {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 541px;
-    left: 655px;
-}
-
-.fooldal .text-wrapper-5 {
-    margin-top: -10px;
-    -webkit-text-stroke: 9px transparent;
-    font-size: 128px;
-    position: relative;
-    width: fit-content;
-    text-shadow: 0px 4px 4px #00000040;
-    background-image: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
-    background-clip: text;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: transparent;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .slogen {
-    position: relative;
-    width: fit-content;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 36px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .nav-bar {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    padding: 29px 0px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #bb5900;
-    border-radius: 0px 0px 5px 5px;
-    overflow: hidden;
-    opacity: 0.95;
-}
-
-.fooldal .frame-18 {
-    display: flex;
-    width: 1920px;
-    align-items: center;
-    justify-content: center;
-    gap: 107px;
-    padding: 0px 35px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.fooldal .text-wrapper-6 {
-    width: 276px;
-    height: 77px;
-    position: absolute;
-    height: 77px;
-    top: 0px;
-    left: 0px;
-    text-shadow: 0px 4px 4px #00000040;
-    -webkit-text-stroke: 10px transparent;
-    background-image: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
-    background-clip: text;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: transparent;
-    font-size: 64px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .frame-19 {
-    position: relative;
-    width: 1005px;
-    height: 75px;
+.searchbar {
     border-radius: 30px;
-    overflow: hidden;
-    border: 2px solid;
+    border-style: solid;
     border-color: #ffffff;
+    border-width: 2px;
+    flex-shrink: 0;
+    width: 905px;
+    height: 65px;
+    position: relative;
+    overflow: hidden;
 }
 
-.fooldal .search-wrapper {
+.label {
+    width: 551px;
+    height: 155px;
+
+}
+
+.label .food-hub {
+    position: fixed;
+    width: 541px;
+    height: 103px;
+    top: 0;
+    left: 0;
+    margin-left: 36%;
+    margin-top: 30%;
+}
+
+.foobhub-logo-text {
+    text-align: center;
+    position: fixed;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 60px;
+    left: 70px;
+    font-weight: 400;
+    position: relative;
     display: flex;
-    width: 955px;
-    height: 75px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    position: relative;
-    left: 22px;
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    -webkit-background-clip: text;
     color: transparent;
-    background-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.fooldal .search {
-    position: relative;
-    width: 953px;
-    height: 70px;
-    margin-top: -8.5px;
-    margin-bottom: -6.5px;
-    margin-left: -9px;
-    margin-right: -9px;
-    opacity: 0.7;
-    font-family: "Inter-Regular", Helvetica;
+.label_slogen {
+    width: 609px;
+    height: 44px;
+}
+
+.label_slogen .slogen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: 'Inter-Regular', sans-serif;
     font-weight: 400;
-    color: #ffffff;
+    color: #000000;
     font-size: 36px;
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
-    background-color: transparent;
-    border: none;
-    text-align: center;
+    margin-left: 35.5%;
+    margin-top: 35%;
 }
 
-.fooldal .login-user-icon {
-    position: relative;
-    width: 287px;
-    height: 60px;
-}
-
-.fooldal .user {
-    position: absolute;
-    width: 62px;
-    height: 62px;
-    top: 0;
-    left: -1px;
-}
-
-.fooldal .login {
-    position: absolute;
-    top: 11px;
-    left: 74px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.fooldal .navbar {
-    display: flex;
-    width: 1911px;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 60px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.fooldal .text-wrapper-7 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 32px;
-    letter-spacing: 0;
-    line-height: normal;
+/* Style for the divider */
+.divider {
+    height: 1px;
+    margin: 5px 0;
+    background-color: #ccc; /* You can adjust the color to your preference */
 }

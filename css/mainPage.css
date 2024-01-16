@@ -1,6 +1,19 @@
 body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
     background-color: #D7BF9C;
-    /* overflow: hidden; */
+    overflow: hidden; /* Hide overflow if necessary */
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the image behind the content */
     background-image: url("../images/mainPage/image-1.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,8 +77,8 @@ body {
     height: 103px;
     top: 0;
     left: 0;
-    margin-left: 36%;
-    margin-top: 30%;
+    margin-left: 680px;
+    margin-top: 540px;
 }
 
 .foobhub-logo-text {
@@ -101,13 +114,14 @@ body {
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
-    margin-left: 35.5%;
-    margin-top: 35%;
+    margin-left: 670px;
+    margin-top: 630px;
 }
 
-/* Style for the divider */
-.divider {
-    height: 1px;
-    margin: 5px 0;
-    background-color: #ccc; /* You can adjust the color to your preference */
+.centered-div {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    text-align: center;
 }
+

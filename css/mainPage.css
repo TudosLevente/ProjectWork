@@ -2,7 +2,21 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     background-color: #D7BF9C;
-    /* overflow: hidden; */
+<<<<<<< HEAD
+=======
+    overflow: hidden; /* Hide overflow if necessary */
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the image behind the content */
+>>>>>>> 9809342a044fb294355e9f4755265b14d14c8834
     background-image: url("../images/mainPage/image-1.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -58,10 +72,13 @@ body {
 .food-hub {
     width: 541px;
     height: 103px;
+<<<<<<< HEAD
+=======
     top: 0;
     left: 0;
-    margin-left: 36%;
-    margin-top: 30%;
+    margin-left: 680px;
+    margin-top: 540px;
+>>>>>>> 9809342a044fb294355e9f4755265b14d14c8834
 }
 
 .foobhub-logo-text {
@@ -88,13 +105,116 @@ body {
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
-    margin-left: 35.5%;
-    margin-top: 35%;
+<<<<<<< HEAD
+    margin-top: 10px;
 }
 
-/* Style for the divider */
 .divider {
     height: 1px;
     margin: 5px 0;
-    background-color: #ccc; /* You can adjust the color to your preference */
+    background-color: #ccc;
 }
+
+.receptek-text {
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    margin-top: 390px;
+    margin-bottom: 30px;
+}
+
+.container {
+    position: relative;
+    top: 450px;
+}
+
+.etel-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: 5px 20px;
+    position: relative;
+}
+
+.etel-galeria .frame {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.etel-galeria .food {
+    position: relative;
+    width: 318px;
+    height: 350px;
+    object-fit: cover;
+    background-color: #613400;
+}
+
+.etel-galeria .pelda-title {
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 38px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.etel-galeria .gomb {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: #ff9900;
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.etel-galeria .gomb:hover {
+    background-color: red;
+}
+
+.etel-galeria .gomb-text {
+    position:static;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: black;
+    font-size: 28px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dashed_border {
+    border: 6px dashed;
+    padding: 20px;
+    border-image: linear-gradient(to top, #FF0000, #FF6000, #EEA325) 1;
+}
+
+.row_main{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+=======
+    margin-left: 670px;
+    margin-top: 630px;
+}
+
+.centered-div {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    text-align: center;
+}
+
+>>>>>>> 9809342a044fb294355e9f4755265b14d14c8834

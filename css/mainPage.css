@@ -150,7 +150,7 @@ body {
     width: 50%;
     height: 50%;
     background-color: #ff9900;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -161,7 +161,7 @@ body {
 }
 
 .etel-galeria .gomb-text {
-    position:static;
+    position: static;
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: black;
@@ -172,11 +172,38 @@ body {
 
 .dashed_border {
     border: 6px dashed;
-    padding: 20px;
     border-image: linear-gradient(to top, #FF0000, #FF6000, #EEA325) 1;
 }
 
-.row_main{
+.row_main {
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+.label_ajanlat {
+    width: 1138px;
+    height: 97px;
+}
+
+.label_ajanlat .ajanlat-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 250px;
+}
+
+.small-image {
+    width: 50%;
+    height: auto;
 }

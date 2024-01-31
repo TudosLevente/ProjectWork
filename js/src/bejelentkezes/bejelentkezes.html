@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pr.css">
+    <script src="../script.js"></script>
+    <title>Bejelentkezés</title>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div>
+          </div>
+          <ul class="nav-links">
+            <li><a onclick="directToFooldal()">Főoldal</a></li>
+            <li><a onclick="directToReg()">Regisztráció</a></li>
+            <li><a onclick="directToBej()">Bejelentkezés</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="login-box">
+        <form id="bejelentkezes">
+    
+            <div class="user-box">
+                <h2>Email-cím</h2>
+                <label for="email"></label>
+                <input type="email" name="email" id="email">
+            </div>
+    
+            <div class="user-box">
+                <h2>Jelszó</h2>
+                <label for="jelszo"></label>
+                <input type="password" name="jelszo" id="jelszo">
+            </div>
+    
+            <button type="submit" onclick="directToFooldalBej()">Bejelentkezés</button>
+    
+        </form>
+    </div>
+
+    <script>
+        function directToFooldal(){
+            window.location.href = "../adatok/fooldal.html";
+        }
+
+        function directToFooldalBej(){
+            const form = document.getElementById('bejelentkezes');
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                new FormData(form);
+            }) 
+
+            form.addEventListener("formdata",(e) => {
+                const formData = e.formData;
+                const data = {
+                    email: formData.get('email'),
+                    jelszo: formData.get('jelszo')
+                }
+                
+                if(data.email === "admin@gmail.com" && data.jelszo === "admin"){
+                    postData("http://localhost:8000/api/adminLogin", data).then((data) => {
+
+                        if(data){
+                            console.log(data.json());
+                            if(data.ok){
+                                setTimeout(5000, window.location.href = "../adatok/adminFooldal.html");
+                            }
+                        }
+                        }).catch((error) => {
+                        console.error("Hiba történt:", error);
+                        });
+                }
+                else{
+                    postData("http://localhost:8000/api/login", data).then((data) => {
+
+                        if(data){
+                            console.log(data.json());
+                            if(data.ok){
+                                setTimeout(5000, window.location.href = "../adatok/fooldal_bej.html");
+                            }
+                        }
+                        }).catch((error) => {
+                        console.error("Hiba történt:", error);
+                        });
+                }
+            })
+        }
+
+
+        function directToReg(){
+            window.location.href = "../regisztracio/regisztracio.html";
+        }
+
+        function directToBej(){
+            window.location.href = "../bejelentkezes/bejelentkezes.html";
+        }
+
+    </script>
+</body>
+</html>

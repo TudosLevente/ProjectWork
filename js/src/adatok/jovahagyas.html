@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pr.css">
+    <script src="../script.js"></script>
+    <title>Jóváhagyás</title>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div>
+          </div>
+          <ul class="nav-links">
+            <li><a onclick="directToFooldalBej()">Főoldal</a></li>
+            <li><a onclick="directToJovahagyas()">Jóváhagyás</a></li>
+            <li><a onclick="directToFooldal()">Kijelentkezés</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="login-box">
+        <form id="jovahagyas">
+
+            <div class="user-box">
+                <h3>A jovahagyni kívánt autó id-ja</h3>
+                <label for="id"></label>
+                <input type="text" name="id" id="id">
+            </div>
+
+            <button type="submit" onclick="directToFooldalBej()">Jóváhagyás</button>
+    
+        </form>
+    </div>
+
+      <script>
+        function directToFooldal(){
+            window.location.href = "../adatok/fooldal.html";
+        }
+
+        function directToFooldalBej(){
+            const form = document.getElementById('jovahagyas');
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                new FormData(form);
+            }) 
+
+            form.addEventListener("formdata",(e) => {
+                const formData = e.formData;
+                const data = {
+                    id: formData.get('id')
+                }    
+                postData("http://localhost:8000/api/autoTorles", data);
+            })
+
+            console.log("Sikeres jóváhagyás!")
+
+            setTimeout(20000, window.location.href = "../adatok/adnubFooldal.html");
+            
+        }
+
+        function directToJovahagyas(){
+            window.location.href = "../adatok/jovahagyas.html";
+        }
+      </script>
+</body>
+</html>

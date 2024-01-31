@@ -9,20 +9,21 @@ function RegButton() {
     }
 
     const form = document.getElementById('regisztracio');
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            new FormData(form);
-        }) 
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        new FormData(form);
+    }) 
 
-        form.addEventListener("formdata",(e) => {
-            const formData = e.formData;
-            const data = {
-                nev: formData.get('username'),
-                email: formData.get('email'),
-                jelszo: formData.get('password')
-            }    
-            postData("http://localhost:8000/api/regFelh", data);
-        })
+    form.addEventListener("formdata",(e) => {
+        const formData = e.formData;
+        const data = {
+            username: usernameInput.value,
+            email: emailInput.value,
+            password: passwordInput.value
+        };
+        console.log(data.username);
+        postData("http://localhost:8000/api/regUser", data);
+    })
 
     var button = document.querySelector('.text-wrapper-7');
     button.style.fontSize = '31px';
@@ -30,9 +31,9 @@ function RegButton() {
     button.style.borderColor = 'green';
     button.style.backgroundColor = 'green';
 
-    setTimeout(function () {
-        window.location.href = '../html/loginPage.html';
-    }, 1500);
+    // setTimeout(function () {
+    //     window.location.href = '../html/loginPage.html';
+    // }, 1500);
 }
 
 function togglePassword() {

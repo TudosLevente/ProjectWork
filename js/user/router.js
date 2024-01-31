@@ -4,6 +4,6 @@ const auth = require("../auth/auth");
 
 router.get('/user',auth,user_model.getAllUserInfos);
 router.get('/user/:id',user_model.getUserDataFromId);
-router.post('/regFelh',user_model.regFelh);
+router.post('/regUser',user_model.regUser);
 
 module.exports = router

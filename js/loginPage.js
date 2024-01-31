@@ -15,11 +15,11 @@ function LoginButton() {
     form.addEventListener("formdata",(e) => {
         const formData = e.formData;
         const data = {
-            email: formData.get('email'),
-            jelszo: formData.get('password')
+            email: emailInput.value,
+            password: passwordInput.value
         }
         
-        if(data.email === "admin@gmail.com" && data.jelszo === "admin"){
+        if(data.email === "admin@gmail.com" && data.password === "admin"){
             postData("http://localhost:8000/api/adminLogin", data)
         }
         else{

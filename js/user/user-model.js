@@ -29,7 +29,7 @@ function getUserDataFromId(req,res) {
 }
 
 // Ez a függvény regisztrál egy új felhasználót és lementi az adatbázisba
-async function regFelh (req,res)  {
+async function regUser (req,res)  {
 
     const user = new User(null,req.body.username,req.body.email,null);
 
@@ -50,7 +50,7 @@ async function regFelh (req,res)  {
         if (err) throw err;
         const token = jwt.sign(
             {
-                felhasznalo_id: result.insertId,
+                user_id: result.insertId,
                 email: user.email
             },
             config.TokenKey,
@@ -58,13 +58,13 @@ async function regFelh (req,res)  {
                 expiresIn:"2h",
             }); 
         user.token = "regeltFelh";
-        user.felhasznalo_id = result.insertId;    
-        console.log(user.felhasznalo_id)    
+        user.user_id = result.insertId;    
+        console.log(user.user_id)    
         con.connect(function(err) {
             if (err) throw err;
             console.log('sikeres csatlakozás');
         })        
-        con.query('call felhTokenFrissites(?,?)',[user.felhasznalo_id,token],(err,result,fields)=>{
+        con.query('call felhTokenFrissites(?,?)',[user.user_id,token],(err,result,fields)=>{
             if (err) throw err;
             console.log(user.token)
             res.send(user);
@@ -74,4 +74,4 @@ async function regFelh (req,res)  {
 
 exports.getAllUserInfos = getAllUserInfos
 exports.getUserDataFromId = getUserDataFromId
-exports.regFelh = regFelh
+exports.regUser = regUser

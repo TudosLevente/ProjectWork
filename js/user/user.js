@@ -1,11 +1,11 @@
 module.exports = class User {
-    felhasznalo_id = null;
+    user_id = null;
     username = "";
     email = "";
     token = "";
 
-    constructor (felhasznalo_id = null,nev,email,token = "" ) {
-        this.felhasznalo_id = felhasznalo_id;
+    constructor (user_id = null,username,email,token = "" ) {
+        this.user_id = user_id;
         this.username = username;
         this.email = email;
         this.token = token;

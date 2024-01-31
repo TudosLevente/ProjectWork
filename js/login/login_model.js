@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 const config = require("../App/config");
 const jwt = require("jsonwebtoken");
 
-function adminBejelentkezes(req,res) {
+function adminLogin(req,res) {
 
     try {
         const {email, password} = req.body;
@@ -47,7 +47,7 @@ function adminBejelentkezes(req,res) {
 }
 
 
-function bejelentkezes(req,res) {
+function login(req,res) {
 
     try {
         const {email, password} = req.body;
@@ -91,5 +91,5 @@ function bejelentkezes(req,res) {
     }
 }
 
-exports.bejelentkezes = bejelentkezes
-exports.adminBejelentkezes = adminBejelentkezes
+exports.login = login
+exports.adminLogin = adminLogin

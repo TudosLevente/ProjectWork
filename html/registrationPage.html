@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="../css/registrationPage_global.css" />
   <link rel="stylesheet" href="../css/registrationPage.css" />
   <link rel="icon" href="../images/logo0.png" type="image/png">
-  <script src="../js/registrationPage.js"></script>
   <script src="../js/script.js"></script>
   <title>Regisztráció</title>
 </head>
@@ -25,36 +24,37 @@
           </div>
           <form id="regisztracio">
             <div class="frame-border">
-            <div class="frame-5">
-              <div class="text-wrapper">Felhasználónév:</div>
-              <div class="div-wrapper"><input class="text-wrapper-2" type="text" id="username"
-                  placeholder="pl:&nbsp;&nbsp;FoodHub" required></div>
-            </div>
-            <div class="frame-5">
-              <div class="text-wrapper">E-mail cím:</div>
-              <div class="frame-6"><input type="email" class="text-wrapper-3" id="email"
-                  placeholder="pl:&nbsp;&nbsp;foodhub@gmail.com" required></div>
-            </div>
-            <div class="frame-5">
-              <div class="text-wrapper">Jelszó:</div>
-              <div class="frame-6">
-                <input type="password" class="text-wrapper-4" id="password" placeholder="pl:&nbsp;&nbsp;FoodHub12345"
-                  required>
-                <div class="overlap-group">
-                  <button type="button" class="text-wrapper-5" onclick="togglePassword()">
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                    Mutasd
-                  </button>
+              <div class="frame-5">
+                <div class="text-wrapper">Felhasználónév:</div>
+                <div class="div-wrapper">
+                  <input class="text-wrapper-2" type="text" id="username" placeholder="pl:&nbsp;&nbsp;FoodHub" required>
                 </div>
               </div>
-            </div>
-            <p class="mar-van-fiokod">
-              <span class="span">Már van fiókod? </span> <a href="../html/loginPage.html"
-                class="text-wrapper-6">Jelentkezz be.</a>
-            </p>
-            <div class="regisztralas-wrapper">
-              <button class="text-wrapper-7" type="submit" onclick="RegButton()">Regisztrálás</button>
-            </div>
+              <div class="frame-5">
+                <div class="text-wrapper">E-mail cím:</div>
+                <div class="frame-6"><input type="email" class="text-wrapper-3" id="email"
+                    placeholder="pl:&nbsp;&nbsp;foodhub@gmail.com" required></div>
+              </div>
+              <div class="frame-5">
+                <div class="text-wrapper">Jelszó:</div>
+                <div class="frame-6">
+                  <input type="password" class="text-wrapper-4" id="password" placeholder="pl:&nbsp;&nbsp;FoodHub12345"
+                    required>
+                  <div class="overlap-group">
+                    <button type="button" class="text-wrapper-5" onclick="togglePassword()">
+                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                      Mutasd
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="mar-van-fiokod">
+                <span class="span">Már van fiókod? </span> <a href="../html/loginPage.html"
+                  class="text-wrapper-6">Jelentkezz be.</a>
+              </p>
+              <div class="regisztralas-wrapper">
+                <button class="text-wrapper-7" type="submit" onclick="RegButton()">Regisztrálás</button>
+              </div>
             </div>
           </form>
         </div>
@@ -62,6 +62,7 @@
       <img class="image" src="../images/registrationPage/image-3.png" />
     </div>
   </div>
+  <script src="../js/registrationPage.js"></script>
 </body>
 
 </html>

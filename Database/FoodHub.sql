@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS Users (
     User_ID INT AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL
+    Password VARCHAR(255) NOT NULL,
+    Token TEXT
 );
 
 -- Function to generate a salt
@@ -110,22 +111,44 @@ CREATE TABLE IF NOT EXISTS Comments (
 
 DELIMITER //
 
-drop procedure userLogin;
+drop procedure felhBejelentkezes;
 
-CREATE PROCEDURE if not EXISTS userLogin(IN mail Varchar(50), pwd varchar(50))
+CREATE PROCEDURE if not EXISTS felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
 BEGIN
-    SELECT user_id, name, email FROM users WHERE users.email = mail And users.password = pwd;
+    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Passsword = jlsz;
 END;
 
 DELIMITER ;
 
 DELIMITER //
 
-drop PROCEDURE userUpdateToken;
+drop PROCEDURE felhTokenFrissites;
 
-CREATE PROCEDURE if not EXISTS userUpdateToken(IN id int, token Text)
+CREATE PROCEDURE if NOT EXISTS felhTokenFrissites(IN id int, token Text)
 BEGIN
-    UPDATE users SET users.token = token WHERE users.user_id = id;     
+    UPDATE Users SET Users.Token = token WHERE Users.User_ID = id;     
+END;
+
+DELIMITER ;
+
+delimiter //
+
+DROP PROCEDURE getAllUserInfos;
+
+CREATE PROCEDURE if not EXISTS getAllUserInfos(IN userID int)
+BEGIN
+    SELECT * FROM Users WHERE Users.User_ID = userID;
+END;
+
+delimiter ;
+
+DELIMITER //
+
+drop procedure felhBejelentkezes;
+
+CREATE PROCEDURE if not EXISTS adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
+BEGIN
+    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
 END;
 
 DELIMITER ;

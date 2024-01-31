@@ -6,6 +6,27 @@ function LoginButton() {
         return;
     }
 
+    const form = document.getElementById('bejelentkezes');
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        new FormData(form);
+    }) 
+
+    form.addEventListener("formdata",(e) => {
+        const formData = e.formData;
+        const data = {
+            email: formData.get('email'),
+            jelszo: formData.get('password')
+        }
+        
+        if(data.email === "admin@gmail.com" && data.jelszo === "admin"){
+            postData("http://localhost:8000/api/adminLogin", data)
+        }
+        else{
+            postData("http://localhost:8000/api/login", data)
+        }
+    })
+
     var button = document.querySelector('.text-wrapper-7');
     button.style.fontSize = '31px';
     button.innerText = 'Sikeres bejelentkezés';

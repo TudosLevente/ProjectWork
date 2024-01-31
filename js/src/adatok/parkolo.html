@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pr.css">
+    <script src="../script.js"></script>
+    <title>Parkoló</title>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div>
+          </div>
+          <ul class="nav-links">
+            <li><a onclick="directToFooldalBej()">Főoldal</a></li>
+            <li><a onclick="directToParkolo()">Parkoló</a></li>
+            <li><a onclick="directToFeladas()">Hirdetés feladás</a></li>
+            <li><a onclick="directToTorles()">Hirdetés Törlés</a></li>
+            <li><a onclick="directToModositas()">Hirdetés Módosítás</a></li>
+            <li><a onclick="directToFooldal()">Kijelentkezés</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <div class="login-box">
+        <h2>Felhasználó Parkolója</h2>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Típus</th>
+                        <th scope="col">Márka</th>
+                        <th scope="col">Gyártási év</th>
+                        <th scope="col">Műszaki érvényesség</th>
+                        <th scope="col">Ár</th>
+                        <th scope="col">Felszereltség</th>
+                    </tr>
+                </thead>
+                <tbody id="autok-lista">
+                    <!-- Itt jelennek meg a felhasználók adatai -->
+                </tbody>
+            </table>
+    
+    </div>
+    <script>
+        function directToFooldal(){
+            window.location.href = "../adatok/fooldal.html";
+        }
+
+        function directToFooldalBej(){
+            window.location.href = "../adatok/fooldal_bej.html";
+        }
+
+        function directToParkolo(){
+            window.location.href = "../adatok/parkolo.html";
+        }
+
+        function directToFeladas(){
+            window.location.href = "../adatok/hirdetes_feladas.html";
+        }
+
+        function directToTorles(){
+            window.location.href = "../adatok/hirdetes_torles.html";
+        }
+
+        function directToModositas(){
+            window.location.href = "../adatok/hirdetes_modositas.html";
+        }
+
+        async function fetchData() {
+            try {
+                const data = await getData("http://localhost:8000/api/parkolo");
+                console.log(data);
+                if(data){
+                    for(let i = 0; i < data.length; i++){
+                        const userTable = document.getElementById("autok-lista");
+                        const row = userTable.insertRow();
+                        row.innerHTML = `
+                            <td>${data[i].tipus}</td>
+                            <td>${data[i].marka}</td>
+                            <td>${data[i].gyartasi_ev}</td>
+                            <td>${data[i].muszaki_ervenyesseg}</td>
+                            <td>${data[i].ar}</td>
+                            <td>${data[i].felszereltseg}</td>
+                        `;   
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../pr.css">
+    <title>Főoldal</title>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+          <div>
+          </div>
+          <ul class="nav-links">
+            <li><a onclick="directToFooldal()">Főoldal</a></li>
+            <li><a onclick="directToReg()">Regisztráció</a></li>
+            <li><a onclick="directToBej()">Bejelentkezés</a></li>
+          </ul>
+        </div>
+      </nav>
+      <script>
+        function directToFooldal(){
+            window.location.href = "../adatok/fooldal.html";
+        }
+
+        function directToReg(){
+            window.location.href = "../regisztracio/regisztracio.html";
+        }
+
+        function directToBej(){
+            window.location.href = "../bejelentkezes/bejelentkezes.html";
+        }
+      </script>
+</body>
+</html>

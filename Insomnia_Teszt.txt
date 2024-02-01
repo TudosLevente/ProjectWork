@@ -1,0 +1,17 @@
+POST - http://localhost:8000/api/uploadRecipe
+JSON ->
+{
+    "picture_file_name" : "kep.jpg",
+    "title" : "Kacsa",
+    "description" : "Frissen sült ropogós kacsa",
+    "instructions" : "1. Süssük meg; 2. Együk meg",
+    "serving" : 3,
+    "difficulty_level" : "Könnyen elkészíthető",
+    "food_category" : "Főétel"
+}
+
+----------------------------------------------------
+
+GET - http://localhost:8000/api/recipe/:id
+Parameters ->
+id : 1

@@ -7,6 +7,7 @@ app.use(require('../router/router'))
 app.use('/api',require("../user/router"));
 app.use('/api',require("../login/router"));
 app.use('/api',require("../recipe/router"));
+app.use('/api',require("../comment/router"));
 
 
 module.exports = app

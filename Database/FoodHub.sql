@@ -1,4 +1,4 @@
--- Active: 1701981789402@@127.0.0.1@3306@foodhub
+-- Active: 1701431087077@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -157,12 +157,26 @@ delimiter //
 
 DROP PROCEDURE getRecipeInfos;
 
-CREATE PROCEDURE if not EXISTS getRecipeInfos(IN recipe_id int)
+CREATE PROCEDURE if not EXISTS getRecipeInfos(IN searched_id int)
 BEGIN
-    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipe_id;
+    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = searched_id;
 END;
 
 delimiter ;
 
 INSERT INTO Recipes (Picture_file_name,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
 Values ('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel');
+
+delimiter //
+
+DROP PROCEDURE getCommentContent;
+
+CREATE PROCEDURE if not EXISTS getCommentContent(IN searched_id int)
+BEGIN
+    SELECT Comment_Text FROM Comments WHERE Comments.Comment_ID = searched_id;
+END;
+
+delimiter ;
+
+INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
+VALUES (3, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");

@@ -8,16 +8,14 @@ const Recipe = require("./recipe");
         if (err) throw err;
         console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
     })
-
-    con.query('CALL getRecipeInfos(?)', [req.param['id']], (err,result) =>{
+    con.query('CALL getRecipeInfos(?)',[req.param['id']], (err,result) =>{
         if (err) throw err;
-        console.log(result);
+        console.log(req.param['id']);
         res.send(result);
     })   
 }
 
 async function uploadRecipe (req,res)  {
-
     const recipe = new Recipe(
         null,
         null,

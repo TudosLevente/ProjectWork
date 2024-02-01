@@ -2,8 +2,8 @@
   --lemon-orange-red-linear: linear-gradient(180deg, #EEA325 0%, #FF6000 50%, #FF0000 100%);
 }
 
-body{
-  zoom: 82%;
+body {
+  zoom: 72%;
   background-color: #d6bf9b;
   overflow: hidden;
 }
@@ -15,7 +15,8 @@ body{
   justify-content: center;
   width: 100%;
 }
-.jelentkezz-be{
+
+.jelentkezz-be {
   position: relative;
   width: fit-content;
   font-family: "Inter", Helvetica;
@@ -247,7 +248,7 @@ body{
   height: 39px;
   top: 18px;
   left: 391px;
-  background-color:#ff9900;
+  background-color: #ff9900;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -310,19 +311,22 @@ body{
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
-  background-color:#ff9900;
+  background-color: #ff9900;
   border-radius: 5px;
   border-color: #ff9900;
   cursor: pointer;
 }
 
-input[type="email"], input[type="text"], input[type="password"]{
+input[type="email"],
+input[type="text"],
+input[type="password"] {
   border: none;
   outline: none;
 }
 
-a, a::after{
-  color:#ff9900;
+a,
+a::after {
+  color: #ff9900;
 }
 
 .text-wrapper-4::placeholder .text-wrapper-3::placeholder {

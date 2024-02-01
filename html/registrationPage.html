@@ -17,8 +17,8 @@
         <div class="frame-2">
           <div class="frame-3">
             <div class="frame-4">
-              <img class="logo" src="../images/registrationPage/logo.png" /> <img class="foodhub-stroke"
-                src="../images/registrationPage/foodhub-stroke.png" />
+              <img class="logo" src="../images/registrationPage/logo.png" />
+              <img class="foodhub-stroke" src="../images/registrationPage/foodhub-stroke.png" />
             </div>
             <div class="regisztralj">Regisztrálj!</div>
           </div>
@@ -47,6 +47,29 @@
                     </button>
                   </div>
                 </div>
+                <div class="password-requirements" style="display: none;">
+                  A jelszónak tartalmaznia kell:
+                  <ul>
+                    <li>8 karaktert</li>
+                    <li>Egy nagybetűt</li>
+                    <li>Egy kisbetűt</li>
+                    <li>Egy számjegyet</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="frame-5">
+                <div class="text-wrapper">Jelszó újra:</div>
+                <div class="frame-6">
+                  <input type="password" class="text-wrapper-4" id="password_again"
+                    placeholder="pl:&nbsp;&nbsp;FoodHub12345" required>
+                  <div class="overlap-group">
+                    <button type="button" class="text-wrapper-5" onclick="togglePassword()">
+                      <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                      Mutasd
+                    </button>
+                  </div>
+                </div>
               </div>
               <p class="mar-van-fiokod">
                 <span class="span">Már van fiókod? </span> <a href="../html/loginPage.html"
@@ -59,7 +82,7 @@
           </form>
         </div>
       </div>
-      <img class="image" src="../images/registrationPage/image-3.png" />
+      <!-- <img class="image" src="../images/registrationPage/image-3.png" /> -->
     </div>
   </div>
   <script src="../js/registrationPage.js"></script>

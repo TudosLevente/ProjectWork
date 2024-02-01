@@ -157,12 +157,14 @@ delimiter //
 
 DROP PROCEDURE getRecipeInfos;
 
-CREATE PROCEDURE if not EXISTS getRecipeInfos(IN searched_id int)
+CREATE PROCEDURE if not EXISTS getRecipeInfos(IN recipeID int)
 BEGIN
-    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = searched_id;
+    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipeID;
 END;
 
 delimiter ;
+
+CALL getRecipeInfos(1);
 
 INSERT INTO Recipes (Picture_file_name,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
 Values ('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel');

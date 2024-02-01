@@ -2,15 +2,14 @@ const mysql = require("mysql2");
 const config = require("../App/config");
 const Recipe = require("./recipe");
 
- function getRecipeInfos(req,res) {
+function getRecipeInfos(req,res) {
     var con = mysql.createConnection(config.database);
     con.connect(function(err) {
         if (err) throw err;
         console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
     })
-    con.query('CALL getRecipeInfos(?)',[req.param['id']], (err,result) =>{
+    con.query('CALL getRecipeInfos(?) ',[req.params['id']], (err,result) =>{
         if (err) throw err;
-        console.log(req.param['id']);
         res.send(result);
     })   
 }

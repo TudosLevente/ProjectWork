@@ -8,9 +8,8 @@ const Comment = require("./comment");
         if (err) throw err;
         console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
     })
-    con.query('CALL getCommentContent(?)',[req.param['id']], (err,result) =>{
+    con.query('CALL getCommentContent(?)',[req.params['id']], (err,result) =>{
         if (err) throw err;
-        console.log(req.param['id']);
         res.send(result);
     })   
 }

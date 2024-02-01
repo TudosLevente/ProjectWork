@@ -6,6 +6,7 @@ body {
     background-position: top;
     margin: 0;
     padding: 0;
+    zoom: 80%;
 }
 
 .navbar {
@@ -39,6 +40,10 @@ body {
     text-decoration: none;
 }
 
+.row a {
+    text-decoration: none;
+}
+
 .searchbar {
     border-radius: 30px;
     border-style: solid;
@@ -55,6 +60,8 @@ body {
 .food-hub {
     width: 541px;
     height: 103px;
+    display: block;
+    margin: 0 auto;
 }
 
 .foobhub-logo-text {
@@ -72,7 +79,12 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
 }
+/* 
+.foobhub-logo-text::hove {
+    text-decoration: none;
+} */
 
 .slogen {
     font-family: 'Inter-Regular', sans-serif;
@@ -81,7 +93,8 @@ body {
     font-size: 36px;
     letter-spacing: 0;
     line-height: normal;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    text-align: center;
 }
 
 .divider {
@@ -98,13 +111,13 @@ body {
     font-family: 'Inter-Regular', sans-serif;
     font-size: 80px;
     font-weight: 400;
-    margin-top: 390px;
+    margin-top: 230px;
     margin-bottom: 30px;
 }
 
 .container {
     position: relative;
-    top: 450px;
+    top: 400px;
 }
 
 .etel-galeria {

@@ -36,45 +36,98 @@
                     <img src="../images/mainPage/user.svg" alt="" style="width: 7%; margin-right: 5px;">
                     <div class="login-div"><a href="../html/loginPage.html" class="login-text">Bejelentkezés</a></div>
                 </div>
-                <div class="row col-12 justify-content-center menuitems_row">
-                    <div class="navmenuitems">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Főételek</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Levesek</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Saláták</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Tészták</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Desszertek</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Kategóriák</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Ajánlatunk</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Rólunk</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </nav>
+    <nav class="navbar_menu navbar-expand-lg fixed-top">
+        <div class="menuitems_row row col-12 justify-content-center ">
+            <div class="navmenuitems">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Főételek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Levesek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Saláták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tészták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Desszertek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kategóriák</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ajánlatunk</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Rólunk</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <style>
+        .menuitems_row,
+        .navbar_menu {
+            transition: opacity 0.5 step-end, transform 0.5 step-start;
+            transform: translateY(0);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+            pointer-events: none;
+            background-color: transparent;
+        }
+
+        .ifHidden {
+            border-radius: 10px;
+        }
+    </style>
+
+    <script>
+        var navbar = document.querySelector('.navbar');
+        var navbar_menu = document.querySelector('.navbar_menu');
+        var isRowDisabled = false;
+
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                if (!isRowDisabled) {
+                    isRowDisabled = true;
+                    navbar_menu.classList.add('hidden');
+                    navbar.classList.add('ifHidden');
+                    setTimeout(function () {
+
+                    }, 500);
+                }
+            } else {
+                if (isRowDisabled) {
+                    isRowDisabled = false;
+                    navbar_menu.classList.remove('hidden');
+                    navbar.classList.remove('ifHidden');
+                }
+            }
+        }
+    </script>
+
+
     <div class="container-fluid" style="margin-top: 200px;">
         <img src="../images/mainPage/foodhub.png" class="food-hub">
         <p class="slogen">Egy harapásra vagy a bologságtól!</p>
@@ -218,7 +271,7 @@
             .carousel-control-prev,
             .carousel-control-next {
                 width: 20%;
-                color: #fff;    
+                color: #fff;
             }
 
             /* Style for the arrow icons */
@@ -270,42 +323,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <style>
-            .navmenuitems {
-                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-                opacity: 1;
-                transform: translateY(0);
-            }
 
-            .hidden {
-                opacity: 0;
-                transform: translateY(-100%);
-                pointer-events: none;
-                background-color: transparent;
-            }
-        </style>
-
-
-        <script>
-            var navMenuItems = document.querySelector('.navmenuitems');
-            var isRowDisabled = false;
-
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                    if (!isRowDisabled) {
-                        isRowDisabled = true;
-                        navMenuItems.classList.add('hidden');
-                    }
-                } else {
-                    if (isRowDisabled) {
-                        isRowDisabled = false;
-                        navMenuItems.classList.remove('hidden');
-                    }
-                }
-            }
-        </script>
 
 
 

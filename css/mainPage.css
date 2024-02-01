@@ -6,13 +6,14 @@ body {
     background-position: top;
     margin: 0;
     padding: 0;
-    zoom: 80%;
+    zoom: 90%;
 }
 
-.navbar {
+.navbar,
+.navbar_menu {
     background: #bb5a00;
-    opacity: 0.93;
-    padding: 19px 0px 19px 0px;
+    opacity: 0.97;
+    padding: 9px 0px 9px 0px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -127,13 +128,14 @@ body {
     justify-content: center;
     gap: 5px 20px;
     position: relative;
+    padding-right: 10px;
 }
 
 .etel-galeria .frame {
     display: flex;
     flex-direction: column;
-    width: 360px;
-    height: 500px;
+    width: 350px;
+    height: 470px;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -142,10 +144,9 @@ body {
 
 .etel-galeria .food {
     position: relative;
-    width: 318px;
-    height: 350px;
-    object-fit: cover;
-    background-color: #613400;
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
 }
 
 .etel-galeria .pelda-title {
@@ -153,7 +154,7 @@ body {
     font-family: "Inter-Regular", Helvetica;
     font-weight: 400;
     color: #000000;
-    font-size: 38px;
+    font-size: 35px;
     letter-spacing: 0;
     line-height: normal;
 }

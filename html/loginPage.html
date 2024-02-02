@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="../css/loginPage_global.css" />
+  <!-- <link rel="stylesheet" href="../css/loginPage_global.css" /> -->
   <link rel="stylesheet" href="../css/loginPage.css" />
   <link rel="icon" href="../images/logo0.png" type="image/png">
   <script src="../js/loginPage.js"></script>
@@ -21,33 +21,33 @@
       </a>
       <div class="jelentkezz_be">Jelentkezz be! </div>
     </div>
-    <div class="border">
-      <div class="email-frame">
-        <div class="e-mail-cim">E-mail cím:</div>
-        <div class="frame_input">
-          <input class="input" type="email" placeholder=" Pl.: foodhub@gmail.com" required />
-        </div>
-      </div>
-      <div class="password-frame">
-        <div class="jelszo">Jelszó:</div>
-        <div class="frame_input">
-          <input class="input" type="password" placeholder=" Pl.: Foodhub12345" id="password" required />
-          <div class="gomb-frame">
-            <button class="gomb-style">Mutasd</button>
+    <form id="bejelentkezes">
+      <div class="border">
+        <div class="email-frame">
+          <div class="e-mail-cim">E-mail cím:</div>
+          <div class="frame_input">
+            <input class="input" type="email" placeholder=" Pl.: foodhub@gmail.com" required />
           </div>
         </div>
+        <div class="password-frame">
+          <div class="jelszo">Jelszó:</div>
+          <div class="frame_input">
+            <input class="input" type="password" placeholder=" Pl.: Foodhub12345" id="password" required />
+            <div class="gomb-frame">
+              <button class="gomb-style">Mutasd</button>
+            </div>
+          </div>
+        </div>
+        <div class="logTOregText">
+          <span>
+            <span class="logTOregText-span">Még nem regisztráltál?</span>
+            <span class="logTOregText-span-a"><a href="../html/registrationPage.html">Katt
+                ide..</a></span>
+          </span>
+        </div>
+        <button type="submit" class="logButton-frame"><span class="bejelentkezes">Bejelentkezés</span></button>
       </div>
-      <div class="logTOregText">
-        <span>
-          <span class="logTOregText-span">Még nem regisztráltál?</span>
-          <span class="logTOregText-span-a"><a href="../html/registrationPage.html">Katt
-              ide..</a></span>
-        </span>
-      </div>
-      <div class="logButton-frame">
-        <div class="bejelentkezes">Bejelentkezés</div>
-      </div>
-    </div>
+    </form>
   </div>
 
   <script>

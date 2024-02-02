@@ -13,60 +13,54 @@
 </head>
 
 <body>
-  <div class="bejelentkezes">
-    <div class="div">
-      <img class="image" src="../images/loginPage/image-3.png" />
-      <div class="frame">
-        <div class="frame-2">
-          <div class="frame-3">
-            <div class="frame-4">
-              <img class="logo" src="../images/loginPage/logo.png" />
-              <div class="foodhub-stroke">
-                <div class="overlap-group">
-                  <img class="stroke" src="../images/loginPage/stroke-6.svg" />
-                  <img class="img" src="../images/loginPage/stroke-5.svg" />
-                  <img class="stroke-2" src="../images/loginPage/stroke-4.svg" />
-                  <img class="stroke-3" src="../images/loginPage/stroke-3.svg" />
-                  <img class="stroke-4" src="../images/loginPage/stroke-2.svg" />
-                  <img class="stroke-5" src="../images/loginPage/stroke-1.svg" />
-                  <img class="stroke-6" src="../images/loginPage/stroke.png" />
-                </div>
-              </div>
-            </div>
-            <div class="jelentkezz-be">Jelentkezz be!</div>
-          </div>
-          <form id="bejelentkezes">
-          <div class="frame-border">
-            <div class="frame-5">
-              <div class="text-wrapper-2">E-mail cím:</div>
-              <div class="frame-6">
-                <input class="text-wrapper-3" type="email" id="email" placeholder="pl:&nbsp;&nbsp;foodhub@gmail.com"
-                  required>
-              </div>
-            </div>
-            <div class="frame-5">
-              <div class="text-wrapper-2">Jelszó:</div>
-              <div class="frame-6">
-                <input class="text-wrapper-4" type="password" id="password" placeholder="pl:&nbsp;&nbsp;FoodHub12345"
-                  required>
-                <div class="div-wrapper">
-                  <button type="button" class="text-wrapper-5" onclick="togglePassword()">Mutasd</button>
-                </div>
-              </div>
-            </div>
-            <p class="meg-nem">
-              <span class="span">Még nem regisztráltál? </span> <span class="text-wrapper-6"><a
-                  href="../html/registrationPage.html">Katt ide.</a></span>
-            </p>
-            <div class="bejelentkezes-wrapper">
-              <button class="text-wrapper-7" type="submit" onclick="LoginButton()">Bejelentkezés</button>
-            </div>
-          </form>
+  <div class="frame-1">
+    <div class="frame-2">
+      <a class="frame-3">
+        <div class="logo"></div>
+        <img class="food-hub-stroke" src="../images/registrationPage/foodhub-text.svg" alt="" srcset="">
+      </a>
+      <div class="jelentkezz_be">Jelentkezz be! </div>
+    </div>
+    <div class="border">
+      <div class="email-frame">
+        <div class="e-mail-cim">E-mail cím:</div>
+        <div class="frame_input">
+          <input class="input" type="email" placeholder=" Pl.: foodhub@gmail.com" required />
+        </div>
+      </div>
+      <div class="password-frame">
+        <div class="jelszo">Jelszó:</div>
+        <div class="frame_input">
+          <input class="input" type="password" placeholder=" Pl.: Foodhub12345" id="password" required />
+          <div class="gomb-frame">
+            <button class="gomb-style">Mutasd</button>
           </div>
         </div>
       </div>
+      <div class="logTOregText">
+        <span>
+          <span class="logTOregText-span">Még nem regisztráltál?</span>
+          <span class="logTOregText-span-a"><a href="../html/registrationPage.html">Katt
+              ide..</a></span>
+        </span>
+      </div>
+      <div class="logButton-frame">
+        <div class="bejelentkezes">Bejelentkezés</div>
+      </div>
     </div>
   </div>
+
+  <script>
+    function togglePassword() {
+      var x = document.getElementById("password");
+      if (x.type === "password") {
+        x.type = "text";
+      } else {
+        x.type = "password";
+      }
+    }
+  </script>
+
 </body>
 
 </html>

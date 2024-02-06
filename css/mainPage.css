@@ -58,12 +58,7 @@ body {
     font-size: 22px;
 }
 
-.food-hub {
-    width: 541px;
-    height: 103px;
-    display: block;
-    margin: 0 auto;
-}
+
 
 .foobhub-logo-text {
     text-align: right;
@@ -81,6 +76,13 @@ body {
     color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     text-decoration: none;
+}
+
+.food-hub {
+    width: 541px;
+    height: 103px;
+    display: block;
+    margin: 0 auto;
 }
 /* 
 .foobhub-logo-text::hove {

@@ -1,0 +1,229 @@
+.profil-adatok, .profil-adatok * { box-sizing: border-box; }.profil-adatok {background: #d7bf9c;height: 1080px;
+      position: relative;
+    overflow: hidden;}
+ .image-12 {width: 1920px; height: 1080px;
+      position: absolute; left: 0px;top: 0px;
+    object-fit: cover;}
+ .profil {background: linear-gradient(180deg, rgba(255, 0, 0, 1.00) 0%,rgba(255, 96, 0, 1.00) 51.5625%,rgba(238, 163, 37, 1.00) 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;text-align: left;font-family: 'Inter-SemiBold', sans-serif;
+font-size: 96px;
+font-weight: 600;
+      position: absolute; left: calc(50% - 117px);top: calc(50% - 438px);
+    display: flex;
+align-items: center;justify-content: flex-start}
+ .frame-174 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    height: 825px;
+      position: absolute; left: 400px;top: 218px;
+    }
+ .frame-97 {padding: 0px 0px 0px 50px;
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: relative;
+    }
+ .adatok {background: #ff9900;border-radius: 10px 10px 0px 0px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;width: 150px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .adatok2 {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 32px;
+font-weight: 400;
+      position: absolute; left: 21px;top: 6px;
+    }
+ .adatok3 {background: #ffd392;border-radius: 10px 10px 0px 0px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;width: 200px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .recepteim {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 32px;
+font-weight: 400;
+      position: absolute; left: 19px;top: 6px;
+    }
+ .adatok4 {background: #ffd392;border-radius: 10px 10px 0px 0px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;width: 218px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .kedvenceim {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 32px;
+font-weight: 400;
+      position: absolute; left: 16px;top: 5px;
+    }
+ .frame-173 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: relative;
+    }
+ .frame-17 {background: rgba(255, 153, 0, 0.90);border-radius: 15px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;width: 1150px; height: 775px;
+      position: relative;
+    overflow: hidden;}
+ .frame-96 {
+      display: flex;
+      flex-direction: row;
+      gap: 262px;
+      align-items: center;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: absolute; left: 40px;top: 40px;
+    }
+ .frame-95 {
+      display: flex;
+      flex-direction: column;
+      gap: 193px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: relative;
+    }
+ .frame-94 {
+      display: flex;
+      flex-direction: column;
+      gap: 33px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: relative;
+    }
+ .felhaszn-l-n-v {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 36px;
+font-weight: 400;
+      position: relative;
+    }
+ .frame-22 {border-radius: 15px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;width: 400px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .tamas-12345 {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 24px;
+font-weight: 400;
+      position: absolute; left: 127px;top: 10px;
+    }
+ .e-mail-c-m {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 36px;
+font-weight: 400;
+      position: relative;
+    }
+ .frame-21 {border-radius: 15px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;width: 400px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .peldatamas-gmail-com {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 24px;
+font-weight: 400;
+      position: absolute; left: 65px;top: 10px;
+    }
+ .jelsz {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 36px;
+font-weight: 400;
+      position: relative;
+    }
+ .frame-23 {border-radius: 15px;
+  border-style: solid; 
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;width: 400px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .div {color: #000000;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 24px;
+font-weight: 400;
+      position: absolute; left: 122px;top: 10px;
+    }
+ .frame-24 {background: #bb5a00;border-radius: 15px;flex-shrink: 0;width: 200px; height: 50px;
+      position: relative;
+    overflow: hidden;}
+ .m-dos-t-s {color: #ffffff;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 24px;
+font-weight: 400;
+      position: absolute; left: 41px;top: 10px;
+    }
+ .image-8 {flex-shrink: 0;width: 448px; height: 557px;
+      position: relative;
+    object-fit: cover;}
+ .navig-ci-s-b-r-sszecsukva {background: #bb5a00;border-radius: 0px 0px 5px 5px;width: 1920px; height: 100px;
+      position: absolute; left: 0px;top: 0px;
+    overflow: hidden;}
+ .frame-166 {
+      display: flex;
+      flex-direction: row;
+      gap: 200px;
+      align-items: center;
+      justify-content: center;
+    width: 1920px; height: 94px;
+      position: absolute; left: 0px;top: 0px;
+    }
+ .food-hub {text-align: center;font-family: 'Inter-Regular', sans-serif;
+font-size: 64px;
+font-weight: 400;
+      position: relative;
+    display: flex;
+align-items: center;justify-content: center-webkit-text-stroke: 10px var(--lemon-orange-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%,rgba(255, 96, 0, 1.00) 51.5625%,rgba(255, 0, 0, 1.00) 100%));}
+ .frame-69 {border-radius: 30px;
+  border-style: solid; 
+  border-color: #ffffff;
+  border-width: 2px;
+  flex-shrink: 0;width: 913px; height: 75px;
+      position: relative;
+    overflow: hidden;}
+ .frame-164 {padding: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    width: 861px; height: 72px;
+      position: absolute; left: 31px;top: 2.5px;
+    }
+ .keres-s {color: #ffffff;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 40px;
+font-weight: 400;
+      position: relative;
+    }
+ .frame-165 {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-start;
+    flex-shrink: 0;
+      position: relative;
+    }
+ .circle-1 {flex-shrink: 0;width: 60px; height: 60px;
+      position: relative;
+    overflow: visible;}
+ .profil2 {color: #ffffff;text-align: left;font-family: 'Inter-Regular', sans-serif;
+font-size: 40px;
+font-weight: 400;
+      position: relative;
+    }
+ .user-1 {flex-shrink: 0;width: 50px; height: 50px;
+      position: absolute; left: 5px;top: 4.38px;
+    overflow: visible;}

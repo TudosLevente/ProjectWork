@@ -221,3 +221,41 @@ body {
     width: 50%;
     height: auto;
 }
+
+.menuitems_row,
+.navbar_menu {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(0);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.ifHidden {
+    border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 20%;
+    color: #fff;
+}
+
+/* Style for the arrow icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    font-size: 24px;
+    /* Adjust the font size */
+}
+
+/* Hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

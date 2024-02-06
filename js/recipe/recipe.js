@@ -1,7 +1,7 @@
 module.exports = class Recipe {
     recipe_id = null;
     user_id = null;
-    picture_file_name = "";
+    picture_data = "";
     title = "";
     description = "";
     instructions = "";
@@ -10,10 +10,10 @@ module.exports = class Recipe {
     food_category = "";
     date_created = "";
 
-    constructor (recipe_id = null,user_id = null,picture_file_name,title,description,instructions,serving,difficulty_level,food_category,date_created) {
+    constructor(recipe_id = null, user_id = null, picture_data, title, description, instructions, serving, difficulty_level, food_category, date_created) {
         this.recipe_id = recipe_id;
         this.user_id = user_id;
-        this.picture_file_name = picture_file_name;
+        this.picture_data = picture_data;
         this.title = title;
         this.description = description;
         this.instructions = instructions;

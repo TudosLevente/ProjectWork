@@ -5,7 +5,7 @@
       rgba(255, 0, 0, 1) 100%);
 }
 
-body {
+.body {
   background-color: #D7BF9C;
   background-image: url(../images/registrationPage/image-3.png);
   background-repeat: no-repeat;

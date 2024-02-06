@@ -1,4 +1,4 @@
-body{
+body {
    background-image: url("../images/profilePage/image-120.png");
    background-repeat: no-repeat;
    background-size: cover;
@@ -47,12 +47,11 @@ body{
 .frame-174 {
    display: flex;
    flex-direction: column;
+   gap: 0px;
    align-items: flex-start;
-   justify-content: space-between;
-   height: 825px;
-   position: absolute;
-   left: 400px;
-   top: 218px;
+   justify-content: flex-start;
+   height: 718px;
+   position: relative;
 }
 
 .frame-97 {
@@ -82,7 +81,7 @@ body{
 .adatok2 {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 32px;
    font-weight: 400;
    position: absolute;
@@ -106,7 +105,7 @@ body{
 .recepteim {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 32px;
    font-weight: 400;
    position: absolute;
@@ -130,7 +129,7 @@ body{
 .kedvenceim {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 32px;
    font-weight: 400;
    position: absolute;
@@ -149,44 +148,59 @@ body{
 }
 
 .frame-17 {
-   background: rgba(255, 153, 0, 0.90);
+   background: rgba(255, 153, 0, 0.9);
    border-radius: 15px;
    border-style: solid;
    border-color: #000000;
    border-width: 3px;
    flex-shrink: 0;
    width: 1150px;
-   height: 775px;
+   height: 674px;
    position: relative;
    overflow: hidden;
 }
 
 .frame-96 {
+   padding: 0px 0px 0px 50px;
    display: flex;
    flex-direction: row;
-   gap: 262px;
+   gap: 200px;
    align-items: center;
    justify-content: flex-start;
    flex-shrink: 0;
+   width: 1150px;
+   height: 666px;
    position: absolute;
-   left: 40px;
-   top: 40px;
+   left: 0px;
+   top: 0px;
 }
 
 .frame-95 {
    display: flex;
    flex-direction: column;
-   gap: 193px;
+   gap: 170px;
    align-items: flex-start;
    justify-content: flex-start;
    flex-shrink: 0;
+   width: 400px;
+   height: 593px;
    position: relative;
 }
 
 .frame-94 {
    display: flex;
    flex-direction: column;
-   gap: 33px;
+   gap: 50px;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-shrink: 0;
+   position: relative;
+}
+
+.frame-175 {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
    align-items: flex-start;
    justify-content: flex-start;
    flex-shrink: 0;
@@ -196,8 +210,8 @@ body{
 .felhaszn-l-n-v {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
-   font-size: 36px;
+   font-family: "Inter-Regular", sans-serif;
+   font-size: 26px;
    font-weight: 400;
    position: relative;
 }
@@ -216,20 +230,35 @@ body{
 
 .tamas-12345 {
    color: #000000;
-   text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   text-align: center;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 24px;
    font-weight: 400;
    position: absolute;
-   left: 127px;
-   top: 10px;
+   left: 0px;
+   top: 0px;
+   width: 400px;
+   height: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.frame-176 {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-shrink: 0;
+   position: relative;
 }
 
 .e-mail-c-m {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
-   font-size: 36px;
+   font-family: "Inter-Regular", sans-serif;
+   font-size: 26px;
    font-weight: 400;
    position: relative;
 }
@@ -249,7 +278,7 @@ body{
 .peldatamas-gmail-com {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 24px;
    font-weight: 400;
    position: absolute;
@@ -257,11 +286,21 @@ body{
    top: 10px;
 }
 
+.frame-177 {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   align-items: flex-start;
+   justify-content: flex-start;
+   flex-shrink: 0;
+   position: relative;
+}
+
 .jelsz {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
-   font-size: 36px;
+   font-family: "Inter-Regular", sans-serif;
+   font-size: 26px;
    font-weight: 400;
    position: relative;
 }
@@ -281,7 +320,7 @@ body{
 .div {
    color: #000000;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 24px;
    font-weight: 400;
    position: absolute;
@@ -302,7 +341,7 @@ body{
 .m-dos-t-s {
    color: #ffffff;
    text-align: left;
-   font-family: 'Inter-Regular', sans-serif;
+   font-family: "Inter-Regular", sans-serif;
    font-size: 24px;
    font-weight: 400;
    position: absolute;
@@ -317,6 +356,8 @@ body{
    position: relative;
    object-fit: cover;
 }
+
+
 
 .navig-ci-s-b-r-sszecsukva {
    background: #bb5a00;
@@ -350,7 +391,6 @@ body{
    position: relative;
    display: flex;
    align-items: center;
-   justify-content: center-webkit-text-stroke: 10px var(--lemon-orange-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(255, 0, 0, 1.00) 100%));
 }
 
 .frame-69 {
@@ -427,17 +467,17 @@ body{
 
 .navbar,
 .navbar_menu {
-    background: #bb5a00;
-    opacity: 0.97;
-    padding: 9px 0px 9px 0px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: sticky;
-    overflow: hidden;
-    width: 100%;
+   background: #bb5a00;
+   opacity: 0.97;
+   padding: 9px 0px 9px 0px;
+   display: flex;
+   gap: 10px;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   position: sticky;
+   overflow: hidden;
+   width: 100%;
 }
 
 .row a {
@@ -450,7 +490,6 @@ body{
    border-color: #ffffff21;
    border-width: 2px;
    flex-shrink: 0;
-   width: 905px;
    height: 65px;
    position: relative;
    overflow: hidden;
@@ -461,7 +500,7 @@ body{
    text-align: right;
    position: fixed;
    font-family: 'Inter-Regular', sans-serif;
-   font-size: 60px;
+   font-size: 40px;
    left: 40px;
    font-weight: 400;
    position: relative;
@@ -473,4 +512,13 @@ body{
    color: transparent;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
    text-decoration: none;
+}
+
+.login-text {
+   color: #ffffff;
+   text-align: left;
+   font-family: 'Inter-Regular', sans-serif;
+   font-size: 30px;
+   font-weight: 400;
+   position: relative;
 }

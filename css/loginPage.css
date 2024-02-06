@@ -5,7 +5,7 @@
       rgba(255, 0, 0, 1) 100%);
 }
 
-body {
+.body-image {
   background-color: #D7BF9C;
   background-image: url(../images/registrationPage/image-3.png);
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding-top: 40px;
-  padding-right: 200px;
+  padding-right: 200px; 
   overflow-x: hidden;
   display: flex;
   flex-direction: column;

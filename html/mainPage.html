@@ -75,7 +75,7 @@
     <style>
         .menuitems_row,
         .navbar_menu {
-            transition: opacity 0.5 step-end, transform 0.5 step-start;
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
             transform: translateY(0);
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px
@@ -101,7 +101,7 @@
         window.onscroll = function () { scrollFunction() };
 
         function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
                 if (!isRowDisabled) {
                     isRowDisabled = true;
                     navbar_menu.classList.add('hidden');

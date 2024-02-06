@@ -1,0 +1,10 @@
+Bence:
+-profilePage.html és a recept feltöltés oldalán dolgozik
+
+Levi:
+-amint kész a profilePage hozzáteszem a user-model-ből az adatlekérést, illetve addig is
+megírom a módosítást
+-amint kész a recept feltöltéses oldal hozzáteszem a recipe-modelből a feltöltést
+-megírom a favourite-model.js, favourite.js, router.js-t
+-illetve a főoldalra megírom a script-et, hogy a már feltöltött receptek közül válasszon
+ki az adatbázisból egy párat és azok legyenek ott megtekinthetőek

@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="../css/registrationPage_global.css" />
   <link rel="stylesheet" href="../css/registrationPage.css" />
-  <link rel="icon" href="../images/logo0.png" type="image/png">
+  <link rel="icon" href="../images/logo.png" type="image/png">
+  <script src="../js/registrationPage.js"></script>
   <script src="../js/script.js"></script>
   <title>Regisztráció</title>
 </head>
@@ -19,18 +20,18 @@
       </a>
       <div class="regisztralj">Regisztrálj!</div>
     </div>
-    <form action="">  
+    <form id="regisztracio">
       <div class="border">
         <div class="felhasznalonev-frame">
           <div class="felhasznalonev">Felhasználónév:</div>
           <div class="frame_input">
-            <input class="input" type="text" placeholder="Pl.: FoodHub" required />
+            <input class="input" type="text" placeholder="Pl.: FoodHub" id="username" required />
           </div>
         </div>
         <div class="email-frame">
           <div class="e-mail-cim">E-mail cím:</div>
           <div class="frame_input">
-            <input class="input" type="email" placeholder="Pl.: foodhub@gmail.com" required />
+            <input class="input" type="email" placeholder="Pl.: foodhub@gmail.com" id="email" required />
           </div>
         </div>
         <div class="password-frame">
@@ -38,7 +39,7 @@
           <div class="frame_input">
             <input class="input" type="password" placeholder="Pl.: Foodhub12345" id="password" required />
             <div class="gomb-frame">
-              <button class="gomb-style">Mutasd</button>
+              <button type="button" onclick="togglePassword()" class="gomb-style">Mutasd</button>
             </div>
           </div>
         </div>
@@ -54,9 +55,9 @@
         <div class="password-check-frame">
           <div class="jelszo">Jelszó újra:</div>
           <div class="frame_input">
-            <input class="input" type="password" placeholder="Pl.: Foodhub12345" required />
+            <input class="input" type="password" id="passwordAgain" placeholder="Pl.: Foodhub12345" required />
             <div class="gomb-frame">
-              <button onclick="togglePassword()" class="gomb-style">Mutasd</button>
+              <button type="button" onclick="togglePasswordAgain()" class="gomb-style">Mutasd</button>
             </div>
           </div>
         </div>
@@ -66,9 +67,9 @@
             <span class="regTologText-span-a"><a href="../html/loginPage.html">Jelentkezz be.</a></span>
           </span>
         </div>
-        <div class="regButton-frame">
-          <div class="regisztralas">Regisztrálás</div>
-        </div>
+        <button type="submit" class="regButton-frame" onclick="RegButton()">
+          <span class="regisztralas">Regisztrálás</span>
+        </button>
     </form>
   </div>
   <script src="../js/registrationPage.js"></script>

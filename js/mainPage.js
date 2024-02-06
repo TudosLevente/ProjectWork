@@ -1,19 +1,23 @@
+function generateNumber() {
+    return Math.floor(Math.random() * 3) + 1;
+}
+
 function loadRecipes() {
-    document.getElementById("r1c1").src = "path/to/your/image.jpg";
-    document.getElementById("r1c2").src = "path/to/your/image.jpg";
-    document.getElementById("r1c3").src = "path/to/your/image.jpg";
+    for (var i = 1; i < 5; i++) {
+        for (var j = 1; j < 4; i++) {
+            var id = generateNumber();
 
-    document.getElementById("r2c1").src = "path/to/your/image.jpg";
-    document.getElementById("r2c2").src = "path/to/your/image.jpg";
-    document.getElementById("r2c3").src = "path/to/your/image.jpg";
+            getData(`http://localhost:8000/api/recipe/${id}`).then((recipeData) => {
+                console.log(recipeData);
 
-    document.getElementById("r3c1").src = "path/to/your/image.jpg";
-    document.getElementById("r3c2").src = "path/to/your/image.jpg";
-    document.getElementById("r3c3").src = "path/to/your/image.jpg";
-
-    document.getElementById("r4c1").src = "path/to/your/image.jpg";
-    document.getElementById("r4c2").src = "path/to/your/image.jpg";
-    document.getElementById("r4c3").src = "path/to/your/image.jpg";
+                if (recipeData) {
+                    document.getElementById(`r${i}c${j}`).src = recipeData.Picture_data;
+                }
+            }).catch((error) => {
+                console.error("Hiba történt:", error);
+            });
+        }
+    }
 }
 
 function goToRecipe() {

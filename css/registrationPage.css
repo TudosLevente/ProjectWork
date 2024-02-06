@@ -65,7 +65,7 @@ body {
   height: 101px;
   position: relative;
   object-fit: cover;
-  background-image: url("../images/logo0.png");
+  background-image: url("../images/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
 }

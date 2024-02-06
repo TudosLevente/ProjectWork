@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Ingredients (
 CREATE TABLE IF NOT EXISTS Recipes (
     Recipe_ID INT AUTO_INCREMENT PRIMARY KEY,
     User_ID INT,
-    Picture_file_name VARCHAR(255),
+    Picture_data BLOB,
     Title VARCHAR(255) NOT NULL,
     Description TEXT,
     Instructions TEXT,
@@ -166,7 +166,7 @@ delimiter ;
 
 CALL getRecipeInfos(1);
 
-INSERT INTO Recipes (Picture_file_name,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
+INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
 Values ('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel');
 
 delimiter //
@@ -181,4 +181,18 @@ END;
 delimiter ;
 
 INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
-VALUES (3, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
+VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
+
+delimiter //
+
+DROP PROCEDURE getFavorites;
+
+CREATE PROCEDURE if not EXISTS getFavorites(in userid int)
+BEGIN
+    SELECT * FROM Favorites WHERE Favorites.User_ID = userid;
+END;
+
+delimiter ;
+
+INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
+VALUES (1, 1, 2);

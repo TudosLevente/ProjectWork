@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="hu">
-<html lang="hu">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/mainPage.css" />
-    <link rel="icon" href="../images/logo0.png" type="image/png" />
+    <link rel="icon" href="../images/logo.png" type="image/png" />
     <script src="../js/mainPage.js"></script>
+    <script src="../js/script.js"></script>
     <title>FoodHub</title>
 </head>
 
@@ -70,57 +70,6 @@
             </div>
         </div>
     </nav>
-
-
-    <style>
-        .menuitems_row,
-        .navbar_menu {
-            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-            transform: translateY(0);
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px
-        }
-
-        .hidden {
-            opacity: 0;
-            transform: translateY(-100%);
-            pointer-events: none;
-            background-color: transparent;
-        }
-
-        .ifHidden {
-            border-radius: 10px;
-        }
-    </style>
-
-    <script>
-        var navbar = document.querySelector('.navbar');
-        var navbar_menu = document.querySelector('.navbar_menu');
-        var isRowDisabled = false;
-
-        window.onscroll = function () { scrollFunction() };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-                if (!isRowDisabled) {
-                    isRowDisabled = true;
-                    navbar_menu.classList.add('hidden');
-                    navbar.classList.add('ifHidden');
-                    setTimeout(function () {
-
-                    }, 500);
-                }
-            } else {
-                if (isRowDisabled) {
-                    isRowDisabled = false;
-                    navbar_menu.classList.remove('hidden');
-                    navbar.classList.remove('ifHidden');
-                }
-            }
-        }
-    </script>
-
-
     <div class="container-fluid" style="margin-top: 200px;">
         <img src="../images/mainPage/foodhub.png" class="food-hub">
         <p class="slogen">Egy harapásra vagy a bologságtól!</p>
@@ -132,29 +81,29 @@
                 <div class="row row_main">
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r1c1" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
+                            <button type="button" class="gomb" onclick="">
                                 <div class="gomb-text">További<br />Információ</div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r1c2" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
+                            <button type="button" class="gomb" onclick="">
                                 <div class="gomb-text">További<br />Információ</div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r1c3" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
+                            <button type="button" class="gomb" onclick="">
                                 <div class="gomb-text">További<br />Információ</div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <!-- <div class="col-3">
@@ -170,87 +119,87 @@
                 <div class="row row_main">
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r2c1" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r2c2" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclcik="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r2c3" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row row_main">
-                    <div class="col-4">
-                        <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
-                            <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
-                            <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
-                            <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                 </div>
                 <div class="row row_main">
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r3c1" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r3c2" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="frame">
-                            <img class="food" src="../images/mainPage/food-1.png" />
+                            <img class="food" src="../images/mainPage/food-1.png" id="r3c3" />
                             <div class="pelda-title">Példa kaja</div>
-                            <a class="gomb" href="#">
-                                <div class="gomb-text">&nbsp;&nbsp;További<br />Információ</div>
-                            </a>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row_main">
+                    <div class="col-4">
+                        <div class="frame">
+                            <img class="food" src="../images/mainPage/food-1.png" id="r4c1" />
+                            <div class="pelda-title">Példa kaja</div>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="frame">
+                            <img class="food" src="../images/mainPage/food-1.png" id="r4c2" />
+                            <div class="pelda-title">Példa kaja</div>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="frame">
+                            <img class="food" src="../images/mainPage/food-1.png" id="r4c3" />
+                            <div class="pelda-title">Példa kaja</div>
+                            <button type="button" class="gomb" onclick="">
+                                <div class="gomb-text">További<br />Információ</div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -259,28 +208,6 @@
         <div class="label_ajanlat">
             <div class="ajanlat-text">Ajánlatunk ebben a hónapban</div>
         </div>
-
-        <style>
-            .carousel-control-prev,
-            .carousel-control-next {
-                width: 20%;
-                color: #fff;
-            }
-
-            /* Style for the arrow icons */
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                font-size: 24px;
-                /* Adjust the font size */
-            }
-
-            /* Hover effect */
-            .carousel-control-prev:hover,
-            .carousel-control-next:hover {
-                background-color: rgba(0, 0, 0, 0.7);
-            }
-        </style>
-
 
         <div id="newCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -310,18 +237,9 @@
             </a>
         </div>
 
-
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-
 
 </body>
 

@@ -12,32 +12,40 @@ function RegButton() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         new FormData(form);
-    }) 
+    })
 
-    form.addEventListener("formdata",(e) => {
-        const formData = e.formData;
+    form.addEventListener("formdata", (e) => {
         const data = {
             username: usernameInput.value,
             email: emailInput.value,
             password: passwordInput.value
         };
-        console.log(data.username);
         postData("http://localhost:8000/api/regUser", data);
+
     })
 
-    var button = document.querySelector('.text-wrapper-7');
+    var button = document.querySelector('.regisztralas');
     button.style.fontSize = '31px';
     button.innerText = 'Sikeres regisztráció';
     button.style.borderColor = 'green';
     button.style.backgroundColor = 'green';
 
-    // setTimeout(function () {
-    //     window.location.href = '../html/loginPage.html';
-    // }, 1500);
+    setTimeout(function () {
+        window.location.href = '../html/loginPage.html';
+    }, 1500);
 }
 
 function togglePassword() {
     var password = document.getElementById("password");
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+}
+
+function togglePasswordAgain() {
+    var password = document.getElementById("passwordAgain");
     if (password.type === "password") {
         password.type = "text";
     } else {

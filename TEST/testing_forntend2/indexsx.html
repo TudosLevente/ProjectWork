@@ -73,10 +73,36 @@
             </div>
           </div>
           <div class="frame-106">
-            <div class="k-p-felt-lt-se">Kép feltöltése:</div>
-            <div class="frame-29">
-              <input class="t-lts-n-fel-k-pet-tel-r-l" type="file" name="image" id="picture_data" accept="image/*" placeholder="Töltsön fel képet ételéről!" />
+            <div class="frame-189">
+              <div class="k-p-felt-lt-se">Kép feltöltése:</div>
+              <div class="a-legjobb-min-s-g-rt-haszn-ljon-200-x-200-px-eles-k-pet">
+                  (a legjobb minőségért használjon
+                  <br />
+                  200x200 px-eles képet)
+              </div>
+          </div>
+            <div class="frame-29" id="imageContainer">
+              <input class="t-lts-n-fel-k-pet-tel-r-l" type="file" name="image" id="picture_data" accept="image/*"
+                value="Töltsön fel képet ételéről!" onchange="displayImage(event)" />
             </div>
+
+            <script>
+              function displayImage(event) {
+                const file = event.target.files[0];
+                if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function (e) {
+                    const imageSrc = e.target.result;
+                    document.getElementById('imageContainer').style.backgroundImage = `url('${imageSrc}')`;
+                    document.getElementsById('imageContainer').style.backgroundRepeat = 'no-repeat';
+                    document.getElementById('picture_data').style.display = 'block';
+                    document.getElementById('picture_data').style.visibility = 'hidden';
+                  };
+                  reader.readAsDataURL(file);
+                }
+              }
+            </script>
+
           </div>
         </div>
         <div class="line-9"></div>
@@ -98,13 +124,13 @@
             <div class="frame-112">
               <div class="frame-109">
                 <div class="frame-30">
-                  <input class="cukor" value="Cukor" />
+                  <input class="cukor" placeholder="Cukor" />
                 </div>
                 <div class="frame-56">
-                  <input class="_1" value="1" />
+                  <input class="_1" placeholder="1" />
                 </div>
                 <div class="frame-57">
-                  <input class="ev-kan-l" value="Evőkanál" />
+                  <input class="ev-kan-l" placeholder="Evőkanál" />
                 </div>
                 <button class="frame-31">
                   <svg class="trash-2-1" width="60" height="61" viewBox="0 0 60 61" fill="none"

@@ -57,9 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(inputDiv);
     }
 
+    function deleteIngredientInput(deleteButton) {
+        deleteButton.closest('.ingredient').remove();
+    }
+
     container.addEventListener('click', function (event) {
-        if (event.target.classList.contains('torles_gomb')) {
-            event.target.closest('.ingredient').parentNode.remove();
+        const button = event.target.closest('.torles_gomb');
+        if (button) {
+            deleteIngredientInput(button);
         }
     });
 

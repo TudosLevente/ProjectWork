@@ -261,10 +261,11 @@ body {
 .x-2 {
   width: 40px;
   height: 40px;
-  position: relative;
+  position: absolute;
   left: 460px;
   top: 360px;
   overflow: visible;
+  z-index: 1;
 }
 
 .rjon-receptj-hez-le-r-st {

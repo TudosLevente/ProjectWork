@@ -1,28 +1,3 @@
-function displayImage(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            const imageSrc = e.target.result;
-            document.getElementById('imageContainer').style.backgroundImage = `url('${imageSrc}')`;
-            document.getElementsById('imageContainer').style.backgroundRepeat = 'no-repeat';
-            document.getElementById('picture_data').style.display = 'block';
-            document.getElementById('picture_data').style.visibility = 'hidden';
-        };
-        reader.readAsDataURL(file);
-    }
-}
-
-function uploadRecipe() {
-    var picture_data_input = document.getElementById('picture_data');
-    var title_input = document.getElementById('title');
-    var description_input = document.getElementById('description');
-    var instructions_input = "";
-    var serving_input = "";
-    var difficulty_level_input = "";
-    var food_category_input = "";
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('ingredient_inputs');
 
@@ -57,9 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(inputDiv);
     }
 
+    function deleteIngredientInput(deleteButton) {
+        deleteButton.closest('.ingredient').remove();
+    }
+
     container.addEventListener('click', function (event) {
-        if (event.target.classList.contains('torles_gomb')) {
-            event.target.closest('.ingredient').parentNode.remove();
+        const button = event.target.closest('.torles_gomb');
+        if (button) {
+            deleteIngredientInput(button);
         }
     });
 

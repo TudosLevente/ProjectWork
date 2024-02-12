@@ -1684,7 +1684,7 @@ body {
   top: 4.38px;
   overflow: visible;
 }
-/* 
+
 #searchResults {
   display: none;
   position: absolute;
@@ -1707,4 +1707,4 @@ body {
 
 #searchResults li:hover {
   background-color: #ddd;
-} */
+}

@@ -6,7 +6,7 @@ function getRecipeInfos(req, res) {
     var con = mysql.createConnection(config.database);
     con.connect(function (err) {
         if (err) throw err;
-        console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
+        console.log('A recept adatok lekérése sikeres.\n');
     })
     con.query('CALL getRecipeInfos(?) ', [req.params['id']], (err, result) => {
         if (err) throw err;
@@ -35,7 +35,7 @@ async function uploadRecipe(req, res) {
     var con = mysql.createConnection(config.database);
     con.connect(function (err) {
         if (err) throw err;
-        console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
+        console.log('A recept sikeresen feltöltve.');
     })
 
     const sql = 'INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) Values (?,?,?,?,?,?,?)';

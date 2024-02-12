@@ -10,24 +10,24 @@ function LoginButton() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         new FormData(form);
-    }) 
+    })
 
-    form.addEventListener("formdata",(e) => {
+    form.addEventListener("formdata", (e) => {
         const formData = e.formData;
         const data = {
             email: emailInput.value,
             password: passwordInput.value
         }
-        
-        if(data.email === "admin@gmail.com" && data.password === "admin"){
+
+        if (data.email === "admin@gmail.com" && data.password === "admin") {
             postData("http://localhost:8000/api/adminLogin", data)
         }
-        else{
+        else {
             postData("http://localhost:8000/api/login", data)
         }
     })
 
-    var button = document.querySelector('.text-wrapper-7');
+    var button = document.querySelector('.logButton-frame');
     button.style.fontSize = '31px';
     button.innerText = 'Sikeres bejelentkezés';
     button.style.borderColor = 'green';

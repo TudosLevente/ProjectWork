@@ -24,8 +24,9 @@ function uploadRecipe() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('ingredient_inputs');
+
     function createIngredientInput() {
-        const container = document.getElementById('ingredient_inputs');
         const inputDiv = document.createElement('div');
         inputDiv.className = 'ingredient';
         inputDiv.innerHTML = `
@@ -56,7 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(inputDiv);
     }
 
-    document.getElementById('add-ingredient').addEventListener('click', function () {
+    container.addEventListener('click', function (event) {
+        if (event.target.classList.contains('torles_gomb')) {
+            event.target.closest('.ingredient').parentNode.remove();
+        }
+    });
+
+    document.getElementById('add_ingredient').addEventListener('click', function () {
         createIngredientInput();
     });
 });

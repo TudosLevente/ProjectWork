@@ -209,7 +209,7 @@ body {
     -webkit-background-clip: text !important;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    /* text-fill-color: transparent; */
     font-family: "Inter-Medium", Helvetica;
     font-weight: 500;
     color: transparent;

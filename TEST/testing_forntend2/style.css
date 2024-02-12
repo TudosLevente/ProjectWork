@@ -79,7 +79,7 @@ body {
   align-items: bottom;
   justify-content: bottom;
   background: linear-gradient(#FF0000, #FF6000, #EEA325);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   text-decoration: none;
@@ -473,7 +473,7 @@ body {
   width: 400px;
   height: 75px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .ingredient_amount {
@@ -1683,3 +1683,27 @@ body {
   top: 4.38px;
   overflow: visible;
 }
+/* 
+#searchResults {
+  display: none;
+  position: absolute;
+  background-color: orange;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  overflow-x: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#searchResults li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#searchResults li:hover {
+  background-color: #ddd;
+} */

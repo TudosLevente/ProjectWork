@@ -1,0 +1,87 @@
+<div class="frame-109">
+    <div class="frame-30">
+      <input type="text" id="searchInput" class="cukor" onkeyup="searchFunction()" onfocus="showResults()"
+        placeholder="Cukor">
+    </div>
+    <style>
+      /* Style for the "popup" */
+      #searchResults {
+        display: block; 
+        position: absolute;
+        background-color: orange;
+        border: 1px solid #ccc;
+        max-height: 150px;
+        overflow-y: auto;
+        z-index: 1;
+        list-style-type: none;
+        padding: 0;
+        overflow-x: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+
+      /* Style for the list items */
+      #searchResults li {
+        padding: 8px 12px;
+        cursor: pointer;
+      }
+
+      /* Style for the list items on hover */
+      #searchResults li:hover {
+        background-color: #ddd;
+      }
+    </style>
+    <div id="searchResults">
+      <ul>
+        <li><span>Apple</span></li>
+        <li><span>Banana</span></li>
+        <li><span>Orange</span></li>
+        <li><span>Grapes</span></li>
+        <li><span>Pineapple</span></li>
+        <li><span>Watermelon</span></li>
+      </ul>
+    </div>
+    <script>
+      function searchFunction() {
+        var input, filter, ul, li, span, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("searchResults");
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+          span = li[i].getElementsByTagName("span")[0];
+          txtValue = span.textContent || span.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+        // Show results if there is some input
+        if (filter !== "") {
+          ul.style.display = "block";
+        } else {
+          ul.style.display = "none";
+        }
+      }
+
+      function showResults() {
+        var ul = document.getElementById("searchResults");
+        ul.style.display = "block";
+      }
+
+      // Function to handle clicking on list items
+      document.addEventListener('DOMContentLoaded', function () {
+        var lis = document.querySelectorAll('#searchResults li');
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].addEventListener('click', function (e) {
+            var text = e.target.textContent;
+            document.getElementById('searchInput').value = text;
+            var ul = document.getElementById("searchResults");
+            ul.style.display = "none";
+          });
+        }
+      });
+    </script>

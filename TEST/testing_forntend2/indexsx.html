@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid body-div">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <div class="row col-12">
+          <div class="col-lg-4 d-flex align-items-center justify-content-start">
+            <a class="foobhub-logo-text" href="#">FoodHub</a>
+          </div>
+          <div class="col-lg-4 d-flex align-items-center justify-content-center">
+            <div class="input-group">
+              <input type="text" class="searchbar form-control" placeholder="Keressen receptjeink közül..."
+                aria-label="Search" aria-describedby="basic-addon2" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
+            <img src="../images/mainPage/user.svg" alt="" style="width: 7%; margin-right: 5px;">
+            <div class="login-div"><a href="../html/profilePage.html" class="profil-text">Profil</a></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <img class="img-fluid image-9" src="image-90.png" />
+    <div class="frame-26">
+      <div class="frame-104">
+        <div class="recept-felt-lt-se">Recept feltöltése</div>
+        <div
+          class="felt-ltheti-kedvenc-recepteit-egyszer-en-s-azokat-megoszthatja-bar-taival-csal-dj-val-vagy-b-rki-m-ssal">
+          Feltöltheti kedvenc recepteit egyszerűen,
+          <br />
+          és azokat megoszthatja barátaival, családjával vagy bárki mással.
+        </div>
+        <div class="line-8"></div>
+      </div>
+      <div class="frame-139">
+        <div class="frame-138">
+          <div class="frame-137">
+            <div class="frame-105">
+              <div class="a-recept-c-me">A recept címe:</div>
+              <div class="frame-27">
+                <input class="adja-meg-a-recept-c-m-t" id="title" placeholder="Adja meg a recept címét" />
+              </div>
+            </div>
+            <div class="frame-107">
+              <div class="le-r-s">Leírás:</div>
+              <div class="frame-28">
+                <svg class="x-2" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M30 10L10 30" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M33.333 21.6667L23.333 31.6667" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <input class="rjon-receptj-hez-le-r-st" id="description" placeholder="Írjon receptjéhez leírást." />
+              </div>
+            </div>
+          </div>
+          <div class="frame-106">
+            <div class="frame-189">
+              <div class="k-p-felt-lt-se">Kép feltöltése:</div>
+              <div class="a-legjobb-min-s-g-rt-haszn-ljon-200-x-200-px-eles-k-pet">
+                (a legjobb minőségért használjon
+                <br />
+                200x200 px-eles képet)
+              </div>
+            </div>
+            <div class="frame-29" id="imageContainer">
+              <input class="t-lts-n-fel-k-pet-tel-r-l" type="file" name="image" id="picture_data" accept="image/*"
+                value="Töltsön fel képet ételéről!" onchange="displayImage(event)" />
+            </div>
+          </div>
+        </div>
+        <div class="line-9"></div>
+      </div>
+      <div class="frame-115">
+        <div class="frame-114">
+          <div class="frame-113">
+            <div class="frame-108">
+              <div class="hozz-val-k">Hozzávalók:</div>
+              <div
+                class="rja-le-a-hozz-val-kat-melyek-oly-finomm-teszik-receptj-t-s-ne-felejtse-el-megadni-a-m-rt-kegys-geket-is">
+                Írja le a hozzávalókat melyek oly finommá
+                <br />
+                teszik receptjét és ne felejtse el megadni a
+                <br />
+                mértékegységeket is.
+              </div>
+            </div>
+            <div id="ingredient_inputs" class="ingredient_inputs">
+              <div class="ingredient">
+                <div class="ingredient_name">
+                  <input class="cukor" name="ingredient[]" placeholder="Cukor" />
+                </div>
+                <div class="ingredient_amount">
+                  <input class="_1" name="quantity[]" type="number" placeholder="1" />
+                </div>
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" placeholder="Evőkanál" />
+                </div>
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                      stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="ingredient">
+                <div class="ingredient_name">
+                  <input class="cukor" name="ingredient[]" value="Cukor" />
+                </div>
+                <div class="ingredient_amount">
+                  <input class="_1" name="quantity[]" type="number" value="1" />
+                </div>
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
+                </div>
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                      stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+              <div class="ingredient">
+                <div class="ingredient_name">
+                  <input class="cukor" name="ingredient[]" value="Cukor" />
+                </div>
+                <div class="ingredient_amount">
+                  <input class="_1" name="quantity[]" type="number" value="1" />
+                </div>
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
+                </div>
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                      stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button id="add_ingredient" class="frame-36">
+            <div class="plus-button-text">Hozzávaló felvétele</div>
+            <svg class="plus-square" width="50" height="50" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M39.5833 6.25H10.4167C8.11548 6.25 6.25 8.11548 6.25 10.4167V39.5833C6.25 41.8845 8.11548 43.75 10.4167 43.75H39.5833C41.8845 43.75 43.75 41.8845 43.75 39.5833V10.4167C43.75 8.11548 41.8845 6.25 39.5833 6.25Z"
+                stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M25 16.6666V33.3333" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M16.667 25H33.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="line-10"></div>
+      </div>
+      <div class="frame-123">
+        <div class="frame-116">
+          <div class="utas-t-sok">Utasítások:</div>
+          <div
+            class="adjon-utas-t-sokat-az-elk-sz-t-ssel-kapcsolatban-s-t-rjen-ki-az-apr-bb-r-szletekre-is-mint-a-s-t-h-foka-h-ny-percig-legyen-bennt-a-s-t-ben-stb">
+            Adjon utasításokat az elkészítéssel kapcsolatban és térjen
+            <br />
+            ki az apróbb részletekre is, mint a sütő hőfoka, hány percig
+            <br />
+            legyen bennt a sütőben, stb.
+          </div>
+        </div>
+        <div class="frame-118">
+          <div class="frame-117">
+            <div class="i-l-p-s">I. Lépés</div>
+            <div class="frame-44">
+              <svg class="x-22" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 10L10 30" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M33.333 21.6666L23.333 31.6666" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <input class="rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben" placeholder="Írja le mi a következő lépés receptjének
+elkészítésében." />
+            </div>
+          </div>
+          <button class="frame-38">
+            <svg class="trash-2-14" width="60" height="61" viewBox="0 0 60 61" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="frame-120">
+          <div class="frame-119">
+            <div class="ii-l-p-s">II. Lépés</div>
+            <div class="frame-46">
+              <svg class="x-23" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 10L10 30" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M33.333 21.6667L23.333 31.6667" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <input class="rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben2" placeholder="Írja le mi a következő lépés receptjének
+elkészítésében." />
+            </div>
+          </div>
+          <button class="frame-45">
+            <svg class="trash-2-15" width="60" height="61" viewBox="0 0 60 61" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="frame-122">
+          <div class="frame-121">
+            <div class="iii-l-p-s">III. Lépés</div>
+            <div class="frame-48">
+              <svg class="x-24" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 10L10 30" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M33.333 21.6667L23.333 31.6667" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <input class="rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben2" placeholder="Írja le mi a következő lépés receptjének
+elkészítésében." />
+            </div>
+          </div>
+          <button class="frame-47">
+            <svg class="trash-2-16" width="60" height="61" viewBox="0 0 60 61" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
+                stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <button class="frame-43">
+          <div class="plus-button-text">Lépés hozzáadása</div>
+          <svg class="plus-square" width="50" height="50" viewBox="0 0 50 50" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M39.5833 6.25H10.4167C8.11548 6.25 6.25 8.11548 6.25 10.4167V39.5833C6.25 41.8845 8.11548 43.75 10.4167 43.75H39.5833C41.8845 43.75 43.75 41.8845 43.75 39.5833V10.4167C43.75 8.11548 41.8845 6.25 39.5833 6.25Z"
+              stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M25 16.6667V33.3334" stroke="black" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M16.667 25H33.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="line-11"></div>
+      </div>
+      <div class="frame-130">
+        <div class="elk-sz-t-si-id">Elkészítési idő:</div>
+        <div class="frame-129">
+          <div class="frame-128">
+            <div class="frame-124">
+              <div class="el-k-sz-let">Előkészület</div>
+              <div class="s-t-s">Sütés</div>
+              <div class="pihentet-s">Pihentetés</div>
+            </div>
+            <div class="frame-125">
+              <div class="frame-49">
+                <input class="_0" value="0" />
+              </div>
+              <div class="frame-51">
+                <input class="_0" value="0" />
+              </div>
+              <div class="frame-53">
+                <input class="_0" value="0" />
+              </div>
+            </div>
+            <div class="frame-126">
+
+              <select class="frame-50">
+                <option class="perc">perc</option>
+                <option class="perc">perc</option>
+                <option class="perc">perc</option>
+                <option class="perc">perc</option>
+                <!-- Add your options here -->
+              </select>
+              <svg class="chevron-down-1" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 15L20 25L30 15" stroke="black" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+
+              <style>
+                .custom-chevron {
+                  position: absolute;
+                  /* top: 50%; */
+                  right: 10px;
+                  /* Adjust as needed */
+                  transform: translateY(-50%);
+                }
+
+                .custom-chevron svg {
+                  width: 20px;
+                  /* Adjust size as needed */
+                  height: 20px;
+                }
+              </style>
+
+
+
+              <button class="frame-50">
+                <div class="perc">perc</div>
+                <svg class="chevron-down-1" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 15L20 25L30 15" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button class="frame-52">
+                <div class="ra">óra</div>
+                <svg class="chevron-down-12" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 15L20 25L30 15" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button class="frame-54">
+                <div class="nap">nap</div>
+                <svg class="chevron-down-13" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 15L20 25L30 15" stroke="black" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="frame-127">
+            <div class="sszes-tett-id">Összesített idő: </div>
+            <div class="_02">0</div>
+          </div>
+        </div>
+        <button class="frame-55">
+          <div class="plus-button-text">Idő hozzáadása</div>
+          <svg class="plus-square" width="50" height="50" viewBox="0 0 50 50" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M39.5833 6.25H10.4167C8.11548 6.25 6.25 8.11548 6.25 10.4167V39.5833C6.25 41.8845 8.11548 43.75 10.4167 43.75H39.5833C41.8845 43.75 43.75 41.8845 43.75 39.5833V10.4167C43.75 8.11548 41.8845 6.25 39.5833 6.25Z"
+              stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M25 16.6667V33.3334" stroke="black" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M16.667 25H33.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+
+        </button>
+        <div class="line-12"></div>
+      </div>
+      <div class="frame-133">
+        <div class="frame-132">
+          <div class="felszolg-l-si-adag">Felszolgálási adag:</div>
+          <div class="frame-131">
+            <svg class="minus-1" width="40" height="40" viewBox="0 0 40 40" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.33301 20H31.6663" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="_12">1</div>
+            <svg class="plus-square-2" width="50" height="50" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 16.6667V33.3334" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M16.667 25H33.3337" stroke="black" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="f-r-sz-re">fő részére</div>
+        </div>
+        <div class="line-13"></div>
+      </div>
+      <div class="frame-135">
+        <div class="frame-134">
+          <div class="neh-zs-g">Nehézség:</div>
+          <button class="frame-66">
+            <select name="" id="">
+              <option class="k-nny-elk-sz-teni" value="">Könnyű elkészíteni</option>
+            </select>
+            <!-- <svg class="chevron-down-2" width="61" height="60" viewBox="0 0 61 60" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 22.5L30.5 37.5L45.5 22.5" stroke="black" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg> -->
+          </button>
+        </div>
+        <div class="line-14"></div>
+      </div>
+      <div class="frame-136">
+        <div class="kateg-ria">Kategória:</div>
+        <button class="frame-67">
+          <select>
+            <option class="f-tel" value="">Főétel</option>p
+            <option value=""></option>p
+            <option value=""></option>p
+          </select> type="text" class="f-tel" placeholder="Főétel"/>
+          <svg class="chevron-down-22" width="60" height="60" viewBox="0 0 60 60" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 22.5L30 37.5L45 22.5" stroke="black" stroke-width="4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="frame-140">
+        <button class="frame-25">
+          <span class="m-gse">Mégse</span>
+        </button>
+        <button class="frame-24">
+          <span class="recept-k-zz-t-tele">
+            Recept
+            <br />
+            közzététele
+          </span>
+        </button>
+      </div>
+    </div>
+    <img class="image-92" src="image-91.png" />
+    <div class="footer">
+      <div class="group-188">
+        <a class="food-hub">FoodHub</a>
+        <a class="felhasz-feltet">Felhasználási feltételek</a>
+      </div>
+      <div class="foodhub-gmail-com">foodhub@gmail.com</div>
+      <img class="foodhub-logo-trasnparent-1" src="foodhub-logo-trasnparent-10.png" />
+      <div class="frame-187">
+        <svg class="facebook" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M30.0003 3.8335H25.0003C22.7902 3.8335 20.6706 4.71147 19.1078 6.27427C17.545 7.83708 16.667 9.95669 16.667 12.1668V17.1668H11.667V23.8335H16.667V37.1668H23.3337V23.8335H28.3337L30.0003 17.1668H23.3337V12.1668C23.3337 11.7248 23.5093 11.3009 23.8218 10.9883C24.1344 10.6758 24.5583 10.5002 25.0003 10.5002H30.0003V3.8335Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <svg class="twitter" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M38.3337 5.50016C36.7376 6.62595 34.9705 7.48701 33.1003 8.05016C32.0966 6.89601 30.7625 6.07798 29.2787 5.7067C27.7949 5.33543 26.2328 5.42882 24.8038 5.97425C23.3748 6.51968 22.1477 7.49083 21.2886 8.75635C20.4295 10.0219 19.9798 11.5207 20.0003 13.0502V14.7168C17.0714 14.7928 14.1691 14.1432 11.552 12.8259C8.9349 11.5086 6.68419 9.56455 5.00033 7.16682C5.00033 7.16682 -1.66634 22.1668 13.3337 28.8335C9.90121 31.1634 5.81225 32.3317 1.66699 32.1668C16.667 40.5002 35.0003 32.1668 35.0003 13.0002C34.9988 12.5359 34.9542 12.0728 34.867 11.6168C36.568 9.93931 37.7684 7.82135 38.3337 5.50016Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <svg class="instagram" width="40" height="41" viewBox="0 0 40 41" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M28.333 3.8335H11.6663C7.06397 3.8335 3.33301 7.56446 3.33301 12.1668V28.8335C3.33301 33.4359 7.06397 37.1668 11.6663 37.1668H28.333C32.9354 37.1668 36.6663 33.4359 36.6663 28.8335V12.1668C36.6663 7.56446 32.9354 3.8335 28.333 3.8335Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M26.6665 19.45C26.8722 20.8371 26.6353 22.2537 25.9894 23.4984C25.3436 24.743 24.3217 25.7524 23.0692 26.3828C21.8167 27.0132 20.3972 27.2327 19.0128 27.0099C17.6284 26.7871 16.3494 26.1335 15.3579 25.1419C14.3664 24.1504 13.7127 22.8715 13.4899 21.487C13.2672 20.1026 13.4866 18.6832 14.117 17.4306C14.7475 16.1781 15.7568 15.1562 17.0015 14.5104C18.2461 13.8646 19.6628 13.6277 21.0498 13.8333C22.4647 14.0432 23.7746 14.7025 24.786 15.7139C25.7974 16.7253 26.4567 18.0351 26.6665 19.45Z"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M29.167 11.3335H29.1837" stroke="white" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="indexsx.js"></script>
+</body>
+
+</html>

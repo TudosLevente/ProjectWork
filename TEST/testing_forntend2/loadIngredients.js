@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('searchResults');
+
+    container.addEventListener('click', function (event) {
+
+    });
+});
+
 function searchFunction() {
     var input, filter, ul, li, span, i, txtValue;
     input = document.getElementById('searchInput');

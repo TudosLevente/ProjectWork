@@ -5,29 +5,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const inputDiv = document.createElement('div');
         inputDiv.className = 'ingredient';
         inputDiv.innerHTML = `
-            <div class="ingredient_name">
-                <input class="cukor" name="ingredient[]" placeholder="Cukor" />
+        <div class="ingredient_name">
+            <input type="text" name="ingredient[]" id="searchInput" class="cukor" onkeyup="searchFunction()" onfocus="showResults()" placeholder="Cukor">
+            <div id="searchResults">
+                <ul>
+                    <li><span>Apple</span></li>
+                    <li><span>Banana</span></li>
+                    <li><span>Orange</span></li>
+                    <li><span>Grapes</span></li>
+                    <li><span>Pineapple</span></li>
+                    <li><span>Watermelon</span></li>
+                </ul>
             </div>
-            <div class="ingredient_amount">
-                <input class="_1" name="quantity[]" type="number" placeholder="1" />
-            </div>
-            <div class="ingredient_measurement">
-                <input class="ev-kan-l" name="measurement[]" placeholder="Evőkanál" />
-            </div>
-            <button class="torles_gomb">
-                <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path
-                    d="M47.5 15.5V50.5C47.5 51.8261 46.9732 53.0979 46.0355 54.0355C45.0979 54.9732 43.8261 55.5 42.5 55.5H17.5C16.1739 55.5 14.9021 54.9732 13.9645 54.0355C13.0268 53.0979 12.5 51.8261 12.5 50.5V15.5M20 15.5V10.5C20 9.17392 20.5268 7.90215 21.4645 6.96447C22.4021 6.02678 23.6739 5.5 25 5.5H35C36.3261 5.5 37.5979 6.02678 38.5355 6.96447C39.4732 7.90215 40 9.17392 40 10.5V15.5"
-                    stroke="#CE0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M25 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M35 28V43" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-            </button>
+        </div>
+        <div class="ingredient_amount">
+            <input class="_1" name="quantity[]" type="number" value="1" />
+        </div>
+        <div class="ingredient_measurement">
+            <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
+        </div>
+        <button class="torles_gomb">
+            <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+        </button>
         `;
         container.appendChild(inputDiv);
     }

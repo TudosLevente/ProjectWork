@@ -4,11 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./vars.css" />
@@ -55,7 +52,7 @@
             <div class="frame-105">
               <div class="a-recept-c-me">A recept címe:</div>
               <div class="frame-27">
-                <input class="adja-meg-a-recept-c-m-t" placeholder="Adja meg a recept címét" />
+                <input class="adja-meg-a-recept-c-m-t" id="title" placeholder="Adja meg a recept címét" />
               </div>
             </div>
             <div class="frame-107">
@@ -68,7 +65,7 @@
                   <path d="M33.333 21.6667L23.333 31.6667" stroke="black" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-                <input class="rjon-receptj-hez-le-r-st" placeholder="Írjon receptjéhez leírást." />
+                <input class="rjon-receptj-hez-le-r-st" id="description" placeholder="Írjon receptjéhez leírást." />
               </div>
             </div>
           </div>
@@ -85,24 +82,6 @@
               <input class="t-lts-n-fel-k-pet-tel-r-l" type="file" name="image" id="picture_data" accept="image/*"
                 value="Töltsön fel képet ételéről!" onchange="displayImage(event)" />
             </div>
-
-            <script>
-              function displayImage(event) {
-                const file = event.target.files[0];
-                if (file) {
-                  const reader = new FileReader();
-                  reader.onload = function (e) {
-                    const imageSrc = e.target.result;
-                    document.getElementById('imageContainer').style.backgroundImage = `url('${imageSrc}')`;
-                    document.getElementsById('imageContainer').style.backgroundRepeat = 'no-repeat';
-                    document.getElementById('picture_data').style.display = 'block';
-                    document.getElementById('picture_data').style.visibility = 'hidden';
-                  };
-                  reader.readAsDataURL(file);
-                }
-              }
-            </script>
-
           </div>
         </div>
         <div class="line-9"></div>
@@ -121,10 +100,10 @@
                 mértékegységeket is.
               </div>
             </div>
-            <div class="frame-112">
-              <div class="frame-109">
-                <div class="frame-30">
-                  <input type="text" id="searchInput" class="cukor" onkeyup="searchFunction()" onfocus="showResults()"
+            <div id="ingredient_inputs" class="ingredient_inputs">
+              <div class="ingredient">
+                <div class="ingredient_name">
+                  <input type="text" id="searchInput" class="cukor" name="ingredient[]" onkeyup="searchFunction()" onfocus="showResults()"
                     placeholder="Cukor">
                 </div>
                 <style>
@@ -212,11 +191,11 @@
                 <div class="frame-56">
                   <input class="_1" placeholder="1" />
                 </div>
-                <div class="frame-57">
-                  <input class="ev-kan-l" placeholder="Evőkanál" />
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" placeholder="Evőkanál" />
                 </div>
-                <button class="frame-31">
-                  <svg class="trash-2-1" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round" />
@@ -245,14 +224,14 @@
                     <li><span>Watermelon</span></li>
                   </ul>
                 </div>
-                <div class="frame-59">
-                  <input class="_1" value="1" />
+                <div class="ingredient_amount">
+                  <input class="_1" name="quantity[]" type="number" value="1" />
                 </div>
-                <div class="frame-60">
-                  <input class="ev-kan-l" value="Evőkanál" />
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
                 </div>
-                <button class="frame-33">
-                  <svg class="trash-2-12" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round" />
@@ -281,14 +260,14 @@
                     <li><span>Watermelon</span></li>
                   </ul>
                 </div>
-                <div class="frame-62">
-                  <input class="_1" value="1" />
+                <div class="ingredient_amount">
+                  <input class="_1" name="quantity[]" type="number" value="1" />
                 </div>
-                <div class="frame-63">
-                  <input class="ev-kan-l" value="Evőkanál" />
+                <div class="ingredient_measurement">
+                  <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
                 </div>
-                <button class="frame-35">
-                  <svg class="trash-2-13" width="60" height="61" viewBox="0 0 60 61" fill="none"
+                <button class="torles_gomb">
+                  <svg class="kuka" width="60" height="61" viewBox="0 0 60 61" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.5 15.5H12.5H52.5" stroke="#CE0000" stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round" />
@@ -304,7 +283,7 @@
               </div>
             </div>
           </div>
-          <button class="frame-36">
+          <button id="add-ingredient" class="frame-36">
             <div class="plus-button-text">Hozzávaló felvétele</div>
             <svg class="plus-square" width="50" height="50" viewBox="0 0 50 50" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -627,6 +606,8 @@ elkészítésében." />
       </div>
     </div>
   </div>
+
+  <script src="indexsx.js"></script>
 </body>
 
 </html>

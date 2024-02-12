@@ -2,10 +2,6 @@ function generateNumber() {
     return Math.floor(Math.random() * 3) + 1;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    loadRecipes();
-});
-
 function loadRecipes() {
     console.log("function is running");
     for (var i = 1; i < 5; i++) {
@@ -38,6 +34,9 @@ function loadRecipes() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    loadRecipes();
+});
 
 // function loadRecipes() {
 //     console.log("igen lefut");
@@ -57,8 +56,6 @@ function loadRecipes() {
 //         }
 //     }
 // }
-
-loadRecipes();
 
 function goToRecipe() {
 

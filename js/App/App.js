@@ -15,5 +15,4 @@ app.get('/', (req, res) => {
 // publikáljuk a szervert
 app.listen(config.port, () => {
     console.log(`A szerver fut | http://localhost:${config.port}`);
-
 })

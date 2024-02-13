@@ -1,4 +1,3 @@
-
 const container = document.getElementById('ingredient_inputs');
 
 function createIngredientInput(count) {

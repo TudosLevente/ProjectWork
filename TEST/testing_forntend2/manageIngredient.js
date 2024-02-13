@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('ingredient_inputs');
 
-    function createIngredientInput(count) {
-        const inputDiv = document.createElement('div');
-        inputDiv.className = 'ingredient';
-        inputDiv.innerHTML = `
+const container = document.getElementById('ingredient_inputs');
+
+function createIngredientInput(count) {
+    const inputDiv = document.createElement('div');
+    inputDiv.className = 'ingredient';
+    inputDiv.innerHTML = `
         <div class="ingredient_name">
         <input type="text" name="ingredient[]" id="searchInput${count}" class="cukor"
         onkeyup="searchFunction('searchInput${count}')" onfocus="showResults('searchResults${count}')"
@@ -24,63 +24,44 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
         </button>
         `;
-        container.appendChild(inputDiv);
+    container.appendChild(inputDiv);
+}
+
+function deleteIngredientInput(deleteButton) {
+    deleteButton.closest('.ingredient').remove();
+}
+
+container.addEventListener('click', function (event) {
+    const button = event.target.closest('.torles_gomb');
+    if (button) {
+        deleteIngredientInput(button);
     }
+});
 
-    function deleteIngredientInput(deleteButton) {
-        deleteButton.closest('.ingredient').remove();
-    }
+document.getElementById('add_ingredient').addEventListener('click', function () {
+    const numberOfElemets = document.querySelectorAll('div [class="ingredient"]').length + 1;
 
-    container.addEventListener('click', function (event) {
-        const button = event.target.closest('.torles_gomb');
-        if (button) {
-            deleteIngredientInput(button);
-        }
-    });
+    createIngredientInput(numberOfElemets);
 
-    document.getElementById('add_ingredient').addEventListener('click', function () {
-        const numberOfElemets = document.querySelectorAll('div [class="ingredient"]').length + 1;
-
-        createIngredientInput(numberOfElemets);
-
-        getData('http://localhost:8000/api/ingredients')
-            .then(ingredientData => {
-                const uls = document.querySelectorAll('.searchResults ul');
-                uls.forEach(function (ul) {
-                    ingredientData.forEach(function (ingredient) {
-                        for (var i = 0; i < ingredient.length; i++) {
-                            const li = document.createElement('li');
-                            const span = document.createElement('span');
-                            span.textContent = ingredient[i].Ingredient_Name;
-                            li.appendChild(span);
-                            ul.appendChild(li);
-                        }
-                    });
-                });
-            })
-            .catch(error => {
-                console.error("Error occurred:", error);
-            });
-
-        const inputs = document.querySelectorAll('.ingredient_inputs input[type="text"]');
-
-        inputs.forEach(function (input) {
-            input.addEventListener('keyup', function () {
-                var inputId = this.id;
-                searchFunction(inputId);
-            });
-
-            input.addEventListener('focus', function () {
-                var resultsId = this.nextElementSibling.id;
-                showResults(resultsId);
-            });
-
-            var lis = input.nextElementSibling.querySelectorAll('li');
-            lis.forEach(function (li) {
-                li.addEventListener('click', function () {
-                    handleListItemClick(input, this.textContent.trim());
+    getData('http://localhost:8000/api/ingredients')
+        .then(ingredientData => {
+            const uls = document.querySelectorAll('.searchResults ul');
+            uls.forEach(function (ul) {
+                ingredientData.forEach(function (ingredient) {
+                    for (var i = 0; i < ingredient.length; i++) {
+                        const li = document.createElement('li');
+                        const span = document.createElement('span');
+                        span.textContent = ingredient[i].Ingredient_Name;
+                        li.appendChild(span);
+                        ul.appendChild(li);
+                    }
                 });
             });
+            pickIngredient();
+        })
+        .catch(error => {
+            console.error("Error occurred:", error);
         });
-    });
+
+
 });

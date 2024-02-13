@@ -85,7 +85,7 @@ body {
   text-decoration: none;
 }
 
-.frame-26 {
+.main_div {
   background: #ffffff;
   border-style: solid;
   border-color: #ff6000;
@@ -109,7 +109,7 @@ body {
   position: relative;
 }
 
-.frame-104 {
+.title_div {
   display: flex;
   flex-direction: column;
   gap: 43px;
@@ -119,7 +119,7 @@ body {
   position: relative;
 }
 
-.recept-felt-lt-se {
+.title_div_text {
   background: var(--lemon-orange-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(255, 0, 0, 1.00) 100%));
   background-clip: text;
   -webkit-background-clip: text;
@@ -131,7 +131,7 @@ body {
   position: relative;
 }
 
-.felt-ltheti-kedvenc-recepteit-egyszer-en-s-azokat-megoszthatja-bar-taival-csal-dj-val-vagy-b-rki-m-ssal {
+.title_div_description {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -140,7 +140,7 @@ body {
   position: relative;
 }
 
-.line-8 {
+.divider_line {
   border-style: solid;
   border-color: #000000;
   border-width: 1px 0 0 0;
@@ -150,7 +150,7 @@ body {
   position: relative;
 }
 
-.frame-139 {
+.recipe_data_div {
   display: flex;
   flex-direction: column;
   gap: 46px;
@@ -160,7 +160,7 @@ body {
   position: relative;
 }
 
-.frame-138 {
+.recipe_layout {
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -170,7 +170,7 @@ body {
   position: relative;
 }
 
-.frame-137 {
+.recipe_layout_left {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -180,7 +180,7 @@ body {
   position: relative;
 }
 
-.frame-105 {
+.recipe_title_div {
   display: flex;
   flex-direction: column;
   gap: 29px;
@@ -190,7 +190,7 @@ body {
   position: relative;
 }
 
-.a-recept-c-me {
+.recipe_title_div_text {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -199,7 +199,7 @@ body {
   position: relative;
 }
 
-.frame-27 {
+.recipe_title_div_input {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -211,7 +211,7 @@ body {
   overflow: hidden;
 }
 
-.adja-meg-a-recept-c-m-t {
+.recipe_title_input {
   color: #a3a3a3;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -227,7 +227,7 @@ body {
   justify-content: flex-start
 }
 
-.frame-107 {
+.recipe_description_div {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -237,7 +237,7 @@ body {
   position: relative;
 }
 
-.le-r-s {
+.recipe_description_div_text {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -246,7 +246,7 @@ body {
   position: relative;
 }
 
-.frame-28 {
+.reciep_description_div_input {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -258,7 +258,7 @@ body {
   overflow: hidden;
 }
 
-.x-2 {
+.recipe_description_design_icon {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -268,7 +268,7 @@ body {
   z-index: 1;
 }
 
-.rjon-receptj-hez-le-r-st {
+.recipe_description_input {
   color: #a3a3a3;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -282,7 +282,7 @@ body {
   height: 400px;
 }
 
-.frame-106 {
+.recipe_layout_right {
   display: flex;
   flex-direction: column;
   gap: 39px;
@@ -292,7 +292,9 @@ body {
   position: relative;
 }
 
-.k-p-felt-lt-se {
+.recipe_image_text_div {}
+
+.recipe_image_text {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -301,7 +303,9 @@ body {
   position: relative;
 }
 
-.frame-29 {
+.recipe_image_description {}
+
+.recipe_image_container {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -313,7 +317,7 @@ body {
   overflow: hidden;
 }
 
-.t-lts-n-fel-k-pet-tel-r-l {
+.recipe_image_input {
   color: rgba(0, 0, 0, 0.70);
   text-align: center;
   font-family: 'Inter-Regular', sans-serif;
@@ -327,16 +331,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center
-}
-
-.line-9 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
-  position: relative;
 }
 
 .frame-115 {
@@ -553,16 +547,6 @@ body {
   top: calc((100% - 50px)/ 2);
 }
 
-.line-10 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
-  position: relative;
-}
-
 .frame-123 {
   display: flex;
   flex-direction: column;
@@ -652,7 +636,7 @@ body {
   z-index: 1;
 }
 
-.instruction_input{
+.instruction_input {
   color: rgba(0, 0, 0, 0.70);
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -666,16 +650,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start
-}
-
-.line-11 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
-  position: relative;
 }
 
 .frame-130 {
@@ -974,16 +948,6 @@ body {
   top: 18px;
 }
 
-.line-12 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
-  position: relative;
-}
-
 .frame-133 {
   display: flex;
   flex-direction: column;
@@ -1054,16 +1018,6 @@ body {
   font-family: 'Inter-Regular', sans-serif;
   font-size: 32px;
   font-weight: 400;
-  position: relative;
-}
-
-.line-13 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
   position: relative;
 }
 
@@ -1143,16 +1097,6 @@ body {
   overflow: visible;
   z-index: 1;
   pointer-events: none;
-}
-
-.line-14 {
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px 0 0 0;
-  flex-shrink: 0;
-  width: 950px;
-  height: 0px;
-  position: relative;
 }
 
 .frame-136 {
@@ -1568,6 +1512,7 @@ body {
   outline: none;
   background: none repeat scroll 0;
 }
+
 .serving_button:hover {
   cursor: pointer;
   outline: none;

@@ -11,12 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         placeholder="Cukor">
             <div id="searchResults${count}" class="searchResults">
                 <ul>
-                    <li><span>Apple</span></li>
-                    <li><span>Banana</span></li>
-                    <li><span>Orange</span></li>
-                    <li><span>Grapes</span></li>
-                    <li><span>Pineapple</span></li>
-                    <li><span>Watermelon</span></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +42,25 @@ document.addEventListener('DOMContentLoaded', function () {
         const numberOfElemets = document.querySelectorAll('div [class="ingredient"]').length + 1;
 
         createIngredientInput(numberOfElemets);
+
+        getData('http://localhost:8000/api/ingredients')
+            .then(ingredientData => {
+                const uls = document.querySelectorAll('.searchResults ul');
+                uls.forEach(function (ul) {
+                    ingredientData.forEach(function (ingredient) {
+                        for (var i = 0; i < ingredient.length; i++) {
+                            const li = document.createElement('li');
+                            const span = document.createElement('span');
+                            span.textContent = ingredient[i].Ingredient_Name;
+                            li.appendChild(span);
+                            ul.appendChild(li);
+                        }
+                    });
+                });
+            })
+            .catch(error => {
+                console.error("Error occurred:", error);
+            });
 
         const inputs = document.querySelectorAll('.ingredient_inputs input[type="text"]');
 

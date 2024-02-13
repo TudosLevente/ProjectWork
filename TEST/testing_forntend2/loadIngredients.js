@@ -34,6 +34,25 @@ function showResults(resultsId) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    getData('http://localhost:8000/api/ingredients')
+        .then(ingredientData => {
+            const uls = document.querySelectorAll('.searchResults ul');
+            uls.forEach(function (ul) {
+                ingredientData.forEach(function (ingredient) {
+                    for (var i = 0; i < ingredient.length; i++) {
+                        const li = document.createElement('li');
+                        const span = document.createElement('span');
+                        span.textContent = ingredient[i].Ingredient_Name;
+                        li.appendChild(span);
+                        ul.appendChild(li);
+                    }
+                });
+            });
+        })
+        .catch(error => {
+            console.error("Error occurred:", error);
+        });
+
     const inputs = document.querySelectorAll('.ingredient_inputs input[type="text"]');
 
     inputs.forEach(function (input) {
@@ -54,10 +73,4 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-});
-
-getData('http://localhost:8000/api/ingredients').then((ingredientData) => {
-    console.log(ingredientData);
-}).catch((error) => {
-    console.error("Error occurred:", error);
 });

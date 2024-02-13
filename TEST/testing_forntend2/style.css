@@ -246,7 +246,7 @@ body {
   position: relative;
 }
 
-.reciep_description_div_input {
+.recipe_description_div_input {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
@@ -331,6 +331,34 @@ body {
   display: flex;
   align-items: center;
   justify-content: center
+}
+
+.recipe_image_delete_button {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  flex-shrink: 0;
+  width: 200px;
+  height: 43px;
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe_image_delete_button_text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 200px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .frame-115 {

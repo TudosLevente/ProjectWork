@@ -1,6 +1,6 @@
 getData('http://localhost:8000/api/ingredients')
     .then(ingredientData => {
-        const uls = document.querySelectorAll('.searchResults ul');
+        const uls = document.querySelectorAll('.ingredientsResults ul');
         uls.forEach(function (ul) {
             ingredientData.forEach(function (ingredient) {
                 for (var i = 0; i < ingredient.length; i++) {

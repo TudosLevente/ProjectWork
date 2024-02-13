@@ -6,10 +6,10 @@ function createIngredientInput(count) {
     inputDiv.className = 'ingredient';
     inputDiv.innerHTML = `
         <div class="ingredient_name">
-        <input type="text" name="ingredient[]" id="searchInput${count}" class="cukor"
-        onkeyup="searchFunction('searchInput${count}')" onfocus="showResults('searchResults${count}')"
+        <input type="text" name="ingredient[]" id="ingredientInput${count}" class="cukor"
+        onkeyup="searchFunction('ingredientInput${count}')" onfocus="showResults('ingredientsResults${count}')"
         placeholder="Cukor">
-            <div id="searchResults${count}" class="searchResults">
+            <div id="ingredientsResults${count}" class="ingredientsResults">
                 <ul>
                 </ul>
             </div>
@@ -18,7 +18,18 @@ function createIngredientInput(count) {
             <input class="_1" name="quantity[]" type="number" value="1" />
         </div>
         <div class="ingredient_measurement">
-            <input class="ev-kan-l" name="measurement[]" value="Evőkanál" />
+            <input type="text" class="ev-kan-l" name="measurement[]" id="measurementInput${count}"
+            onkeyup="searchFunction('measurementInput${count}')" onfocus="showResults('measurementResults${count}')"
+            placeholder="Evőkanál" />
+            <div id="measurementResults${count}" class="measurementsResults">
+                <ul>
+                    <li>Tömegmértékegységek:</li>
+                    <li>Milligramm (mg)</li>
+                    <li>Gramm (g)</li>
+                    <li>Dekagramm (dkg)</li>
+                    <li>Kilogramm (kg)</li>
+                </ul>
+            </div>
         </div>
         <button class="torles_gomb">
             <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
@@ -45,7 +56,7 @@ document.getElementById('add_ingredient').addEventListener('click', function () 
 
     getData('http://localhost:8000/api/ingredients')
         .then(ingredientData => {
-            const uls = document.querySelectorAll('.searchResults ul');
+            const uls = document.querySelectorAll('.ingredientsResults ul');
             uls.forEach(function (ul) {
                 ingredientData.forEach(function (ingredient) {
                     for (var i = 0; i < ingredient.length; i++) {

@@ -522,7 +522,7 @@ body {
   overflow: visible;
 }
 
-.frame-36 {
+.add_element_button {
   border-radius: 10px;
   border-style: solid;
   border-color: #bb5a00;
@@ -601,7 +601,7 @@ body {
   position: relative;
 }
 
-.frame-118 {
+.steps {
   display: flex;
   flex-direction: row;
   gap: 78px;
@@ -611,7 +611,7 @@ body {
   position: relative;
 }
 
-.frame-117 {
+.instruction {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -621,7 +621,7 @@ body {
   position: relative;
 }
 
-.i-l-p-s {
+.instruction_title {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -630,19 +630,19 @@ body {
   position: relative;
 }
 
-.frame-44 {
+.instruction_container {
   background: #ffffff;
   border-style: solid;
   border-color: #000000;
   border-width: 1px;
   flex-shrink: 0;
-  width: 740px;
+  width: 750px;
   height: 150px;
   position: relative;
   overflow: hidden;
 }
 
-.x-22 {
+.instruction_design_icon {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -652,95 +652,7 @@ body {
   z-index: 1;
 }
 
-.rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben {
-  color: rgba(0, 0, 0, 0.70);
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 743px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start
-}
-
-.frame-38 {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #ce0000;
-  border-width: 2px;
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  position: relative;
-  overflow: hidden;
-}
-
-.trash-2-14 {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  overflow: visible;
-}
-
-.frame-120 {
-  display: flex;
-  flex-direction: row;
-  gap: 78px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.frame-119 {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.ii-l-p-s {
-  color: #000000;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
-}
-
-.frame-46 {
-  background: #ffffff;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px;
-  flex-shrink: 0;
-  width: 750px;
-  height: 150px;
-  position: relative;
-  overflow: hidden;
-}
-
-.x-23 {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 710px;
-  top: 110px;
-  overflow: visible;
-  z-index: 1;
-}
-
-.rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben2 {
+.instruction_input{
   color: rgba(0, 0, 0, 0.70);
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -754,122 +666,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start
-}
-
-.frame-45 {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #ce0000;
-  border-width: 2px;
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  position: relative;
-  overflow: hidden;
-}
-
-.trash-2-15 {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  overflow: visible;
-}
-
-.frame-122 {
-  display: flex;
-  flex-direction: row;
-  gap: 78px;
-  align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.frame-121 {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.iii-l-p-s {
-  color: #000000;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  position: relative;
-}
-
-.frame-48 {
-  background: #ffffff;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px;
-  flex-shrink: 0;
-  width: 750px;
-  height: 150px;
-  position: relative;
-  overflow: hidden;
-}
-
-.x-24 {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  left: 710px;
-  top: 110px;
-  overflow: visible;
-  z-index: 1;
-}
-
-.frame-47 {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #ce0000;
-  border-width: 2px;
-  flex-shrink: 0;
-  width: 70px;
-  height: 70px;
-  position: relative;
-  overflow: hidden;
-}
-
-.trash-2-16 {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  overflow: visible;
-}
-
-.frame-43 {
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #bb5a00;
-  border-width: 4px;
-  flex-shrink: 0;
-  width: 400px;
-  height: 75px;
-  position: relative;
-  overflow: hidden;
-}
-
-.l-p-s-hozz-ad-sa {
-  color: #000000;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  position: absolute;
-  left: 86px;
-  top: 18px;
 }
 
 .line-11 {

@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./vars.css" />
   <link rel="stylesheet" href="./style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../../js/script.js"></script>
   <title>Document</title>
 </head>
 
@@ -98,9 +99,10 @@
               <div class="ingredient">
                 <div class="ingredient_name">
                   <!-- <input class="cukor" name="ingredient[]" value="Cukor" /> -->
-                  <input type="text" name="ingredient[]" id="searchInput" class="cukor" onkeyup="searchFunction()"
-                    onfocus="showResults()" placeholder="Cukor">
-                  <div id="searchResults">
+                  <input type="text" name="ingredient[]" id="searchInput1" class="cukor"
+                    onkeyup="searchFunction('searchInput1')" onfocus="showResults('searchResults1')"
+                    placeholder="Cukor">
+                  <div id="searchResults1" class="searchResults">
                     <ul>
                       <li><span>Apple</span></li>
                       <li><span>Banana</span></li>
@@ -123,9 +125,11 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <input type="text" name="ingredient[]" id="searchInput" class="cukor" onkeyup="searchFunction()"
-                    onfocus="showResults()" placeholder="Cukor">
-                  <div id="searchResults">
+                  <input type="text" name="ingredient[]" id="searchInput2" class="cukor"
+                    onkeyup="searchFunction('searchInput2')" onfocus="showResults('searchResults2')"
+                    placeholder="Cukor">
+
+                  <div id="searchResults2" class="searchResults">
                     <ul>
                       <li><span>Apple</span></li>
                       <li><span>Banana</span></li>
@@ -148,9 +152,11 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <input type="text" name="ingredient[]" id="searchInput" class="cukor" onkeyup="searchFunction()"
-                    onfocus="showResults()" placeholder="Cukor">
-                  <div id="searchResults">
+                  <input type="text" name="ingredient[]" id="searchInput3" class="cukor"
+                    onkeyup="searchFunction('searchInput3')" onfocus="showResults('searchResults3')"
+                    placeholder="Cukor">
+
+                  <div id="searchResults3" class="searchResults">
                     <ul>
                       <li><span>Apple</span></li>
                       <li><span>Banana</span></li>

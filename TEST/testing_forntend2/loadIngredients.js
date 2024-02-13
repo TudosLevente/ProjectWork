@@ -1,19 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('searchResults');
-
-    container.addEventListener('click', function (event) {
-
-    });
-});
-
-function searchFunction() {
-    var input, filter, ul, li, span, i, txtValue;
-    input = document.getElementById('searchInput');
+function searchFunction(inputId) {
+    var input = document.getElementById(inputId);
+    var filter, ul, li, span, txtValue;
     filter = input.value.toUpperCase();
-    ul = document.getElementById("searchResults");
+    ul = input.nextElementSibling.querySelector("ul");
     li = ul.getElementsByTagName('li');
 
-    for (i = 0; i < li.length; i++) {
+    for (var i = 0; i < li.length; i++) {
         span = li[i].getElementsByTagName("span")[0];
         txtValue = span.textContent || span.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -22,7 +14,7 @@ function searchFunction() {
             li[i].style.display = "none";
         }
     }
-    // Show results if there is some input
+
     if (filter !== "") {
         ul.style.display = "block";
     } else {
@@ -30,20 +22,42 @@ function searchFunction() {
     }
 }
 
-function showResults() {
-    var ul = document.getElementById("searchResults");
+function handleListItemClick(input, text) {
+    input.value = text;
+    var ul = input.nextElementSibling.querySelector("ul");
+    ul.style.display = "none";
+}
+
+function showResults(resultsId) {
+    var ul = document.getElementById(resultsId);
     ul.style.display = "block";
 }
 
-// Function to handle clicking on list items
 document.addEventListener('DOMContentLoaded', function () {
-    var lis = document.querySelectorAll('#searchResults li');
-    for (var i = 0; i < lis.length; i++) {
-        lis[i].addEventListener('click', function (e) {
-            var text = e.target.textContent;
-            document.getElementById('searchInput').value = text;
-            var ul = document.getElementById("searchResults");
-            ul.style.display = "none";
+    const inputs = document.querySelectorAll('.ingredient_inputs input[type="text"]');
+
+    inputs.forEach(function (input) {
+        input.addEventListener('keyup', function () {
+            var inputId = this.id;
+            searchFunction(inputId);
         });
-    }
+
+        input.addEventListener('focus', function () {
+            var resultsId = this.nextElementSibling.id;
+            showResults(resultsId);
+        });
+
+        var lis = input.nextElementSibling.querySelectorAll('li');
+        lis.forEach(function (li) {
+            li.addEventListener('click', function () {
+                handleListItemClick(input, this.textContent.trim());
+            });
+        });
+    });
+});
+
+getData('http://localhost:8000/api/ingredients').then((ingredientData) => {
+    console.log(ingredientData);
+}).catch((error) => {
+    console.error("Error occurred:", error);
 });

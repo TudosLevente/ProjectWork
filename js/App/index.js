@@ -9,5 +9,6 @@ app.use('/api', require("../login/router"));
 app.use('/api', require("../recipe/router"));
 app.use('/api', require("../comment/router"));
 app.use('/api', require("../favorite/router"));
+app.use('/api', require("../ingredient/router"));
 
 module.exports = app

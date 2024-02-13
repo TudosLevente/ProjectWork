@@ -1,4 +1,4 @@
-const container = document.getElementById('ingredient_inputs');
+const ingredientContainer = document.getElementById('ingredient_inputs');
 
 function createIngredientInput(count) {
     const inputDiv = document.createElement('div');
@@ -34,14 +34,14 @@ function createIngredientInput(count) {
             <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
         </button>
         `;
-    container.appendChild(inputDiv);
+    ingredientContainer.appendChild(inputDiv);
 }
 
 function deleteIngredientInput(deleteButton) {
     deleteButton.closest('.ingredient').remove();
 }
 
-container.addEventListener('click', function (event) {
+ingredientContainer.addEventListener('click', function (event) {
     const button = event.target.closest('.torles_gomb');
     if (button) {
         deleteIngredientInput(button);

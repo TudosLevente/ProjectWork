@@ -1,4 +1,4 @@
--- Active: 1707314970079@@127.0.0.1@3306@foodhub
+-- Active: 1706877955099@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -46,12 +46,14 @@ END;
 //
 DELIMITER ;
 
+-- Ingredients table
 CREATE TABLE IF NOT EXISTS Ingredients (
     Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
     Ingredient_Name VARCHAR(255) NOT NULL,
     Ingredient_Category VARCHAR(30)
 );
 
+-- Recipes table
 CREATE TABLE IF NOT EXISTS Recipes (
     Recipe_ID INT AUTO_INCREMENT PRIMARY KEY,
     User_ID INT,
@@ -67,6 +69,7 @@ CREATE TABLE IF NOT EXISTS Recipes (
         REFERENCES Users (User_ID)
 );
 
+-- Time table
 CREATE TABLE IF NOT EXISTS Time (
     Recipe_ID INT,
     Time_Prep_Type VARCHAR(30),
@@ -76,6 +79,7 @@ CREATE TABLE IF NOT EXISTS Time (
 		REFERENCES Recipes (Recipe_ID)
 );
 
+-- Recipe_Ingredients table
 CREATE TABLE IF NOT EXISTS Recipe_Ingredients (
     Recipe_ID INT ,
     Ingredient_ID INT,
@@ -87,6 +91,7 @@ CREATE TABLE IF NOT EXISTS Recipe_Ingredients (
 		REFERENCES Recipes (Recipe_ID)
 );
 
+-- Favorites table
 CREATE TABLE IF NOT EXISTS Favorites (
     Favorite_ID INT AUTO_INCREMENT PRIMARY KEY,
     User_ID INT,
@@ -97,6 +102,7 @@ CREATE TABLE IF NOT EXISTS Favorites (
         REFERENCES Recipes (Recipe_ID)
 );
 
+-- Comments table
 CREATE TABLE IF NOT EXISTS Comments (
     Comment_ID INT AUTO_INCREMENT PRIMARY KEY,
     User_ID INT,
@@ -109,93 +115,11 @@ CREATE TABLE IF NOT EXISTS Comments (
         REFERENCES Recipes (Recipe_ID)
 );
 
-DELIMITER //
 
-drop procedure felhBejelentkezes;
-
-CREATE PROCEDURE if not EXISTS felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
-BEGIN
-    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Passsword = jlsz;
-END;
-
-DELIMITER ;
-
-DELIMITER //
-
-drop PROCEDURE felhTokenFrissites;
-
-CREATE PROCEDURE if NOT EXISTS felhTokenFrissites(IN id int, token Text)
-BEGIN
-    UPDATE Users SET Users.Token = token WHERE Users.User_ID = id;     
-END;
-
-DELIMITER ;
-
-delimiter //
-
-DROP PROCEDURE getAllUserInfos;
-
-CREATE PROCEDURE if not EXISTS getAllUserInfos(IN userID int)
-BEGIN
-    SELECT * FROM Users WHERE Users.User_ID = userID;
-END;
-
-delimiter ;
-
-DELIMITER //
-
-drop procedure felhBejelentkezes;
-
-CREATE PROCEDURE if not EXISTS adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
-BEGIN
-    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
-END;
-
-DELIMITER ;
-
-delimiter //
-
-DROP PROCEDURE getRecipeInfos;
-
-CREATE PROCEDURE if not EXISTS getRecipeInfos(IN recipeID int)
-BEGIN
-    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipeID;
-END;
-
-delimiter ;
-
-CALL getRecipeInfos(1);
-
+-- INSERT INTO Recipes
 INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
 Values ('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel');
 
-delimiter //
-
-DROP PROCEDURE getCommentContent;
-
-CREATE PROCEDURE if not EXISTS getCommentContent(IN searched_id int)
-BEGIN
-    SELECT Comment_Text FROM Comments WHERE Comments.Comment_ID = searched_id;
-END;
-
-delimiter ;
-
-INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
-VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
-
-delimiter //
-
-DROP PROCEDURE getFavorites;
-
-CREATE PROCEDURE if not EXISTS getFavorites(in userid int)
-BEGIN
-    SELECT * FROM Favorites WHERE Favorites.User_ID = userid;
-END;
-
-delimiter ;
-
-INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
-VALUES (1, 1, 2);
 
 -- Hozzávalók beszúrása egyetlen INSERT INTO utasítással
 INSERT INTO Ingredients (Ingredient_Name, Ingredient_Category) 
@@ -207,15 +131,94 @@ VALUES
     ('Tej', 'Fehérjék'),
     ('Só', 'Fűszerek'),
     ('Bors', 'Fűszerek'),
-    ('Sütőpor', 'Egyéb');
+    ('Sütőpor', 'Egyéb')
+;
+    
+-- INSERT INTO Favorites
+INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
+VALUES (1,1,2);
+   
+-- INSERT INTO Comments
+INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
+VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
 
+
+-- felhBejelentkezes procedure
+drop procedure if exists felhBejelentkezes;
+DELIMITER //
+CREATE PROCEDURE if not EXISTS felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
+BEGIN
+    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Passsword = jlsz;
+END;
+DELIMITER ;
+
+
+-- felhTokenFrissites procedure
+drop PROCEDURE if exists felhTokenFrissites;
+DELIMITER //
+CREATE PROCEDURE if NOT EXISTS felhTokenFrissites(IN id int, token Text)
+BEGIN
+    UPDATE Users SET Users.Token = token WHERE Users.User_ID = id;     
+END;
+DELIMITER ;
+
+
+-- getAllUserInfos procedure
+DROP PROCEDURE if exists getAllUserInfos;
 delimiter //
+CREATE PROCEDURE if not EXISTS getAllUserInfos(IN userID int)
+BEGIN
+    SELECT * FROM Users WHERE Users.User_ID = userID;
+END;
+delimiter ;
 
-DROP PROCEDURE getIngredients;
 
+-- felhBejelentkezes procedure
+drop procedure if exists felhBejelentkezes;
+DELIMITER //
+CREATE PROCEDURE if not EXISTS adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
+BEGIN
+    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
+END;
+DELIMITER ;
+
+
+-- getRecipeInfos procedure
+DROP PROCEDURE if exists getRecipeInfos;
+delimiter //
+CREATE PROCEDURE getRecipeInfos(IN recipeID int)
+BEGIN
+    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipeID;
+END;
+delimiter ;
+CALL getRecipeInfos(1);
+
+
+-- getCommentContent procedure
+DROP PROCEDURE if exists getCommentContent;
+delimiter //
+CREATE PROCEDURE if not EXISTS getCommentContent(IN searched_id int)
+BEGIN
+    SELECT Comment_Text FROM Comments WHERE Comments.Comment_ID = searched_id;
+END;
+delimiter ;
+
+
+-- getFavorites procedure
+DROP PROCEDURE if exists getFavorites;
+delimiter //
+CREATE PROCEDURE if not EXISTS getFavorites(in userid int)
+BEGIN
+    SELECT * FROM Favorites WHERE Favorites.User_ID = userid;
+END;
+delimiter ;
+
+
+-- getIngredients procedure
+DROP PROCEDURE if exists getIngredients;
+delimiter //
 CREATE PROCEDURE if not EXISTS getIngredients()
 BEGIN
     SELECT * FROM Ingredients;
 END;
-
 DELIMITER ;

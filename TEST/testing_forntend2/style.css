@@ -649,6 +649,7 @@ body {
   left: 700px;
   top: 110px;
   overflow: visible;
+  z-index: 1;
 }
 
 .rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben {
@@ -736,6 +737,7 @@ body {
   left: 710px;
   top: 110px;
   overflow: visible;
+  z-index: 1;
 }
 
 .rja-le-mi-a-k-vetkez-l-p-s-receptj-nek-elk-sz-t-s-ben2 {
@@ -823,6 +825,7 @@ body {
   left: 710px;
   top: 110px;
   overflow: visible;
+  z-index: 1;
 }
 
 .frame-47 {
@@ -901,7 +904,7 @@ body {
 .frame-129 {
   padding: 0px 0px 0px 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 36px;
   align-items: flex-start;
   justify-content: flex-start;
@@ -911,8 +914,8 @@ body {
 
 .frame-128 {
   display: flex;
-  flex-direction: row;
-  gap: 88px;
+  flex-direction: column;
+  gap: 40px;
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
@@ -920,40 +923,15 @@ body {
 }
 
 .frame-124 {
-  display: flex;
-  flex-direction: column;
-  gap: 42px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-shrink: 0;
   position: relative;
-}
-
-.el-k-sz-let {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 400;
-  position: relative;
-}
-
-.s-t-s {
-  color: #000000;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  position: relative;
-}
-
-.pihentet-s {
-  color: #000000;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  position: relative;
+  appearance: none;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .frame-125 {
@@ -975,11 +953,13 @@ body {
   height: 50px;
   position: relative;
   overflow: hidden;
+  appearance: none;
+  border: none;
 }
 
 ._0 {
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-family: 'Inter-Regular', sans-serif;
   font-size: 24px;
   font-weight: 400;
@@ -988,6 +968,10 @@ body {
   top: 0px;
   width: 100px;
   height: 50px;
+  appearance: none;
+  outline: none;
+  border: 1px solid black;
+  text-align: center;
 }
 
 .frame-51 {
@@ -1032,8 +1016,15 @@ body {
   position: relative;
   overflow: hidden;
   appearance: none;
+  color: #000000;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 20px;
 }
 
+/* 
 .perc {
   color: #000000;
   text-align: left;
@@ -1042,10 +1033,8 @@ body {
   font-weight: 400;
   position: absolute;
   left: 26px;
-  top: calc((100% - 36)/ 2);
-  width: 300px;
-  height: 50px;
-}
+  top: 10px;
+} */
 
 .chevron-down-1 {
   width: 40px;
@@ -1054,6 +1043,7 @@ body {
   left: 251px;
   top: 5px;
   overflow: visible;
+  z-index: 1;
 }
 
 .frame-52 {
@@ -1065,9 +1055,16 @@ body {
   height: 50px;
   position: relative;
   overflow: hidden;
+  appearance: none;
+  color: #000000;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  padding-left: 20px;
 }
 
-.ra {
+/* .ra {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -1076,7 +1073,7 @@ body {
   position: absolute;
   left: 26px;
   top: 10px;
-}
+} */
 
 .chevron-down-12 {
   width: 40px;
@@ -1085,6 +1082,7 @@ body {
   left: 251px;
   top: 5px;
   overflow: visible;
+  z-index: 1;
 }
 
 .frame-54 {
@@ -1116,6 +1114,7 @@ body {
   left: 251px;
   top: 5px;
   overflow: visible;
+  z-index: 1;
 }
 
 .frame-127 {
@@ -1126,6 +1125,8 @@ body {
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
+  height: auto;
+  width: auto;
 }
 
 .sszes-tett-id {
@@ -1135,15 +1136,18 @@ body {
   font-size: 32px;
   font-weight: 400;
   position: relative;
+  height: 50px;
 }
 
 ._02 {
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-family: 'Inter-Regular', sans-serif;
   font-size: 32px;
   font-weight: 400;
   position: relative;
+  height: 50px;
+  width: 40px;
 }
 
 .frame-55 {
@@ -1275,7 +1279,7 @@ body {
 .frame-134 {
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 93px;
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
@@ -1306,6 +1310,8 @@ body {
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
+  height: 75px;
+  width: 500px;
 }
 
 .k-nny-elk-sz-teni {
@@ -1315,14 +1321,27 @@ body {
   font-size: 32px;
   font-weight: 400;
   position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 500px;
+  height: 75px;
+  max-height: 75px;
+  border: none;
+  outline: none;
+  appearance: none;
+  padding-left: 20px;
+  overflow-y: auto;
 }
 
 .chevron-down-2 {
-  flex-shrink: 0;
   width: 60px;
   height: 60px;
-  position: relative;
+  position: absolute;
+  right: 10px;
+  top: 7.5px;
   overflow: visible;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .line-14 {
@@ -1361,10 +1380,13 @@ body {
   border-color: #000000;
   border-width: 1px;
   flex-shrink: 0;
-  width: 400px;
+  width: 500px;
   height: 75px;
   position: relative;
   overflow: hidden;
+  outline: none;
+  appearance: none;
+  display: inline-block;
 }
 
 .f-tel {
@@ -1376,19 +1398,25 @@ body {
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 400px;
+  width: 500px;
   height: 75px;
+  max-height: 75px;
   border: none;
   outline: none;
+  appearance: none;
+  padding-left: 20px;
+  overflow-y: auto;
 }
 
 .chevron-down-22 {
   width: 60px;
   height: 60px;
   position: absolute;
-  left: 330px;
-  top: 8px;
+  right: 10px;
+  top: 7.5px;
   overflow: visible;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .frame-140 {

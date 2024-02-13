@@ -5,10 +5,20 @@ function displayImage(event) {
         reader.onload = function (e) {
             const imageSrc = e.target.result;
             document.getElementById('imageContainer').style.backgroundImage = `url('${imageSrc}')`;
-            document.getElementsById('imageContainer').style.backgroundRepeat = 'no-repeat';
-            document.getElementById('picture_data').style.display = 'block';
-            document.getElementById('picture_data').style.visibility = 'hidden';
+            document.getElementById('imageContainer').style.backgroundRepeat = 'no-repeat';
+            document.getElementById('imageContainer').style.backgroundSize = 'contain';
+            document.getElementById('picture_data').style.display = 'none';
+            document.getElementById('recipe_image_input_label').style.display = 'none';
+            document.getElementById('recipe_image_delete_button').style.display = 'block';
         };
         reader.readAsDataURL(file);
     }
+}
+
+function deleteImage() {
+    var imageContainer = document.getElementById('imageContainer');
+    imageContainer.style.backgroundImage = 'none';
+    document.getElementById('picture_data').style.display = 'none';
+    document.getElementById('recipe_image_input_label').style.display = 'block';
+    document.getElementById('recipe_image_delete_button').style.display = 'none';
 }

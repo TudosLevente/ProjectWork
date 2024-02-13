@@ -20,22 +20,22 @@
       <div class="container-fluid">
         <div class="row col-12">
           <div class="col-lg-4 d-flex align-items-center justify-content-start">
-            <a class="foobhub-logo-text" href="#">FoodHub</a>
+            <a class="navbar_foobhub_logo_text" href="./html/mainPage.html">FoodHub</a>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-center">
             <div class="input-group">
-              <input type="text" class="searchbar form-control" placeholder="Keressen receptjeink közül..."
+              <input type="text" class="navbar_searchbar form-control" placeholder="Keressen receptjeink között ..."
                 aria-label="Search" aria-describedby="basic-addon2" />
             </div>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-            <img src="../images/mainPage/user.svg" alt="" style="width: 7%; margin-right: 5px;">
-            <div class="login-div"><a href="../html/profilePage.html" class="profil-text">Profil</a></div>
+            <img src="../images/mainPage/user.svg" style="width: 7%; margin-right: 5px;">
+            <div class="login_div"><a href="../html/profilePage.html" class="navbar_profil_text">Profil</a></div>
           </div>
         </div>
       </div>
     </nav>
-    <img class="img-fluid image-9" src="./recipiesuploadPage/image-90.png" />
+    <img class="img-fluid background_image_top" src="./recipiesuploadPage/image-90.png" />
     <div class="main_div">
       <div class="title_div">
         <div class="title_div_text">Recept feltöltése</div>
@@ -52,14 +52,16 @@
             <div class="recipe_title_div">
               <div class="recipe_title_div_text">A recept címe:</div>
               <div class="recipe_title_div_input">
-                <input class="recipe_title_input" id="title" placeholder="Adja meg a recept címét" />
+                <input class="recipe_title_input" id="title" type="text" placeholder="Adja meg a recept címét" />
               </div>
             </div>
             <div class="recipe_description_div">
               <div class="recipe_description_div_text">Leírás:</div>
               <div class="recipe_description_div_input">
+                <label for="description" class="recipe_description_div_input_label">Írjon receptjéhez leírást.</label>
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="recipe_description_design_icon" alt="">
-                <input class="recipe_description_input" id="description" placeholder="Írjon receptjéhez leírást." />
+                <input class="recipe_description_input" id="description" type="text"
+                  placeholder="Írjon receptjéhez leírást." />
               </div>
             </div>
           </div>
@@ -71,23 +73,25 @@
               </div>
             </div>
             <div class="recipe_image_container" id="imageContainer">
+              <label class="recipe_image_input_label" id="recipe_image_input_label" for="picture_data">Töltsön fel képet
+                ételéről!</label>
               <input class="recipe_image_input" type="file" name="image" id="picture_data" accept="image/*"
-                value="Töltsön fel képet ételéről!" onchange="displayImage(event)" />
+                onchange="displayImage(event)" />
             </div>
-            <button class="recipe_image_delete_button">
+            <button type="button" class="recipe_image_delete_button" id="recipe_image_delete_button"
+              onclick="deleteImage()">
               <span class="recipe_image_delete_button_text">Kép törlése</span>
             </button>
           </div>
         </div>
         <div class="divider_line"></div>
       </div>
-      <div class="frame-115">
-        <div class="frame-114">
-          <div class="frame-113">
-            <div class="frame-108">
-              <div class="hozz-val-k">Hozzávalók:</div>
-              <div
-                class="rja-le-a-hozz-val-kat-melyek-oly-finomm-teszik-receptj-t-s-ne-felejtse-el-megadni-a-m-rt-kegys-geket-is">
+      <div class="ingredient_div">
+        <div class="ingredient_div_inner">
+          <div class="ingredient_div_inner_top">
+            <div class="ingredient_div_title">
+              <div class="ingredient_div_title_text">Hozzávalók:</div>
+              <div class="ingredient_div_title_description">
                 Írja le a hozzávalókat melyek oly finommá
                 <br />
                 teszik receptjét és ne felejtse el megadni a
@@ -98,7 +102,7 @@
             <div id="ingredient_inputs" class="ingredient_inputs">
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <input type="text" name="ingredient[]" id="ingredientInput1" class="cukor"
+                  <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
                     onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
                     placeholder="Cukor">
                   <div id="ingredientsResults1" class="ingredientsResults">
@@ -107,12 +111,12 @@
                   </div>
                 </div>
                 <div class="ingredient_amount">
-                  <input class="_1" name="quantity[]" type="number" value="1" />
+                  <input class="ingredient_input_style_quantity" name="quantity[]" type="number" value="1" />
                 </div>
                 <div class="ingredient_measurement">
-                  <input type="text" class="ev-kan-l" name="measurement[]" id="measurementInput1"
-                    onkeyup="searchFunction('measurementInput1')" onfocus="showResults('measurementResults1')"
-                    placeholder="Evőkanál" />
+                  <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
+                    id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
+                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
                   <div id="measurementResults1" class="measurementsResults">
                     <ul>
                       <li>Tömegmértékegységek:</li>
@@ -129,23 +133,22 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <!-- <input class="cukor" name="ingredient[]" value="Cukor" /> -->
-                  <input type="text" name="ingredient[]" id="ingredientInput2" class="cukor"
-                    onkeyup="searchFunction('ingredientInput2')" onfocus="showResults('ingredientsResults2')"
+                  <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
+                    onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
                     placeholder="Cukor">
-                  <div id="ingredientsResults2" class="ingredientsResults">
+                  <div id="ingredientsResults1" class="ingredientsResults">
                     <ul>
                     </ul>
                   </div>
                 </div>
                 <div class="ingredient_amount">
-                  <input class="_1" name="quantity[]" type="number" value="1" />
+                  <input class="ingredient_input_style_quantity" name="quantity[]" type="number" value="1" />
                 </div>
                 <div class="ingredient_measurement">
-                  <input type="text" class="ev-kan-l" name="measurement[]" id="measurementInput2"
-                    onkeyup="searchFunction('measurementInput2')" onfocus="showResults('measurementResults2')"
-                    placeholder="Evőkanál" />
-                  <div id="measurementResults2" class="measurementsResults">
+                  <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
+                    id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
+                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
+                  <div id="measurementResults1" class="measurementsResults">
                     <ul>
                       <li>Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
@@ -161,23 +164,22 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <!-- <input class="cukor" name="ingredient[]" value="Cukor" /> -->
-                  <input type="text" name="ingredient[]" id="ingredientInput3" class="cukor"
-                    onkeyup="searchFunction('ingredientInput3')" onfocus="showResults('ingredientsResults3')"
+                  <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
+                    onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
                     placeholder="Cukor">
-                  <div id="ingredientsResults3" class="ingredientsResults">
+                  <div id="ingredientsResults1" class="ingredientsResults">
                     <ul>
                     </ul>
                   </div>
                 </div>
                 <div class="ingredient_amount">
-                  <input class="_1" name="quantity[]" type="number" value="1" />
+                  <input class="ingredient_input_style_quantity" name="quantity[]" type="number" value="1" />
                 </div>
                 <div class="ingredient_measurement">
-                  <input type="text" class="ev-kan-l" name="measurement[]" id="measurementInput3"
-                    onkeyup="searchFunction('measurementInput3')" onfocus="showResults('measurementResults3')"
-                    placeholder="Evőkanál" />
-                  <div id="measurementResults3" class="measurementsResults">
+                  <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
+                    id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
+                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
+                  <div id="measurementResults1" class="measurementsResults">
                     <ul>
                       <li>Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
@@ -194,17 +196,16 @@
             </div>
           </div>
           <button id="add_ingredient" class="add_element_button">
-            <div class="plus-button-text">Hozzávaló felvétele</div>
-            <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="" srcset="">
+            <div class="add_element_button_text">Hozzávaló felvétele</div>
+            <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
           </button>
         </div>
         <div class="divider_line"></div>
       </div>
-      <div class="frame-123">
-        <div class="frame-116">
-          <div class="utas-t-sok">Utasítások:</div>
-          <div
-            class="adjon-utas-t-sokat-az-elk-sz-t-ssel-kapcsolatban-s-t-rjen-ki-az-apr-bb-r-szletekre-is-mint-a-s-t-h-foka-h-ny-percig-legyen-bennt-a-s-t-ben-stb">
+      <div class="instruction_div_container">
+        <div class="instruction_div_container_title">
+          <div class="instruction_div_container_title_text">Utasítások:</div>
+          <div class="instruction_div_container_title_description">
             Adjon utasításokat az elkészítéssel kapcsolatban és térjen
             <br />
             ki az apróbb részletekre is, mint a sütő hőfoka, hány percig
@@ -212,58 +213,58 @@
             legyen bennt a sütőben, stb.
           </div>
         </div>
-        <div id="instruction_inputs">
+        <div id="instruction_inputs" class="instruction_div_container_inputs">
           <div class="steps">
             <div class="instruction">
               <div class="instruction_title">I. Lépés</div>
               <div class="instruction_container">
-                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
+                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput1"
                   placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka" alt="" srcset="">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
             </button>
           </div>
           <div class="steps">
             <div class="instruction">
               <div class="instruction_title">II. Lépés</div>
               <div class="instruction_container">
-                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
+                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput2"
                   placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka" alt="" srcset="">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
             </button>
           </div>
           <div class="steps">
             <div class="instruction">
               <div class="instruction_title">III. Lépés</div>
               <div class="instruction_container">
-                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
+                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput3"
                   placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka" alt="" srcset="">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
             </button>
           </div>
           <button class="add_element_button">
-            <div class="plus-button-text">Lépés hozzáadása</div>
+            <div class="add_element_button_text">Lépés hozzáadása</div>
             <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="">
           </button>
         </div>
         <div class="divider_line"></div>
       </div>
-      <div class="frame-130">
-        <div class="elk-sz-t-si-id">Elkészítési idő:</div>
-        <div class="frame-129">
-          <div class="frame-124">
-            <select class="frame-50">
+      <div class="preparation_div_container">
+        <div class="preparation_div_container_text">Elkészítési idő:</div>
+        <div class="preparation_div">
+          <div class="preparation_div_row">
+            <select class="preparation_div_row_type">
               <option selected>Előkészület</option>
               <option>Főzés</option>
               <option>Sütés</option>
@@ -275,19 +276,19 @@
               <option>Áztatás</option>
               <option>Pihentetés</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+            <div class="preparation_div_row_type_small">
+              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="frame-50">
+            <select class="preparation_div_row_type">
               <option selected>perc</option>
               <option>óra</option>
               <option>nap</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
           </div>
-          <div class="frame-124">
-            <select class="frame-50">
+          <div class="preparation_div_row">
+            <select class="preparation_div_row_type">
               <option>Előkészület</option>
               <option>Főzés</option>
               <option selected>Sütés</option>
@@ -299,19 +300,19 @@
               <option>Áztatás</option>
               <option>Pihentetés</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+            <div class="preparation_div_row_type_small">
+              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="frame-50">
+            <select class="preparation_div_row_type">
               <option>perc</option>
               <option selected>óra</option>
               <option>nap</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
           </div>
-          <div class="frame-124">
-            <select class="frame-50">
+          <div class="preparation_div_row">
+            <select class="preparation_div_row_type">
               <option>Előkészület</option>
               <option>Főzés</option>
               <option>Sütés</option>
@@ -322,38 +323,38 @@
               <option>Keltés</option>
               <option>Áztatás</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+            <div class="preparation_div_row_type_small">
+              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="frame-50">
+            <select class="preparation_div_row_type">
               <option>perc</option>
               <option>óra</option>
               <option selected>nap</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
           </div>
         </div>
-        <div class="frame-127">
-          <div class="sszes-tett-id">Összesített idő: </div>
-          <div class="_02">0</div>
+        <div class="overalltime_div_container">
+          <div class="overalltime_div_container_text">Összesített idő: </div>
+          <div class="overalltime_div_container_time">0</div>
         </div>
-        <button class="frame-55">
-          <div class="plus-button-text">Idő hozzáadása</div>
-          <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="" srcset="">
+        <button class="add_element_button">
+          <div class="add_element_button_text">Idő hozzáadása</div>
+          <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
         </button>
       </div>
       <div class="divider_line"></div>
-      <div class="frame-133">
-        <div class="frame-132">
-          <div class="felszolg-l-si-adag">Felszolgálási adag:</div>
-          <div class="frame-131">
+      <div class="serving_div_container">
+        <div class="serving_div">
+          <div class="serving_div_text">Felszolgálási adag:</div>
+          <div class="serving_div_buttons">
             <button class="serving_button" onclick="decreaseServing()">
-              <img src="./recipiesuploadPage/minus.svg" class="minus-1" alt="" srcset="">
+              <img src="./recipiesuploadPage/minus.svg" class="minus-icon">
             </button>
-            <div id="serving_size" class="_12">1</div>
+            <div id="serving_size" class="serving_size_number">1</div>
             <button class="serving_button" onclick="increaseServing()">
-              <img src="./recipiesuploadPage/plusz.svg" class="plus-square-2" alt="" srcset="">
+              <img src="./recipiesuploadPage/plusz.svg" class="plus_square_button">
             </button>
 
             <script>
@@ -372,28 +373,28 @@
               }
             </script>
           </div>
-          <div class="f-r-sz-re">fő részére</div>
+          <div class="serving_div_text">fő részére</div>
         </div>
         <div class="divider_line"></div>
       </div>
-      <div class="frame-135">
-        <div class="frame-134">
-          <div class="neh-zs-g">Nehézség:</div>
-          <div class="frame-66">
-            <select class="k-nny-elk-sz-teni" name="" id="">
+      <div class="difficulty_div_container">
+        <div class="difficulty_div">
+          <div class="difficulty_div_text">Nehézség:</div>
+          <div class="difficulty_div_select_div">
+            <select class="difficulty_div_select" name="" id="">
               <option selected value="konnyu">Könnyű elkészíteni</option>
               <option value="kozepes">Közepesen nehés elkészíteni</option>
               <option value="nehez">Nehéz elkészíteni</option>
             </select>
-            <img src="./recipiesuploadPage/nagylefelenyil.svg" class="chevron-down-2" alt="" srcset="">
+            <img src="./recipiesuploadPage/nagylefelenyil.svg" class="chevrondown_2">
           </div>
         </div>
         <div class="divider_line"></div>
       </div>
-      <div class="frame-136">
-        <div class="kateg-ria">Kategória:</div>
-        <div class="frame-67">
-          <select class="f-tel">
+      <div class="category_div_container">
+        <div class="category_div_container_text">Kategória:</div>
+        <div class="category_select_div">
+          <select class="category_select_style">
             <option value="Burgerek">Burgerek</option>
             <option selected value="Szendvicsek_Wrappok">Szendvicsek és Wrappok</option>
             <option value="Pizzak">Pizzák</option>
@@ -415,15 +416,15 @@
             <option value="Turmixok_Shakek">Turmixok és Shakek</option>
             <option value="Vegetarianus">Vegetárianus</option>
           </select>
-          <img src="./recipiesuploadPage/nagylefelenyil.svg" class="chevron-down-22" alt="" srcset="">
+          <img src="./recipiesuploadPage/nagylefelenyil.svg" class="chevrondown_2 ">
         </div>
       </div>
-      <div class="frame-140">
-        <button class="frame-25">
-          <span class="m-gse">Mégse</span>
+      <div class="button_div">
+        <button class="button_div_nobutton">
+          <span class="button_div_nobutton_span">Mégse</span>
         </button>
-        <button class="frame-24">
-          <span class="recept-k-zz-t-tele">
+        <button class="button_div_upload">
+          <span class="button_div_upload_span">
             Recept
             <br />
             közzététele
@@ -431,18 +432,18 @@
         </button>
       </div>
     </div>
-    <img class="image-92" src="./recipiesuploadPage/image-91.png" />
+    <img class="background_image_bottom" src="./recipiesuploadPage/image-91.png" />
     <div class="footer">
-      <div class="group-188">
-        <a class="food-hub">FoodHub</a>
-        <a class="felhasz-feltet">Felhasználási feltételek</a>
+      <div class="footer_div">
+        <a class="footer_div_maintitle">FoodHub</a>
+        <a class="footer_div_TermsofUse">Felhasználási feltételek</a>
       </div>
-      <div class="foodhub-gmail-com">foodhub@gmail.com</div>
-      <img class="foodhub-logo-trasnparent-1" src="./recipiesuploadPage/foodhub-logo-trasnparent-10.png" />
-      <div class="frame-187">
-        <img src="./recipiesuploadPage/facebook.svg" class="facebook" alt="" srcset="">
-        <img src="./recipiesuploadPage/twitter.svg" class="twitter" alt="" srcset="">
-        <img src="./recipiesuploadPage/instagram.svg" class="instagram" alt="" srcset="">
+      <div class="footer_div_gmail">foodhub@gmail.com</div>
+      <img class="footer_div_foodhub_logo_trasnparent" src="./recipiesuploadPage/foodhub-logo-trasnparent-10.png" />
+      <div class="footer_div_social_div">
+        <img src="./recipiesuploadPage/facebook.svg" class="footer_div_social_div_facebook">
+        <img src="./recipiesuploadPage/twitter.svg" class="footer_div_social_div_twitter">
+        <img src="./recipiesuploadPage/instagram.svg" class="footer_div_social_div_instagram">
       </div>
     </div>
   </div>

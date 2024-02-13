@@ -1,4 +1,4 @@
--- Active: 1707314970079@@127.0.0.1@3306@test
+-- Active: 1707314970079@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -196,3 +196,26 @@ delimiter ;
 
 INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
 VALUES (1, 1, 2);
+
+-- Hozzávalók beszúrása egyetlen INSERT INTO utasítással
+INSERT INTO Ingredients (Ingredient_Name, Ingredient_Category) 
+VALUES 
+    ('Liszt', 'Szénhidrátok'),
+    ('Tojás', 'Fehérjék'),
+    ('Cukor', 'Édesítőszerek'),
+    ('Vaj', 'Zsírok'),
+    ('Tej', 'Fehérjék'),
+    ('Só', 'Fűszerek'),
+    ('Bors', 'Fűszerek'),
+    ('Sütőpor', 'Egyéb');
+
+delimiter //
+
+DROP PROCEDURE getIngredients;
+
+CREATE PROCEDURE if not EXISTS getIngredients()
+BEGIN
+    SELECT * FROM Ingredients;
+END;
+
+DELIMITER ;

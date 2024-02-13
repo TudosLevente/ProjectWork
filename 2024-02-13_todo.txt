@@ -1,0 +1,3 @@
+-Main page dizájnolása, profil page lekódolása
+
+-Receptfeltöltés oldalon a hiányzó scriptek megírása, a meglévők importálása és azok javítása

@@ -1713,7 +1713,7 @@ body {
   overflow: visible;
 }
 
-#searchResults {
+.searchResults {
   display: none;
   position: absolute;
   background-color: orange;
@@ -1728,11 +1728,11 @@ body {
   border-radius: 5px;
 }
 
-#searchResults li {
+.searchResults li {
   padding: 8px 12px;
   cursor: pointer;
 }
 
-#searchResults li:hover {
+.searchResults li:hover {
   background-color: #ddd;
 }

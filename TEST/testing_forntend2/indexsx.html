@@ -228,75 +228,115 @@ elkészítésében." />
       <div class="frame-130">
         <div class="elk-sz-t-si-id">Elkészítési idő:</div>
         <div class="frame-129">
-          <div class="frame-128">
-            <select class="frame-124">
-              <option>Előkészület</option>
+          <div class="frame-124">
+            <select class="frame-50">
+              <option selected>Előkészület</option>
+              <option>Főzés</option>
               <option>Sütés</option>
+              <option>Lehűtés</option>
+              <option>Fagyasztás</option>
+              <option>Marinálás</option>
+              <option>Pihentetés</option>
+              <option>Keltés</option>
+              <option>Áztatás</option>
               <option>Pihentetés</option>
             </select>
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
             <div class="frame-49">
               <input class="_0" type="number" min="0" value="0" />
             </div>
-            <select class="frame-124">
-              <option>Előkészület:</option>
-              <option>Sütés:</option>
-              <option>Pihentetés:</option>
-            </select>
-            <select class="frame-124">
-              <option>Előkészület:</option>
-              <option>Sütés:</option>
-              <option>Pihentetés:</option>
-            </select>
-          </div>
-          <div class="frame-125">
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
-            </div>
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
-            </div>
-            <div class="frame-49">
-              <input class="_0" type="number" min="0" value="0" />
-            </div>
-          </div>
-          <div class="frame-126">
             <select class="frame-50">
-              <option>perc</option>
+              <option selected>perc</option>
               <option>óra</option>
               <option>nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
+          </div>
+          <div class="frame-124">
             <select class="frame-50">
-              <option>perc</option>
-              <option>óra</option>
-              <option>nap</option>
+              <option>Előkészület</option>
+              <option>Főzés</option>
+              <option selected>Sütés</option>
+              <option>Lehűtés</option>
+              <option>Fagyasztás</option>
+              <option>Marinálás</option>
+              <option>Pihentetés</option>
+              <option>Keltés</option>
+              <option>Áztatás</option>
+              <option>Pihentetés</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
+            <div class="frame-49">
+              <input class="_0" type="number" min="0" value="0" />
+            </div>
+            <select class="frame-50">
+              <option>perc</option>
+              <option selected>óra</option>
+              <option>nap</option>
+            </select>
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
+          </div>
+          <div class="frame-124">
+            <select class="frame-50">
+              <option>Előkészület</option>
+              <option>Főzés</option>
+              <option>Sütés</option>
+              <option>Lehűtés</option>
+              <option>Fagyasztás</option>
+              <option>Marinálás</option>
+              <option selected>Pihentetés</option>
+              <option>Keltés</option>
+              <option>Áztatás</option>
+            </select>
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-12" alt="" srcset="">
+            <div class="frame-49">
+              <input class="_0" type="number" min="0" value="0" />
+            </div>
             <select class="frame-50">
               <option>perc</option>
               <option>óra</option>
-              <option>nap</option>
+              <option selected>nap</option>
             </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-13" alt="" srcset="">
+            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevron-down-1" alt="" srcset="">
           </div>
         </div>
         <div class="frame-127">
           <div class="sszes-tett-id">Összesített idő: </div>
           <div class="_02">0</div>
         </div>
+        <button class="frame-55">
+          <div class="plus-button-text">Idő hozzáadása</div>
+          <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="" srcset="">
+        </button>
       </div>
-      <button class="frame-55">
-        <div class="plus-button-text">Idő hozzáadása</div>
-        <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="" srcset="">
-      </button>
       <div class="line-12"></div>
       <div class="frame-133">
         <div class="frame-132">
           <div class="felszolg-l-si-adag">Felszolgálási adag:</div>
           <div class="frame-131">
-            <img src="./recipiesuploadPage/minus.svg" class="minus-1" alt="" srcset="">
-            <div class="_12">1</div>
-            <img src="./recipiesuploadPage/plusz.svg" class="plus-square-2" alt="" srcset="">
+            <button class="serving_button" onclick="decreaseServing()">
+              <img src="./recipiesuploadPage/minus.svg" class="minus-1" alt="" srcset="">
+            </button>
+            <div id="serving_size" class="_12">1</div>
+            <button class="serving_button" onclick="increaseServing()">
+              <img src="./recipiesuploadPage/plusz.svg" class="plus-square-2" alt="" srcset="">
+            </button>
+
+            <script>
+              function decreaseServing() {
+                var servingSize = document.getElementById("serving_size");
+                var currentSize = parseInt(servingSize.innerHTML);
+                if (currentSize > 1) {
+                  servingSize.innerHTML = currentSize - 1;
+                }
+              }
+
+              function increaseServing() {
+                var servingSize = document.getElementById("serving_size");
+                var currentSize = parseInt(servingSize.innerHTML);
+                servingSize.innerHTML = currentSize + 1;
+              }
+            </script>
           </div>
           <div class="f-r-sz-re">fő részére</div>
         </div>

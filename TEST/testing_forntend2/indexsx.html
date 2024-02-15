@@ -262,7 +262,7 @@
       </div>
       <div class="preparation_div_container">
         <div class="preparation_div_container_text">Elkészítési idő:</div>
-        <div class="preparation_div">
+        <div id="preparation_inputs" class="preparation_div">
           <div class="preparation_div_row">
             <select class="preparation_div_row_type">
               <option selected>Előkészület</option>
@@ -278,12 +278,12 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput1" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option selected>perc</option>
-              <option>óra</option>
-              <option>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc" selected>perc</option>
+              <option value="óra">óra</option>
+              <option value="nap">nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
             <button class="torles_gomb">
@@ -305,12 +305,12 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput2" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option>perc</option>
-              <option selected>óra</option>
-              <option>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc">perc</option>
+              <option value="óra" selected>óra</option>
+              <option value="nap">nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
             <button class="torles_gomb">
@@ -331,12 +331,12 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput3" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option>perc</option>
-              <option>óra</option>
-              <option selected>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc">perc</option>
+              <option value="óra">óra</option>
+              <option value="nap" selected>nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
             <button class="torles_gomb">
@@ -346,9 +346,9 @@
         </div>
         <div class="overalltime_div_container">
           <div class="overalltime_div_container_text">Összesített idő: </div>
-          <div class="overalltime_div_container_time">0</div>
+          <div id="sum_time" class="overalltime_div_container_time">0 perc</div>
         </div>
-        <button class="add_element_button">
+        <button id="add_prep_time" class="add_element_button">
           <div class="add_element_button_text">Idő hozzáadása</div>
           <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
         </button>
@@ -462,6 +462,8 @@
   <script src="./ingredients/chooseIngredient.js"></script>
   <script src="./instructions/manageInstructions.js"></script>
   <script src="./instructions/nameChangeInstruction.js"></script>
+  <script src="./preparation/managePreparation.js"></script>
+  <script src="./preparation/changePrepTime.js"></script>
   <script src="uploadRecipe.js"></script>
   <script src="displayImage.js"></script>
 

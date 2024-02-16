@@ -1,4 +1,4 @@
--- Active: 1706877955099@@127.0.0.1@3306@foodhub
+-- Active: 1706877955099@@127.0.0.1@3306
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -267,6 +267,7 @@ END;
 //
 DELIMITER ;
 SELECT adminBejelentkezes('admin@gmail.com', 'admin') AS 'adminBejelentkezes';
+
 
 
 -- getRecipeInfos procedure

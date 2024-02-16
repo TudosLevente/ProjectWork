@@ -5,7 +5,7 @@ function createIngredientInput(count) {
     inputDiv.className = 'ingredient';
     inputDiv.innerHTML = `
         <div class="ingredient_name">
-        <input type="text" name="ingredient[]" id="ingredientInput${count}" class="cukor"
+        <input type="text" name="ingredient[]" id="ingredientInput${count}" class="ingredient_input_style_name"
         onkeyup="searchFunction('ingredientInput${count}')" onfocus="showResults('ingredientsResults${count}')"
         placeholder="Cukor">
             <div id="ingredientsResults${count}" class="ingredientsResults">
@@ -14,10 +14,10 @@ function createIngredientInput(count) {
             </div>
         </div>
         <div class="ingredient_amount">
-            <input class="_1" name="quantity[]" type="number" value="1" />
+            <input class="ingredient_input_style_quantity" name="quantity[]" type="number" value="1" />
         </div>
         <div class="ingredient_measurement">
-            <input type="text" class="ev-kan-l" name="measurement[]" id="measurementInput${count}"
+            <input type="text" class="ingredient_input_style_measurement" name="measurement[]" id="measurementInput${count}"
             onkeyup="searchFunction('measurementInput${count}')" onfocus="showResults('measurementResults${count}')"
             placeholder="Evőkanál" />
             <div id="measurementResults${count}" class="measurementsResults">

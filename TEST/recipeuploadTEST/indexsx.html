@@ -133,10 +133,10 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
-                    onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
+                  <input type="text" name="ingredient[]" id="ingredientInput2" class="ingredient_input_style_name"
+                    onkeyup="searchFunction('ingredientInput2')" onfocus="showResults('ingredientsResults2')"
                     placeholder="Cukor">
-                  <div id="ingredientsResults1" class="ingredientsResults">
+                  <div id="ingredientsResults2" class="ingredientsResults">
                     <ul>
                     </ul>
                   </div>
@@ -146,9 +146,9 @@
                 </div>
                 <div class="ingredient_measurement">
                   <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
-                    id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
-                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
-                  <div id="measurementResults1" class="measurementsResults">
+                    id="measurementInput2" onkeyup="searchFunction('measurementInput2')"
+                    onfocus="showResults('measurementResults2')" placeholder="Evőkanál" />
+                  <div id="measurementResults2" class="measurementsResults">
                     <ul>
                       <li>Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
@@ -164,10 +164,10 @@
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
-                  <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
-                    onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
+                  <input type="text" name="ingredient[]" id="ingredientInput3" class="ingredient_input_style_name"
+                    onkeyup="searchFunction('ingredientInput3')" onfocus="showResults('ingredientsResults3')"
                     placeholder="Cukor">
-                  <div id="ingredientsResults1" class="ingredientsResults">
+                  <div id="ingredientsResults3" class="ingredientsResults">
                     <ul>
                     </ul>
                   </div>
@@ -177,9 +177,9 @@
                 </div>
                 <div class="ingredient_measurement">
                   <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
-                    id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
-                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
-                  <div id="measurementResults1" class="measurementsResults">
+                    id="measurementInput3" onkeyup="searchFunction('measurementInput3')"
+                    onfocus="showResults('measurementResults3')" placeholder="Evőkanál" />
+                  <div id="measurementResults3" class="measurementsResults">
                     <ul>
                       <li>Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
@@ -216,7 +216,7 @@
         <div id="instruction_inputs" class="instruction_div_container_inputs">
           <div class="steps">
             <div class="instruction">
-              <div class="instruction_title">I. Lépés</div>
+              <div id="instruction_title" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput1"
@@ -229,7 +229,7 @@
           </div>
           <div class="steps">
             <div class="instruction">
-              <div class="instruction_title">II. Lépés</div>
+              <div id="instruction_title" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput2"
@@ -242,7 +242,7 @@
           </div>
           <div class="steps">
             <div class="instruction">
-              <div class="instruction_title">III. Lépés</div>
+              <div id="instruction_title" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput3"
@@ -253,16 +253,16 @@
               <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
             </button>
           </div>
-          <button class="add_element_button">
-            <div class="add_element_button_text">Lépés hozzáadása</div>
-            <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="">
-          </button>
         </div>
+        <button id="add_instruction" class="add_element_button">
+          <div class="add_element_button_text">Lépés hozzáadása</div>
+          <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="">
+        </button>
         <div class="divider_line"></div>
       </div>
       <div class="preparation_div_container">
         <div class="preparation_div_container_text">Elkészítési idő:</div>
-        <div class="preparation_div">
+        <div id="preparation_inputs" class="preparation_div">
           <div class="preparation_div_row">
             <select class="preparation_div_row_type">
               <option selected>Előkészület</option>
@@ -278,14 +278,17 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput1" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option selected>perc</option>
-              <option>óra</option>
-              <option>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc" selected>perc</option>
+              <option value="óra">óra</option>
+              <option value="nap">nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+            <button class="torles_gomb">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+            </button>
           </div>
           <div class="preparation_div_row">
             <select class="preparation_div_row_type">
@@ -302,14 +305,17 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput2" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option>perc</option>
-              <option selected>óra</option>
-              <option>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc">perc</option>
+              <option value="óra" selected>óra</option>
+              <option value="nap">nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+            <button class="torles_gomb">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+            </button>
           </div>
           <div class="preparation_div_row">
             <select class="preparation_div_row_type">
@@ -325,21 +331,24 @@
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
             <div class="preparation_div_row_type_small">
-              <input class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+              <input id="prepTimeInput3" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
             </div>
-            <select class="preparation_div_row_type">
-              <option>perc</option>
-              <option>óra</option>
-              <option selected>nap</option>
+            <select id="selected_time" class="preparation_div_row_type">
+              <option value="perc">perc</option>
+              <option value="óra">óra</option>
+              <option value="nap" selected>nap</option>
             </select>
             <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+            <button class="torles_gomb">
+              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+            </button>
           </div>
         </div>
         <div class="overalltime_div_container">
           <div class="overalltime_div_container_text">Összesített idő: </div>
-          <div class="overalltime_div_container_time">0</div>
+          <div id="sum_time" class="overalltime_div_container_time">0 perc</div>
         </div>
-        <button class="add_element_button">
+        <button id="add_prep_time" class="add_element_button">
           <div class="add_element_button_text">Idő hozzáadása</div>
           <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
         </button>
@@ -383,7 +392,7 @@
           <div class="difficulty_div_select_div">
             <select class="difficulty_div_select" name="" id="">
               <option selected value="konnyu">Könnyű elkészíteni</option>
-              <option value="kozepes">Közepesen nehés elkészíteni</option>
+              <option value="kozepes">Közepesen nehéz elkészíteni</option>
               <option value="nehez">Nehéz elkészíteni</option>
             </select>
             <img src="./recipiesuploadPage/nagylefelenyil.svg" class="chevrondown_2">
@@ -452,6 +461,9 @@
   <script src="./ingredients/manageIngredient.js"></script>
   <script src="./ingredients/chooseIngredient.js"></script>
   <script src="./instructions/manageInstructions.js"></script>
+  <script src="./instructions/nameChangeInstruction.js"></script>
+  <script src="./preparation/managePreparation.js"></script>
+  <script src="./preparation/changePrepTime.js"></script>
   <script src="uploadRecipe.js"></script>
   <script src="displayImage.js"></script>
 

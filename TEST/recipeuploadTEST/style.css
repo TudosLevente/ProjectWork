@@ -859,7 +859,7 @@ body {
   flex-shrink: 0;
   position: relative;
   height: auto;
-  width: auto;
+  width: 700px;
 }
 
 .overalltime_div_container_text {
@@ -880,7 +880,7 @@ body {
   font-weight: 400;
   position: relative;
   height: 50px;
-  width: 40px;
+  width: 250px;
 }
 
 .serving_div_container {

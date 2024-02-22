@@ -55,3 +55,26 @@ async function pickIngredient() {
         });
     });
 }
+
+async function pickMeasurement() {
+    const inputs = document.querySelectorAll('.measurement_inputs input[type="text"]');
+
+    inputs.forEach(function (input) {
+        input.addEventListener('keyup', function () {
+            var inputId = this.id;
+            searchFunction(inputId);
+        });
+
+        input.addEventListener('focus', function () {
+            var resultsId = this.nextElementSibling.id;
+            showResults(resultsId);
+        });
+
+        var lis = input.nextElementSibling.querySelectorAll('li');
+        lis.forEach(function (li) {
+            li.addEventListener('click', function () {
+                handleListItemClick(input, this.textContent.trim());
+            });
+        });
+    });
+}

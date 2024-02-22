@@ -4,7 +4,7 @@ function createPreparationInput(count) {
     const inputDiv = document.createElement('div');
     inputDiv.className = 'preparation_div_row';
     inputDiv.innerHTML = `
-        <select class="preparation_div_row_type">
+        <select id="prep_input${count}" class="preparation_div_row_type">
             <option>Előkészület</option>
             <option>Főzés</option>
             <option selected>Sütés</option>
@@ -46,9 +46,9 @@ preparationContainer.addEventListener('click', function (event) {
 });
 
 document.getElementById('add_prep_time').addEventListener('click', function () {
-    const numberOfElemets = document.querySelectorAll('div [class="preparation_div_row"]').length + 1;
+    const numberOfElements = document.querySelectorAll('div [class="preparation_div_row"]').length + 1;
 
-    createPreparationInput(numberOfElemets);
+    createPreparationInput(numberOfElements);
 
     refreshTime();
 });

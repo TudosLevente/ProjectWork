@@ -15,6 +15,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .div_body,
@@ -28,8 +29,8 @@ body {
   align-items: flex-start;
   justify-content: center;
   position: relative;
-  width: 853px;
-  height: 330px;
+  width: auto;
+  height: auto;
   align-self: center;
   flex-wrap: nowrap;
 }
@@ -53,7 +54,7 @@ body {
   position: relative;
 }
 
-.menu_div_profiledata {
+.menu_div_data {
   background: #ff9900;
   border-radius: 10px 10px 0px 0px;
   border-style: solid;
@@ -63,7 +64,6 @@ body {
   width: 119px;
   height: 40px;
   position: relative;
-  overflow: hidden;
 }
 
 .menu_div_profiledata_text {
@@ -112,50 +112,41 @@ body {
 
 .menu_div_favorites_text {
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-family: 'Inter-Regular', sans-serif;
   font-size: 25px;
   font-weight: 400;
   position: relative;
-  left: 15px;
-  top: 5px;
 }
 
-.data_div {
-  background: rgba(255, 153, 0, 0.90);
+.my_data_div {
+  background: rgba(255, 153, 0, 0.95);
   border-radius: 15px;
   border-style: solid;
   border-color: #000000;
   border-width: 3px;
-  width: 100%;
-  height: 100%;
+  width: 900px;
+  height: 600px;
   position: relative;
   overflow: hidden;
-  /* left: 50%;
-  top: 50%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.data_div_inputs {
+.my_data_div_inputs {
   display: flex;
-  align-items: flex-end;
-  flex-direction: row;
+  align-items: flex-start;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: space-between;
+  gap: 70px;
+  width: 500px;
 }
 
-.data_div_left {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  left: 34px;
-  top: 18px;
-}
-
-.data_div_inputs_layout {
+.my_data_div_inputs_layout {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -165,7 +156,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_username {
+.my_data_div_inputs_username {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -175,7 +166,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_username_title {
+.my_data_div_inputs_username_title {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -185,7 +176,7 @@ body {
   width: 182px;
 }
 
-.data_div_inputs_username_container {
+.my_data_div_inputs_username_container {
   border-radius: 15px;
   border-style: solid;
   border-color: #000000;
@@ -197,7 +188,7 @@ body {
   overflow: hidden;
 }
 
-.data_div_inputs_username_container_input {
+.my_data_div_inputs_username_container_input {
   color: #000000;
   text-align: center;
   font-family: 'Inter-Regular', sans-serif;
@@ -210,10 +201,26 @@ body {
   height: 35px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
-.data_div_inputs_email {
+.my_data_div_inputs_username_container_input::placeholder,
+.my_data_div_inputs_email_container_input::placeholder,
+.my_data_div_inputs_password_container_input::placeholder {
+  color: white;
+}
+
+.input_edit_icon {
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.my_data_div_inputs_email {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -223,7 +230,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_email_title {
+.my_data_div_inputs_email_title {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -232,7 +239,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_email_container {
+.my_data_div_inputs_email_container {
   border-radius: 15px;
   border-style: solid;
   border-color: #000000;
@@ -244,7 +251,7 @@ body {
   overflow: hidden;
 }
 
-.data_div_inputs_email_container_input {
+.my_data_div_inputs_email_container_input {
   color: #000000;
   text-align: center;
   font-family: 'Inter-Regular', sans-serif;
@@ -253,14 +260,17 @@ body {
   position: relative;
   left: 0px;
   top: 0px;
-  width: 283px;
-  height: 35px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
-.data_div_inputs_password {
+.my_data_div_inputs_password {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -270,7 +280,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_password_title {
+.my_data_div_inputs_password_title {
   color: #000000;
   text-align: left;
   font-family: 'Inter-Regular', sans-serif;
@@ -279,7 +289,7 @@ body {
   position: relative;
 }
 
-.data_div_inputs_password_container {
+.my_data_div_inputs_password_container {
   border-radius: 15px;
   border-style: solid;
   border-color: #000000;
@@ -291,7 +301,7 @@ body {
   overflow: hidden;
 }
 
-.data_div_inputs_password_container_input {
+.my_data_div_inputs_password_container_input {
   color: #000000;
   text-align: center;
   font-family: 'Inter-Regular', sans-serif;
@@ -304,36 +314,167 @@ body {
   height: 35px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
 }
 
-.data_div_button {
+.my_data_div_button {
   background: #bb5a00;
   border-radius: 15px;
-  flex-shrink: 0;
   width: 172px;
   height: 43px;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  appearance: none;
+  border: none;
+  outline: none;
 }
 
-.data_div_button_text {
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  animation-duration: 0.3s;
+}
+
+button:active {
+  animation-name: buttonClick;
+}
+
+button:focus,
+button:active {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_text {
   color: #ffffff;
-  text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
   font-size: 22px;
   font-weight: 400;
   position: relative;
-  left: 31px;
-  top: 8px;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.my_data_div_button_layout {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  width: 172px;
+  height: 43px;
+}
+
+.my_data_div_button_layout_save_button {
+  background-color: #bb5a00;
+  border-radius: 15px;
+  flex-shrink: 0;
+  width: 142px;
+  height: 41px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_layout_save_button_title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.my_data_div_button_layout_cancel_button {
+  background-color: #808080;
+  border-radius: 15px;
+  flex-shrink: 0;
+  width: 142px;
+  height: 41px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_layout_cancel_button_title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
 }
 
 .image-8 {
   width: 291px;
   height: 362px;
-  position: absolute;
-  left: 789px;
-  top: 282px;
+  position: relative;
   object-fit: cover;
 }
 
@@ -346,7 +487,7 @@ body {
   font-family: 'Inter-SemiBold', sans-serif;
   font-size: 50px;
   font-weight: 600;
-  position: absolute;
+  position: relative;
   left: calc(50% - 75px);
   top: 140px;
   display: flex;
@@ -430,4 +571,270 @@ body {
       rgba(238, 163, 37, 1) 0%,
       rgba(255, 96, 0, 1) 51.5625%,
       rgba(255, 0, 0, 1) 100%);
+}
+
+.my_recipes_div {
+  background: rgba(255, 153, 0, 0.90);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.my_recipes_div_row {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.my_recipes_div_row_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 213px;
+  height: 302px;
+  position: relative;
+}
+
+.my_recipes_div_row_container_img_div {
+  background: #623500;
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_recipes_div_row_container_img {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 5.5px;
+  top: 5px;
+  object-fit: cover;
+}
+
+.my_recipes_div_row_container_title {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_recipes_div_row_container_button_div {
+  background: #ae5400;
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 150px;
+  height: 59px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_recipes_div_row_container_button_text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - 58.5px);
+  top: calc(50% - 11px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.my_favorites_div {
+  background: rgba(255, 153, 0, 0.90);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.my_favorites_div_row {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.my_favorites_div_row_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 213px;
+  height: 302px;
+  position: relative;
+}
+
+.my_favorites_div_row_container_img_div {
+  background: #623500;
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_favorites_div_row_container_img {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 5.5px;
+  top: 5px;
+  object-fit: cover;
+}
+
+.my_favorites_div_row_container_title {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_favorites_div_row_container_button_div {
+  background: #ae5400;
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 150px;
+  height: 59px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_favorites_div_row_container_button_text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - 58.5px);
+  top: calc(50% - 11px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_screen_blur {
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  zoom: 50%;
+}
+
+.loading_screen_body_div {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  zoom: 50%;
+  position: absolute;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.loading_screen_pizza {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.loading_screen_slice {
+  width: 460px;
+  height: 420px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 50%;
+}
+
+.loading_screen_slice:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(30deg) translate(150px) rotate(95deg);
+}
+
+.loading_screen_slice:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg) translate(150px) rotate(95deg);
+}
+
+.loading_screen_slice:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(150deg) translate(150px) rotate(95deg);
+}
+
+.loading_screen_slice:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(210deg) translate(150px) rotate(95deg);
+}
+
+.loading_screen_slice:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(270deg) translate(150px) rotate(95deg);
+}
+
+.loading_screen_slice:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(330deg) translate(150px) rotate(95deg);
+}
+
+.fadeOut {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.main_div {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
 }

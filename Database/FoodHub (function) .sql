@@ -1,4 +1,4 @@
--- Active: 1707314970079@@127.0.0.1@3306@foodhub
+-- Active: 1706877955099@@127.0.0.1@3306
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -45,7 +45,7 @@ BEGIN
 END;
 //
 DELIMITER ;
-*296A11A90EEC6D320FC8430F0038498FC514B8B2:3019d65f4204bc3b15847793be1ac6dc
+
 -- Ingredients table
 CREATE TABLE IF NOT EXISTS Ingredients (
     Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -133,8 +133,8 @@ VALUES (1,1,1);
 INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
 VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
 
-DELIMITER ;
 
+-- generateToken function
 DROP FUNCTION IF EXISTS generateToken;
 DELIMITER //
 CREATE FUNCTION generateToken() RETURNS VARCHAR(36)
@@ -179,25 +179,15 @@ END;
 DELIMITER ;*/
 DROP FUNCTION IF EXISTS felhBejelentkezes;
 DELIMITER //
-
 CREATE FUNCTION felhBejelentkezes(mail VARCHAR(50), jlsz VARCHAR(50))
-RETURNS BOOLEAN
+RETURNS INT
 BEGIN
-    DECLARE user_id_value INT;
-    DECLARE email_value VARCHAR(60);
-    DECLARE hashed_password VARCHAR(255);
-    DECLARE salt_value VARCHAR(255);
-    SELECT User_ID, Password, Email INTO user_id_value, hashed_password, email_value
-    FROM Users WHERE Email = mail;
-    IF hashed_password IS NOT NULL AND PASSWORD(CONCAT(jlsz, SUBSTRING_INDEX(hashed_password, ':', -1))) = SUBSTRING_INDEX(hashed_password, ':', 1) THEN
-    RETURN TRUE;
-    ELSE
-    RETURN FALSE;
-    END IF;
-END//
-
+    DECLARE user_id INT;
+    SELECT User_ID INTO user_id FROM Users WHERE Email = mail AND Password = jlsz;
+    RETURN user_id;
+END;
+//
 DELIMITER ;
-
 SELECT felhBejelentkezes('example@example.com', 'password');
 
 
@@ -211,11 +201,11 @@ END;
 DELIMITER ;*/
 DROP FUNCTION IF EXISTS felhTokenFrissites;
 DELIMITER //
-CREATE FUNCTION felhTokenFrissites(email TEXT, token TEXT) RETURNS TEXT
+CREATE FUNCTION felhTokenFrissites(id INT, token TEXT) RETURNS TEXT
 BEGIN
     DECLARE info TEXT;
-    UPDATE Users SET Token = token WHERE Users.`Email` = email;
-    SET info = CONCAT('Token for Email ', email, ' has been updated to: ', token);
+    UPDATE Users SET Token = token WHERE User_ID = id;
+    SET info = CONCAT('Token for User_ID ', id, ' has been updated to: ', token);
     RETURN info;
 END;
 //
@@ -277,6 +267,7 @@ END;
 //
 DELIMITER ;
 SELECT adminBejelentkezes('admin@gmail.com', 'admin') AS 'adminBejelentkezes';
+
 
 
 -- getRecipeInfos procedure

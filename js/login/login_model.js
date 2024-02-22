@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const config = require("../App/config");
 const jwt = require("jsonwebtoken");
+var userLoggedIn = false;
 
 function adminLogin(req, res) {
 
@@ -17,7 +18,7 @@ function adminLogin(req, res) {
             console.log('sikeres csatlakozás');
         })
 
-        const sql = 'call adminBejelentkezes(?,?)';
+        const sql = 'CALL adminBejelentkezes(?,?)';
 
         con.query(sql, [email, password], (err, result) => {
             console.log(result);
@@ -32,7 +33,7 @@ function adminLogin(req, res) {
                     });
 
                 let user = result[0][0];
-                con.query('call felhTokenFrissites(?,?)', [result[0][0].felhasznalo_id, token], (err, result, fields) => {
+                con.query('SELECT felhTokenFrissites(?,?)', [result[0][0].felhasznalo_id, token], (err, result, fields) => {
                     if (err) throw err;
                     user.token = token;
                     res.send(result);
@@ -52,7 +53,6 @@ function login(req, res) {
 
     try {
         const { email, password } = req.body;
-        console.log(req.body);
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
@@ -62,32 +62,60 @@ function login(req, res) {
             console.log('sikeres csatlakozás');
         })
 
-        const sql = 'call felhBejelentkezes(?,?)';
-
+        const sql = 'SELECT felhBejelentkezes(?,?)';
         con.query(sql, [email, password], (err, result) => {
-            console.log(result);
             if (err) throw err;
-            if (result[0].length > 0) {
+            if (result.length > 0 && Object.values(result[0])[0] > 0) {
+
+                const functionResult = result[0];
+                const functionCall = Object.keys(functionResult)[0];
+                const matches = functionCall.match(/'([^']+)'/g);
+
                 const token = jwt.sign({
-                    user_id: result[0][0].user_id,
-                    email: result[0][0].email
+                    email: matches[0].replace(/'/g, '')
                 }, config.TokenKey,
                     {
                         expiresIn: "2h",
                     });
 
-                let user = result[0][0];
-                con.query('call felhTokenFrissites(?,?)', [result[0][0].user_id, token], (err, result, fields) => {
+                const getUserDataQuery = 'SELECT User_ID, Username, Email FROM Users WHERE Email = (?)';
+
+                var loggedInUserData = {
+                    logged_user_id: null,
+                    logged_username: "",
+                    logged_email: ""
+                };
+
+                con.query(getUserDataQuery, [matches[0].replace(/'/g, '')], (err, result, fields) => {
                     if (err) throw err;
-                    user.token = token;
-                    res.send(result);
+                    console.log(result);
+                    console.log(result[0].User_ID, result[0].Username, result[0].Email);
+
+                    loggedInUserData.logged_user_id = result[0].User_ID;
+                    loggedInUserData.logged_username = result[0].Username;
+                    loggedInUserData.logged_email = result[0].Email;
+
+                    con.query('SELECT felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
+                        if (err) throw err;
+
+                        userLoggedIn = true;
+                        var resData = {
+                            result: result,
+                            loggedIn: userLoggedIn,
+                            user_id: loggedInUserData.logged_user_id,
+                            username: loggedInUserData.logged_username,
+                            email: loggedInUserData.logged_email
+                        };
+                        res.status(200).send(resData);
+                    })
                 })
             }
             else {
-                res.status(401).send("nem engedélyezett");
+                res.status(401).send("Nem engedélyezett");
             }
-        })
-    } catch (error) {
+        });
+    }
+    catch (error) {
 
     }
 }

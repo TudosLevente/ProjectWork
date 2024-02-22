@@ -1,6 +1,3 @@
-
-
-
 function toggleDataDiv() {
     try {
         try {
@@ -20,7 +17,6 @@ function toggleDataDiv() {
         }
 
         datadiv.style.display = 'flex';
-        loadingscreen.style.display = 'flex';
 
         if (datadiv.style.display == 'flex') {
             recipesdiv.style.display = 'none';
@@ -30,10 +26,8 @@ function toggleDataDiv() {
         datadivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
         recipesdivbutton.style.backgroundColor = '#ffd392';
         favoritesdivbutton.style.backgroundColor = '#ffd392';
-        
-        setTimeout(() => {
-            loadingscreen.style.display = 'none';
-        }, 500);
+
+
     } catch (error) {
         console.error("Error:", error);
     }
@@ -58,7 +52,6 @@ function toggleRecipesDiv() {
         }
 
         recipesdiv.style.display = 'flex';
-        loadingscreen.style.display = 'flex';
 
         if (recipesdiv.style.display = 'flex') {
             datadiv.style.display = 'none';
@@ -68,9 +61,7 @@ function toggleRecipesDiv() {
         recipesdivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
         favoritesdivbutton.style.backgroundColor = '#ffd392';
 
-        setTimeout(() => {
-            loadingscreen.style.display = 'none';
-        }, 500);
+
     } catch (error) {
         console.error("Error:", error);
     }
@@ -93,10 +84,8 @@ function toggFavoritesDiv() {
             console.error;
             console.log(e);
         }
-        
+
         favoritesdiv.style.display = 'flex';
-        loadingscreen.style.display = 'flex';
-        
 
         if (favoritesdiv.style.display = 'flex') {
             datadiv.style.display = 'none';
@@ -106,9 +95,7 @@ function toggFavoritesDiv() {
         recipesdivbutton.style.backgroundColor = '#ffd392';
         favoritesdivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
 
-        setTimeout(() => {
-            loadingscreen.style.display = 'none';
-        }, 500);
+
     } catch (error) {
         console.error("Error:", error);
     }

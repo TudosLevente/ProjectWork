@@ -10,18 +10,30 @@
     <script src="./index.js"></script>
     <link rel="stylesheet" href="./style.css">
 
-    <script src="./menubuttons.js"></script>
+    <script src="./navbar_dropdown.js"></script>
 </head>
 
 <body>
+    <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+        <div class="loading_screen_body_div">
+            <div class="loading_screen_pizza">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+            </div>
+        </div>
+    </div>
     <div class="div_body container-fluid">
-        <div class="profil_text">Profil</div>
+        <div class="profil_text"> Profil </div>
         <div class="row justify-content-center align-items-center" style="height: 100%;">
             <div class="data_div_center_row col-12">
                 <div class="data_div_container">
                     <div class="menu_div">
                         <button type="button" class="menu_div_data" id="DataDivButton" onclick="toggleDataDiv()">
-                            <span class="menu_div_profiledata_text">Adatok</span>
+                            <span class="menu_div_profiledata_text">Adataim</span>
                         </button>
                         <button type="button" class="menu_div_recipes" id="RecipesDivButton"
                             onclick="toggleRecipesDiv()">
@@ -34,7 +46,7 @@
                         </button>
                     </div>
                     <div class="main_div">
-                        <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+                        <!-- <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
                             <div class="loading_screen_body_div">   
                                 <div class="loading_screen_pizza">
                                     <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
@@ -45,7 +57,7 @@
                                     <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="my_data_div" style="display: flex;" id="my_data_div">
                             <div class="my_data_div_inputs">
                                 <div class="my_data_div_inputs_layout">
@@ -206,7 +218,19 @@
                 <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
                     <img src="./profilePage/user.svg" style="width: 7%; margin-right: 5px;">
                     <div class="login_div">
-                        <a href="../html/profilePage.html" class="navbar_profil_text">Profil</a>
+                        <div class="dropdown">
+                            <a href="#" onclick="showAdataim()" class="navbar_profil_text">Profil</a>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="showAdataim()">Adataim<img src="./profilePage/gear.svg"
+                                        class="gear_icon"></a>  
+                                <a href="#" onclick="showRecepjeim()">Recepjeim<img src="./profilePage/recipebook.svg"
+                                    class="gear_icon"></a>
+                                <a href="#" onclick="showKedvenceim()">Kedvenceim<img src="./profilePage/heart.svg"
+                                    class="gear_icon"></a>
+                                <a href="#" onclick="logout()">Kijelentkezés<img src="./profilePage/logout.svg"
+                                        class="logout_icon"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,9 +240,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="./loadingscreen.js"></script>
     <script src="./profilemodifying.js"></script>
-
+    <script src="./menubuttons.js"></script>
+    <script src="./loadingscreen.js"></script>
 </body>
 
 </html>

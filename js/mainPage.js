@@ -34,28 +34,46 @@ function loadRecipes() {
     }
 }
 
+var loggedInUserData = {
+    loggedIn: false,
+    user_id: null,
+    username: "",
+    email: "",
+};
+
+// getData('/')
+//     .then((response) => {
+//         console.log(response);
+//         response.then((data) => {
+
+//             console.log(data);
+//             console.log(data.loggedIn);
+//             loggedInUserData.loggedIn = data.loggedIn;
+//         })
+//     })
+//     .catch((error) => {
+//         console.error("Error occurred:", error);
+//     });
+
 document.addEventListener("DOMContentLoaded", function () {
+    if (loggedInUserData.loggedIn) {
+        getData('/')
+            .then((response) => {
+                console.log(response);
+                response.json().then((data) => {
+                    console.log(data);
+                    console.log(data.loggedIn);
+                    console.log(data.user_id);
+                    console.log(data.username);
+                    console.log(data.email);
+                })
+            })
+            .catch((error) => {
+                console.error("Error occurred:", error);
+            });
+    }
     loadRecipes();
 });
-
-// function loadRecipes() {
-//     console.log("igen lefut");
-//     for (var i = 1; i < 5; i++) {
-//         for (var j = 1; j < 4; j++) {
-//             var id = generateNumber();
-
-//             getData(`http://localhost:8000/api/recipe/${id}`).then((recipeData) => {
-//                 console.log(recipeData);
-
-//                 if (recipeData) {
-//                     document.getElementById(`r${i}c${j}`).src = recipeData.Picture_data;
-//                 }
-//             }).catch((error) => {
-//                 console.error("Hiba történt:", error);
-//             });
-//         }
-//     }
-// }
 
 function goToRecipe() {
 

@@ -119,11 +119,24 @@
                     onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
                   <div id="measurementResults1" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li>
+                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
+                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Teáskanál (tsp)</li>
+                      <li>Evőkanál (tbsp)</li>
+                      <li>Fluidumuncia (fl oz)</li>
+                      <li>Csésze (cup)</li>
+                      <li>Pint (pt)</li>
+                      <li>Quartz (qt)</li>
+                      <li>Gallon (gal)</li>
+                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Milliliter (ml)</li>
+                      <li>Centiliter (cl)</li>
+                      <li>Deciliter (dl)</li>
+                      <li>Liter (l)</li>
                     </ul>
                   </div>
                 </div>
@@ -150,11 +163,24 @@
                     onfocus="showResults('measurementResults2')" placeholder="Evőkanál" />
                   <div id="measurementResults2" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li>
+                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
+                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Teáskanál (tsp)</li>
+                      <li>Evőkanál (tbsp)</li>
+                      <li>Fluidumuncia (fl oz)</li>
+                      <li>Csésze (cup)</li>
+                      <li>Pint (pt)</li>
+                      <li>Quartz (qt)</li>
+                      <li>Gallon (gal)</li>
+                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Milliliter (ml)</li>
+                      <li>Centiliter (cl)</li>
+                      <li>Deciliter (dl)</li>
+                      <li>Liter (l)</li>
                     </ul>
                   </div>
                 </div>
@@ -181,11 +207,24 @@
                     onfocus="showResults('measurementResults3')" placeholder="Evőkanál" />
                   <div id="measurementResults3" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li>
+                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
+                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Teáskanál (tsp)</li>
+                      <li>Evőkanál (tbsp)</li>
+                      <li>Fluidumuncia (fl oz)</li>
+                      <li>Csésze (cup)</li>
+                      <li>Pint (pt)</li>
+                      <li>Quartz (qt)</li>
+                      <li>Gallon (gal)</li>
+                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li>Milliliter (ml)</li>
+                      <li>Centiliter (cl)</li>
+                      <li>Deciliter (dl)</li>
+                      <li>Liter (l)</li>
                     </ul>
                   </div>
                 </div>
@@ -216,7 +255,7 @@
         <div id="instruction_inputs" class="instruction_div_container_inputs">
           <div class="steps">
             <div class="instruction">
-              <div id="instruction_title" class="instruction_title"></div>
+              <div id="instruction_title1" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput1"
@@ -229,7 +268,7 @@
           </div>
           <div class="steps">
             <div class="instruction">
-              <div id="instruction_title" class="instruction_title"></div>
+              <div id="instruction_title2" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput2"
@@ -242,7 +281,7 @@
           </div>
           <div class="steps">
             <div class="instruction">
-              <div id="instruction_title" class="instruction_title"></div>
+              <div id="instruction_title3" class="instruction_title"></div>
               <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
                 <input class="instruction_input" id="instructionInput3"
@@ -262,96 +301,101 @@
       </div>
       <div class="preparation_div_container">
         <div class="preparation_div_container_text">Elkészítési idő:</div>
-        <div id="preparation_inputs" class="preparation_div">
-          <div class="preparation_div_row">
-            <select class="preparation_div_row_type">
-              <option selected>Előkészület</option>
-              <option>Főzés</option>
-              <option>Sütés</option>
-              <option>Lehűtés</option>
-              <option>Fagyasztás</option>
-              <option>Marinálás</option>
-              <option>Pihentetés</option>
-              <option>Keltés</option>
-              <option>Áztatás</option>
-              <option>Pihentetés</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
-            <div class="preparation_div_row_type_small">
-              <input id="prepTimeInput1" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+        <div class="preparation_input_div">
+          <div id="preparation_inputs" class="preparation_div">
+            <div class="preparation_div_row">
+              <select id="prep_input1" class="preparation_div_row_type">
+                <option selected>Előkészület</option>
+                <option>Főzés</option>
+                <option>Sütés</option>
+                <option>Lehűtés</option>
+                <option>Fagyasztás</option>
+                <option>Marinálás</option>
+                <option>Pihentetés</option>
+                <option>Keltés</option>
+                <option>Áztatás</option>
+                <option>Pihentetés</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <div class="preparation_div_row_type_small">
+                <input id="prepTimeInput1" class="preparation_div_row_type_small_input" type="number" min="0"
+                  value="0" />
+              </div>
+              <select id="selected_time1" class="preparation_div_row_type">
+                <option value="perc" selected>perc</option>
+                <option value="óra">óra</option>
+                <option value="nap">nap</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <button class="torles_gomb">
+                <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+              </button>
             </div>
-            <select id="selected_time" class="preparation_div_row_type">
-              <option value="perc" selected>perc</option>
-              <option value="óra">óra</option>
-              <option value="nap">nap</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
-            <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
-            </button>
-          </div>
-          <div class="preparation_div_row">
-            <select class="preparation_div_row_type">
-              <option>Előkészület</option>
-              <option>Főzés</option>
-              <option selected>Sütés</option>
-              <option>Lehűtés</option>
-              <option>Fagyasztás</option>
-              <option>Marinálás</option>
-              <option>Pihentetés</option>
-              <option>Keltés</option>
-              <option>Áztatás</option>
-              <option>Pihentetés</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
-            <div class="preparation_div_row_type_small">
-              <input id="prepTimeInput2" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+            <div class="preparation_div_row">
+              <select id="prep_input2" class="preparation_div_row_type">
+                <option>Előkészület</option>
+                <option>Főzés</option>
+                <option selected>Sütés</option>
+                <option>Lehűtés</option>
+                <option>Fagyasztás</option>
+                <option>Marinálás</option>
+                <option>Pihentetés</option>
+                <option>Keltés</option>
+                <option>Áztatás</option>
+                <option>Pihentetés</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <div class="preparation_div_row_type_small">
+                <input id="prepTimeInput2" class="preparation_div_row_type_small_input" type="number" min="0"
+                  value="0" />
+              </div>
+              <select id="selected_time2" class="preparation_div_row_type">
+                <option value="perc">perc</option>
+                <option value="óra" selected>óra</option>
+                <option value="nap">nap</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <button class="torles_gomb">
+                <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+              </button>
             </div>
-            <select id="selected_time" class="preparation_div_row_type">
-              <option value="perc">perc</option>
-              <option value="óra" selected>óra</option>
-              <option value="nap">nap</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
-            <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
-            </button>
-          </div>
-          <div class="preparation_div_row">
-            <select class="preparation_div_row_type">
-              <option>Előkészület</option>
-              <option>Főzés</option>
-              <option>Sütés</option>
-              <option>Lehűtés</option>
-              <option>Fagyasztás</option>
-              <option>Marinálás</option>
-              <option selected>Pihentetés</option>
-              <option>Keltés</option>
-              <option>Áztatás</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
-            <div class="preparation_div_row_type_small">
-              <input id="prepTimeInput3" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
+            <div class="preparation_div_row">
+              <select id="prep_input3" class="preparation_div_row_type">
+                <option>Előkészület</option>
+                <option>Főzés</option>
+                <option>Sütés</option>
+                <option>Lehűtés</option>
+                <option>Fagyasztás</option>
+                <option>Marinálás</option>
+                <option selected>Pihentetés</option>
+                <option>Keltés</option>
+                <option>Áztatás</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <div class="preparation_div_row_type_small">
+                <input id="prepTimeInput3" class="preparation_div_row_type_small_input" type="number" min="0"
+                  value="0" />
+              </div>
+              <select id="selected_time3" class="preparation_div_row_type">
+                <option value="perc">perc</option>
+                <option value="óra">óra</option>
+                <option value="nap" selected>nap</option>
+              </select>
+              <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <button class="torles_gomb">
+                <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+              </button>
             </div>
-            <select id="selected_time" class="preparation_div_row_type">
-              <option value="perc">perc</option>
-              <option value="óra">óra</option>
-              <option value="nap" selected>nap</option>
-            </select>
-            <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
-            <button class="torles_gomb">
-              <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
-            </button>
           </div>
+          <div class="overalltime_div_container">
+            <div class="overalltime_div_container_text">Összesített idő: </div>
+            <div id="sum_time" class="overalltime_div_container_time">0 perc</div>
+          </div>
+          <button id="add_prep_time" class="add_element_button">
+            <div class="add_element_button_text">Idő hozzáadása</div>
+            <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
+          </button>
         </div>
-        <div class="overalltime_div_container">
-          <div class="overalltime_div_container_text">Összesített idő: </div>
-          <div id="sum_time" class="overalltime_div_container_time">0 perc</div>
-        </div>
-        <button id="add_prep_time" class="add_element_button">
-          <div class="add_element_button_text">Idő hozzáadása</div>
-          <img src="./recipiesuploadPage/plussz-icon.svg" class="plus-square">
-        </button>
       </div>
       <div class="divider_line"></div>
       <div class="serving_div_container">
@@ -390,7 +434,7 @@
         <div class="difficulty_div">
           <div class="difficulty_div_text">Nehézség:</div>
           <div class="difficulty_div_select_div">
-            <select class="difficulty_div_select" name="" id="">
+            <select class="difficulty_div_select" id="difficulty">
               <option selected value="konnyu">Könnyű elkészíteni</option>
               <option value="kozepes">Közepesen nehéz elkészíteni</option>
               <option value="nehez">Nehéz elkészíteni</option>
@@ -403,7 +447,7 @@
       <div class="category_div_container">
         <div class="category_div_container_text">Kategória:</div>
         <div class="category_select_div">
-          <select class="category_select_style">
+          <select class="category_select_style" id="food_category">
             <option value="Burgerek">Burgerek</option>
             <option selected value="Szendvicsek_Wrappok">Szendvicsek és Wrappok</option>
             <option value="Pizzak">Pizzák</option>
@@ -432,7 +476,7 @@
         <button class="button_div_nobutton">
           <span class="button_div_nobutton_span">Mégse</span>
         </button>
-        <button class="button_div_upload">
+        <button type="button" onclick="uploadRecipe()" class="button_div_upload">
           <span class="button_div_upload_span">
             Recept
             <br />
@@ -466,7 +510,6 @@
   <script src="./preparation/changePrepTime.js"></script>
   <script src="uploadRecipe.js"></script>
   <script src="displayImage.js"></script>
-
 </body>
 
 </html>

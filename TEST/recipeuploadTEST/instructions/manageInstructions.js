@@ -5,7 +5,7 @@ function createInstructionInput(count) {
     inputDiv.className = 'steps';
     inputDiv.innerHTML = `
         <div class="instruction">
-            <div id="instruction_title" class="instruction_title"></div>
+            <div id="instruction_title${count}" class="instruction_title"></div>
             <div class="instruction_container">
                 <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
                 <input class="instruction_input"  id="instructionInput${count}" placeholder="Írja le mi a következő lépés receptjének elkészítésében." />

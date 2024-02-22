@@ -22,11 +22,24 @@ function createIngredientInput(count) {
             placeholder="Evőkanál" />
             <div id="measurementResults${count}" class="measurementsResults">
                 <ul>
-                    <li>Tömegmértékegységek:</li>
+                    <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
                     <li>Milligramm (mg)</li>
                     <li>Gramm (g)</li>
                     <li>Dekagramm (dkg)</li>
                     <li>Kilogramm (kg)</li>
+                    <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
+                    <li>Teáskanál (tsp)</li>
+                    <li>Evőkanál (tbsp)</li>
+                    <li>Fluidumuncia (fl oz)</li>
+                    <li>Csésze (cup)</li>
+                    <li>Pint (pt)</li>
+                    <li>Quartz (qt)</li>
+                    <li>Gallon (gal)</li>
+                    <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                    <li>Milliliter (ml)</li>
+                    <li>Centiliter (cl)</li>
+                    <li>Deciliter (dl)</li>
+                    <li>Liter (l)</li>
                 </ul>
             </div>
         </div>

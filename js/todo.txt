@@ -1,0 +1,6 @@
+-a login__modelből elküldjük a felhasználó adatait, amit ott lekérünk egy query-vel, fhnév id meg
+ilyenek
+-a loginPage megkapja ezeket az adatokat és passzolja a getLoginInfo-ba (App.js-be)
+-App.js ugye ellenőrzi, hogy a felhasználó loggedIn-e és ha igen akkor továbbpasszolja a felhasználó
+adatait, meg azt is hogy loggedIn, mert akkor a főoldalon úgy tudjuk betölteni a html-t, hogy az
+maradjon, mondjuk fennt a bejelentkezés, vagy a profil legyen ott

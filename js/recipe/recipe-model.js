@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 const config = require("../App/config");
 const Recipe = require("./recipe");
+const fs = require('fs');
 
 function getRecipeInfos(req, res) {
     var con = mysql.createConnection(config.database);
@@ -16,19 +17,27 @@ function getRecipeInfos(req, res) {
 
 async function uploadRecipe(req, res) {
     const recipe = new Recipe(
-        null,
-        null,
+        null, //recept id, ami feltöltéskor adodik majd hozzá
+        null, //user id, az éppen bejelentkezett user-nek az id-je
         req.body.picture_data,
         req.body.title,
         req.body.description,
         req.body.instructions,
+        //---
+        req.body.ingredient_name,
+        req.body.ingredient_quantity,
+        req.body.ingredient_measurement,
+        req.body.time_prep_type,
+        req.body.time_quantity,
+        req.body.time_type,
+        //---
         req.body.serving,
         req.body.difficulty_level,
         req.body.food_category,
-        null
+        null //ez a feltöltési dátum ideje
     );
 
-    if (!(recipe.picture_data && recipe.title && recipe.description && recipe.instructions && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
+    if (!(recipe.picture_data && recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
@@ -40,24 +49,61 @@ async function uploadRecipe(req, res) {
 
     const sql = 'INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) Values (?,?,?,?,?,?,?)';
 
-    const picture_data = req.file.buffer; // Binary data of the uploaded image
+    const picture_data = fs.readFileSync(recipe.picture_data);
 
-    con.query(sql, [picture_data, req.body.title, req.body.description, req.body.instructions, req.body.serving, req.body.difficulty_level, req.body.food_category], (err, result) => {
-        recipe.recipe_id = 0;
-        recipe.user_id = 0;
+    function concatenatedTitlesAndInputs(array) {
+        var concatenatedStrings = array.map(function (obj) {
+            return obj.title + " (" + obj.input + ")";
+        });
+
+        var concatenatedString = concatenatedStrings.join(';');
+
+        return concatenatedString;
+    }
+
+    var concatenatedInstructions = concatenatedTitlesAndInputs(recipe.instructions);
+
+    con.query(sql, [picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category], (err, result) => {
+        if (err) throw err;
+        console.log(result.insertId);
+        console.log(result[0][0].insertId);
+        console.log(result[0][1].insertId);
+        recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
+        recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
+
+        var ingredient_id = null;
+
+        recipe.ingredient_name.foreEach(function (ingredient) {
+            con.query('SELECT Ingredient_ID FROM Ingredients WHERE Ingredient_Name = ?', [ingredient], (err, result) => {
+                if (err) throw err;
+                ingredient_id = result[0][0].Ingredient_ID;
+
+                con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity, recipe.ingredient_measurement], (err, result) => {
+                    if (err) throw err;
+                });
+            });
+        });
+
+        for (var i = 0; i < recipe.time_prep_type.length; i++) {
+            var timePrepType = recipe.time_prep_type[i];
+            var timeQuantity = recipe.time_quantity[i];
+            var timeType = recipe.time_type[i];
+
+            con.query('INSERT INTO Time (Recipe_ID,Time_Prep_Type,Time_Quantity,Time_Type) VALUES (?,?,?,?)', [recipe.recipe_id, timePrepType, timeQuantity, timeType], (err, result) => {
+                if (err) throw err;
+
+            });
+        };
 
         const date = new Date();
 
         recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 
-        //Teszt
-        console.log(recipe.date_created);
-
         con.connect(function (err) {
             if (err) throw err;
             console.log('Sikeres feltöltés!');
             console.log(result)
-            res.send(recipe);
+            res.status(200).send(recipe);
         })
     })
 }

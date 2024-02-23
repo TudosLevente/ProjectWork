@@ -44,7 +44,7 @@ function createIngredientInput(count) {
             </div>
         </div>
         <button class="torles_gomb">
-            <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+            <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
         </button>
         `;
     ingredientContainer.appendChild(inputDiv);

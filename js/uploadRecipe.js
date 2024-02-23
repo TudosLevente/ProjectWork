@@ -98,17 +98,55 @@ function uploadRecipe() {
     var difficulty_level_input = document.getElementById('difficulty');
     var food_category_input = document.getElementById('food_category');
 
-    console.log(picture_data_input.value);
-    console.log(title_input.value);
-    console.log(description_input.value);
-    console.log(ingredients_input);
-    console.log(quantities_input);
-    console.log(measurements_input);
-    console.log(instructions_input);
-    console.log(prep_type_input);
-    console.log(prep_time_input);
-    console.log(prep_time_type_input);
-    console.log(parseInt(serving_input.innerHTML));
-    console.log(difficulty_level_input.options[difficulty_level_input.selectedIndex].innerHTML);
-    console.log(food_category_input.options[food_category_input.selectedIndex].innerHTML);
+    var userID = null;
+
+    getData('/getLoggedInUserData').then((response) => {
+        console.log(response);
+        userID = response.user_id;
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+
+    var recipeData = {
+        picture_data: picture_data_input.value,
+        title: title_input.value,
+        description: description_input.value,
+        ingredients: ingredients_input,
+        quantities: quantities_input,
+        measurements: measurements_input,
+        instructions: instructions_input,
+        preparation_type: prep_type_input,
+        preparation_time: prep_time_input,
+        preparation_time_type: prep_time_type_input,
+        serving_size: parseInt(serving_input.innerHTML),
+        difficulty_level: difficulty_level_input.options[difficulty_level_input.selectedIndex].innerHTML,
+        food_category: food_category_input.options[food_category_input.selectedIndex].innerHTML,
+        user_id: userID
+    };
+
+    postData('http://localhost:8000/api/uploadRecipe', recipeData).then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to upload recipe.");
+        }
+
+        console.log(response.json());
+
+
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+
+    console.log(picture_data_input.value); //nem tömb
+    console.log(title_input.value); //nem tömb
+    console.log(description_input.value); //nem tömb
+    console.log(ingredients_input); //tömb
+    console.log(quantities_input); //tömb
+    console.log(measurements_input); //tömb
+    console.log(instructions_input); //tömb 
+    console.log(prep_type_input); //tömb
+    console.log(prep_time_input); // tömb
+    console.log(prep_time_type_input); //tömb
+    console.log(parseInt(serving_input.innerHTML)); //nem tömb
+    console.log(difficulty_level_input.options[difficulty_level_input.selectedIndex].innerHTML); //nem tömb
+    console.log(food_category_input.options[food_category_input.selectedIndex].innerHTML); //nem tömb
 }

@@ -11,7 +11,7 @@
             padding: 0px;
         }
 
-        .body_div {
+        .loading_screen_body_div {
             margin: 0;
             display: flex;
             justify-content: center;
@@ -22,13 +22,13 @@
             zoom: 50%;
         }
 
-        .pizza {
+        .loading_screen_pizza {
             width: 500px;
             height: 500px;
             position: relative;
         }
 
-        .slice {
+        .loading_screen_slice {
             width: 460px;
             height: 420px;
             position: absolute;
@@ -37,27 +37,27 @@
             transform-origin: 50% 50%;
         }
 
-        .slice:nth-child(1) {
+        .loading_screen_slice:nth-child(1) {
             transform: translate(-50%, -50%) rotate(30deg) translate(150px) rotate(95deg);
         }
 
-        .slice:nth-child(2) {
+        .loading_screen_slice:nth-child(2) {
             transform: translate(-50%, -50%) rotate(90deg) translate(150px) rotate(95deg);
         }
 
-        .slice:nth-child(3) {
+        .loading_screen_slice:nth-child(3) {
             transform: translate(-50%, -50%) rotate(150deg) translate(150px) rotate(95deg);
         }
 
-        .slice:nth-child(4) {
+        .loading_screen_slice:nth-child(4) {
             transform: translate(-50%, -50%) rotate(210deg) translate(150px) rotate(95deg);
         }
 
-        .slice:nth-child(5) {
+        .loading_screen_slice:nth-child(5) {
             transform: translate(-50%, -50%) rotate(270deg) translate(150px) rotate(95deg);
         }
 
-        .slice:nth-child(6) {
+        .loading_screen_slice:nth-child(6) {
             transform: translate(-50%, -50%) rotate(330deg) translate(150px) rotate(95deg);
         }
     </style>
@@ -67,19 +67,19 @@
 
 
 
-    <div class="body_div">
-        <div class="pizza">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
-            <img class="slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png" alt="Slice 1">
+    <div class="loading_screen_body_div">
+        <div class="loading_screen_pizza">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
+            <img class="loading_screen_slice" src="../loadingScreen/pizzaslice-removebg-preview (Small).png">
         </div>
     </div>
 
     <script>
-        let slices = document.querySelectorAll('.slice');
+        let slices = document.querySelectorAll('.loading_screen_slice');
         let sliceCount = slices.length;
         let currentSliceIndex = 0;
         let isDisappearing = true;

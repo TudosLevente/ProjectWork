@@ -7,7 +7,7 @@ function getIngredients(req, res) {
     con.connect(function (err) {
         if (err) throw err;
     })
-    con.query('CALL getIngredients()', (err, result) => {
+    con.query('SELECT getIngredients()', (err, result) => {
         if (err) throw err;
         res.send(result);
     })

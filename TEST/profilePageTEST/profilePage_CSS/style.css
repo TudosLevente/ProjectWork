@@ -8,7 +8,7 @@ body {
   margin: 0px;
   padding: 0px;
   zoom: 90%;
-  background-image: url("./profilePage/image-120.png");
+  background-image: url("../profilePage_Images/image-120.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -54,7 +54,7 @@ body {
   position: relative;
 }
 
-.menu_div_data {
+.menu_div_data_button {
   background-color: #ffd392;
   border-radius: 10px 10px 0px 0px;
   border-style: solid;
@@ -75,7 +75,7 @@ body {
   position: relative;
 }
 
-.menu_div_recipes {
+.menu_div_recipes_button {
   background: #ffd392;
   border-radius: 10px 10px 0px 0px;
   border-style: solid;
@@ -97,7 +97,7 @@ body {
   position: relative;
 }
 
-.menu_div_favorites {
+.menu_div_favorites_button {
   background: #ffd392;
   border-radius: 10px 10px 0px 0px;
   border-style: solid;
@@ -740,6 +740,17 @@ a:hover {
   height: 59px;
   position: relative;
   overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.my_recipes_div_row_container_button_div:hover{
+  background: #FF0000;
+  scale: calc(110%);
+}
+
+.my_recipes_div_row_container_button_div:hover .my_recipes_div_row_container_button_text {
+  color: whitesmoke;
 }
 
 .my_recipes_div_row_container_button_text {
@@ -749,11 +760,13 @@ a:hover {
   font-size: 20px;
   font-weight: 400;
   position: absolute;
-  left: calc(50% - 58.5px);
-  top: calc(50% - 11px);
+  top: 0px;
+  left: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -831,6 +844,18 @@ a:hover {
   height: 59px;
   position: relative;
   overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.my_favorites_div_row_container_button_div:hover {
+  background: #FF0000;
+  scale: calc(110%);
+  color: whitesmoke;
+}
+
+.my_favorites_div_row_container_button_div:hover .my_favorites_div_row_container_button_text {
+  color: whitesmoke;
 }
 
 .my_favorites_div_row_container_button_text {
@@ -840,11 +865,13 @@ a:hover {
   font-size: 20px;
   font-weight: 400;
   position: absolute;
-  left: calc(50% - 58.5px);
-  top: calc(50% - 11px);
+  top: 0px;
+  left: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .loading_screen_blur {
@@ -961,6 +988,8 @@ a:hover {
 }
 
 .highlight {
-  color: black; /* Color for highlighted portion */
-  font-weight: bold; /* Make the highlighted portion bold */
+  color: black;
+  /* Color for highlighted portion */
+  font-weight: bold;
+  /* Make the highlighted portion bold */
 }

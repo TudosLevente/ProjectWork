@@ -8,26 +8,25 @@
     <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="./profilePage_CSS/style.css">
+    <link rel="stylesheet" href="./profilePage_CSS/dropdownfoetel.css">
+    <link rel="stylesheet" href="./profilePage_CSS/dropdowndesszert.css">
+    <link rel="stylesheet" href="./profilePage_CSS/dropdownkategoriak.css">
+    <link rel="stylesheet" href="./profilePage_CSS/dropdownprofil.css">
+    <script src="./profilePage_JS/navbar_dropdown.js"></script>
     <title>Profil</title>
-    <script src="./index.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./dropdownfoetel.css">
-    <link rel="stylesheet" href="./dropdowndesszert.css">
-    <link rel="stylesheet" href="./dropdownkategoriak.css">
-    <link rel="stylesheet" href="./dropdownprofil.css">
-    <script src="./navbar_dropdown.js"></script>
 </head>
 
 <body>
     <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
         <div class="loading_screen_body_div">
             <div class="loading_screen_pizza">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="./profilePage_Images/pizzaslice.png">
             </div>
         </div>
     </div>
@@ -37,32 +36,20 @@
             <div class="data_div_center_row col-12">
                 <div class="data_div_container">
                     <div class="menu_div">
-                        <button type="button" class="menu_div_data" id="DataDivButton" onclick="toggleDataDiv()">
+                        <button type="button" class="menu_div_data_button" id="DataDivButton" onclick="toggleDataDiv()">
                             <span class="menu_div_profiledata_text">Adataim</span>
                         </button>
-                        <button type="button" class="menu_div_recipes" id="RecipesDivButton"
+                        <button type="button" class="menu_div_recipes_button" id="RecipesDivButton"
                             onclick="toggleRecipesDiv()">
                             <span class="menu_div_recipes_text">Recepteim</span>
                         </button>
-                        <button type="button" class="menu_div_favorites" id="FavoritesDivButton"
+                        <button type="button" class="menu_div_favorites_button" id="FavoritesDivButton"
                             onclick="toggFavoritesDiv()">
                             <span class="menu_div_favorites_text">Kedvenceim</span>
                         </button>
                         </button>
                     </div>
                     <div class="main_div">
-                        <!-- <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
-                            <div class="loading_screen_body_div">   
-                                <div class="loading_screen_pizza">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                    <img class="loading_screen_slice" src="./profilePage/pizzaslice.png">
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="my_data_div" style="display: flex;" id="my_data_div">
                             <div class="my_data_div_inputs">
                                 <div class="my_data_div_inputs_layout">
@@ -72,7 +59,7 @@
                                             <input class="my_data_div_inputs_username_container_input"
                                                 placeholder="FoodHub" id="username_input"
                                                 style="display:none; color: white;" />
-                                            <img src="./profilePage/input_edit_icon.png" class="input_edit_icon"
+                                            <img src="./profilePage_Images/input_edit_icon.png" class="input_edit_icon"
                                                 style="display: none;" id="input_edit_icon">
                                             <div class="my_data_div_inputs_username_container_input">FoodHub</div>
                                         </div>
@@ -83,7 +70,7 @@
                                             <input class="my_data_div_inputs_email_container_input"
                                                 placeholder="foodhub@gmail.com" id="email_input"
                                                 style="display: none; color: white;" />
-                                            <img src="./profilePage/input_edit_icon.png" class="input_edit_icon"
+                                            <img src="./profilePage_Images/input_edit_icon.png" class="input_edit_icon"
                                                 style="display: none;" id="input_edit_icon">
                                             <div class="my_data_div_inputs_email_container_input">foodhub@gmail.com
                                             </div>
@@ -95,7 +82,7 @@
                                             <input class="my_data_div_inputs_password_container_input"
                                                 placeholder="FoodHub12345" id="password_input"
                                                 style="display: none; color: white;" />
-                                            <img src="./profilePage/input_edit_icon.png" class="input_edit_icon"
+                                            <img src="./profilePage_Images/input_edit_icon.png" class="input_edit_icon"
                                                 style="display: none;" id="input_edit_icon">
                                             <div class="my_data_div_inputs_password_container_input">********</div>
                                         </div>
@@ -116,45 +103,45 @@
                                     </button>
                                 </div>
                             </div>
-                            <img class="image-8" src="./profilePage/image-80.png" />
+                            <img class="image-8" src="./profilePage_Images/image-80.png" />
                         </div>
                         <div class="my_recipes_div" style="display: none;" id="my_recipes_div" data-simplebar>
                             <div class="my_recipes_div_row">
                                 <div class="my_recipes_div_row_container">
                                     <div class="my_recipes_div_row_container_img_div">
-                                        <img class="my_recipes_div_row_container_img" src="./profilePage/food 1.png" />
+                                        <img class="my_recipes_div_row_container_img" src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_recipes_div_row_container_title">Példa kaja</div>
-                                    <div class="my_recipes_div_row_container_button_div">
+                                    <button class="my_recipes_div_row_container_button_div">
                                         <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_recipes_div_row_container">
                                     <div class="my_recipes_div_row_container_img_div">
-                                        <img class="my_recipes_div_row_container_img" src="./profilePage/food 1.png" />
+                                        <img class="my_recipes_div_row_container_img" src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_recipes_div_row_container_title">Példa kaja</div>
-                                    <div class="my_recipes_div_row_container_button_div">
+                                    <button class="my_recipes_div_row_container_button_div">
                                         <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_recipes_div_row_container">
                                     <div class="my_recipes_div_row_container_img_div">
-                                        <img class="my_recipes_div_row_container_img" src="./profilePage/food 1.png" />
+                                        <img class="my_recipes_div_row_container_img" src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_recipes_div_row_container_title">Példa kaja</div>
-                                    <div class="my_recipes_div_row_container_button_div">
+                                    <button class="my_recipes_div_row_container_button_div">
                                         <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_recipes_div_row_container">
                                     <div class="my_recipes_div_row_container_img_div">
-                                        <img class="my_recipes_div_row_container_img" src="./profilePage/food 1.png" />
+                                        <img class="my_recipes_div_row_container_img" src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_recipes_div_row_container_title">Példa kaja</div>
-                                    <div class="my_recipes_div_row_container_button_div">
+                                    <button class="my_recipes_div_row_container_button_div">
                                         <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -163,42 +150,42 @@
                                 <div class="my_favorites_div_row_container">
                                     <div class="my_favorites_div_row_container_img_div">
                                         <img class="my_favorites_div_row_container_img"
-                                            src="./profilePage/food 1.png" />
+                                            src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_favorites_div_row_container_title">Példa kaja</div>
-                                    <div class="my_favorites_div_row_container_button_div">
+                                    <button class="my_favorites_div_row_container_button_div">
                                         <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_favorites_div_row_container">
                                     <div class="my_favorites_div_row_container_img_div">
                                         <img class="my_favorites_div_row_container_img"
-                                            src="./profilePage/food 1.png" />
+                                            src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_favorites_div_row_container_title">Példa kaja</div>
-                                    <div class="my_favorites_div_row_container_button_div">
+                                    <button class="my_favorites_div_row_container_button_div">
                                         <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_favorites_div_row_container">
                                     <div class="my_favorites_div_row_container_img_div">
                                         <img class="my_favorites_div_row_container_img"
-                                            src="./profilePage/food 1.png" />
+                                            src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_favorites_div_row_container_title">Példa kaja</div>
-                                    <div class="my_favorites_div_row_container_button_div">
+                                    <button class="my_favorites_div_row_container_button_div">
                                         <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                                 <div class="my_favorites_div_row_container">
                                     <div class="my_favorites_div_row_container_img_div">
                                         <img class="my_favorites_div_row_container_img"
-                                            src="./profilePage/food 1.png" />
+                                            src="./profilePage_Images/food 1.png" />
                                     </div>
                                     <div class="my_favorites_div_row_container_title">Példa kaja</div>
-                                    <div class="my_favorites_div_row_container_button_div">
+                                    <button class="my_favorites_div_row_container_button_div">
                                         <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -212,8 +199,8 @@
             <div class="row col-12">
                 <div class="col-lg-4 d-flex align-items-center justify-content-start">
                     <div class="navbar_logo">
-                        <img src="./profilePage/logo-removebg-preview.png" class="logo">
-                        <img src="./profilePage/FoodHub.png" class="navbar_foobhub_logo_text">
+                        <img src="./profilePage_Images/logo-removebg-preview.png" class="logo">
+                        <img src="./profilePage_Images/FoodHub.png" class="navbar_foobhub_logo_text">
                     </div>
                 </div>
                 <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
@@ -240,7 +227,6 @@
                                         <li><a class="dropdown-item" href="#">Tészták</a></li>
                                         <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
                                         <li><a class="dropdown-item" href="#">Köretek</a></li>
-                                        <!-- Add more dropdown items as needed -->
                                     </ul>
                                 </li>
                                 <li class="divider"></li>
@@ -314,18 +300,18 @@
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-                    <img src="./profilePage/user.svg" style="width: 7%; margin-right: 5px;">
+                    <img src="./profilePage_Images/user.svg" style="width: 7%; margin-right: 5px;">
                     <div class="login_div">
                         <div class="dropdown_profil dropdown">
                             <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
                             <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                                <a href="#" onclick="showAdataim()">Adataim<img src="./profilePage/gear.svg"
+                                <a href="#" onclick="showAdataim()">Adataim<img src="./profilePage_Images/gear.svg"
                                         class="gear_icon"></a>
-                                <a href="#" onclick="showRecepjeim()">Recepjeim<img src="./profilePage/recipebook.svg"
+                                <a href="#" onclick="showRecepjeim()">Recepjeim<img src="./profilePage_Images/recipebook.svg"
                                         class="gear_icon"></a>
-                                <a href="#" onclick="showKedvenceim()">Kedvenceim<img src="./profilePage/heart.svg"
+                                <a href="#" onclick="showKedvenceim()">Kedvenceim<img src="./profilePage_Images/heart.svg"
                                         class="gear_icon"></a>
-                                <a href="#" onclick="logout()">Kijelentkezés<img src="./profilePage/logout.svg"
+                                <a href="#" onclick="logout()">Kijelentkezés<img src="./profilePage_Images/logout.svg"
                                         class="logout_icon"></a>
                             </div>
                         </div>
@@ -339,10 +325,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="./profilemodifying.js"></script>
-    <script src="./menubuttons.js"></script>
-    <script src="./loadingscreen.js"></script>
-    <script src="./searchbar.js"></script>
+    <script src="./profilePage_JS/profilemodifying.js"></script>
+    <script src="./profilePage_JS/menubuttons.js"></script>
+    <script src="./profilePage_JS/loadingscreen.js"></script>
+    <script src="./profilePage_JS/searchbar.js"></script>
 </body>
 
 </html>

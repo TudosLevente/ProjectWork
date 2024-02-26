@@ -16,7 +16,7 @@ function createPreparationInput(count) {
             <option>Áztatás</option>
             <option>Pihentetés</option>
         </select>
-        <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+        <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
         <div class="preparation_div_row_type_small">
             <input id="prepTimeInput${count}" class="preparation_div_row_type_small_input" type="number" min="0" value="0" />
         </div>
@@ -25,9 +25,9 @@ function createPreparationInput(count) {
             <option>óra</option>
             <option>nap</option>
         </select>
-        <img src="./recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+        <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
         <button class="torles_gomb">
-            <img src="./recipiesuploadPage/kukaimage.svg" class="kuka">
+            <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
         </button>
         `;
     preparationContainer.appendChild(inputDiv);

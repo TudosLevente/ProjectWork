@@ -7,12 +7,12 @@ function createInstructionInput(count) {
         <div class="instruction">
             <div id="instruction_title${count}" class="instruction_title"></div>
             <div class="instruction_container">
-                <img src="./recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
+                <img src="../images/recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon" alt="" srcset="">
                 <input class="instruction_input"  id="instructionInput${count}" placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
             </div>
         </div>
         <button class="torles_gomb">
-            <img src="./recipiesuploadPage/kukaimage.svg" class="kuka" alt="" srcset="">
+            <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka" alt="" srcset="">
         </button>
         `;
     instructionContainer.appendChild(inputDiv);

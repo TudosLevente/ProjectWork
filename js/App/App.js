@@ -14,13 +14,17 @@ var loggedInUserData = {
     email: ""
 };
 
+app.get('/getLoggedInUserData', (req, res) => {
+    res.send(loggedInUserData);
+})
+
 app.post('/getLoginInfo', (req, res) => {
     loggedInUserData.loggedIn = req.body.loggedIn;
     loggedInUserData.user_id = req.body.user_id;
     loggedInUserData.username = req.body.username;
     loggedInUserData.email = req.body.email;
 
-    console.log(loggedIn);
+    console.log(loggedInUserData.loggedIn);
     console.log(loggedInUserData.user_id);
     console.log(loggedInUserData.username);
     console.log(loggedInUserData.email);

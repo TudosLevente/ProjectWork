@@ -41,37 +41,55 @@ var loggedInUserData = {
     email: "",
 };
 
-// getData('/')
-//     .then((response) => {
-//         console.log(response);
-//         response.then((data) => {
 
-//             console.log(data);
-//             console.log(data.loggedIn);
-//             loggedInUserData.loggedIn = data.loggedIn;
-//         })
-//     })
-//     .catch((error) => {
-//         console.error("Error occurred:", error);
-//     });
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (loggedInUserData.loggedIn) {
-        getData('/')
-            .then((response) => {
-                console.log(response);
-                response.json().then((data) => {
-                    console.log(data);
-                    console.log(data.loggedIn);
-                    console.log(data.user_id);
-                    console.log(data.username);
-                    console.log(data.email);
-                })
-            })
-            .catch((error) => {
-                console.error("Error occurred:", error);
-            });
-    }
+    getData('/getLoggedInUserData').then((response) => {
+        if (response.loggedIn) {
+            loggedInUserData.loggedIn = response.loggedIn;
+        }
+        else if (!response.loggedIn) {
+            loggedInUserData.loggedIn = false;
+        }
+
+        if (loggedInUserData.loggedIn) {
+            console.log("logged in");
+
+            const login_or_profil_div = document.getElementById('login_or_profil');
+
+            const addedUpload = document.createElement('div');
+            addedUpload.className = "login-div";
+
+            addedUpload.innerHTML = `
+                <a href="../html/recipeUpload.html" class="login-text">Recept feltöltés</a>
+            `;
+
+            login_or_profil_div.appendChild(addedUpload);
+        }
+        else if (!loggedInUserData.loggedIn) {
+            console.log("not logged in");
+            const login_or_profil_div = document.getElementById('login_or_profil');
+            const addedImg = document.createElement('img');
+            addedImg.src = "../images/mainPage/user.svg";
+            addedImg.alt = "";
+            addedImg.style = "width: 7%; margin-right: 5px;";
+
+            const addedLogin = document.createElement('div');
+            addedLogin.className = "login-div";
+
+
+
+            addedLogin.innerHTML = `
+                <a href="../html/loginPage.html" class="login-text">Bejelentkezés</a>
+            `;
+
+            login_or_profil_div.appendChild(addedImg);
+            login_or_profil_div.appendChild(addedLogin);
+        }
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
     loadRecipes();
 });
 

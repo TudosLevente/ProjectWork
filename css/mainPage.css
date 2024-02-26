@@ -59,7 +59,6 @@ body {
 }
 
 
-
 .foobhub-logo-text {
     text-align: right;
     position: fixed;
@@ -72,7 +71,7 @@ body {
     align-items: bottom;
     justify-content: bottom;
     background: linear-gradient(#FF0000, #FF6000, #EEA325);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     text-decoration: none;
@@ -108,7 +107,7 @@ body {
 
 .receptek-text {
     background: linear-gradient(#FF0000, #FF6000, #EEA325);
-    -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
     text-align: center;
     font-family: 'Inter-Regular', sans-serif;

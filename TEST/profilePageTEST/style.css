@@ -18,9 +18,9 @@ body {
   overflow: hidden;
 }
 
-.div_body,
-.div_body * {
-  box-sizing: border-box;
+.div_body * a {
+  appearance: none;
+  text-decoration: none;
 }
 
 .data_div_container {
@@ -481,7 +481,6 @@ button:active {
 .profil_text {
   background: linear-gradient(180deg, rgba(255, 0, 0, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(238, 163, 37, 1.00) 100%);
   background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: left;
   font-family: 'Inter-SemiBold', sans-serif;
@@ -497,8 +496,9 @@ button:active {
 
 .navbar,
 .navbar_menu {
-  background: #bb5a00;
-  opacity: 0.97;
+  /* background: #bb5a00; */
+  background-color: #B02000;
+  opacity: 0.96;
   padding: 9px 0px 9px 0px;
   display: flex;
   gap: 10px;
@@ -506,7 +506,6 @@ button:active {
   align-items: center;
   justify-content: flex-start;
   position: sticky;
-  /* overflow: hidden; */
   width: 100%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -526,13 +525,74 @@ button:active {
   text-decoration: none;
 }
 
+.search-container {
+  position: relative;
+  /* Change position to relative */
+  margin-top: 10px;
+  /* Add margin to separate search bar from navbar */
+}
+
+#search-results-container {
+  position: absolute;
+  display: none;
+  top: 40px;
+  /* Position below the search bar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  /* Ensure search results appear above other content */
+  background-color: white;
+  /* Example background color */
+  border: 1px solid #ccc;
+  /* Example border */
+  /* width: 94%; */
+  /* Adjust width based on navbar width */
+  max-height: 300px;
+  /* Example maximum height */
+  overflow-y: auto;
+  /* Enable vertical scrolling if needed */
+}
+
+/* Width */
+#search-results-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#search-results-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+#search-results-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+#search-results-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Additional styles for the container if necessary */
+#search-results-container {
+  max-height: 320px;
+  /* Example height to make scrollbar visible */
+  overflow-y: auto;
+}
+
+.navbar_searchbar,
+#search-results-container {
+  width: calc(100% - 30px);
+  /* Adjust width as needed */
+}
+
 .navbar_searchbar {
-  border-radius: 30px;
+  /* border-radius: 30px; */
   border-style: solid;
   border-color: #ffffff21;
   border-width: 2px;
   flex-shrink: 0;
-  width: 905px;
+  /* width: 905px; */
   height: 65px;
   position: relative;
   overflow: hidden;
@@ -540,18 +600,21 @@ button:active {
   text-align: left;
   padding-left: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+  /* Add margin to separate search bar from navbar */
 }
 
 .navbar_foobhub_logo_text {
-  font-family: 'Inter-Regular', sans-serif;
+  /* font-family: 'Inter-Regular', sans-serif; */
   font-size: 60px;
-  left: 40px;
   position: relative;
   background: linear-gradient(#FF0000, #FF6000, #EEA325);
   background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
+  width: 240px;
+  height: auto;
 }
 
 .navbar_foobhub_logo_text:hover {
@@ -559,11 +622,41 @@ button:active {
   background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 
-.navbar a {
+.navbar a,
+.navbar a:hover {
   text-decoration: none;
+  color: white;
+}
+
+.navbar_middle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbarmenulist li:hover,
+a:hover {
+  color: white;
+  font-weight: 20px;
+}
+
+.menuitems_row {
+  font-size: 20px;
 }
 
 :root {
@@ -844,54 +937,6 @@ button:active {
   align-content: center;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: rgba(238, 163, 37, 1);
-  min-width: 170px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 15px;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px;
-  opacity: 0;
-}
-
-.dropdown-content a {
-  color: black;
-  text-decoration: none;
-  appearance: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 20px;
-}
-
-.dropdown-content a:hover {
-  background-color: transparent;
-  text-decoration: none;
-  color: white;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
 .logout_icon,
 .gear_icon,
 .gear_icon,
@@ -899,4 +944,23 @@ button:active {
   position: relative;
   width: 20%;
   height: 20%;
+}
+
+.navbar_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.highlight {
+  color: black; /* Color for highlighted portion */
+  font-weight: bold; /* Make the highlighted portion bold */
 }

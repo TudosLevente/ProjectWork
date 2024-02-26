@@ -1,0 +1,22 @@
+<svg class="zigzag-line4" width="1142" height="15" viewBox="0 0 1142 15" fill="none"
+xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_461_475)">
+  <path
+    d="M0.5 12.0331L68.777 0L141.68 12.0331L227.313 5.5L286.33 15L362.705 5.5L425.194 15L499.255 5.5L571.001 15L663.577 5.5L749.21 15L867.244 5.5L938.99 15L1007.27 5.5L1067.44 15L1141.5 5.5"
+    stroke="#FF2E00" stroke-opacity="0.88" stroke-width="7" shape-rendering="crispEdges" />
+</g>
+<defs>
+  <filter id="filter0_d_461_475" x="-4.10742" y="-3.55078" width="1150.05" height="30.0859"
+    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+      result="hardAlpha" />
+    <feOffset dy="4" />
+    <feGaussianBlur stdDeviation="2" />
+    <feComposite in2="hardAlpha" operator="out" />
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_461_475" />
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_461_475" result="shape" />
+  </filter>
+</defs>
+</svg>

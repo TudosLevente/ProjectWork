@@ -23,6 +23,7 @@ function toggleDataDiv() {
             datadivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
             favoritesdiv.style.display = 'none';
         }
+        // datadivbutton.style.backgroundColor = '#B02000';
         datadivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
         recipesdivbutton.style.backgroundColor = '#ffd392';
         favoritesdivbutton.style.backgroundColor = '#ffd392';
@@ -59,6 +60,7 @@ function toggleRecipesDiv() {
         }
         datadivbutton.style.backgroundColor = '#ffd392';
         recipesdivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
+        // recipesdivbutton.style.backgroundColor = '#B02000';
         favoritesdivbutton.style.backgroundColor = '#ffd392';
 
 
@@ -94,6 +96,7 @@ function toggFavoritesDiv() {
         datadivbutton.style.backgroundColor = '#ffd392';
         recipesdivbutton.style.backgroundColor = '#ffd392';
         favoritesdivbutton.style.backgroundColor = 'rgba(255, 153, 0, 0.90)';
+        // favoritesdivbutton.style.backgroundColor = '#B02000';
 
 
     } catch (error) {

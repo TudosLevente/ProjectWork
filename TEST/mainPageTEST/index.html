@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./dropdowndesszert.css">
+  <link rel="stylesheet" href="./dropdownfoetel.css">
+  <link rel="stylesheet" href="./dropdownkategoriak.css">
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./loadingscreen.css">
+
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      appearance: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+    <div class="loading_screen_body_div">
+      <div class="loading_screen_pizza">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+      </div>
+    </div>
+  </div>
+  <div class="fooldal">
+    <div class="navbar_div">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <div class="row col-12">
+            <div class="col-lg-4 d-flex align-items-center justify-content-start">
+              <div class="navbar_logo">
+                <img src="./logo-removebg-preview.png" class="logo">
+                <img src="./FoodHub.png" class="navbar_foobhub_logo_text">
+              </div>
+            </div>
+            <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+              <div class="input-group">
+                <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
+                  aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
+              </div>
+              <div id="search-results-container" class="mt-2 fixed-top"></div>
+              <div class="menuitems_row row justify-content-center ">
+                <div class="navmenuitems">
+                  <ul class="navbarmenulist navbar-nav">
+                    <li class="divider"></li>
+                    <li class="dropdown_foetel nav-item dropdown">
+                      <a class="nav-link dropdown" class="dropdown_content_foetel" id="dropdownfoetel">
+                        Főételek
+                      </a>
+                      <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_desszert nav-item dropdown">
+                      <a class="nav-link dropdown" class="dropdown_content_desszert" id="dropdowndesszert" href="#">
+                        Desszertek
+                      </a>
+                      <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Levesek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Saláták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tészták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_kategoriak nav-item dropdown">
+                      <a class="nav-link dropdown" class="dropdown_content_kategoriak" id="dropdownkategoriak" href="#">
+                        Kategóriák
+                      </a>
+                      <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                        <li><a class="dropdown-item" href="#">Szószok</a></li>
+                        <li><a class="dropdown-item" href="#">Torták</a></li>
+                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
+                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ajánlatunk</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Rólunk</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="login_or_profil" class="col-lg-4 d-flex align-items-center justify-content-end"
+              style="right: 40px;">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <img class="background_image" src="backgorund-image0.png" />
+    <div class="title">
+      <div class="foodhub_title">FoodHub</div>
+      <div class="slogen">Egy harapásra vagy a boldogságtól!</div>
+    </div>
+    <div class="ajanlataink">
+      <div class="ajanlat_title">
+        <div class="ajanlat_text">Legfelkeresetebb recepjeink</div>
+        <img src="./zigzag_line.png" class="zigzag-line">
+      </div>
+      <div class="slideshow-container">
+        <div class="ajanlat_container">
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" src="./food-20.png" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+          <div class="ajanlat_container_div">
+            <a href="link-to-food-1">
+              <img class="ajanlat_container_div_image" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .slideshow-container {
+          width: 100%;
+          height: min-content;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+        }
+
+        .ajanlat_container {
+          display: flex;
+          width: max-content;
+          justify-content: center;
+          /* Adjust width based on content */
+        }
+
+        .ajanlat_container_div {
+          flex-shrink: 0;
+          display: flex;
+          animation: slideLeft 20s linear infinite;
+          animation-fill-mode: forwards;
+        }
+
+        .slideshow-container:hover .ajanlat_container_div {
+          animation-play-state: paused;
+        }
+
+        .ajanlat_container_div:hover {
+          cursor: pointer;
+        }
+
+        @keyframes slideLeft {
+          0% {
+            transform: translateX(0);
+            /* Start from initial position */
+          }
+
+          100% {
+            transform: translateX(-100%);
+            /* Slide div to the left */
+          }
+        }
+      </style>
+
+      <div class="etel-galeria">
+        <div class="uj-recpetjeink-title">
+          <div class="receptek-text">Új Recepjeink</div>
+          <!-- <img src="./zigzag_line.png" class="zigzag-line"> -->
+        </div>
+        <div class="frame-202">
+          <div class="frame-1">
+            <div class="etel-pic">
+              <img class="food-1" src="food-10.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-2">
+            <div class="etel-pic">
+              <img class="food-1" src="food-11.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-3">
+            <div class="etel-pic">
+              <img class="food-1" src="food-12.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-4">
+            <div class="etel-pic">
+              <img class="food-1" src="food-13.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-5">
+            <div class="etel-pic">
+              <img class="food-1" src="food-14.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-6">
+            <div class="etel-pic">
+              <img class="food-1" src="food-15.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-7">
+            <div class="etel-pic">
+              <img class="food-1" src="food-16.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-8">
+            <div class="etel-pic">
+              <img class="food-1" src="food-17.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="honap-legjobb-div">
+        <img class="honap-legjobb-backgroundimage" src="honap-legjobb-backgroundimage0.png" />
+        <div class="honap-legjobb-title">
+          <div class="honap-legjobb-title-text">
+            A hónap legjobbnak értékelt receptje!
+          </div>
+        </div>
+        <div class="honap-legjobb-gomb-div">
+          <div class="honap-legjobb-gomb-text">Megnézem</div>
+        </div>
+        <div class="leiras-div">
+          <div class="felso-text">Kóstold meg a Taco varázsát!</div>
+          <div class="also-text">
+            Fedezze fel az igazi mexikói ízeket a taco varázslatos világában!
+            Friss, ropogós tortillalapok, ínycsiklandó húsok és friss zöldségek
+            várnak arra, hogy megtöltse őket az Ön kedvenc összetevőivel.
+            Készüljön fel egy kulináris utazásra, amely garantáltan felkelti
+            mindenki figyelmét és étvágyát!
+          </div>
+        </div>
+      </div>
+      <div class="kategoria-search">
+        <div class="frame-211">
+          <div class="keressen-kateg-ri-nk-nt">Keressen kategóriánként!</div>
+          <!-- <img src="./zigzag_line.png" class="zigzag-line"> -->
+        </div>
+        <div class="frame-192">
+          <img src="./buttonleft.svg" class="buttonleft">
+          <div class="frame-1982">
+            <img class="ellipse-3" src="ellipse-30.png" />
+            <div class="burgerek">Burgerek</div>
+          </div>
+          <div class="frame-2112">
+            <img class="ellipse-3" src="ellipse-31.png" />
+            <div class="burgerek">Burgerek</div>
+          </div>
+          <div class="frame-212">
+            <img class="ellipse-3" src="ellipse-32.png" />
+            <div class="burgerek">Burgerek</div>
+          </div>
+          <div class="frame-213">
+            <img class="ellipse-3" src="ellipse-33.png" />
+            <div class="burgerek">Burgerek</div>
+          </div>
+          <div class="frame-214">
+            <img class="ellipse-3" src="ellipse-34.png" />
+            <div class="burgerek">Burgerek</div>
+          </div>
+          <img src="./buttonright.svg" class="buttonright">
+        </div>
+      </div>
+      <div class="frame-220">
+        <div class="rectangle-15"></div>
+        <div class="frame-2122">
+          <div class="frame-2142">
+            <div class="iratkozzon-fel-h-rlevel-nkre-hogy-nem-maradjon-le-a-leg-jjabb">
+              Iratkozzon fel hírlevelünkre, hogy nem maradjon le a legújjabb,
+            </div>
+            <div class="legbefut-bb-receptekr-l">legbefutóbb receptekről!</div>
+          </div>
+          <div class="frame-215">
+            <div class="rectangle-13"></div>
+            <div class="frame-2132">
+              <div class="rectangle-14"></div>
+              <div class="feliratkoz-s">Feliratkozás</div>
+            </div>
+            <div class="email-c-m">Email cím:</div>
+          </div>
+        </div>
+      </div>
+      <div class="etel-galeria2">
+        <div class="uj-recpetjeink-title">
+          <div class="receptek-text2">Látogatóink által kedvelt receptek</div>
+          <!-- <img src="./zigzag_line.png" class="zigzag-line"> -->
+        </div>
+        <div class="frame-202">
+          <div class="frame-1">
+            <div class="etel-pic">
+              <img class="food-1" src="food-18.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-2">
+            <div class="etel-pic">
+              <img class="food-1" src="food-19.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-3">
+            <div class="etel-pic">
+              <img class="food-1" src="food-110.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-4">
+            <div class="etel-pic">
+              <img class="food-1" src="food-111.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-5">
+            <div class="etel-pic">
+              <img class="food-1" src="food-112.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-6">
+            <div class="etel-pic">
+              <img class="food-1" src="food-113.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-7">
+            <div class="etel-pic">
+              <img class="food-1" src="food-114.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+          <div class="frame-8">
+            <div class="etel-pic">
+              <img class="food-1" src="food-115.png" />
+            </div>
+            <div class="etel-title">Példa kaja</div>
+            <button class="gomb">
+              <div class="gomb-text">Megnézem</div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="frame-221">
+        <div class="feedback-aboutus">
+          <div class="kapcsolat">
+            <div class="rectangle-10"></div>
+            <div class="feedback-cim">Lépjen velünk kapcsolatba !</div>
+            <div class="feeback-leiras">
+              Az alábbi mezők kitöltésével kapcsolatba tud lépni velünk.
+              <br />
+              Bármilyen kérdés merül fel Önben, mi szívesen megválaszoljuk.
+            </div>
+            <div class="feedback">
+              <div class="nev">
+                <div class="nev2">
+                  <div class="frame-160">
+                    <input class="pelda-nev" value="Pl.: Példa Tamás" />
+                  </div>
+                </div>
+                <div class="nev3">Név:</div>
+              </div>
+              <div class="uzenet">
+                <div class="uzenet2">
+                  <div class="frame-162">
+                    <input class="pelda-uzenet" value="Írja ide üzenetét..." />
+                  </div>
+                </div>
+                <div class="uzenet3">Üzenet:</div>
+              </div>
+              <div class="email">
+                <div class="email2">
+                  <div class="frame-161">
+                    <input class="pelda-email" value="Pl.: peldatamas@gmail.com" />
+                  </div>
+                </div>
+                <div class="e-mail-cim">E-mail cím:</div>
+              </div>
+              <button class="gomb2">
+                <div class="k-ld-s">Küldés</div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <a class="food-hub">FoodHub</a>
+          <a class="felhasz-feltet">Felhasználási feltételek</a>
+          <img src="./facebook.svg" class="facebook">
+          <img src="./twitter.svg" class="twitter">
+          <img src="./instagram.svg" class="instagram">
+          <a class="foodhub-gmail-com">foodhub@gmail.com</a>
+          <img class="foodhub-logo-trasnparent-1" src="foodhub-logo-trasnparent-10.png" />
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="./mainPage.js"></script>
+    <script src="./loadingscreen.js"></script>
+    <script src="./searchbar.js"></script>
+</body>
+
+</html>

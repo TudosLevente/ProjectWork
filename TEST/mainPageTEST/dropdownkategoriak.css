@@ -1,0 +1,65 @@
+.dropdown_kategoriak {
+    position: relative;
+    display: inline-block;
+    appearance: none;
+}
+
+.dropdown_content_kategoriak {
+    display: none;
+    position: absolute;
+    background-color: rgba(238, 163, 37, 0.99);
+    width: 1200px;
+    max-height: 500px;
+    /* height: auto; */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 15px;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px;
+    opacity: 0;
+    right: -550px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown_content_kategoriak li a{
+    font-size: 30px;
+    display: flex;
+}
+
+.dropdown_content_kategoriak a {
+    color: black;
+    text-decoration: none;
+    appearance: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px;
+}
+
+.dropdown_content_kategoriak a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown_content_kategoriak li {
+    list-style-type: none;
+}
+
+.dropdown_kategoriak:hover .dropdown_content_kategoriak {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+.dropdown_kategoriak:hover {
+    color: white;
+    font-weight: bold;
+}

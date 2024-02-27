@@ -7,7 +7,7 @@ module.exports = class Recipe {
     instructions = "";
 
     //hozzávaló adatok
-    ingredient_name = ""; //pl. Cukor
+    ingredient_name = {}; //pl. Cukor
     ingredient_quantity = ""; //pl. 1
     ingredient_measurement = ""; //pl. g, dkg, kg
 

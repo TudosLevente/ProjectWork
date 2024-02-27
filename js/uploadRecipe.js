@@ -82,9 +82,21 @@ function retrievePrepTimeType() {
     return preparationTimeTypes;
 }
 
+var userID = null;
+
+document.addEventListener('DOMContentLoaded', function () {
+    getData('/getLoggedInUserData').then((response) => {
+        console.log(response);
+        userID = response.user_id;
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
 function uploadRecipe() {
 
-    var picture_data_input = document.getElementById('picture_data');
+    //var picture_data_input = document.getElementById('picture_data');
+    var picture_data_input = "";
     var title_input = document.getElementById('title');
     var description_input = document.getElementById('description');
     var ingredients_input = retrieveIngredients();
@@ -98,27 +110,18 @@ function uploadRecipe() {
     var difficulty_level_input = document.getElementById('difficulty');
     var food_category_input = document.getElementById('food_category');
 
-    var userID = null;
-
-    getData('/getLoggedInUserData').then((response) => {
-        console.log(response);
-        userID = response.user_id;
-    }).catch((error) => {
-        console.error('Error:', error);
-    });
-
     var recipeData = {
         picture_data: picture_data_input.value,
         title: title_input.value,
         description: description_input.value,
-        ingredients: ingredients_input,
-        quantities: quantities_input,
-        measurements: measurements_input,
+        ingredient_name: ingredients_input,
+        ingredient_quantity: quantities_input,
+        ingredient_measurement: measurements_input,
         instructions: instructions_input,
-        preparation_type: prep_type_input,
-        preparation_time: prep_time_input,
-        preparation_time_type: prep_time_type_input,
-        serving_size: parseInt(serving_input.innerHTML),
+        time_prep_type: prep_type_input,
+        time_quantity: prep_time_input,
+        time_type: prep_time_type_input,
+        serving: parseInt(serving_input.innerHTML),
         difficulty_level: difficulty_level_input.options[difficulty_level_input.selectedIndex].innerHTML,
         food_category: food_category_input.options[food_category_input.selectedIndex].innerHTML,
         user_id: userID
@@ -136,7 +139,7 @@ function uploadRecipe() {
         console.error('Error:', error);
     });
 
-    console.log(picture_data_input.value); //nem tömb
+    //console.log(picture_data_input.value); //nem tömb
     console.log(title_input.value); //nem tömb
     console.log(description_input.value); //nem tömb
     console.log(ingredients_input); //tömb

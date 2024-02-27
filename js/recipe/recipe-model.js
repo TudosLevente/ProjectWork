@@ -37,7 +37,7 @@ async function uploadRecipe(req, res) {
         null //ez a feltöltési dátum ideje
     );
 
-    if (!(recipe.picture_data && recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
+    if (!(/*recipe.picture_data &&*/ recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
@@ -49,7 +49,10 @@ async function uploadRecipe(req, res) {
 
     const sql = 'INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) Values (?,?,?,?,?,?,?)';
 
-    const picture_data = fs.readFileSync(recipe.picture_data);
+
+    //const picture_data = fs.readFileSync(recipe.picture_data);
+
+    recipe.picture_data = "its a picture";
 
     function concatenatedTitlesAndInputs(array) {
         var concatenatedStrings = array.map(function (obj) {
@@ -63,26 +66,43 @@ async function uploadRecipe(req, res) {
 
     var concatenatedInstructions = concatenatedTitlesAndInputs(recipe.instructions);
 
-    con.query(sql, [picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category], (err, result) => {
+    con.query(sql, [recipe.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category], (err, result) => {
         if (err) throw err;
-        console.log(result.insertId);
-        console.log(result[0][0].insertId);
-        console.log(result[0][1].insertId);
         recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
         recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
 
         var ingredient_id = null;
 
-        recipe.ingredient_name.foreEach(function (ingredient) {
-            con.query('SELECT Ingredient_ID FROM Ingredients WHERE Ingredient_Name = ?', [ingredient], (err, result) => {
-                if (err) throw err;
-                ingredient_id = result[0][0].Ingredient_ID;
+        (async () => {
+            for (var i = 0; i < recipe.ingredient_name.length; i++) {
+                try {
+                    const result = await new Promise((resolve, reject) => {
+                        con.query('SELECT Ingredient_ID FROM Ingredients WHERE Ingredient_Name = ?', [recipe.ingredient_name[i]], (err, result) => {
+                            if (err) reject(err);
+                            else resolve(result);
+                        });
+                    });
 
-                con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity, recipe.ingredient_measurement], (err, result) => {
-                    if (err) throw err;
-                });
-            });
-        });
+                    console.log(result[0].Ingredient_ID);
+                    ingredient_id = result[0].Ingredient_ID;
+
+                    console.log(recipe.ingredient_measurement[i]);
+                    console.log(recipe.ingredient_quantity[i]);
+
+                    const insertResult = await new Promise((resolve, reject) => {
+                        con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity[i], recipe.ingredient_measurement[i]], (err, result) => {
+                            if (err) reject(err);
+                            else resolve(result);
+                        });
+                    });
+
+                    console.log(insertResult);
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+        })();
+
 
         for (var i = 0; i < recipe.time_prep_type.length; i++) {
             var timePrepType = recipe.time_prep_type[i];
@@ -108,5 +128,5 @@ async function uploadRecipe(req, res) {
     })
 }
 
-exports.getRecipeInfos = getRecipeInfos
-exports.uploadRecipe = uploadRecipe
+exports.getRecipeInfos = getRecipeInfos;
+exports.uploadRecipe = uploadRecipe;

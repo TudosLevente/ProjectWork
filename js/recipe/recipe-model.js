@@ -1,7 +1,6 @@
 const mysql = require("mysql2");
 const config = require("../App/config");
 const Recipe = require("./recipe");
-const fs = require('fs');
 
 function getRecipeInfos(req, res) {
     var con = mysql.createConnection(config.database);
@@ -47,12 +46,7 @@ async function uploadRecipe(req, res) {
         console.log('A recept sikeresen feltöltve.');
     })
 
-    const sql = 'INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) Values (?,?,?,?,?,?,?)';
-
-
-    //const picture_data = fs.readFileSync(recipe.picture_data);
-
-    recipe.picture_data = "its a picture";
+    const sql = 'INSERT INTO Recipes (User_ID,Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?,?)';
 
     function concatenatedTitlesAndInputs(array) {
         var concatenatedStrings = array.map(function (obj) {
@@ -64,12 +58,19 @@ async function uploadRecipe(req, res) {
         return concatenatedString;
     }
 
+    recipe.picture_data = "../App/uploads/";
+
     var concatenatedInstructions = concatenatedTitlesAndInputs(recipe.instructions);
 
-    con.query(sql, [recipe.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category], (err, result) => {
+    recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
+
+    const date = new Date();
+
+    recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
+
+    con.query(sql, [recipe.user_id, recipe.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, date], (err, result) => {
         if (err) throw err;
         recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
-        recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
 
         var ingredient_id = null;
 
@@ -114,10 +115,6 @@ async function uploadRecipe(req, res) {
 
             });
         };
-
-        const date = new Date();
-
-        recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 
         con.connect(function (err) {
             if (err) throw err;

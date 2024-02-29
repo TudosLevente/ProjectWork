@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function uploadRecipe() {
 
     //var picture_data_input = document.getElementById('picture_data');
-    var picture_data_input = "";
+    var picture_data_input = file;
     var title_input = document.getElementById('title');
     var description_input = document.getElementById('description');
     var ingredients_input = retrieveIngredients();
@@ -127,19 +127,30 @@ function uploadRecipe() {
         user_id: userID
     };
 
-    postData('http://localhost:8000/api/uploadRecipe', recipeData).then((response) => {
-        if (!response.ok) {
+    postData('http://localhost:8000/api/upload', picture_data_input).then((res) => {
+        if (!res.ok) {
             throw new Error("Failed to upload recipe.");
         }
 
-        console.log(response.json());
+        console.log(res.json());
+    }).then(
+        postData('http://localhost:8000/api/uploadRecipe', recipeData).then((response) => {
+            if (!response.ok) {
+                throw new Error("Failed to upload recipe.");
+            }
+
+            console.log(response.json());
 
 
-    }).catch((error) => {
-        console.error('Error:', error);
+        }).catch((error) => {
+            console.error('Error:', error);
+        })
+    ).catch((err) => {
+        console.error('Error:', err);
     });
 
     //console.log(picture_data_input.value); //nem tömb
+    console.log(picture_data_input)
     console.log(title_input.value); //nem tömb
     console.log(description_input.value); //nem tömb
     console.log(ingredients_input); //tömb

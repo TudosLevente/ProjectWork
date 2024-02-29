@@ -5,12 +5,15 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./vars.css" />
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="./loadingscreen.css">
   <link rel="stylesheet" href="./footer.css">
   <link rel="stylesheet" href="./navbar.css">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./dropdowndesszert.css">
+  <link rel="stylesheet" href="./dropdownfoetel.css">
+  <link rel="stylesheet" href="./dropdownkategoriak.css">
 
 
   <style>
@@ -35,10 +38,22 @@
       -webkit-font-smoothing: antialiased;
     }
   </style>
-  <title>Document</title>
+  <title>Recept</title>
 </head>
 
 <body>
+  <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+    <div class="loading_screen_body_div">
+      <div class="loading_screen_pizza">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+      </div>
+    </div>
+  </div>
   <div class="recipe-display">
     <div class="navbar_div">
       <nav class="navbar navbar-expand-lg fixed-top">
@@ -218,278 +233,279 @@
           </div>
         </div>
       </nav>
-      <img class="background-img-top" src="background-img-top0.png" />
-      <div class="recipe-display-main-div">
-        <div class="recipe-display-layout">
-          <div class="recipe-title">
-            <div class="recipe-title-text">Egy példa kaja</div>
+    </div>
+    <img class="background-img-top" src="background-img-top0.png" />
+    <div class="recipe-display-main-div">
+      <div class="recipe-display-layout">
+        <div class="recipe-title">
+          <div class="recipe-title-text">Egy példa kaja</div>
+        </div>
+        <div class="recipe-description">
+          <div class="recipe-description-title">Leírás:</div>
+          <div class="recipe-description-text">
+            Egy rövid leírás az ételről amit tudni lehet róla,
+            <br />
+            vagy ha van esetleg egy különleges története
+            <br />
+            akkor az itt szerepel.
           </div>
-          <div class="recipe-description">
-            <div class="recipe-description-title">Leírás:</div>
-            <div class="recipe-description-text">
-              Egy rövid leírás az ételről amit tudni lehet róla,
-              <br />
-              vagy ha van esetleg egy különleges története
-              <br />
-              akkor az itt szerepel.
-            </div>
+        </div>
+        <div class="recipe-img-and-details">
+          <div class="recipe-img-div">
+            <div class="recipe-img-display">Egy kép az ételről!</div>
           </div>
-          <div class="recipe-img-and-details">
-            <div class="recipe-img-div">
-              <div class="recipe-img-display">Egy kép az ételről!</div>
+          <div class="recipe-details">
+            <div class="recipe-details-difficulty">
+              <div class="recipe-details-difficulty-title">Nehézség:</div>
+              <img class="star-1" src="star-10.svg" />
+              <img class="star-2" src="star-20.svg" />
+              <img class="star-3" src="star-30.svg" />
             </div>
-            <div class="recipe-details">
-              <div class="recipe-details-difficulty">
-                <div class="recipe-details-difficulty-title">Nehézség:</div>
-                <img class="star-1" src="star-10.svg" />
-                <img class="star-2" src="star-20.svg" />
-                <img class="star-3" src="star-30.svg" />
+            <div class="recipe-details-data">
+              <div class="recipe-details-data-username">
+                Feltöltötte:
+                <br />
+                Tamas12345
               </div>
-              <div class="recipe-details-data">
-                <div class="recipe-details-data-username">
-                  Feltöltötte:
-                  <br />
-                  Tamas12345
-                </div>
-                <div class="recipe-details-data-date">
-                  Feltöltve:
-                  <br />
-                  2023 November 20
-                </div>
+              <div class="recipe-details-data-date">
+                Feltöltve:
+                <br />
+                2023 November 20
               </div>
-              <button class="recipe-details-favoritebutton">
-                <div class="recipe-details-favoritebutton-text">
-                  Recept mentése
-                </div>
-                <img class="recipe-details-favoritebutton-hearticon"
-                  src="recipe-details-favoritebutton-hearticon0.svg" />
-              </button>
             </div>
+            <button class="recipe-details-favoritebutton">
+              <div class="recipe-details-favoritebutton-text">
+                Recept mentése
+              </div>
+              <img class="recipe-details-favoritebutton-hearticon" src="recipe-details-favoritebutton-hearticon0.svg" />
+            </button>
           </div>
-          <div class="recipe-details-cooking">
-            <div class="recipe-details-cooking-service">
-              <div class="recipe-details-cooking-service-text">
-                Felszolgálási adag:
-              </div>
-              <div class="recipe-details-cooking-service-number">2</div>
+        </div>
+        <div class="recipe-details-cooking">
+          <div class="recipe-details-cooking-service">
+            <div class="recipe-details-cooking-service-text">
+              Felszolgálási adag:
             </div>
-            <div class="recipe-details-cooking-time">
-              <div class="recipe-details-cooking-time-innerdiv">
-                <div class="recipe-details-cooking-time-title">
-                  Elkészítési idő:
-                </div>
-                <div class="recipe-details-cooking-time-layout">
-                  <div class="recipe-details-cooking-time-1">
-                    <div class="recipe-details-cooking-time-1-type">
-                      Előkészület:
-                    </div>
-                    <div class="recipe-details-cooking-time-1-number">15</div>
-                    <div class="recipe-details-cooking-time-1-timetype">
-                      perc
-                    </div>
+            <div class="recipe-details-cooking-service-number">2</div>
+          </div>
+          <div class="recipe-details-cooking-time">
+            <div class="recipe-details-cooking-time-innerdiv">
+              <div class="recipe-details-cooking-time-title">
+                Elkészítési idő:
+              </div>
+              <div class="recipe-details-cooking-time-layout">
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
                   </div>
-                  <div class="recipe-details-cooking-time-1">
-                    <div class="recipe-details-cooking-time-1-type">
-                      Előkészület:
-                    </div>
-                    <div class="recipe-details-cooking-time-1-number">15</div>
-                    <div class="recipe-details-cooking-time-1-timetype">
-                      perc
-                    </div>
-                  </div>
-                  <div class="recipe-details-cooking-time-1">
-                    <div class="recipe-details-cooking-time-1-type">
-                      Előkészület:
-                    </div>
-                    <div class="recipe-details-cooking-time-1-number">15</div>
-                    <div class="recipe-details-cooking-time-1-timetype">
-                      perc
-                    </div>
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
+                    perc
                   </div>
                 </div>
-                <div class="recipe-details-cooking-time-alltime">
-                  <div class="recipe-details-cooking-time-alltime-title">
-                    Összesen:
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
                   </div>
-                  <div class="recipe-details-cooking-time-alltime-number">
-                    55
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
+                    perc
                   </div>
-                  <div class="recipe-details-cooking-time-alltime-timetype">
+                </div>
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
+                  </div>
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
                     perc
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="recipe-details-cooking-ingredients">
-              <div class="recipe-details-cooking-ingredients-innerdiv">
-                <div class="recipe-details-cooking-ingredients-title">
-                  Hozzávalók:
+              <div class="recipe-details-cooking-time-alltime">
+                <div class="recipe-details-cooking-time-alltime-title">
+                  Összesen:
                 </div>
-                <div class="recipe-details-cooking-ingredients-layout">
-                  <div class="recipe-details-cooking-ingredients-1">
-                    <div class="recipe-details-cooking-ingredients-1-quantity">
-                      Egy evőkanál
-                    </div>
-                    <div class="recipe-details-cooking-ingredients-1-name">
-                      cukor
-                    </div>
-                  </div>
-                  <div class="recipe-details-cooking-ingredients-1">
-                    <div class="recipe-details-cooking-ingredients-1-quantity">
-                      Egy evőkanál
-                    </div>
-                    <div class="recipe-details-cooking-ingredients-1-name">
-                      cukor
-                    </div>
-                  </div>
-                  <div class="recipe-details-cooking-ingredients-1">
-                    <div class="recipe-details-cooking-ingredients-1-quantity">
-                      Egy evőkanál
-                    </div>
-                    <div class="recipe-details-cooking-ingredients-1-name">
-                      cukor
-                    </div>
-                  </div>
-                  <div class="recipe-details-cooking-ingredients-1">
-                    <div class="recipe-details-cooking-ingredients-1-quantity">
-                      Egy evőkanál
-                    </div>
-                    <div class="recipe-details-cooking-ingredients-1-name">
-                      cukor
-                    </div>
-                  </div>
-                  <div class="recipe-details-cooking-ingredients-1">
-                    <div class="recipe-details-cooking-ingredients-1-quantity">
-                      Egy evőkanál
-                    </div>
-                    <div class="recipe-details-cooking-ingredients-1-name">
-                      cukor
-                    </div>
-                  </div>
+                <div class="recipe-details-cooking-time-alltime-number">
+                  55
+                </div>
+                <div class="recipe-details-cooking-time-alltime-timetype">
+                  perc
                 </div>
               </div>
             </div>
-            <div class="recipe-details-cooking-steps">
-              <div class="recipe-details-cooking-steps-innerdiv">
-                <div class="recipe-details-cooking-steps-title">
-                  Utasítások:
+          </div>
+          <div class="recipe-details-cooking-ingredients">
+            <div class="recipe-details-cooking-ingredients-innerdiv">
+              <div class="recipe-details-cooking-ingredients-title">
+                Hozzávalók:
+              </div>
+              <div class="recipe-details-cooking-ingredients-layout">
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
                 </div>
-                <div class="recipe-details-cooking-steps-layout">
-                  <div class="recipe-details-cooking-steps-1">
-                    <div class="recipe-details-cooking-steps-1-title">
-                      <div class="recipe-details-cooking-steps-1-title-number">
-                        I.
-                      </div>
-                      <div class="recipe-details-cooking-steps-1-title-text">
-                        Lépés
-                      </div>
-                    </div>
-                    <div class="recipe-details-cooking-steps-1-description">
-                      A recept elkészítésének az egyik lépése.
-                    </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
                   </div>
-                  <div class="recipe-details-cooking-steps-1">
-                    <div class="recipe-details-cooking-steps-1-title">
-                      <div class="recipe-details-cooking-steps-1-title-number">
-                        I.
-                      </div>
-                      <div class="recipe-details-cooking-steps-1-title-text">
-                        Lépés
-                      </div>
-                    </div>
-                    <div class="recipe-details-cooking-steps-1-description">
-                      A recept elkészítésének az egyik lépése.
-                    </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
                   </div>
-                  <div class="recipe-details-cooking-steps-1">
-                    <div class="recipe-details-cooking-steps-1-title">
-                      <div class="recipe-details-cooking-steps-1-title-number">
-                        I.
-                      </div>
-                      <div class="recipe-details-cooking-steps-1-title-text">
-                        Lépés
-                      </div>
-                    </div>
-                    <div class="recipe-details-cooking-steps-1-description">
-                      A recept elkészítésének az egyik lépése.
-                    </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="recipe-comments">
-          <div class="recipe-comments-title">
-            <div class="recipe-comments-title-text">Hozzászólások</div>
-            <div class="recipe-comments-title-description">
-              Mindig örülünk, ha hallunk a közösség tagjaitól!
-              <br />
-              Ne habozz megosztani a véleményed vagy élményed a
-              <br />
-              recepttel kapcsolatban.
-            </div>
-          </div>
-          <div class="recipe-comments-inputdiv">
-            <div class="recipe-comments-inputlayout">
-              <div class="recipe-comments-input">Írd ide a véleményed.</div>
-            </div>
-          </div>
-          <div class="recipe-comments-commentcontainer">
-            <div class="recipe-comments-commentcontainer-1">
-              <div class="recipe-comments-commentcontainer-1-title">
-                <div class="recipe-comments-commentcontainer-1-title-username">
-                  Tamas12345
-                </div>
-                <div class="recipe-comments-commentcontainer-1-title-date">
-                  2023.11.20
-                </div>
+          <div class="recipe-details-cooking-steps">
+            <div class="recipe-details-cooking-steps-innerdiv">
+              <div class="recipe-details-cooking-steps-title">
+                Utasítások:
               </div>
-              <div class="recipe-comments-commentcontainer-1-comment">
-                Ez a recept még számomra is könnyen elkészíthető volt, aki két
-                bal kezes
-                <br />
-                a konyhában. Köszönöm szépen a receptet.
-              </div>
-              <div class="recipe-comments-commentcontainer-1-line"></div>
-            </div>
-            <div class="recipe-comments-commentcontainer-1">
-              <div class="recipe-comments-commentcontainer-1-title">
-                <div class="recipe-comments-commentcontainer-1-title-username">
-                  Tamas12345
+              <div class="recipe-details-cooking-steps-layout">
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
                 </div>
-                <div class="recipe-comments-commentcontainer-1-title-date">
-                  2023.11.20
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
                 </div>
-              </div>
-              <div class="recipe-comments-commentcontainer-1-comment">
-                Ez a recept még számomra is könnyen elkészíthető volt, aki két
-                bal kezes
-                <br />
-                a konyhában. Köszönöm szépen a receptet.
-              </div>
-              <div class="recipe-comments-commentcontainer-1-line"></div>
-            </div>
-            <div class="recipe-comments-commentcontainer-1">
-              <div class="recipe-comments-commentcontainer-1-title">
-                <div class="recipe-comments-commentcontainer-1-title-username">
-                  Tamas12345
-                </div>
-                <div class="recipe-comments-commentcontainer-1-title-date">
-                  2023.11.20
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
                 </div>
               </div>
-              <div class="recipe-comments-commentcontainer-1-comment">
-                Ez a recept még számomra is könnyen elkészíthető volt, aki két
-                bal kezes
-                <br />
-                a konyhában. Köszönöm szépen a receptet.
-              </div>
-              <div class="recipe-comments-commentcontainer-1-line"></div>
             </div>
           </div>
         </div>
       </div>
+      <div class="recipe-comments">
+        <div class="recipe-comments-title">
+          <div class="recipe-comments-title-text">Hozzászólások</div>
+          <div class="recipe-comments-title-description">
+            Mindig örülünk, ha hallunk a közösség tagjaitól!
+            <br />
+            Ne habozz megosztani a véleményed vagy élményed a
+            <br />
+            recepttel kapcsolatban.
+          </div>
+        </div>
+        <div class="recipe-comments-inputdiv">
+          <div class="recipe-comments-inputlayout">
+            <div class="recipe-comments-input">Írd ide a véleményed.</div>
+          </div>
+        </div>
+        <div class="recipe-comments-commentcontainer">
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%;">
       <img class="background-img-bottom" src="background-img-bottom0.png" />
       <div class="footer_container">
         <div class="footer_main_div">
@@ -512,6 +528,9 @@
       </div>
     </div>
   </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

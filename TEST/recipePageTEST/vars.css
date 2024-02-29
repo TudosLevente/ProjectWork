@@ -1,0 +1,13 @@
+/* Figma Styles of your File */
+:root {
+  /* Colors */
+  --lemon-greater-orange-greater-red-linear: linear-gradient(
+    180deg,
+    rgba(238, 163, 37, 1) 0%,
+    rgba(255, 96, 0, 1) 51.5625%,
+    rgba(255, 0, 0, 1) 100%
+  );
+
+  /* Fonts */
+  /* Effects */
+}

@@ -1,0 +1,74 @@
+.websidecookies,
+.websidecookies * {
+  box-sizing: border-box;
+}
+.websidecookies {
+  height: 78px;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+}
+.websidecookies-backgroundimage {
+  width: 1915px;
+  height: 77px;
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  object-fit: cover;
+}
+.websidecookies-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 226px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 195px;
+  top: 1px;
+}
+.websidecookies-description {
+  flex-shrink: 0;
+  width: 999px;
+  height: 77px;
+  position: relative;
+  overflow: hidden;
+}
+.websidecookies-description-text {
+  color: #ffd88a;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  left: 9px;
+  top: 0px;
+  width: 990px;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.websidecookies-agreebutton {
+  background: #d8a339;
+  border-radius: 15px;
+  flex-shrink: 0;
+  width: 148px;
+  height: 42px;
+  position: relative;
+  overflow: hidden;
+}
+.websidecookies-agreebutton-text {
+  color: #492a04;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 148px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

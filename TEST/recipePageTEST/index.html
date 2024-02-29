@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./loadingscreen.css">
+  <link rel="stylesheet" href="./footer.css">
+  <link rel="stylesheet" href="./navbar.css">
+  <link rel="stylesheet" href="./dropdowndesszert.css">
+  <link rel="stylesheet" href="./dropdownfoetel.css">
+  <link rel="stylesheet" href="./dropdownkategoriak.css">
+
+
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      appearance: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+  <title>Recept</title>
+</head>
+
+<body>
+  <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+    <div class="loading_screen_body_div">
+      <div class="loading_screen_pizza">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="./pizzaslice.png">
+      </div>
+    </div>
+  </div>
+  <div class="recipe-display">
+    <div class="navbar_div">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <div class="row col-12">
+            <div class="col-lg-4 d-flex align-items-center justify-content-start">
+              <div class="navbar_logo">
+                <img src="./logo-removebg-preview.png" class="logo">
+                <img src="./FoodHub.png" class="navbar_foobhub_logo_text">
+              </div>
+            </div>
+            <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+              <div class="input-group">
+                <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
+                  aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
+              </div>
+              <div id="search-results-container" class="mt-2 fixed-top"></div>
+              <div class="menuitems_row row justify-content-center ">
+                <div class="navmenuitems">
+                  <ul class="navbarmenulist navbar-nav">
+                    <li class="divider"></li>
+                    <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelDropdown()"
+                      onmouseout="hideFoetelDropdown()">
+                      <a class="nav-link dropdown" class="dropdown_content_foetel" id="dropdownfoetel">
+                        Főételek
+                      </a>
+                      <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                      </ul>
+                    </li>
+                    <script>
+                      function showFoetelDropdown() {
+                        var dropdownContent = document.querySelector('.dropdown_foetel .dropdown_content_foetel');
+                        dropdownContent.style.display = 'flex';
+                        dropdownContent.style.animationName = 'fadeIn';
+                        dropdownContent.style.animationDuration = '0.3s';
+                        dropdownContent.style.animationFillMode = 'forwards';
+                      }
+
+                      function hideFoetelDropdown() {
+                        var dropdownContent = document.querySelector('.dropdown_foetel .dropdown_content_foetel');
+                        dropdownContent.style.animationName = 'fadeOut';
+                        dropdownContent.style.animationDuration = '0.3s';
+                        dropdownContent.style.animationFillMode = 'forwards';
+                        setTimeout(function () {
+                          dropdownContent.style.display = 'none';
+                        }, 300);
+                      }
+
+                    </script>
+                    <li class="divider"></li>
+                    <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertDropdown()"
+                      onmouseout="hideDesszertDropdown()">
+                      <a class="nav-link dropdown" class="dropdown_content_desszert" id="dropdowndesszert" href="#">
+                        Desszertek
+                      </a>
+                      <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                      </ul>
+                    </li>
+                    <script>
+                      function showDesszertDropdown() {
+                        var dropdownContent = document.querySelector('.dropdown_desszert .dropdown_content_desszert');
+                        dropdownContent.style.display = 'flex';
+                        dropdownContent.style.animationName = 'fadeIn';
+                        dropdownContent.style.animationDuration = '0.3s';
+                        dropdownContent.style.animationFillMode = 'forwards';
+                      }
+
+                      function hideDesszertDropdown() {
+                        var dropdownContent = document.querySelector('.dropdown_desszert .dropdown_content_desszert');
+                        dropdownContent.style.animationName = 'fadeOut';
+                        dropdownContent.style.animationDuration = '0.3s';
+                        dropdownContent.style.animationFillMode = 'forwards';
+                        setTimeout(function () {
+                          dropdownContent.style.display = 'none';
+                        }, 300);
+                      }
+                    </script>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Levesek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Saláták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tészták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
+                      onmouseout="hideKategoriakDropdown()">
+                      <a class="nav-link dropdown" class="dropdown_content_kategoriak" id="dropdownkategoriak" href="#">
+                        Kategóriák
+                      </a>
+                      <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
+                        id="dropdown_content_kategoriak">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                        <li><a class="dropdown-item" href="#">Szószok</a></li>
+                        <li><a class="dropdown-item" href="#">Torták</a></li>
+                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
+                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                      </ul>
+                    </li>
+                    <script>
+                      var kategoriakHovered = false;
+
+                      function setHoverState(value) {
+                        kategoriakHovered = value;
+                        console.log(kategoriakHovered);
+                      }
+
+                      function showKategoriakDropdown() {
+                        var dropdownContent = document.querySelector('.dropdown_kategoriak .dropdown_content_kategoriak');
+                        dropdownContent.style.display = 'flex';
+                        dropdownContent.style.animationName = 'fadeIn';
+                        dropdownContent.style.animationDuration = '0.3s';
+                        dropdownContent.style.animationFillMode = 'forwards';
+                        setHoverState(true);
+                      }
+
+                      function hideKategoriakDropdown() {
+                        console.log(kategoriakHovered)
+                        setHoverState(false);
+                        if (kategoriakHovered === false) {
+                          var dropdownContent = document.querySelector('.dropdown_kategoriak .dropdown_content_kategoriak');
+                          dropdownContent.style.animationName = 'fadeOut';
+                          dropdownContent.style.animationDuration = '0.3s';
+                          dropdownContent.style.animationFillMode = 'forwards';
+                        }
+                      }
+
+                    </script>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ajánlatunk</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Rólunk</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="login_or_profil" class="col-lg-4 d-flex align-items-center justify-content-end"
+              style="right: 40px;">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <img class="background-img-top" src="background-img-top0.png" />
+    <div class="recipe-display-main-div">
+      <div class="recipe-display-layout">
+        <div class="recipe-title">
+          <div class="recipe-title-text">Egy példa kaja</div>
+        </div>
+        <div class="recipe-description">
+          <div class="recipe-description-title">Leírás:</div>
+          <div class="recipe-description-text">
+            Egy rövid leírás az ételről amit tudni lehet róla,
+            <br />
+            vagy ha van esetleg egy különleges története
+            <br />
+            akkor az itt szerepel.
+          </div>
+        </div>
+        <div class="recipe-img-and-details">
+          <div class="recipe-img-div">
+            <div class="recipe-img-display">Egy kép az ételről!</div>
+          </div>
+          <div class="recipe-details">
+            <div class="recipe-details-difficulty">
+              <div class="recipe-details-difficulty-title">Nehézség:</div>
+              <img class="star-1" src="star-10.svg" />
+              <img class="star-2" src="star-20.svg" />
+              <img class="star-3" src="star-30.svg" />
+            </div>
+            <div class="recipe-details-data">
+              <div class="recipe-details-data-username">
+                Feltöltötte:
+                <br />
+                Tamas12345
+              </div>
+              <div class="recipe-details-data-date">
+                Feltöltve:
+                <br />
+                2023 November 20
+              </div>
+            </div>
+            <button class="recipe-details-favoritebutton">
+              <div class="recipe-details-favoritebutton-text">
+                Recept mentése
+              </div>
+              <img class="recipe-details-favoritebutton-hearticon" src="recipe-details-favoritebutton-hearticon0.svg" />
+            </button>
+          </div>
+        </div>
+        <div class="recipe-details-cooking">
+          <div class="recipe-details-cooking-service">
+            <div class="recipe-details-cooking-service-text">
+              Felszolgálási adag:
+            </div>
+            <div class="recipe-details-cooking-service-number">2</div>
+          </div>
+          <div class="recipe-details-cooking-time">
+            <div class="recipe-details-cooking-time-innerdiv">
+              <div class="recipe-details-cooking-time-title">
+                Elkészítési idő:
+              </div>
+              <div class="recipe-details-cooking-time-layout">
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
+                  </div>
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
+                    perc
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
+                  </div>
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
+                    perc
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-time-1">
+                  <div class="recipe-details-cooking-time-1-type">
+                    Előkészület:
+                  </div>
+                  <div class="recipe-details-cooking-time-1-number">15</div>
+                  <div class="recipe-details-cooking-time-1-timetype">
+                    perc
+                  </div>
+                </div>
+              </div>
+              <div class="recipe-details-cooking-time-alltime">
+                <div class="recipe-details-cooking-time-alltime-title">
+                  Összesen:
+                </div>
+                <div class="recipe-details-cooking-time-alltime-number">
+                  55
+                </div>
+                <div class="recipe-details-cooking-time-alltime-timetype">
+                  perc
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-details-cooking-ingredients">
+            <div class="recipe-details-cooking-ingredients-innerdiv">
+              <div class="recipe-details-cooking-ingredients-title">
+                Hozzávalók:
+              </div>
+              <div class="recipe-details-cooking-ingredients-layout">
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-ingredients-1">
+                  <div class="recipe-details-cooking-ingredients-1-quantity">
+                    Egy evőkanál
+                  </div>
+                  <div class="recipe-details-cooking-ingredients-1-name">
+                    cukor
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-details-cooking-steps">
+            <div class="recipe-details-cooking-steps-innerdiv">
+              <div class="recipe-details-cooking-steps-title">
+                Utasítások:
+              </div>
+              <div class="recipe-details-cooking-steps-layout">
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
+                </div>
+                <div class="recipe-details-cooking-steps-1">
+                  <div class="recipe-details-cooking-steps-1-title">
+                    <div class="recipe-details-cooking-steps-1-title-number">
+                      I.
+                    </div>
+                    <div class="recipe-details-cooking-steps-1-title-text">
+                      Lépés
+                    </div>
+                  </div>
+                  <div class="recipe-details-cooking-steps-1-description">
+                    A recept elkészítésének az egyik lépése.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recipe-comments">
+        <div class="recipe-comments-title">
+          <div class="recipe-comments-title-text">Hozzászólások</div>
+          <div class="recipe-comments-title-description">
+            Mindig örülünk, ha hallunk a közösség tagjaitól!
+            <br />
+            Ne habozz megosztani a véleményed vagy élményed a
+            <br />
+            recepttel kapcsolatban.
+          </div>
+        </div>
+        <div class="recipe-comments-inputdiv">
+          <div class="recipe-comments-inputlayout">
+            <div class="recipe-comments-input">Írd ide a véleményed.</div>
+          </div>
+        </div>
+        <div class="recipe-comments-commentcontainer">
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+          <div class="recipe-comments-commentcontainer-1">
+            <div class="recipe-comments-commentcontainer-1-title">
+              <div class="recipe-comments-commentcontainer-1-title-username">
+                Tamas12345
+              </div>
+              <div class="recipe-comments-commentcontainer-1-title-date">
+                2023.11.20
+              </div>
+            </div>
+            <div class="recipe-comments-commentcontainer-1-comment">
+              Ez a recept még számomra is könnyen elkészíthető volt, aki két
+              bal kezes
+              <br />
+              a konyhában. Köszönöm szépen a receptet.
+            </div>
+            <div class="recipe-comments-commentcontainer-1-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%;">
+      <img class="background-img-bottom" src="background-img-bottom0.png" />
+      <div class="footer_container">
+        <div class="footer_main_div">
+          <div class="footer_column_1">
+            <button class="footer_foodhub">FoodHub</button>
+            <a class="footer_termsofuse">Felhasználási feltételek</a>
+          </div>
+          <div class="footer_column_2">
+            <button class="footer_email">foodhub@gmail.com</button>
+          </div>
+          <div class="footer_column_3">
+            <img class="footer_logo_pic" src="./logo-removebg-preview.png" />
+          </div>
+          <div class="footer_column_4">
+            <a href="#"><img class="footer_facebook" src="./facebook.svg" /></a>
+            <a href="#"><img class="footer_twitter" src="./twitter.svg" /></a>
+            <a href="#"><img class="footer_intagram" src="./instagram.svg" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="./loadingscreen.js"></script>
+  <script src="./searchbar.js"></script>
+</body>
+
+</html>

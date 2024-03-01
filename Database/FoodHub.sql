@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS Ingredients (
 CREATE TABLE IF NOT EXISTS Recipes (
     Recipe_ID INT AUTO_INCREMENT PRIMARY KEY,
     User_ID INT,
-    Picture_data BLOB,
+    Picture_data VARCHAR(255),
     Title VARCHAR(255) NOT NULL,
     Description TEXT,
     Instructions TEXT,
@@ -68,6 +68,9 @@ CREATE TABLE IF NOT EXISTS Recipes (
     FOREIGN KEY (User_ID)
         REFERENCES Users (User_ID)
 );
+
+ALTER TABLE Recipes
+MODIFY Picture_data VARCHAR(255) AFTER User_ID;
 
 -- Time table
 CREATE TABLE IF NOT EXISTS Time (

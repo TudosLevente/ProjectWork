@@ -94,9 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function uploadRecipe() {
-
-    //var picture_data_input = document.getElementById('picture_data');
-    var picture_data_input = file;
+    var picture_data_input = document.getElementById('picture_data');
     var title_input = document.getElementById('title');
     var description_input = document.getElementById('description');
     var ingredients_input = retrieveIngredients();
@@ -111,7 +109,7 @@ function uploadRecipe() {
     var food_category_input = document.getElementById('food_category');
 
     var recipeData = {
-        picture_data: picture_data_input.value,
+        picture_data: null,
         title: title_input.value,
         description: description_input.value,
         ingredient_name: ingredients_input,
@@ -127,40 +125,32 @@ function uploadRecipe() {
         user_id: userID
     };
 
-    postData('http://localhost:8000/api/upload', picture_data_input).then((res) => {
-        if (!res.ok) {
-            throw new Error("Failed to upload recipe.");
-        }
+    var pictureData = new FormData();
+    pictureData.append('picture_data', picture_data_input.files[0]);
 
-        console.log(res.json());
-    }).then(
-        postData('http://localhost:8000/api/uploadRecipe', recipeData).then((response) => {
-            if (!response.ok) {
+    postData('http://localhost:8000/api/uploadRecipe', recipeData)
+        .then((res) => {
+            if (!res.ok) {
                 throw new Error("Failed to upload recipe.");
             }
-
-            console.log(response.json());
-
-
-        }).catch((error) => {
-            console.error('Error:', error);
+            return res.json();
         })
-    ).catch((err) => {
-        console.error('Error:', err);
-    });
+        .then((data) => {
+            pictureData.append('recipe_id', data.recipe_id);
 
-    //console.log(picture_data_input.value); //nem tömb
-    console.log(picture_data_input)
-    console.log(title_input.value); //nem tömb
-    console.log(description_input.value); //nem tömb
-    console.log(ingredients_input); //tömb
-    console.log(quantities_input); //tömb
-    console.log(measurements_input); //tömb
-    console.log(instructions_input); //tömb 
-    console.log(prep_type_input); //tömb
-    console.log(prep_time_input); // tömb
-    console.log(prep_time_type_input); //tömb
-    console.log(parseInt(serving_input.innerHTML)); //nem tömb
-    console.log(difficulty_level_input.options[difficulty_level_input.selectedIndex].innerHTML); //nem tömb
-    console.log(food_category_input.options[food_category_input.selectedIndex].innerHTML); //nem tömb
+
+            console.log(pictureData);
+
+            return postFormData('http://localhost:8000/api/uploadPicture', pictureData);
+        })
+        .then((response) => {
+            console.log(response.json());
+            if (!response.ok) {
+                throw new Error("Failed to upload picture.");
+            }
+            console.log(response.json());
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }

@@ -43,10 +43,10 @@ async function uploadRecipe(req, res) {
     var con = mysql.createConnection(config.database);
     con.connect(function (err) {
         if (err) throw err;
-        console.log('A recept sikeresen feltöltve.');
+        console.log('Csatlakozva a recept feltöltéshez.');
     })
 
-    const sql = 'INSERT INTO Recipes (User_ID,Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?,?)';
+    const sql = 'INSERT INTO Recipes (User_ID,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?)';
 
     function concatenatedTitlesAndInputs(array) {
         var concatenatedStrings = array.map(function (obj) {
@@ -58,8 +58,6 @@ async function uploadRecipe(req, res) {
         return concatenatedString;
     }
 
-    recipe.picture_data = "../App/uploads/";
-
     var concatenatedInstructions = concatenatedTitlesAndInputs(recipe.instructions);
 
     recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
@@ -68,7 +66,7 @@ async function uploadRecipe(req, res) {
 
     recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 
-    con.query(sql, [recipe.user_id, recipe.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, date], (err, result) => {
+    con.query(sql, [recipe.user_id, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, date], (err, result) => {
         if (err) throw err;
         recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
 
@@ -80,7 +78,6 @@ async function uploadRecipe(req, res) {
                     const result = await new Promise((resolve, reject) => {
                         con.query('SELECT Ingredient_ID FROM Ingredients WHERE Ingredient_Name = ?', [recipe.ingredient_name[i]], (err, result) => {
                             if (err) reject(err);
-                            else resolve(result);
                         });
                     });
 
@@ -93,7 +90,6 @@ async function uploadRecipe(req, res) {
                     const insertResult = await new Promise((resolve, reject) => {
                         con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity[i], recipe.ingredient_measurement[i]], (err, result) => {
                             if (err) reject(err);
-                            else resolve(result);
                         });
                     });
 

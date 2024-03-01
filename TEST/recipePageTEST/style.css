@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  zoom: 67%;
+  zoom: 55%;
   background: #f0d8b5;
 }
 
@@ -246,7 +246,11 @@
   flex-shrink: 0;
   height: 75px;
   position: relative;
+  text-align: center;
+  display: flex;
   overflow: hidden;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .recipe-details-favoritebutton-text {

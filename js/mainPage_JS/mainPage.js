@@ -4,8 +4,8 @@ function generateNumber() {
 
 function loadRecipes() {
     console.log("function is running");
-    for (var i = 1; i < 5; i++) {
-        for (var j = 1; j < 4; j++) {
+    for (var i = 1; i < 3; i++) {
+        for (var j = 1; j < 5; j++) {
             (function (i, j) {
                 var id = generateNumber();
 
@@ -56,13 +56,21 @@ document.addEventListener("DOMContentLoaded", function () {
         if (loggedInUserData.loggedIn) {
             console.log("logged in");
 
-            const login_or_profil_div = document.getElementById('login_or_profil');
+            const login_or_profil_div = document.getElementById('login_div');
 
             const addedUpload = document.createElement('div');
-            addedUpload.className = "login-div";
+            addedUpload.className = "dropdown_profil dropdown";
 
             addedUpload.innerHTML = `
-                <a href="../html/recipeUpload.html" class="login-text">Recept feltöltés</a>
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                    <a href="#" onclick="showAdataim()">Adataim<img
+                            src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
+                    <a href="#" onclick="showRecepjeim()">Recept feltöltése<img
+                            src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
+                    <a href="#" onclick="logout()">Kijelentkezés<img
+                            src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
+                </div>
             `;
 
             login_or_profil_div.appendChild(addedUpload);

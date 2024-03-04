@@ -21,13 +21,13 @@ async function postData(url = "", data = {}) {
     return response;
 };
 
-async function postFormData(url = "", data = null) {
+async function postFormData(url = "", data = {}) {
     const response = await fetch(url, {
-        method: "POST", // POST, PUT, DELETE ...       
+        method: "POST", // POST, PUT, DELETE ... 
         headers: {
-            "Content-Type": "multipart/form-data",
+            'Content-Type': 'multipart/form-data; boundary=' + data.boundary,
         },
-        body: data,
+        body: data
     })
     console.log(response);
     return response;

@@ -109,7 +109,7 @@ function uploadRecipe() {
     var food_category_input = document.getElementById('food_category');
 
     var recipeData = {
-        picture_data: null,
+        picture_data: picture_data_input.files[0],
         title: title_input.value,
         description: description_input.value,
         ingredient_name: ingredients_input,
@@ -136,11 +136,6 @@ function uploadRecipe() {
             return res.json();
         })
         .then((data) => {
-            pictureData.append('recipe_id', data.recipe_id);
-
-
-            console.log(pictureData);
-
             return postFormData('http://localhost:8000/api/uploadPicture', pictureData);
         })
         .then((response) => {
@@ -154,3 +149,7 @@ function uploadRecipe() {
             console.error('Error:', error);
         });
 }
+
+function cancelUpload() {
+    window.location.href = '/';
+};

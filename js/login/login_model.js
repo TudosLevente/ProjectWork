@@ -65,10 +65,11 @@ function login(req, res) {
             console.log('sikeres csatlakozás (login)');
         })
 
-        const sql = 'CALL felhBejelentkezes(?,?)';
+        const sql = 'SELECT felhBejelentkezes(?,?)';
         con.query(sql, [email, password], (err, result) => {
             if (err) throw err;
             if (result.length > 0 && Object.values(result[0])[0] > 0) {
+                console.log('call-on belül nincs error');
 
                 const functionResult = result[0];
                 const functionCall = Object.keys(functionResult)[0];
@@ -98,7 +99,7 @@ function login(req, res) {
                     loggedInUserData.logged_username = result[0].Username;
                     loggedInUserData.logged_email = result[0].Email;
 
-                    con.query('CALL felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
+                    con.query('SELECT felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
                         if (err) throw err;
 
                         userLoggedIn = true;

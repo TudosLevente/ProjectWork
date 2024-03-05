@@ -170,7 +170,7 @@ a:hover {
     display: none;
     position: absolute;
     background-color: rgba(238, 163, 37, 0.97);
-    min-width: 180px;
+    min-width: 300px;
     height: auto;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -183,8 +183,9 @@ a:hover {
     gap: 10px;
     padding: 10px;
     opacity: 0;
-    right: -50px;
+    right: -100px;
     transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 .dropdown_content_profil a {
@@ -197,7 +198,7 @@ a:hover {
     align-content: center;
     justify-content: flex-start;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .dropdown_content_profil a:hover {

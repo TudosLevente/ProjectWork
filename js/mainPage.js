@@ -101,23 +101,23 @@ var navbar = document.querySelector('.navbar');
 var navbar_menu = document.querySelector('.navbar_menu');
 var isRowDisabled = false;
 
-window.onscroll = function () { scrollFunction() };
+// window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-        if (!isRowDisabled) {
-            isRowDisabled = true;
-            navbar_menu.classList.add('hidden');
-            navbar.classList.add('ifHidden');
-            setTimeout(function () {
+// function scrollFunction() {
+//     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+//         if (!isRowDisabled) {
+//             isRowDisabled = true;
+//             navbar_menu.classList.add('hidden');
+//             navbar.classList.add('ifHidden');
+//             setTimeout(function () {
 
-            }, 500);
-        }
-    } else {
-        if (isRowDisabled) {
-            isRowDisabled = false;
-            navbar_menu.classList.remove('hidden');
-            navbar.classList.remove('ifHidden');
-        }
-    }
-}
+//             }, 500);
+//         }
+//     } else {
+//         if (isRowDisabled) {
+//             isRowDisabled = false;
+//             navbar_menu.classList.remove('hidden');
+//             navbar.classList.remove('ifHidden');
+//         }
+//     }
+// }

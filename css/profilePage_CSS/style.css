@@ -890,8 +890,7 @@ a:hover {
 
 .logout_icon,
 .gear_icon,
-.gear_icon,
-.gear_icon {
+.recipe_icon{
   position: relative;
   width: 20%;
   height: 20%;

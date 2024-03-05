@@ -5,7 +5,7 @@
 }
 
 .dropdown_content_foetel {
-    display: none;
+    display: flex;
     position: absolute;
     background-color: rgba(238, 163, 37, 0.97);
     min-width: 100px;

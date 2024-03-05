@@ -35,18 +35,21 @@ function AnimateLoadingScreen() {
     }
 
     // Initial animation
-    setInterval(animateSlices, 200);
+    setInterval(animateSlices, 220);
 
-    // Fading effect after 3 seconds
     setTimeout(() => {
         document.getElementById('loading_screen').classList.add('fadeOut');
         setTimeout(() => {
             document.getElementById('loading_screen').style.display = 'none';
         }, 1000);
-    }, 1000);
+    }, 1100);
 
 }
 
 window.onload = function () {
     AnimateLoadingScreen();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
 }

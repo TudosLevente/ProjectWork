@@ -4,8 +4,8 @@ function generateNumber() {
 
 function loadRecipes() {
     console.log("function is running");
-    for (var i = 1; i < 5; i++) {
-        for (var j = 1; j < 4; j++) {
+    for (var i = 1; i < 3; i++) {
+        for (var j = 1; j < 5; j++) {
             (function (i, j) {
                 var id = generateNumber();
 
@@ -58,33 +58,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const login_or_profil_div = document.getElementById('login_or_profil');
 
-            const addedUpload = document.createElement('div');
-            addedUpload.className = "login-div";
+            const addedProfil = document.createElement('div');
+            addedProfil.className = "dropdown_profil dropdown";
 
-            addedUpload.innerHTML = `
-                <a href="../html/recipeUpload.html" class="login-text">Recept feltöltés</a>
+            addedProfil.innerHTML = `
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                    <a href="../../html/profilePage.html" onclick="showAdataim()">Adataim<img
+                            src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
+                    <a href="../../html/recipeUpload.html" onclick="showRecepjeim()">Recept feltöltése<img
+                            src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
+                    <a href="#" onclick="logout()">Kijelentkezés<img
+                            src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
+                </div>
             `;
 
-            login_or_profil_div.appendChild(addedUpload);
+            login_or_profil_div.appendChild(addedProfil);
         }
         else if (!loggedInUserData.loggedIn) {
             console.log("not logged in");
+
             const login_or_profil_div = document.getElementById('login_or_profil');
-            const addedImg = document.createElement('img');
-            addedImg.src = "../images/mainPage/user.svg";
-            addedImg.alt = "";
-            addedImg.style = "width: 7%; margin-right: 5px;";
 
             const addedLogin = document.createElement('div');
             addedLogin.className = "login-div";
-
-
 
             addedLogin.innerHTML = `
                 <a href="../html/loginPage.html" class="login-text">Bejelentkezés</a>
             `;
 
-            login_or_profil_div.appendChild(addedImg);
             login_or_profil_div.appendChild(addedLogin);
         }
     }).catch((error) => {

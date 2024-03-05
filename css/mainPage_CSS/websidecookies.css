@@ -32,12 +32,13 @@ h5,
 }
 
 .websidecookies {
+    display: flex;
     height: 78px;
     position: fixed;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    background-image: url(./websidecookies.jpeg);
+    background-image: url('../../images/mainPage_Image/websidecookies.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -2,9 +2,11 @@
   "name": "foodhub",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon App/App.js"
+  
   },
   "keywords": [],
   "author": "",

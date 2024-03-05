@@ -48,7 +48,6 @@
                             onclick="toggFavoritesDiv()">
                             <span class="menu_div_favorites_text">Kedvenceim</span>
                         </button>
-                        </button>
                     </div>
                     <div class="main_div">
                         <div class="my_data_div" style="display: flex;" id="my_data_div">
@@ -62,7 +61,8 @@
                                                 style="display:none; color: white;" />
                                             <img src="../images/profilePage_Images/input_edit_icon.png"
                                                 class="input_edit_icon" style="display: none;" id="input_edit_icon">
-                                            <div class="my_data_div_inputs_username_container_input">FoodHub</div>
+                                            <div id="username_input_shown"
+                                                class="my_data_div_inputs_username_container_input">FoodHub</div>
                                         </div>
                                     </div>
                                     <div class="my_data_div_inputs_email">
@@ -73,7 +73,8 @@
                                                 style="display: none; color: white;" />
                                             <img src="../images/profilePage_Images/input_edit_icon.png"
                                                 class="input_edit_icon" style="display: none;" id="input_edit_icon">
-                                            <div class="my_data_div_inputs_email_container_input">foodhub@gmail.com
+                                            <div id="email_input_shown"
+                                                class="my_data_div_inputs_email_container_input">foodhub@gmail.com
                                             </div>
                                         </div>
                                     </div>
@@ -310,12 +311,12 @@
                         <div class="dropdown_profil dropdown">
                             <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
                             <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                                <a href="#" onclick="showAdataim()">Adataim<img
+                                <a href="../html/profilePage.html" onclick="showAdataim()">Adataim<img
                                         src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
-                                <a href="#" onclick="showRecepjeim()">Recepjeim<img
+                                <a href="../html/recipeUpload.html" onclick="showRecepjeim()">Recept feltöltése<img
                                         src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
-                                <a href="#" onclick="showKedvenceim()">Kedvenceim<img
-                                        src="../images/profilePage_Images/heart.svg" class="gear_icon"></a>
+                                <!-- <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                        src="../images/profilePage_Images/heart.svg" class="gear_icon"></a> -->
                                 <a href="#" onclick="logout()">Kijelentkezés<img
                                         src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
                             </div>
@@ -334,6 +335,8 @@
     <script src="../js/profilePage_JS/menubuttons.js"></script>
     <script src="../js/profilePage_JS/loadingscreen.js"></script>
     <script src="../js/profilePage_JS/searchbar.js"></script>
+    <script src="../js/profilePage_JS/loadUserData.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

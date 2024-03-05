@@ -18,6 +18,7 @@ function LoginButton() {
             email: emailInput.value,
             password: passwordInput.value
         }
+        console.log(data);
 
         if (data.email === "admin@gmail.com" && data.password === "admin") {
             postData("http://localhost:8000/api/adminLogin", data)

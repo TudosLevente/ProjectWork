@@ -33,7 +33,7 @@ function adminLogin(req, res) {
                     });
 
                 let user = result[0][0];
-                con.query('SELECT felhTokenFrissites(?,?)', [result[0][0].felhasznalo_id, token], (err, result, fields) => {
+                con.query('CALL felhTokenFrissites(?,?)', [result[0][0].felhasznalo_id, token], (err, result, fields) => {
                     if (err) throw err;
                     user.token = token;
                     res.send(result);
@@ -52,17 +52,20 @@ function adminLogin(req, res) {
 function login(req, res) {
 
     try {
+        console.log(req.body);
         const { email, password } = req.body;
+        console.log(email);
+        console.log(password);
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
         var con = mysql.createConnection(config.database);
         con.connect(function (err) {
             if (err) throw err;
-            console.log('sikeres csatlakozás');
+            console.log('sikeres csatlakozás (login)');
         })
 
-        const sql = 'SELECT felhBejelentkezes(?,?)';
+        const sql = 'CALL felhBejelentkezes(?,?)';
         con.query(sql, [email, password], (err, result) => {
             if (err) throw err;
             if (result.length > 0 && Object.values(result[0])[0] > 0) {
@@ -95,7 +98,7 @@ function login(req, res) {
                     loggedInUserData.logged_username = result[0].Username;
                     loggedInUserData.logged_email = result[0].Email;
 
-                    con.query('SELECT felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
+                    con.query('CALL felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
                         if (err) throw err;
 
                         userLoggedIn = true;

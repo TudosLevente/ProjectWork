@@ -136,9 +136,8 @@ VALUES (1,1,1);
 INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
 VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
 
-
-DELIMITER //
 DROP PROCEDURE IF EXISTS generateTokenProcedure;
+DELIMITER //
 CREATE PROCEDURE generateTokenProcedure(OUT generatedToken VARCHAR(36))
 BEGIN
     SET generatedToken = UUID();
@@ -150,40 +149,44 @@ DELIMITER ;
 -- felhBejelentkezes procedure
 drop procedure if exists felhBejelentkezes;
 DELIMITER //
-CREATE PROCEDURE if not EXISTS felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
+CREATE PROCEDURE felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
 BEGIN
-    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Passsword = jlsz;
+    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
 END;
+//felhBejelentkezes
 DELIMITER ;
 
 
 -- felhTokenFrissites procedure
 drop PROCEDURE if exists felhTokenFrissites;
 DELIMITER //
-CREATE PROCEDURE if NOT EXISTS felhTokenFrissites(IN id int, token Text)
+CREATE PROCEDURE felhTokenFrissites(IN id int, token Text)
 BEGIN
     UPDATE Users SET Users.Token = token WHERE Users.User_ID = id;     
 END;
+//
 DELIMITER ;
 
 
 -- getAllUserInfos procedure
 DROP PROCEDURE if exists getAllUserInfos;
 delimiter //
-CREATE PROCEDURE if not EXISTS getAllUserInfos(IN userID int)
+CREATE PROCEDURE getAllUserInfos(IN userID int)
 BEGIN
     SELECT * FROM Users WHERE Users.User_ID = userID;
 END;
+//
 delimiter ;
 
 
 -- felhBejelentkezes procedure
 drop procedure if exists adminBejelentkezes;
 DELIMITER //
-CREATE PROCEDURE if not EXISTS adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
+CREATE PROCEDURE adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
 BEGIN
     SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
 END;
+//
 DELIMITER ;
 
 
@@ -194,6 +197,7 @@ CREATE PROCEDURE getRecipeInfos(IN recipeID int)
 BEGIN
     SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipeID;
 END;
+//
 delimiter ;
 call getRecipeInfos(1);
 
@@ -201,30 +205,33 @@ call getRecipeInfos(1);
 -- getCommentContent procedure
 DROP PROCEDURE if exists getCommentContent;
 delimiter //
-CREATE PROCEDURE if not EXISTS getCommentContent(IN searched_id int)
+CREATE PROCEDURE getCommentContent(IN searched_id int)
 BEGIN
     SELECT Comment_Text FROM Comments WHERE Comments.Comment_ID = searched_id;
 END;
+//
 delimiter ;
 
 
 -- getFavorites procedure
 DROP PROCEDURE if exists getFavorites;
 delimiter //
-CREATE PROCEDURE if not EXISTS getFavorites(in userid int)
+CREATE PROCEDURE getFavorites(in userid int)
 BEGIN
     SELECT * FROM Favorites WHERE Favorites.User_ID = userid;
 END;
+//
 delimiter ;
 
 
 -- getIngredients procedure
 DROP PROCEDURE if exists getIngredients;
 delimiter //
-CREATE PROCEDURE if not EXISTS getIngredients()
+CREATE PROCEDURE getIngredients()
 BEGIN
     SELECT * FROM Ingredients;
 END;
+//
 DELIMITER ;
 CALL getIngredients;
 

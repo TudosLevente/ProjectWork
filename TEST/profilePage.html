@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar/dist/simplebar.min.css">
+    <script src="https://unpkg.com/simplebar/dist/simplebar.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../css/profilePage_CSS/style.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/dropdownfoetel.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/dropdowndesszert.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/dropdownkategoriak.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/dropdownprofil.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/loadingscreen.css">
+    <script src="../js/profilePage_JS/navbar_dropdown.js"></script>
+    <title>Profil</title>
+</head>
+
+<body>
+    <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+        <div class="loading_screen_body_div">
+            <div class="loading_screen_pizza">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+                <img class="loading_screen_slice" src="../images/profilePage_Images/pizzaslice.png">
+            </div>
+        </div>
+    </div>
+    <div class="div_body container-fluid">
+        <div class="profil_text"> Profil </div>
+        <div class="row justify-content-center align-items-center" style="height: 100%;">
+            <div class="data_div_center_row col-12">
+                <div class="data_div_container">
+                    <div class="menu_div">
+                        <button type="button" class="menu_div_data_button" id="DataDivButton" onclick="toggleDataDiv()">
+                            <span class="menu_div_profiledata_text">Adataim</span>
+                        </button>
+                        <button type="button" class="menu_div_recipes_button" id="RecipesDivButton"
+                            onclick="toggleRecipesDiv()">
+                            <span class="menu_div_recipes_text">Recepteim</span>
+                        </button>
+                        <button type="button" class="menu_div_favorites_button" id="FavoritesDivButton"
+                            onclick="toggFavoritesDiv()">
+                            <span class="menu_div_favorites_text">Kedvenceim</span>
+                        </button>
+                        </button>
+                    </div>
+                    <div class="main_div">
+                        <div class="my_data_div" style="display: flex;" id="my_data_div">
+                            <div class="my_data_div_inputs">
+                                <div class="my_data_div_inputs_layout">
+                                    <div class="my_data_div_inputs_username">
+                                        <div class="my_data_div_inputs_username_title">Felhasználónév:</div>
+                                        <div class="my_data_div_inputs_username_container">
+                                            <input class="my_data_div_inputs_username_container_input"
+                                                placeholder="FoodHub" id="username_input"
+                                                style="display:none; color: white;" />
+                                            <img src="../images/profilePage_Images/input_edit_icon.png"
+                                                class="input_edit_icon" style="display: none;" id="input_edit_icon">
+                                            <div class="my_data_div_inputs_username_container_input">FoodHub</div>
+                                        </div>
+                                    </div>
+                                    <div class="my_data_div_inputs_email">
+                                        <div class="my_data_div_inputs_email_title">Email cím:</div>
+                                        <div class="my_data_div_inputs_email_container">
+                                            <input class="my_data_div_inputs_email_container_input"
+                                                placeholder="foodhub@gmail.com" id="email_input"
+                                                style="display: none; color: white;" />
+                                            <img src="../images/profilePage_Images/input_edit_icon.png"
+                                                class="input_edit_icon" style="display: none;" id="input_edit_icon">
+                                            <div class="my_data_div_inputs_email_container_input">foodhub@gmail.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my_data_div_inputs_password">
+                                        <div class="my_data_div_inputs_password_title">Jelszó:</div>
+                                        <div class="my_data_div_inputs_password_container">
+                                            <input class="my_data_div_inputs_password_container_input"
+                                                placeholder="FoodHub12345" id="password_input"
+                                                style="display: none; color: white;" />
+                                            <img src="../images/profilePage_Images/input_edit_icon.png"
+                                                class="input_edit_icon" style="display: none;" id="input_edit_icon">
+                                            <div class="my_data_div_inputs_password_container_input">********</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="my_data_div_button" onclick="toggleInputs()"
+                                    style="display: flex;" id="modify_button">
+                                    <span class="my_data_div_button_text">Módosítás</span>
+                                </button>
+                                <div class="my_data_div_button_layout" id="button_layout" style="display: none;">
+                                    <button type="button" class="my_data_div_button_layout_save_button" id="save_button"
+                                        onclick="SaveButton()">
+                                        <span class="my_data_div_button_layout_save_button_title">Mentés</span>
+                                    </button>
+                                    <button type="button" class="my_data_div_button_layout_cancel_button"
+                                        id="cancel_button" onclick="CancelButton()">
+                                        <span class="my_data_div_button_layout_cancel_button_title">Mégse</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <img class="image-8" src="../images/profilePage_Images/image-80.png" />
+                        </div>
+                        <div class="my_recipes_div" style="display: none;" id="my_recipes_div" data-simplebar>
+                            <div class="my_recipes_div_row">
+                                <div class="my_recipes_div_row_container">
+                                    <div class="my_recipes_div_row_container_img_div">
+                                        <img class="my_recipes_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_recipes_div_row_container_title">Példa kaja</div>
+                                    <button class="my_recipes_div_row_container_button_div">
+                                        <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_recipes_div_row_container">
+                                    <div class="my_recipes_div_row_container_img_div">
+                                        <img class="my_recipes_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_recipes_div_row_container_title">Példa kaja</div>
+                                    <button class="my_recipes_div_row_container_button_div">
+                                        <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_recipes_div_row_container">
+                                    <div class="my_recipes_div_row_container_img_div">
+                                        <img class="my_recipes_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_recipes_div_row_container_title">Példa kaja</div>
+                                    <button class="my_recipes_div_row_container_button_div">
+                                        <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_recipes_div_row_container">
+                                    <div class="my_recipes_div_row_container_img_div">
+                                        <img class="my_recipes_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_recipes_div_row_container_title">Példa kaja</div>
+                                    <button class="my_recipes_div_row_container_button_div">
+                                        <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my_favorites_div" style="display: none;" id="my_favorites_div" data-simplebar>
+                            <div class="my_favorites_div_row">
+                                <div class="my_favorites_div_row_container">
+                                    <div class="my_favorites_div_row_container_img_div">
+                                        <img class="my_favorites_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_favorites_div_row_container_title">Példa kaja</div>
+                                    <button class="my_favorites_div_row_container_button_div">
+                                        <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_favorites_div_row_container">
+                                    <div class="my_favorites_div_row_container_img_div">
+                                        <img class="my_favorites_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_favorites_div_row_container_title">Példa kaja</div>
+                                    <button class="my_favorites_div_row_container_button_div">
+                                        <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_favorites_div_row_container">
+                                    <div class="my_favorites_div_row_container_img_div">
+                                        <img class="my_favorites_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_favorites_div_row_container_title">Példa kaja</div>
+                                    <button class="my_favorites_div_row_container_button_div">
+                                        <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                                <div class="my_favorites_div_row_container">
+                                    <div class="my_favorites_div_row_container_img_div">
+                                        <img class="my_favorites_div_row_container_img"
+                                            src="../images/profilePage_Images/food 1.png" />
+                                    </div>
+                                    <div class="my_favorites_div_row_container_title">Példa kaja</div>
+                                    <button class="my_favorites_div_row_container_button_div">
+                                        <div class="my_favorites_div_row_container_button_text">Megtekintés</div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <div class="row col-12">
+                <div class="col-lg-4 d-flex align-items-center justify-content-start">
+                    <div class="navbar_logo">
+                        <img src="../images/profilePage_Images/logo-removebg-preview.png" class="logo">
+                        <img src="../images/profilePage_Images/FoodHub.png" class="navbar_foobhub_logo_text">
+                    </div>
+                </div>
+                <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="input-group">
+                        <input type="text" class="navbar_searchbar form-control"
+                            placeholder="Keressen receptjeink között ..." aria-label="Search"
+                            aria-describedby="basic-addon2" id="search-input" />
+                    </div>
+                    <div id="search-results-container" class="mt-2 fixed-top"></div>
+                    <div class="menuitems_row row justify-content-center ">
+                        <div class="navmenuitems">
+                            <ul class="navbarmenulist navbar-nav">
+                                <li class="divider"></li>
+                                <li class="dropdown_foetel nav-item dropdown">
+                                    <a class="nav-link dropdown" class="dropdown_content_foetel" id="dropdownfoetel">
+                                        Főételek
+                                    </a>
+                                    <ul class="dropdown_content_foetel dropdown-content"
+                                        aria-labelledby="dropdownfoetel">
+                                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                                    </ul>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="dropdown_desszert nav-item dropdown">
+                                    <a class="nav-link dropdown" class="dropdown_content_desszert" id="dropdowndesszert"
+                                        href="#">
+                                        Desszertek
+                                    </a>
+                                    <ul class="dropdown_content_desszert dropdown-content"
+                                        aria-labelledby="dropdowndesszert">
+                                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                                    </ul>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Levesek</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Saláták</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tészták</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="dropdown_kategoriak nav-item dropdown">
+                                    <a class="nav-link dropdown" class="dropdown_content_kategoriak"
+                                        id="dropdownkategoriak" href="#">
+                                        Kategóriák
+                                    </a>
+                                    <ul class="dropdown_content_kategoriak dropdown-content"
+                                        aria-labelledby="dropdownkategoriak">
+                                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
+                                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                                        <li><a class="dropdown-item" href="#">Szószok</a></li>
+                                        <li><a class="dropdown-item" href="#">Torták</a></li>
+                                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
+                                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
+                                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
+                                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                                    </ul>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ajánlatunk</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Rólunk</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
+                    <img src="../images/profilePage_Images/user.svg" style="width: 7%; margin-right: 5px;">
+                    <div class="login_div">
+                        <div class="dropdown_profil dropdown">
+                            <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
+                            <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                                <a href="#" onclick="showAdataim()">Adataim<img
+                                        src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
+                                <a href="#" onclick="showRecepjeim()">Recepjeim<img
+                                        src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
+                                <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                        src="../images/profilePage_Images/heart.svg" class="gear_icon"></a>
+                                <a href="#" onclick="logout()">Kijelentkezés<img
+                                        src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/profilePage_JS/profilemodifying.js"></script>
+    <script src="../js/profilePage_JS/menubuttons.js"></script>
+    <script src="../js/profilePage_JS/loadingscreen.js"></script>
+    <script src="../js/profilePage_JS/searchbar.js"></script>
+</body>
+
+</html>

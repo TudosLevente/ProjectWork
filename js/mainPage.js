@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function goToRecipe() {
-
+    window.location.href = '../TEST/recipePageTEST/index.html';
 }
 
 var navbar = document.querySelector('.navbar');

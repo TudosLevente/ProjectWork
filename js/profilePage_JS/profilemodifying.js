@@ -16,6 +16,12 @@ function toggleInputs() {
 }
 
 function CancelButton() {
+    var username_inInput = document.getElementById('username_input');
+    username_inInput.value = response.username;
+
+    var email_inInput = document.getElementById('email_input');
+    email_inInput.value = response.email;
+
     var containers = document.querySelectorAll("#username_input, #password_input, #email_input, #input_edit_icon");
     containers.forEach(function (container) {
         container.style.display = 'none';

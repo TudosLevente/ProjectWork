@@ -10,7 +10,6 @@ function loadRecipes() {
                 var id = generateNumber();
 
                 getData(`http://localhost:8000/api/recipe/${id}`).then((recipeData) => {
-
                     if (recipeData) {
                         var element = document.getElementById(`r${i}c${j}`);
                         if (element) {
@@ -22,6 +21,8 @@ function loadRecipes() {
                         var element_name = document.getElementById(`name_r${i}c${j}`);
                         if (element_name) {
                             element_name.innerHTML = recipeData[0][0].Title;
+                            var set_id = element_name.nextElementSibling;
+                            set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
                         } else {
                             console.error(`Az következő elemre ezzel az id-val nincs találat: 'name_r${i}c${j}'!`);
                         }
@@ -95,8 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
     loadRecipes();
 });
 
-function goToRecipe() {
-
+function goToRecipe(buttondId) {
+    var recipe_id = parseInt(document.getElementById(buttondId).getAttribute('id'));
+    console.log(recipe_id);
+    window.location.href = `../TEST/recipePageTEST/index.html?id=${recipe_id}`;
 }
 
 var navbar = document.getElementById('navbar');

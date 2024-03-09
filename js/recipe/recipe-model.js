@@ -66,7 +66,7 @@ async function uploadRecipe(req, res) {
 
     recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 
-    con.query(sql, [recipe.user_id, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, date], (err, result) => {
+    con.query(sql, [recipe.user_id, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, recipe.date_created], (err, result) => {
         if (err) throw err;
         recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
 

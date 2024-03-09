@@ -256,7 +256,37 @@ DROP PROCEDURE if exists getRecipeInfos;
 delimiter //
 CREATE PROCEDURE getRecipeInfos(IN recipeID int)
 BEGIN
-    SELECT * FROM Recipes WHERE Recipes.Recipe_ID = recipeID;
+SELECT 
+    Recipes.User_ID AS Recipes_User_ID,
+    Recipes.Picture_data AS Recipes_Picture_data,
+    Recipes.Title AS Recipes_Title,
+    Recipes.Description AS Recipes_Description,
+    Recipes.Instructions AS Recipes_Instructions,
+    Recipes.Serving AS Recipes_Serving,
+    Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
+    Recipes.Date_Created AS Recipes_Date_Created,
+    GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients,
+    GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
+FROM 
+    Recipes
+INNER JOIN 
+    Recipe_Ingredients ON Recipes.Recipe_ID = Recipe_Ingredients.Recipe_ID
+INNER JOIN 
+    `Time` ON `Time`.Recipe_ID = Recipes.Recipe_ID 
+INNER JOIN 
+    Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
+WHERE 
+    Recipes.Recipe_ID = recipeID
+GROUP BY 
+    Recipes.User_ID,
+    Recipes.Picture_data,
+    Recipes.Title,
+    Recipes.Description,
+    Recipes.Instructions,
+    Recipes.Serving,
+    Recipes.Difficulty_Level,
+    Recipes.Date_Created;
+
 END;
 //
 delimiter ;
@@ -306,3 +336,33 @@ SELECT * FROM Favorites;
 SELECT * FROM Comments;
 SELECT * FROM Ingredients;
 
+SELECT 
+    Recipes.User_ID AS Recipes_User_ID,
+    Recipes.Picture_data AS Recipes_Picture_data,
+    Recipes.Title AS Recipes_Title,
+    Recipes.Description AS Recipes_Description,
+    Recipes.Instructions AS Recipes_Instructions,
+    Recipes.Serving AS Recipes_Serving,
+    Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
+    Recipes.Date_Created AS Recipes_Date_Created,
+    GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients,
+    GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
+FROM 
+    Recipes
+INNER JOIN 
+    Recipe_Ingredients ON Recipes.Recipe_ID = Recipe_Ingredients.Recipe_ID
+INNER JOIN 
+    `Time` ON `Time`.Recipe_ID = Recipes.Recipe_ID 
+INNER JOIN 
+    Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
+WHERE 
+    Recipes.Recipe_ID = 33
+GROUP BY 
+    Recipes.User_ID,
+    Recipes.Picture_data,
+    Recipes.Title,
+    Recipes.Description,
+    Recipes.Instructions,
+    Recipes.Serving,
+    Recipes.Difficulty_Level,
+    Recipes.Date_Created;

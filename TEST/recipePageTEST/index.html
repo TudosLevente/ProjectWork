@@ -238,11 +238,11 @@
     <div class="recipe-display-main-div">
       <div class="recipe-display-layout">
         <div class="recipe-title">
-          <div class="recipe-title-text">Egy példa kaja</div>
+          <div id="title" class="recipe-title-text">Egy példa kaja</div>
         </div>
         <div class="recipe-description">
           <div class="recipe-description-title">Leírás:</div>
-          <div class="recipe-description-text">
+          <div id="description" class="recipe-description-text">
             Egy rövid leírás az ételről amit tudni lehet róla,
             <br />
             vagy ha van esetleg egy különleges története
@@ -252,22 +252,22 @@
         </div>
         <div class="recipe-img-and-details">
           <div class="recipe-img-div">
-            <div class="recipe-img-display">Egy kép az ételről!</div>
+            <img id="picture_data" src="" alt="" class="recipe-img-display">
           </div>
           <div class="recipe-details">
-            <div class="recipe-details-difficulty">
+            <div id="difficulty" class="recipe-details-difficulty">
               <div class="recipe-details-difficulty-title">Nehézség:</div>
-              <img class="star-1" src="star-10.svg" />
-              <img class="star-2" src="star-20.svg" />
-              <img class="star-3" src="star-30.svg" />
+              <img class="star-1" src="star-filled.svg" />
+              <img class="star-2" src="star-empty.svg" />
+              <img class="star-3" src="star-empty.svg" />
             </div>
             <div class="recipe-details-data">
-              <div class="recipe-details-data-username">
+              <div id="username" class="recipe-details-data-username">
                 Feltöltötte:
                 <br />
                 Tamas12345
               </div>
-              <div class="recipe-details-data-date">
+              <div id="date" class="recipe-details-data-date">
                 Feltöltve:
                 <br />
                 2023 November 20
@@ -293,7 +293,7 @@
               <div class="recipe-details-cooking-time-title">
                 Elkészítési idő:
               </div>
-              <div class="recipe-details-cooking-time-layout">
+              <div id="prep_time" class="recipe-details-cooking-time-layout">
                 <div class="recipe-details-cooking-time-1">
                   <div class="recipe-details-cooking-time-1-type">
                     Előkészület:
@@ -535,6 +535,8 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="./loadingscreen.js"></script>
+  <script src="../../js/script.js"></script>
+  <script type="module" src="./loadRecipe.js"></script>
   <script src="./searchbar.js"></script>
 </body>
 

@@ -282,50 +282,6 @@
             </div>
           </div>
         </div>
-
-        <style>
-          .slideshow-container {
-            width: 100%;
-            height: min-content;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-          }
-
-          .ajanlat_container {
-            display: flex;
-            width: max-content;
-            justify-content: center;
-            /* Adjust width based on content */
-          }
-
-          .ajanlat_container_div {
-            flex-shrink: 0;
-            display: flex;
-            animation: slideLeft 20s linear infinite;
-            animation-fill-mode: forwards;
-          }
-
-          .slideshow-container:hover .ajanlat_container_div {
-            animation-play-state: paused;
-          }
-
-          .ajanlat_container_div:hover {
-            cursor: pointer;
-          }
-
-          @keyframes slideLeft {
-            0% {
-              transform: translateX(0);
-              /* Start from initial position */
-            }
-
-            100% {
-              transform: translateX(-100%);
-              /* Slide div to the left */
-            }
-          }
-        </style>
       </div>
       <div class="uj_recpetjeink_etel_galeria">
         <div class="uj_recpetjeink_title">

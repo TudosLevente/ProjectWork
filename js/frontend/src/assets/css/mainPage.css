@@ -1,0 +1,262 @@
+body {
+    background-color: #D7BF9C;
+    background-image: url("../images/mainPage/image-1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    margin: 0;
+    padding: 0;
+    zoom: 90%;
+}
+
+.navbar,
+.navbar_menu {
+    background: #bb5a00;
+    opacity: 0.97;
+    padding: 9px 0px 9px 0px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    overflow: hidden;
+    width: 100%;
+}
+
+.login-text {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+}
+
+.login-div a,
+.navmenuitems a,
+.frame a {
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+
+.row a {
+    text-decoration: none;
+}
+
+.searchbar {
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #ffffff21;
+    border-width: 2px;
+    flex-shrink: 0;
+    width: 905px;
+    height: 65px;
+    position: relative;
+    overflow: hidden;
+    font-size: 22px;
+}
+
+
+.foobhub-logo-text {
+    text-align: right;
+    position: fixed;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 60px;
+    left: 40px;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    align-items: bottom;
+    justify-content: bottom;
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.food-hub {
+    width: 541px;
+    height: 103px;
+    display: block;
+    margin: 0 auto;
+}
+/* 
+.foobhub-logo-text::hove {
+    text-decoration: none;
+} */
+
+.slogen {
+    font-family: 'Inter-Regular', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    /* margin-top: 10px; */
+    text-align: center;
+}
+
+.divider {
+    height: 1px;
+    margin: 5px 0;
+    background-color: #ccc;
+}
+
+.receptek-text {
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    margin-top: 230px;
+    margin-bottom: 30px;
+}
+
+.container {
+    position: relative;
+    top: 400px;
+}
+
+.etel-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px 20px;
+    position: relative;
+    padding-right: 10px;
+}
+
+.etel-galeria .frame {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 470px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.etel-galeria .food {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+}
+
+.etel-galeria .pelda-title {
+    width: fit-content;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.etel-galeria .gomb {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: #ff9900;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.etel-galeria .gomb:hover {
+    background-color: red;
+}
+
+.etel-galeria .gomb-text {
+    position: static;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: black;
+    font-size: 28px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.dashed_border {
+    border: 6px dashed;
+    border-image: linear-gradient(to top, #FF0000, #FF6000, #EEA325) 1;
+}
+
+.row_main {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.label_ajanlat {
+    width: 1138px;
+    height: 97px;
+}
+
+.label_ajanlat .ajanlat-text {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgb(238, 163, 37) 0%, rgb(255, 96, 0) 51.56%, rgb(255, 0, 0) 100%);
+    -webkit-background-clip: text !important;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-fill-color: transparent; */
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: transparent;
+    font-size: 80px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 250px;
+}
+
+.small-image {
+    width: 50%;
+    height: auto;
+}
+
+.menuitems_row,
+.navbar_menu {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translateY(0);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.ifHidden {
+    border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 20%;
+    color: #fff;
+}
+
+/* Style for the arrow icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    font-size: 24px;
+    /* Adjust the font size */
+}
+
+/* Hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

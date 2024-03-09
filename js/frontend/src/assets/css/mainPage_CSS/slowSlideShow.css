@@ -1,0 +1,37 @@
+.slideshow-container {
+    width: 100%;
+    height: min-content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.ajanlat_container {
+    display: flex;
+    width: max-content;
+    justify-content: center;
+}
+
+.ajanlat_container_div {
+    flex-shrink: 0;
+    display: flex;
+    /* animation: slideLeft 20s linear infinite; */
+}
+
+.slideshow-container:hover .ajanlat_container_div {
+    animation-play-state: paused;
+}
+
+.ajanlat_container_div:hover {
+    cursor: pointer;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

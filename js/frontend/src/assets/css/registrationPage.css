@@ -1,0 +1,312 @@
+:root {
+  --lemon-orange-red-linear: linear-gradient(180deg,
+      rgba(238, 163, 37, 1) 0%,
+      rgba(255, 96, 0, 1) 51.5625%,
+      rgba(255, 0, 0, 1) 100%);
+}
+
+body {
+  background-color: #D7BF9C;
+  background-image: url(../images/registrationPage/image-3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  background-attachment: fixed;
+  margin: 0;
+  padding-right: 200px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.frame-1,
+.frame-1 * {
+  box-sizing: border-box;
+}
+
+.frame-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  height: 572px;
+  position: relative;
+  align-self: flex-end;
+}
+
+
+.frame-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  height: 153px;
+  position: relative;
+}
+
+.frame-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.logo {
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 128px;
+  height: 101px;
+  position: relative;
+  object-fit: cover;
+  background-image: url("../images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.food-hub-stroke {
+  flex-shrink: 0;
+  width: 266.09px;
+  height: 53.39px;
+  position: relative;
+  overflow: visible;
+}
+
+.regisztralj {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  position: relative;
+}
+
+.border {
+  border-width: 5px;
+  border-style: dashed;
+  border-image: var(--lemon-orange-red-linear,
+      linear-gradient(180deg,
+        rgba(238, 163, 37, 1) 0%,
+        rgba(255, 96, 0, 1) 51.5625%,
+        rgba(255, 0, 0, 1) 100%));
+  padding: 20px 20px;
+  border-image-slice: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.felhasznalonev-frame,
+.email-frame,
+.password-frame,
+.password-check-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.felhasznalonev {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.frame_input {
+  background: #ffffff;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 3px;
+  flex-shrink: 0;
+  width: 280px;
+  height: 40px;
+  position: relative;
+}
+
+.input {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: none !important;
+}
+
+.e-mail-cim {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.jelszo {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.gomb-frame{
+  position: absolute;
+  left: 208px;
+  top: 0.5px;
+}
+
+.gomb-style {
+  background: #ff9900;
+  border-radius: 5px;
+  width: 60px;
+  height: 32px;
+  position: relative;
+  margin: 1px 1px 1px 1px;
+  border: none;
+}
+
+.regTologText {
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+}
+
+.regTologText-span {
+  color: #000000;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.regTologText-span-a {
+  color: #ff9900;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.regButton-frame {
+  background: #ff9900;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 250px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.regisztralas {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-requirements {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  font-size: 15px;
+  display: none;
+  visibility: hidden;
+}
+
+.password-requirements ul {
+  padding: 0;
+  margin: 0;
+}
+
+.password-requirements ul li {
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  padding: 2px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.password_checher_icons {
+  content: '✓';
+  background-color: green;
+}
+
+.password-requirements .ul .li:hover {
+  content: '✓';
+  color: green;
+}
+
+a,
+a::after {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  border: none;
+  outline: none;
+}
+
+.password-match {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  font-size: 15px;
+  display: none;
+  visibility: hidden;
+}
+
+.password-match ul {
+  padding: 0;
+  margin: 0;
+}
+
+.password-match ul li {
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  padding: 2px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

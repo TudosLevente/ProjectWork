@@ -7,7 +7,7 @@ function adminLogin(req, res) {
 
     try {
         const { email, password } = req.body;
-        console.log(req.body);
+        console.log(req.body); 
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
@@ -68,6 +68,7 @@ function login(req, res) {
         const sql = 'SELECT felhBejelentkezes(?,?)';
         con.query(sql, [email, password], (err, result) => {
             if (err) throw err;
+            console.log('result:', result);
             if (result.length > 0 && Object.values(result[0])[0] > 0) {
                 console.log('call-on belül nincs error');
 

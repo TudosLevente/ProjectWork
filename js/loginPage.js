@@ -30,10 +30,10 @@ function LoginButton() {
                 }
 
                 response.json().then((data) => {
-                    console.log(data.loggedIn);
-                    console.log(data.user_id);
-                    console.log(data.username);
-                    console.log(data.email);
+                    console.log('data.loggedIn:', data.loggedIn);
+                    console.log('data.user_id:', data.user_id);
+                    console.log('data.username:', data.username);
+                    console.log('data.email:', data.email);
 
                     postData('/getLoginInfo', {
                         loggedIn: data.loggedIn,
@@ -51,7 +51,7 @@ function LoginButton() {
 
 
                 var button = document.querySelector('.logButton-frame');
-                button.style.fontSize = '31px';
+                button.style.fontSize = '20px';
                 button.innerText = 'Sikeres bejelentkezés';
                 button.style.borderColor = 'green';
                 button.style.backgroundColor = 'green';
@@ -72,4 +72,11 @@ function togglePassword() {
     } else {
         password.type = "password";
     }
+}
+function TESTGreenButton() {
+    var button = document.querySelector('.logButton-frame');
+    button.style.fontSize = '20px';
+    button.innerText = 'Sikeres bejelentkezés';
+    button.style.borderColor = 'green';
+    button.style.backgroundColor = 'green';
 }

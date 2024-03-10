@@ -7,11 +7,21 @@
   background: #f0d8b5;
   display: flex;
   flex-direction: column;
-  gap: 50px;
   align-items: center;
   justify-content: center;
   position: relative;
   zoom: 55%;
+}
+
+.fooldal_layout {
+  gap: 50px;
+  background: #f0d8b5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
 .background_image {
@@ -20,77 +30,7 @@
   position: sticky;
   overflow: visible;
   object-fit: cover;
-}
-
-.ajanlataink {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  width: 100%;
-  position: relative;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-}
-
-.ajanlat_title {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.ajanlat_text {
-  background: var(--lemon-greater-orange-greater-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(255, 0, 0, 1.00) 100%));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: left;
-  font-family: 'Inter-Medium', sans-serif;
-  font-size: 80px;
-  font-weight: 500;
-  position: relative;
-}
-
-.ajanlat_container {
-  padding: 0px 0px 50px 0px;
-  display: flex;
-  flex-direction: row;
-  gap: 19px;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  flex-shrink: 0;
-  height: 450px;
-  position: relative;
-  overflow: hidden;
-}
-
-.ajanlat_container_div {
-  background: #623500;
-  border-radius: 10px;
-  flex-shrink: 0;
-  width: 500px;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-  flex: 0 0 auto;
-  transition: transform 0.5s ease;
-}
-
-.ajanlat_container_div_image {
-  width: 500px;
-  height: 400px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  object-fit: cover;
+  z-index: 0;
 }
 
 .uj_recpetjeink_etel_galeria {
@@ -527,25 +467,28 @@
 }
 
 .signup_newspaper_div_input_background {
-  background: #f2d09d;
+  background: #fecb00;
   border-radius: 200px;
-  border-style: solid;
+  /* border-style: solid;
   border-color: #000000;
-  border-width: 1px;
-  width: 696px;
-  height: 81px;
-  position: absolute;
-  left: calc(50% - 348px);
-  top: 0px;
+  border-width: 0.1px; */
+  height: 78px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .signup_newspaper_div_input_button {
+  background: #fe2f008d;
+  border-radius: 200px;
+  /* border-style: solid;
+  border-color: #000000;
+  border-width: 0.1px; */
   width: 241px;
-  height: 81px;
+  height: 78px;
   position: absolute;
   right: 0px;
-  top: calc(50% - 40px);
-  outline: none;
+  top: calc(50% - 39px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .signup_newspaper_div_input_button:active,
@@ -556,9 +499,6 @@
 .signup_newspaper_div_input_button_background {
   background: #f2d09d;
   border-radius: 40px;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 1px;
   width: 241px;
   height: 81px;
   position: absolute;
@@ -569,26 +509,26 @@
 .signup_newspaper_div_input_button_text {
   color: #000000;
   text-align: center;
-  font-family: 'Inter-Regular', sans-serif;
+  font-family: "Inter-Regular", sans-serif;
   font-size: 30px;
   font-weight: 400;
   position: absolute;
-  left: calc(50% - 100.5px);
-  top: calc(50% - 16.5px);
-  width: 201px;
-  height: 35px;
+  left: calc(50% - 120.5px);
+  top: calc(50% - 40px);
+  width: 241px;
+  height: 79px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .signup_newspaper_div_input_email {
   color: #000000;
   text-align: left;
-  font-family: 'Inter-Regular', sans-serif;
+  font-family: "Inter-Regular", sans-serif;
   font-size: 30px;
   font-weight: 400;
-  position: relative;
+  position: absolute;
   left: 10px;
   top: 0px;
   width: 445px;
@@ -596,11 +536,40 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.signup_newspaper_div_input_email:active,
+.signup_newspaper_div_input_email:focus {
   outline: none;
 }
 
-.signup_newspaper_div_input_email::placeholder{
+.signup_newspaper_div_input_email::placeholder {
   color: #000000;
+}
+
+.thanksmessage_div {
+  background: #008000;
+  border-radius: 200px;
+  height: 78px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: none;
+}
+
+.thanksmessage {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  width: 650px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .customersfavorite_etel_galeria {
@@ -1035,8 +1004,8 @@
   justify-content: center;
   position: absolute;
   top: 600px;
-  background-color: transparent;
-  backdrop-filter: blur(15px);
+  /* background-color: transparent;
+  backdrop-filter: blur(15px); */
   padding: 50px;
   border-radius: 40px;
 }
@@ -1064,7 +1033,7 @@
 
 .logout_icon,
 .gear_icon,
-.recipe_icon{
+.recipe_icon {
   position: relative;
   width: 20%;
   height: 20%;

@@ -1,0 +1,918 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.div_body {
+  margin: 0px;
+  padding: 0px;
+  zoom: 90%;
+  background-image: url("../../images/profilePage_Images/image-120.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.div_body * a {
+  appearance: none;
+  text-decoration: none;
+}
+
+.data_div_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  height: auto;
+  align-self: center;
+  flex-wrap: nowrap;
+}
+
+.data_div_center_row {
+  display: flex;
+  justify-content: center;
+  width: 853px;
+  height: 330px;
+  overflow: visible;
+}
+
+.menu_div {
+  padding: 0px 0px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.menu_div_data_button {
+  background-color: #ffd392;
+  border-radius: 10px 10px 0px 0px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;
+  width: 119px;
+  height: 40px;
+  position: relative;
+}
+
+.menu_div_profiledata_text {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  position: relative;
+}
+
+.menu_div_recipes_button {
+  background: #ffd392;
+  border-radius: 10px 10px 0px 0px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;
+  width: 160px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu_div_recipes_text {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  position: relative;
+}
+
+.menu_div_favorites_button {
+  background: #ffd392;
+  border-radius: 10px 10px 0px 0px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  flex-shrink: 0;
+  width: 176px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu_div_favorites_text {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_data_div {
+  background: rgba(255, 153, 0, 0.95);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.my_data_div_inputs {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  gap: 70px;
+  width: 500px;
+}
+
+.my_data_div_inputs_layout {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.my_data_div_inputs_username {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.my_data_div_inputs_username_title {
+  color: #000000;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  width: 182px;
+}
+
+.my_data_div_inputs_username_container {
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;
+  width: 283px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_data_div_inputs_username_container_input {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 283px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.my_data_div_inputs_username_container_input::placeholder,
+.my_data_div_inputs_email_container_input::placeholder,
+.my_data_div_inputs_password_container_input::placeholder {
+  color: white;
+}
+
+.input_edit_icon {
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.my_data_div_inputs_email {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.my_data_div_inputs_email_title {
+  color: #000000;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_data_div_inputs_email_container {
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;
+  width: 283px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_data_div_inputs_email_container_input {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.my_data_div_inputs_password {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.my_data_div_inputs_password_title {
+  color: #000000;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_data_div_inputs_password_container {
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 2px;
+  flex-shrink: 0;
+  width: 283px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_data_div_inputs_password_container_input {
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 283px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button {
+  background: #bb5a00;
+  border-radius: 15px;
+  width: 172px;
+  height: 43px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+button {
+  animation-duration: 0.3s;
+}
+
+button:active {
+  animation-name: buttonClick;
+}
+
+button:focus,
+button:active {
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_text {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.my_data_div_button_layout {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  width: 172px;
+  height: 43px;
+}
+
+.my_data_div_button_layout_save_button {
+  background-color: #bb5a00;
+  border-radius: 15px;
+  flex-shrink: 0;
+  width: 142px;
+  height: 41px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_layout_save_button_title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.my_data_div_button_layout_cancel_button {
+  background-color: #808080;
+  border-radius: 15px;
+  flex-shrink: 0;
+  width: 142px;
+  height: 41px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.my_data_div_button_layout_cancel_button_title {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.image-8 {
+  width: 291px;
+  height: 362px;
+  position: relative;
+  object-fit: cover;
+}
+
+.profil_text {
+  background: linear-gradient(180deg, rgba(255, 0, 0, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(238, 163, 37, 1.00) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  font-family: 'Inter-SemiBold', sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  position: relative;
+  left: calc(50% - 75px);
+  top: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start
+}
+
+.navbar,
+.navbar_menu {
+  /* background: #bb5a00; */
+  background-color: #B02000;
+  opacity: 0.96;
+  padding: 9px 0px 9px 0px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_profil_text {
+  color: #ffffff;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.login_div a {
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+.search-container {
+  position: relative;
+  /* Change position to relative */
+  margin-top: 10px;
+  /* Add margin to separate search bar from navbar */
+}
+
+#search-results-container {
+  position: absolute;
+  display: none;
+  top: 40px;
+  /* Position below the search bar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  /* Ensure search results appear above other content */
+  background-color: white;
+  /* Example background color */
+  border: 1px solid #ccc;
+  /* Example border */
+  /* width: 94%; */
+  /* Adjust width based on navbar width */
+  max-height: 300px;
+  /* Example maximum height */
+  overflow-y: auto;
+  /* Enable vertical scrolling if needed */
+}
+
+/* Width */
+#search-results-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#search-results-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+#search-results-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+#search-results-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Additional styles for the container if necessary */
+#search-results-container {
+  max-height: 320px;
+  /* Example height to make scrollbar visible */
+  overflow-y: auto;
+}
+
+.navbar_searchbar,
+#search-results-container {
+  width: calc(100% - 30px);
+  /* Adjust width as needed */
+}
+
+.navbar_searchbar {
+  /* border-radius: 30px; */
+  border-style: solid;
+  border-color: #ffffff21;
+  border-width: 2px;
+  flex-shrink: 0;
+  /* width: 905px; */
+  height: 65px;
+  position: relative;
+  overflow: hidden;
+  font-size: 22px;
+  text-align: left;
+  padding-left: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+  /* Add margin to separate search bar from navbar */
+}
+
+.navbar_foobhub_logo_text {
+  /* font-family: 'Inter-Regular', sans-serif; */
+  font-size: 60px;
+  position: relative;
+  background: linear-gradient(#FF0000, #FF6000, #EEA325);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  width: 240px;
+  height: auto;
+}
+
+.navbar_foobhub_logo_text:hover {
+  background: linear-gradient(#FF0000, #FF6000, #EEA325);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.navbar a,
+.navbar a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar_middle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbarmenulist li:hover,
+a:hover {
+  color: white;
+  font-weight: 20px;
+}
+
+.menuitems_row {
+  font-size: 20px;
+}
+
+:root {
+  --lemon-greater-orange-greater-red-linear: linear-gradient(180deg,
+      rgba(238, 163, 37, 1) 0%,
+      rgba(255, 96, 0, 1) 51.5625%,
+      rgba(255, 0, 0, 1) 100%);
+}
+
+.my_recipes_div {
+  background: rgba(255, 153, 0, 0.90);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.my_recipes_div_row {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.my_recipes_div_row_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 213px;
+  height: 302px;
+  position: relative;
+}
+
+.my_recipes_div_row_container_img_div {
+  background: #623500;
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_recipes_div_row_container_img {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 5.5px;
+  top: 5px;
+  object-fit: cover;
+}
+
+.my_recipes_div_row_container_title {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_recipes_div_row_container_button_div {
+  background: #ae5400;
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 150px;
+  height: 59px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.my_recipes_div_row_container_button_div:hover{
+  background: #FF0000;
+  scale: calc(110%);
+}
+
+.my_recipes_div_row_container_button_div:hover .my_recipes_div_row_container_button_text {
+  color: whitesmoke;
+}
+
+.my_recipes_div_row_container_button_text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+.my_favorites_div {
+  background: rgba(255, 153, 0, 0.90);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 3px;
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.my_favorites_div_row {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.my_favorites_div_row_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 213px;
+  height: 302px;
+  position: relative;
+}
+
+.my_favorites_div_row_container_img_div {
+  background: #623500;
+  flex-shrink: 0;
+  width: 190px;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.my_favorites_div_row_container_img {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 5.5px;
+  top: 5px;
+  object-fit: cover;
+}
+
+.my_favorites_div_row_container_title {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 27px;
+  font-weight: 400;
+  position: relative;
+}
+
+.my_favorites_div_row_container_button_div {
+  background: #ae5400;
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 150px;
+  height: 59px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.my_favorites_div_row_container_button_div:hover {
+  background: #FF0000;
+  scale: calc(110%);
+  color: whitesmoke;
+}
+
+.my_favorites_div_row_container_button_div:hover .my_favorites_div_row_container_button_text {
+  color: whitesmoke;
+}
+
+.my_favorites_div_row_container_button_text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.main_div {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.logout_icon,
+.gear_icon,
+.recipe_icon{
+  position: relative;
+  width: 20%;
+  height: 20%;
+}
+
+.navbar_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.highlight {
+  color: black;
+  /* Color for highlighted portion */
+  font-weight: bold;
+  /* Make the highlighted portion bold */
+}

@@ -102,59 +102,17 @@ function goToRecipe(buttondId) {
     window.location.href = `../TEST/recipePageTEST/index.html?id=${recipe_id}`;
 }
 
-var navbar = document.getElementById('navbar');
-var navbar_menu = document.getElementById('navbar_menu');
-var isRowDisabled = false;
 
-// window.onscroll = function () { scrollFunction() };
+document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
-// function scrollFunction() {
-//     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-//         if (!isRowDisabled) {
-//             isRowDisabled = true;
-//             navbar_menu.style.opacity = 0;
-//             navbar_menu.style.transform = 'translateY(-100%)';
-//             navbar_menu.style.pointerEvents = 'none';
-//             navbar_menu.style.backgroundColor = 'transparent';
-//             navbar.style.borderRadius = '10px';
-//             setTimeout(function () {
+function adjustMouseScroll(event) {
+    // console.log('user scrolling')
+    event.deltaY *= 0.1;
+}
 
-//             }, 500);
-//         }
-//     } else {
-//         if (isRowDisabled) {
-//             isRowDisabled = false;
-//             navbar_menu.style.opacity = 0.97;
-//             navbar_menu.style.transform = 'none';
-//             navbar_menu.style.pointerEvents = 'none';
-//             navbar_menu.style.background = '#B02000';
-//             navbar_menu.style.display = 'flex';
-//             navbar_menu.style.padding = '9px 0px 9px 0px';
-//             navbar_menu.style.gap = '10px';
-//             navbar_menu.style.flexDirection = 'column';
-//             navbar_menu.style.alignItems = 'center';
-//             navbar_menu.style.justifyContent = 'flex-start';
-//             navbar_menu.style.position = 'sticky';
-//             navbar_menu.style.overflow = 'hidden';
-//             navbar_menu.style.width = '100%';
-//             navbar_menu.style.top = '108px';
-//             navbar_menu.classList.add('navbar_menu');
-
-//             navbar.style.background = '#B02000';
-//             navbar.style.opacity = 0.97;
-//             navbar.style.padding = '9px 0px 9px 0px';
-//             navbar.style.display = 'flex';
-//             navbar.style.gap = '10px';
-//             navbar.style.flexDirection = 'column';
-//             navbar.style.alignItems = 'center';
-//             navbar.style.justifyContent = 'flex-start';
-//             navbar.style.position = 'sticky';
-//             navbar.style.overflow = 'hidden';
-//             navbar.style.width = '100%';
-//             navbar.style.borderRadius = '0px';
-//             navbar_menu.classList.add('navbar');
-
-
-//         }
-//     }
-// }
+window.addEventListener('wheel', adjustMouseScroll);

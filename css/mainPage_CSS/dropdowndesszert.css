@@ -24,6 +24,19 @@
     right: -90px;
 }
 
+.dropdown_content_desszert.fadeIn {
+    display: flex;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.dropdown_content_desszert.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -46,6 +59,13 @@
         opacity: 0;
         transform: scale(0.5);
     }
+}
+
+.dropdown_content_desszert li a {
+    font-size: 30px;
+    display: flex;
+    color: black;
+    text-decoration: none;
 }
 
 .dropdown_content_desszert a {

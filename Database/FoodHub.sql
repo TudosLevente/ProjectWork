@@ -1,4 +1,4 @@
--- Active: 1707314970079@@127.0.0.1@3306@foodhub
+-- Active: 1708009143398@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -42,10 +42,34 @@ BEGIN
   DECLARE salt_value VARCHAR(255);
   SET salt_value = salt();
   SET NEW.Password = CONCAT(PASSWORD(CONCAT(NEW.Password, salt_value)), ':', salt_value);
+  -- SET NEW.Password = CONCAT(SHA2(NEW.Password,256), ':', salt_value);
 END;
 //
 DELIMITER ;
--- *296A11A90EEC6D320FC8430F0038498FC514B8B2:3019d65f4204bc3b15847793be1ac6dc
+
+-- Create the desalting function
+-- DROP FUNCTION IF EXISTS `VerifyPassword`;
+-- DELIMITER //
+-- CREATE FUNCTION VerifyPassword(mail VARCHAR(255), p_password VARCHAR(255))
+-- RETURNS INT
+-- BEGIN
+--     DECLARE stored_password VARCHAR(255);
+--     DECLARE stored_salt VARCHAR(255);
+--     DECLARE hashed_password VARCHAR(255);
+--     SELECT Password INTO stored_password FROM Users WHERE `Email` = mail;
+--     IF stored_password IS NULL THEN
+--         RETURN 0;
+--     END IF;
+--     SET stored_salt = SUBSTRING_INDEX(stored_password, ':', -1);
+--     SET hashed_password = SHA2(p_password, 256);
+--     IF hashed_password = stored_password THEN
+--         RETURN 1;
+--     ELSE
+--         RETURN -1;
+--     END IF;
+-- END //
+-- DELIMITER ;
+
 -- Ingredients table
 CREATE TABLE IF NOT EXISTS Ingredients (
     Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -55,18 +79,18 @@ CREATE TABLE IF NOT EXISTS Ingredients (
 
 -- Recipes table
 CREATE TABLE IF NOT EXISTS Recipes (
-    Recipe_ID INT AUTO_INCREMENT PRIMARY KEY,
-    User_ID INT,
-    Picture_data VARCHAR(255),
-    Title VARCHAR(255) NOT NULL,
-    Description TEXT,
-    Instructions TEXT,
-    Serving INT,
-    Difficulty_Level VARCHAR(30),
-    Food_Category VARCHAR(30),
-    Date_Created DATE,
-    FOREIGN KEY (User_ID)
-        REFERENCES Users (User_ID)
+	Recipe_ID INT AUTO_INCREMENT PRIMARY KEY,
+	User_ID INT,
+	Picture_data VARCHAR(255),
+	Title VARCHAR(255) NOT NULL,
+	Description TEXT,
+	Instructions TEXT,
+	Serving INT,
+	Difficulty_Level VARCHAR(30),
+	Food_Category VARCHAR(30),
+	Date_Created DATE,
+	FOREIGN KEY (User_ID)
+		REFERENCES Users (User_ID)
 );
 
 ALTER TABLE Recipes
@@ -131,6 +155,7 @@ VALUES('Liszt', 'Szénhidrátok'),
 ('Bors', 'Fűszerek'),
 ('Sütőpor', 'Egyéb');
 INSERT INTO Users (Username, Email, Password) VALUES ('Levi', 'levi@gmail.com', 'levi123');
+INSERT INTO Users (Username, Email, Password) VALUES ('Bence', 'bence@gmail.com', 'bb123');
 INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
 VALUES (1,1,1);
 INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
@@ -153,9 +178,32 @@ CREATE PROCEDURE felhBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
 BEGIN
     SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
 END;
-//felhBejelentkezes
+//
 DELIMITER ;
+CALL `felhBejelentkezes` ('bencebudai2004@gmail.com','Asdfg123');
 
+-- -- felhBejelentkezes function
+DROP FUNCTION IF EXISTS felhBejelentkezes;
+DELIMITER //
+CREATE FUNCTION felhBejelentkezes(mail VARCHAR(50), jlsz VARCHAR(50))
+RETURNS INT
+BEGIN
+    DECLARE user_id_value INT;
+    DECLARE email_value VARCHAR(60);
+    DECLARE hashed_password VARCHAR(255);
+    DECLARE salt_value VARCHAR(255);
+    SELECT User_ID, Password, Email INTO user_id_value, hashed_password, email_value
+    FROM Users WHERE Email = mail;
+    IF hashed_password IS NOT NULL AND PASSWORD(CONCAT(jlsz, SUBSTRING_INDEX(hashed_password, ':', -1))) = SUBSTRING_INDEX(hashed_password, ':', 1) THEN
+    RETURN TRUE;
+    ELSE
+    RETURN FALSE;
+    END IF;
+END
+//
+DELIMITER ;
+SELECT felhBejelentkezes ('levi@gmail.com','levi123');
+SELECT felhBejelentkezes ('bence@gmail.com','bb123');
 
 -- felhTokenFrissites procedure
 drop PROCEDURE if exists felhTokenFrissites;
@@ -167,6 +215,19 @@ END;
 //
 DELIMITER ;
 
+-- felhTokenFrissites function
+drop FUNCTION if exists felhTokenFrissites;
+DELIMITER //
+CREATE FUNCTION felhTokenFrissites(id INT, token TEXT) RETURNS TEXT
+BEGIN
+    DECLARE info TEXT;
+    UPDATE Users SET Token = token WHERE User_ID = id;
+    SET info = CONCAT('Token for User_ID ', id, ' has been updated to: ', token);
+    RETURN info;
+END;
+//
+DELIMITER ;
+SELECT felhTokenFrissites (1,generateTokenProcedure );
 
 -- getAllUserInfos procedure
 DROP PROCEDURE if exists getAllUserInfos;
@@ -265,6 +326,8 @@ END;
 DELIMITER ;
 CALL getIngredients;
 
+-- -- Functions
+-- SELECT VerifyPassword ('levi@gmail.com' ,'levi123');
 
 -- Select utasitasok
 SELECT * FROM Users;

@@ -107,6 +107,7 @@
   font-weight: 400;
   position: relative;
   width: 848px;
+  height: min-content;
 }
 
 .recipe-img-and-details {
@@ -131,6 +132,8 @@
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .recipe-img-display {
@@ -250,26 +253,55 @@
   display: flex;
   overflow: hidden;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 30px;
+}
+
+.recipe-details-favoritebutton:active,
+.recipe-details-favoritebutton:focus {
+  outline: none;
+}
+
+.recipe-details-favoritebutton:active {
+  transform: scale(1.04);
+  animation-name: pulse;
+  animation-duration: 0.2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .recipe-details-favoritebutton-text {
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   font-family: "Inter-Regular", sans-serif;
   font-size: 32px;
   font-weight: 400;
-  position: absolute;
-  left: 101px;
-  top: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .recipe-details-favoritebutton-hearticon {
   width: 50px;
   height: 50px;
-  position: absolute;
-  left: 25px;
-  top: 13px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: visible;
 }
 
@@ -327,6 +359,7 @@
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .recipe-details-cooking-time-innerdiv {
@@ -449,6 +482,7 @@
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .recipe-details-cooking-ingredients-innerdiv {
@@ -524,6 +558,7 @@
   position: relative;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .recipe-details-cooking-steps-innerdiv {
@@ -637,6 +672,7 @@
   justify-content: center;
   flex-shrink: 0;
   position: relative;
+  width: 78%;
 }
 
 .recipe-comments-title-text {
@@ -655,6 +691,8 @@
   font-size: 26px;
   font-weight: 400;
   position: relative;
+  height: min-content;
+  width: 100%;
 }
 
 .recipe-comments-inputdiv {
@@ -664,23 +702,24 @@
   border-width: 1px;
   flex-shrink: 0;
   width: 900px;
-  height: 200px;
+  min-height: 80px;
+  height: max-content;
   position: relative;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 .recipe-comments-inputlayout {
   padding: 10px;
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 900px;
-  height: 200px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100%;
+  height: max-content;
+  position: relative;
 }
 
 .recipe-comments-input {
@@ -690,8 +729,47 @@
   font-size: 24px;
   font-weight: 400;
   position: relative;
-  align-self: stretch;
-  flex: 1;
+  padding: 10px;
+  width: 100%;
+  min-height: fit-content;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  resize: none;
+  overflow-y: hidden;
+}
+
+.recipe-comments-input::placeholder {
+  color: #000000;
+  text-align: left;
+  position: absolute;
+  top: auto;
+}
+
+.recipe-comments-input:active,
+.recipe-comments-input:focus {
+  outline: none;
+}
+
+.send-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 26px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: #000000 1px solid;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #fc7f30;
+}
+
+.send-button:active,
+.send-button:focus {
+  outline: none;
+}
+
+.send-button:active {
+  transform: scale(0.9);
 }
 
 .recipe-comments-commentcontainer {

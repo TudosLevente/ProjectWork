@@ -60,7 +60,7 @@
         <div class="container-fluid">
           <div class="row col-12">
             <div class="col-lg-4 d-flex align-items-center justify-content-start">
-              <div class="navbar_logo">
+              <div class="navbar_logo" onclick="redirectToMainPage()">
                 <img src="./logo-removebg-preview.png" class="logo">
                 <img src="./FoodHub.png" class="navbar_foobhub_logo_text">
               </div>
@@ -75,9 +75,9 @@
                 <div class="navmenuitems">
                   <ul class="navbarmenulist navbar-nav">
                     <li class="divider"></li>
-                    <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelDropdown()"
-                      onmouseout="hideFoetelDropdown()">
-                      <a class="nav-link dropdown" class="dropdown_content_foetel" id="dropdownfoetel">
+                    <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelekDropdown()"
+                      onmouseout="hideFoetelekDropdown()">
+                      <a class="nav-link dropdown" id="dropdownfoetel">
                         Főételek
                       </a>
                       <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
@@ -90,30 +90,10 @@
                         <li><a class="dropdown-item" href="#">Köretek</a></li>
                       </ul>
                     </li>
-                    <script>
-                      function showFoetelDropdown() {
-                        var dropdownContent = document.querySelector('.dropdown_foetel .dropdown_content_foetel');
-                        dropdownContent.style.display = 'flex';
-                        dropdownContent.style.animationName = 'fadeIn';
-                        dropdownContent.style.animationDuration = '0.3s';
-                        dropdownContent.style.animationFillMode = 'forwards';
-                      }
-
-                      function hideFoetelDropdown() {
-                        var dropdownContent = document.querySelector('.dropdown_foetel .dropdown_content_foetel');
-                        dropdownContent.style.animationName = 'fadeOut';
-                        dropdownContent.style.animationDuration = '0.3s';
-                        dropdownContent.style.animationFillMode = 'forwards';
-                        setTimeout(function () {
-                          dropdownContent.style.display = 'none';
-                        }, 300);
-                      }
-
-                    </script>
                     <li class="divider"></li>
-                    <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertDropdown()"
-                      onmouseout="hideDesszertDropdown()">
-                      <a class="nav-link dropdown" class="dropdown_content_desszert" id="dropdowndesszert" href="#">
+                    <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertekDropdown()"
+                      onmouseout="hideDesszertekDropdown()">
+                      <a class="nav-link dropdown" id="dropdowndesszert" href="#">
                         Desszertek
                       </a>
                       <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
@@ -125,25 +105,6 @@
                         <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
                       </ul>
                     </li>
-                    <script>
-                      function showDesszertDropdown() {
-                        var dropdownContent = document.querySelector('.dropdown_desszert .dropdown_content_desszert');
-                        dropdownContent.style.display = 'flex';
-                        dropdownContent.style.animationName = 'fadeIn';
-                        dropdownContent.style.animationDuration = '0.3s';
-                        dropdownContent.style.animationFillMode = 'forwards';
-                      }
-
-                      function hideDesszertDropdown() {
-                        var dropdownContent = document.querySelector('.dropdown_desszert .dropdown_content_desszert');
-                        dropdownContent.style.animationName = 'fadeOut';
-                        dropdownContent.style.animationDuration = '0.3s';
-                        dropdownContent.style.animationFillMode = 'forwards';
-                        setTimeout(function () {
-                          dropdownContent.style.display = 'none';
-                        }, 300);
-                      }
-                    </script>
                     <li class="divider"></li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Levesek</a>
@@ -159,7 +120,7 @@
                     <li class="divider"></li>
                     <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
                       onmouseout="hideKategoriakDropdown()">
-                      <a class="nav-link dropdown" class="dropdown_content_kategoriak" id="dropdownkategoriak" href="#">
+                      <a class="nav-link dropdown" id="dropdownkategoriak" href="#">
                         Kategóriák
                       </a>
                       <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
@@ -186,35 +147,6 @@
                         <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
                       </ul>
                     </li>
-                    <script>
-                      var kategoriakHovered = false;
-
-                      function setHoverState(value) {
-                        kategoriakHovered = value;
-                        console.log(kategoriakHovered);
-                      }
-
-                      function showKategoriakDropdown() {
-                        var dropdownContent = document.querySelector('.dropdown_kategoriak .dropdown_content_kategoriak');
-                        dropdownContent.style.display = 'flex';
-                        dropdownContent.style.animationName = 'fadeIn';
-                        dropdownContent.style.animationDuration = '0.3s';
-                        dropdownContent.style.animationFillMode = 'forwards';
-                        setHoverState(true);
-                      }
-
-                      function hideKategoriakDropdown() {
-                        console.log(kategoriakHovered)
-                        setHoverState(false);
-                        if (kategoriakHovered === false) {
-                          var dropdownContent = document.querySelector('.dropdown_kategoriak .dropdown_content_kategoriak');
-                          dropdownContent.style.animationName = 'fadeOut';
-                          dropdownContent.style.animationDuration = '0.3s';
-                          dropdownContent.style.animationFillMode = 'forwards';
-                        }
-                      }
-
-                    </script>
                     <li class="divider"></li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Ajánlatunk</a>
@@ -227,8 +159,29 @@
                 </div>
               </div>
             </div>
-            <div id="login_or_profil" class="col-lg-4 d-flex align-items-center justify-content-end"
-              style="right: 40px;">
+            <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
+              <img src="./user.svg" style="width: 7%; margin-right: 5px;">
+              <div id="login_or_profil" class="login_div">
+                <!-- <div class="dropdown_profil dropdown">
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">
+                  Profil
+                </a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                  <a href="#" onclick="showAdataim()">
+                    Adataim
+                    <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
+                  <a href="#" onclick="showRecepjeim()">
+                    Recept feltöltése
+                    <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="logout()">
+                    Kijelentkezés
+                    <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                  </a>
+                </div>
+              </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -243,16 +196,13 @@
         <div class="recipe-description">
           <div class="recipe-description-title">Leírás:</div>
           <div id="description" class="recipe-description-text">
-            Egy rövid leírás az ételről amit tudni lehet róla,
-            <br />
-            vagy ha van esetleg egy különleges története
-            <br />
-            akkor az itt szerepel.
+            Egy rövid leírás az ételről amit tudni lehet róla, vagy ha van esetleg egy különleges története akkor az itt
+            szerepel.
           </div>
         </div>
         <div class="recipe-img-and-details">
           <div class="recipe-img-div">
-            <img id="picture_data" src="" alt="" class="recipe-img-display">
+            <img id="picture_data" src="./food 1.png" alt="" class="recipe-img-display">
           </div>
           <div class="recipe-details">
             <div id="difficulty" class="recipe-details-difficulty">
@@ -265,19 +215,20 @@
               <div id="username" class="recipe-details-data-username">
                 Feltöltötte:
                 <br />
-                Tamas12345
+                <div id="userUploadusername">Tamas12345</div>
               </div>
               <div id="date" class="recipe-details-data-date">
                 Feltöltve:
                 <br />
-                2023 November 20
+                <span id="userUploaddate"><span id="userUploaddate_year">2023</span> <span
+                    id="userUploaddate_month">November</span> <span id="userUploaddate_day">20</span></span>
               </div>
             </div>
-            <button class="recipe-details-favoritebutton">
+            <button class="recipe-details-favoritebutton" onclick="toggleColor()">
               <div class="recipe-details-favoritebutton-text">
                 Recept mentése
               </div>
-              <img class="recipe-details-favoritebutton-hearticon" src="recipe-details-favoritebutton-hearticon0.svg" />
+              <img class="recipe-details-favoritebutton-hearticon" id="heartIcon" src="./uncolored_heart_icon.png" />
             </button>
           </div>
         </div>
@@ -439,16 +390,15 @@
           <div class="recipe-comments-title-text">Hozzászólások</div>
           <div class="recipe-comments-title-description">
             Mindig örülünk, ha hallunk a közösség tagjaitól!
-            <br />
+            <br>
             Ne habozz megosztani a véleményed vagy élményed a
-            <br />
             recepttel kapcsolatban.
           </div>
         </div>
         <div class="recipe-comments-inputdiv">
-          <div class="recipe-comments-inputlayout">
-            <div class="recipe-comments-input">Írd ide a véleményed.</div>
-          </div>
+          <textarea class="recipe-comments-input" placeholder="Írd ide a véleményed..."
+            oninput="handleTextarea(event)"></textarea>
+          <button class="send-button" onclick="sendMessage()">Küldés</button>
         </div>
         <div class="recipe-comments-commentcontainer">
           <div class="recipe-comments-commentcontainer-1">
@@ -538,6 +488,12 @@
   <script src="../../js/script.js"></script>
   <script type="module" src="./loadRecipe.js"></script>
   <script src="./searchbar.js"></script>
+  <script src="./desszertekDropdown.js"></script>
+  <script src="./foetelekDropdown.js"></script>
+  <script src="./kategoriakDropdown.js"></script>
+  <script src="./navbar.js"></script>
+  <script src="./saveRecipeToFavorites.js"></script>
+  <script src="./commentsInput.js"></script>
 </body>
 
 </html>

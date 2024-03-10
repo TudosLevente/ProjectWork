@@ -116,7 +116,3 @@ function adjustMouseScroll(event) {
 }
 
 window.addEventListener('wheel', adjustMouseScroll);
-
-function redirectToMainPage() {
-    window.location = "/";
-}

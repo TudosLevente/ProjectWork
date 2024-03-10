@@ -1,25 +1,30 @@
-function slideRecipes() {
-    const container = document.getElementById('ajanlat-container');
-    const firstRecipe = container.firstElementChild;
-    const recipeWidth = firstRecipe.offsetWidth;
-    const marginLeft = parseInt(window.getComputedStyle(container).marginLeft);
+// function slideRecipes() {
+//     const container = document.querySelector('.ajanlat_container_track');
+//     const firstRecipe = container.firstElementChild;
+//     container.style.transition = 'margin-left 5s linear';
+//     setTimeout(() => {
+//         firstRecipe.style.transition = '';
+//         container.appendChild(firstRecipe);
+//     }, 0);
+// }
 
-    // Calculate the distance to slide
-    let distance = -(marginLeft + recipeWidth);
+// setInterval(slideRecipes, 1500);
 
-    // Apply transition to the container
-    container.style.transition = 'margin-left 1s linear'; // Adjust the duration as needed
+function slideDivs(containerSelector, duration = 5) {
+    const container = document.querySelector(containerSelector);
+    const divs = Array.from(container.children);
+    const divWidth = divs[0].offsetWidth;
 
-    // Slide the container to the left
-    container.style.marginLeft = `${distance}px`;
+    let currentIndex = 0;
 
-    // After transition, move the first recipe to the end
-    setTimeout(() => {
-        container.appendChild(firstRecipe); // Move the first recipe to the end
-        container.style.transition = ''; // Reset transition
-        container.style.marginLeft = '0'; // Reset margin left
-    }, 1000); // Wait for transition to finish
+    function slide() {
+        currentIndex = (currentIndex + 1) % divs.length;
+        container.appendChild(divs[currentIndex]);
+    }
+
+    slide();
+    setInterval(slide, duration * 1000);
 }
 
-// Call slideRecipes every 5 seconds
-setInterval(slideRecipes, 1000); // Adjust the interval as needed
+slideDivs('.ajanlat_container_track', 5);
+

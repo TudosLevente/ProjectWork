@@ -1,0 +1,197 @@
+
+.ajanlataink {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  
+  .ajanlat_title {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .ajanlat_text {
+    background: var(--lemon-greater-orange-greater-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(255, 0, 0, 1.00) 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .ajanlat_container {
+    padding: 0px 0px 50px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 19px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-shrink: 0;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ajanlat_container_track{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .ajanlat_container_div {
+    background: #623500;
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 auto;
+    transition: transform 0.5s ease;
+  }
+  
+  .ajanlat_container_div_image {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+  }
+
+/* .ajanlataink {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.ajanlat_title {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ajanlat_text {
+    background: var(--lemon-greater-orange-greater-red-linear, linear-gradient(180deg, rgba(238, 163, 37, 1.00) 0%, rgba(255, 96, 0, 1.00) 51.5625%, rgba(255, 0, 0, 1.00) 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    position: relative;
+}
+
+.slideshow-container {
+    min-width: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.ajanlat_container {
+    height: max-content;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.ajanlat_container_track {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 40s linear infinite;
+}
+
+.ajanlat_container_track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 9));
+    }
+}
+
+.ajanlat_container_div {
+    background: #623500;
+    border-radius: 10px;
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.ajanlat_container_div_image {
+    width: fit-content;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+    transition: transform 1s;
+}
+
+
+.ajanlat_container_div_image:hover {
+    transform: translateZ(10px);
+}
+
+.ajanlat_container::before,
+.ajanlat_container::after { 
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15px;
+    z-index: 2;
+}
+
+.ajanlat_container::before {
+    left: 0;
+    top: 0;
+}
+
+.ajanlat_container::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ('180deg');
+} */

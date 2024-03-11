@@ -7,9 +7,9 @@ function loadRecipes() {
     for (var i = 1; i < 3; i++) {
         for (var j = 1; j < 5; j++) {
             (function (i, j) {
-                var id = generateNumber();
+                var id = 33;
 
-                getData(`http://localhost:8000/api/recipe/${id}`).then((recipeData) => {
+                getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
                     if (recipeData) {
                         var element = document.getElementById(`r${i}c${j}`);
                         if (element) {

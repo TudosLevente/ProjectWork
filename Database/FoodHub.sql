@@ -294,7 +294,14 @@ WHERE
 END;
 //
 delimiter ;
-call getRecipeInfos(1);
+
+
+CREATE PROCEDURE loadRecipeInfos(IN recipeID int)
+BEGIN
+    SELECT * FROM Recipes WHERE Recipe_ID = recipeID;
+END;
+//
+delimiter ;
 
 
 -- getCommentContent procedure

@@ -14,6 +14,18 @@ function getRecipeInfos(req, res) {
     })
 }
 
+function loadRecipeInfos(req, res) {
+    var con = mysql.createConnection(config.database);
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log('A recept adatok lekérése sikeres.\n');
+    })
+    con.query('CALL loadRecipeInfos(?) ', [req.params['id']], (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    })
+}
+
 async function uploadRecipe(req, res) {
     const recipe = new Recipe(
         null, //recept id, ami feltöltéskor adodik majd hozzá
@@ -123,3 +135,4 @@ async function uploadRecipe(req, res) {
 
 exports.getRecipeInfos = getRecipeInfos;
 exports.uploadRecipe = uploadRecipe;
+exports.loadRecipeInfos = loadRecipeInfos;

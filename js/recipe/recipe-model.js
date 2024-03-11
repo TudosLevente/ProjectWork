@@ -53,7 +53,7 @@ async function uploadRecipe(req, res) {
             return obj.title + " (" + obj.input + ")";
         });
 
-        var concatenatedString = concatenatedStrings.join('•');
+        var concatenatedString = concatenatedStrings.join(';');
 
         return concatenatedString;
     }

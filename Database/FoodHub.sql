@@ -1,4 +1,4 @@
--- Active: 1708009143398@@127.0.0.1@3306@foodhub
+-- Active: 1707314970079@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -296,9 +296,12 @@ call getRecipeInfos(1);
 -- getCommentContent procedure
 DROP PROCEDURE if exists getCommentContent;
 delimiter //
-CREATE PROCEDURE getCommentContent(IN searched_id int)
+CREATE PROCEDURE getCommentContent(IN recipeId int)
 BEGIN
-    SELECT Comment_Text FROM Comments WHERE Comments.Comment_ID = searched_id;
+    SELECT Comments.Comment_Text, Comments.Date_Posted, Users.Username FROM Comments 
+    INNER JOIN Users
+    ON Comments.User_ID = Users.User_ID
+    WHERE Comments.Recipe_ID = recipeId;
 END;
 //
 delimiter ;

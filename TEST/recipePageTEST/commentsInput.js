@@ -14,4 +14,21 @@ function sendMessage() {
         textarea.value = "";
         textarea.style.height = 'auto';
     }
+
+    console.log(message);
+
+    var commentData = {
+        comment_text: message,
+        recipe_id: recipeId,
+        user_id: loggedInUserId
+    };
+
+    postData('http://localhost:8000/api/uploadComment', commentData)
+        .then((res) => {
+            console.log(res);
+            console.log("Recept feltölve!")
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }

@@ -1,6 +1,5 @@
 ::-webkit-scrollbar {
   overflow: scroll;
-  background: transparent;
   width: 10px;
   height: 10px;
   z-index: 0;

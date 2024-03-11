@@ -4,47 +4,47 @@ function createIngredientInput(count) {
     const inputDiv = document.createElement('div');
     inputDiv.className = 'ingredient';
     inputDiv.innerHTML = `
-        <div class="ingredient_name">
-        <input type="text" name="ingredient[]" id="ingredientInput${count}" class="ingredient_input_style_name"
-        onkeyup="searchFunction('ingredientInput${count}')" onfocus="showResults('ingredientsResults${count}')"
-        placeholder="Cukor">
+            <div class="ingredient_name">
+            <input type="text" name="ingredient[]" id="ingredientInput${count}" class="ingredient_input_style_name"
+            onkeyup="searchFunction('ingredientInput${count}')" onfocus="showResults('ingredientsResults${count}')"
+            onblur="hideResults('ingredientsResults${count}')" placeholder="Cukor">
             <div id="ingredientsResults${count}" class="ingredientsResults">
-                <ul>
-                </ul>
+            <ul>
+            </ul>
             </div>
         </div>
         <div class="ingredient_amount">
             <input class="ingredient_input_style_quantity" name="quantity[]" type="number" value="1" />
         </div>
         <div class="ingredient_measurement">
-            <input type="text" class="ingredient_input_style_measurement" name="measurement[]" id="measurementInput${count}"
-            onkeyup="searchFunction('measurementInput${count}')" onfocus="showResults('measurementResults${count}')"
+            <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
+            id="measurementInput${count}" onkeyup="searchFunction('measurementInput${count}')"
+            onfocus="showResults('measurementResults${count}')" onblur="hideResults('measurementResults${count}')"
             placeholder="Evőkanál" />
             <div id="measurementResults${count}" class="measurementsResults">
-                <ul>
-                    <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
-                    <li>Milligramm (mg)</li>
-                    <li>Gramm (g)</li>
-                    <li>Dekagramm (dkg)</li>
-                    <li>Kilogramm (kg)</li>
-                    <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
-                    <li>Teáskanál (tsp)</li>
-                    <li>Evőkanál (tbsp)</li>
-                    <li>Fluidumuncia (fl oz)</li>
-                    <li>Csésze (cup)</li>
-                    <li>Pint (pt)</li>
-                    <li>Quartz (qt)</li>
-                    <li>Gallon (gal)</li>
-                    <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
-                    <li>Milliliter (ml)</li>
-                    <li>Centiliter (cl)</li>
-                    <li>Deciliter (dl)</li>
-                    <li>Liter (l)</li>
-                </ul>
+            <ul>
+                <li class="nonclickable">Tömegmértékegységek:</li>
+                <li>Milligramm (mg)</li>
+                <li>Gramm (g)</li>
+                <li>Dekagramm (dkg)</li>
+                <li>Kilogramm (kg)</li>
+                <li class="nonclickable">Térfogatmértékegységek:</li>
+                <li>Teáskanál (tk)</li>
+                <li>Evőkanál (ek)</li>
+                <li>Csésze (cup)</li>
+                <li>Pint (pt)</li>
+                <li>Kvart (qt)</li>
+                <li>Gallon (gal)</li>
+                <li class="nonclickable">Űrmértékegységek:</li>
+                <li>Milliliter (ml)</li>
+                <li>Centiliter (cl)</li>
+                <li>Deciliter (dl)</li>
+                <li>Liter (l)</li>
+            </ul>
             </div>
         </div>
         <button class="torles_gomb">
-            <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+            <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
         </button>
         `;
     ingredientContainer.appendChild(inputDiv);

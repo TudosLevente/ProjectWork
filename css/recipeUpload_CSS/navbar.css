@@ -1,0 +1,216 @@
+.navbar,
+.navbar_menu {
+    /* background: #bb5a00; */
+    background-color: #B02000;
+    opacity: 0.96;
+    padding: 9px 0px 9px 0px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.navbar_profil_text {
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Inter-Regular', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    position: relative;
+}
+
+.login_div a {
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.search-container {
+    position: relative;
+    /* Change position to relative */
+    margin-top: 10px;
+    /* Add margin to separate search bar from navbar */
+}
+
+#search-results-container {
+    position: absolute;
+    display: none;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: white;
+    /* border: 4px solid #ff9900; */
+    border-top: none !important;
+    width: calc(100% - 45px);
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 30px !important;
+}
+
+/* Width */
+#search-results-container::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+#search-results-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+#search-results-container::-webkit-scrollbar-thumb {
+    background: #ff9900;
+}
+
+/* Handle on hover */
+#search-results-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.navbar_searchbar {
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #ffffff21;
+    background-color: whitesmoke;
+    border-width: 2px;
+    flex-shrink: 0;
+    width: calc(100%);
+    height: 75px;
+    position: relative;
+    overflow: hidden;
+    font-size: 40px;
+    text-align: left;
+    padding-left: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    outline: none;
+}
+
+.navbar_foobhub_logo_text {
+    font-size: 100px;
+    position: relative;
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: auto;
+    left: 20px;
+}
+
+.navbar_foobhub_logo_text:hover {
+    background: linear-gradient(#FF0000, #FF6000, #EEA325);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.navbar a,
+.navbar a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar_middle {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+
+.nav-link:hover {
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbarmenulist li:hover,
+a:hover {
+    color: white;
+    font-weight: 20px;
+}
+
+.menuitems_row {
+    font-size: 30px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.navbar_menu {
+    top: 107px;
+}
+
+
+
+
+
+.dropdown_profil {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content_profil {
+    display: none;
+    position: absolute;
+    background-color: rgba(238, 163, 37, 0.97);
+    min-width: 300px;
+    height: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 15px;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    opacity: 0;
+    right: -100px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.dropdown_content_profil a {
+    color: black;
+    text-decoration: none;
+    appearance: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px;
+}
+
+.dropdown_content_profil a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown_profil:hover .dropdown_content_profil {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}

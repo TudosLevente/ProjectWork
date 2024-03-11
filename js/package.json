@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "App/index.js",
+  "nodemonConfig": {
+    "ext": "js,html,css"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon App/App.js"
+    "start": "nodemon --delay 1000ms App/App.js"
   },
   "keywords": [],
   "author": "",

@@ -14,12 +14,6 @@ function searchFunction(inputId) {
             li[i].style.display = "none";
         }
     }
-
-    if (filter !== "") {
-        ul.style.display = "block";
-    } else {
-        ul.style.display = "none";
-    }
 }
 
 function handleListItemClick(input, text) {
@@ -31,6 +25,11 @@ function handleListItemClick(input, text) {
 function showResults(resultsId) {
     var ul = document.getElementById(resultsId);
     ul.style.display = "block";
+}
+
+function hideResults(resultsId) {
+    var ul = document.getElementById(resultsId);
+    ul.style.display = "none";
 }
 
 async function pickIngredient() {
@@ -78,3 +77,53 @@ async function pickMeasurement() {
         });
     });
 }
+
+
+/*
+    switch (text.toLowerCase()) {
+        case "milligramm":
+            input.value = "mg";
+            break;
+        case "gramm":
+            input.value = "g";
+            break;
+        case "dekagramm":
+            input.value = "dkg";
+            break;
+        case "kilogramm":
+            input.value = "kg";
+            break;
+        case "teáskanál":
+            input.value = "tk";
+            break;
+        case "evőkanál":
+            input.value = "ek";
+            break;
+        case "csésze":
+            input.value = "cup";
+            break;
+        case "pint":
+            input.value = "pt";
+            break;
+        case "kvart":
+            input.value = "qt";
+            break;
+        case "gallon":
+            input.value = "gal";
+            break;
+        case "milliliter":
+            input.value = "ml";
+            break;
+        case "centiliter":
+            input.value = "cl";
+            break;
+        case "deciliter":
+            input.value = "dl";
+            break;
+        case "liter":
+            input.value = "l";
+            break;
+        default:
+            input.value = text;
+    }
+*/

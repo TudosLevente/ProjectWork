@@ -6,8 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/vars.css" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/vars.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/style.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/dropdowndesszert.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/dropdownfoetel.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/dropdownkategoriak.css" />
+  <link rel="stylesheet" href="../css/recipeUpload_CSS/navbar.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="../js/script.js"></script>
@@ -16,26 +20,139 @@
 
 <body>
   <div class="container-fluid body-div">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <div class="row col-12">
-          <div class="col-lg-4 d-flex align-items-center justify-content-start">
-            <a class="navbar_foobhub_logo_text" href="../html/mainPage.html">FoodHub</a>
-          </div>
-          <div class="col-lg-4 d-flex align-items-center justify-content-center">
-            <div class="input-group">
-              <input type="text" class="navbar_searchbar form-control" placeholder="Keressen receptjeink között ..."
-                aria-label="Search" aria-describedby="basic-addon2" />
+    <div class="navbar_div">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <div class="row col-12">
+            <div class="col-lg-4 d-flex align-items-center justify-content-start">
+              <div class="navbar_logo" onclick="redirectToMainPage()">
+                <img src="../images/recipeUpload_Images/logo-removebg-preview.png" class="logo">
+                <img src="../images/recipeUpload_Images/FoodHub.png" class="navbar_foobhub_logo_text">
+              </div>
+            </div>
+            <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+              <div class="input-group">
+                <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
+                  aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
+              </div>
+              <div id="search-results-container" class="mt-2 fixed-top"></div>
+              <div class="menuitems_row row justify-content-center ">
+                <div class="navmenuitems">
+                  <ul class="navbarmenulist navbar-nav">
+                    <li class="divider"></li>
+                    <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelekDropdown()"
+                      onmouseout="hideFoetelekDropdown()">
+                      <a class="nav-link dropdown" id="dropdownfoetel">
+                        Főételek
+                      </a>
+                      <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertekDropdown()"
+                      onmouseout="hideDesszertekDropdown()">
+                      <a class="nav-link dropdown" id="dropdowndesszert" href="#">
+                        Desszertek
+                      </a>
+                      <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Levesek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Saláták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tészták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
+                      onmouseout="hideKategoriakDropdown()">
+                      <a class="nav-link dropdown" id="dropdownkategoriak" href="#">
+                        Kategóriák
+                      </a>
+                      <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
+                        id="dropdown_content_kategoriak">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                        <li><a class="dropdown-item" href="#">Szószok</a></li>
+                        <li><a class="dropdown-item" href="#">Torták</a></li>
+                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
+                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ajánlatunk</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Rólunk</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
+              <img src="../images/recipeUpload_Images/user.svg" style="width: 7%; margin-right: 5px;">
+              <div id="login_or_profil" class="login_div">
+                <!-- <div class="dropdown_profil dropdown">
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">
+                  Profil
+                </a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                  <a href="#" onclick="showAdataim()">
+                    Adataim
+                    <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
+                  <a href="#" onclick="showRecepjeim()">
+                    Recept feltöltése
+                    <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="logout()">
+                    Kijelentkezés
+                    <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                  </a>
+                </div>
+              </div> -->
+              </div>
             </div>
           </div>
-          <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-            <img src="../images/mainPage/user.svg" style="width: 7%; margin-right: 5px;">
-            <div class="login_div"><a href="../html/profilePage.html" class="navbar_profil_text">Profil</a></div>
-          </div>
         </div>
-      </div>
-    </nav>
-    <img class="img-fluid background_image_top" src="../images/recipiesuploadPage/image-90.png" />
+      </nav>
+    </div>
+    <img class="img-fluid background_image_top" src="../images/recipeUpload_Images/image-90.png" />
     <div class="main_div">
       <div class="title_div">
         <div class="title_div_text">Recept feltöltése</div>
@@ -58,11 +175,11 @@
             <div class="recipe_description_div">
               <div class="recipe_description_div_text">Leírás:</div>
               <div class="recipe_description_div_input">
-                <label for="description" class="recipe_description_div_input_label">Írjon receptjéhez leírást.</label>
-                <img src="../images/recipiesuploadPage/leirasboximage.svg" class="recipe_description_design_icon"
+                <!-- <label for="description" class="recipe_description_div_input_label">Írjon receptjéhez leírást.</label> -->
+                <img src="../images/recipeUpload_Images/leirasboximage.svg" class="recipe_description_design_icon"
                   alt="">
-                <input class="recipe_description_input" id="description" type="text"
-                  placeholder="Írjon receptjéhez leírást." />
+                <textarea class="recipe_description_input" id="description"
+                  placeholder=" Írjon receptjéhez leírást..."></textarea>
               </div>
             </div>
           </div>
@@ -97,7 +214,7 @@
                 <br />
                 teszik receptjét és ne felejtse el megadni a
                 <br />
-                mértékegységeket is.
+                mértékegységeket se.
               </div>
             </div>
             <div id="ingredient_inputs" class="ingredient_inputs">
@@ -105,7 +222,7 @@
                 <div class="ingredient_name">
                   <input type="text" name="ingredient[]" id="ingredientInput1" class="ingredient_input_style_name"
                     onkeyup="searchFunction('ingredientInput1')" onfocus="showResults('ingredientsResults1')"
-                    placeholder="Cukor">
+                    onblur="hideResults('ingredientsResults1')" placeholder="Cukor">
                   <div id="ingredientsResults1" class="ingredientsResults">
                     <ul>
                     </ul>
@@ -117,23 +234,23 @@
                 <div class="ingredient_measurement">
                   <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
                     id="measurementInput1" onkeyup="searchFunction('measurementInput1')"
-                    onfocus="showResults('measurementResults1')" placeholder="Evőkanál" />
+                    onfocus="showResults('measurementResults1')" onblur="hideResults('measurementResults1')"
+                    placeholder="Evőkanál" />
                   <div id="measurementResults1" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
-                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
-                      <li>Teáskanál (tsp)</li>
-                      <li>Evőkanál (tbsp)</li>
-                      <li>Fluidumuncia (fl oz)</li>
+                      <li class="nonclickable">Térfogatmértékegységek:</li>
+                      <li>Teáskanál (tk)</li>
+                      <li>Evőkanál (ek)</li>
                       <li>Csésze (cup)</li>
                       <li>Pint (pt)</li>
-                      <li>Quartz (qt)</li>
+                      <li>Kvart (qt)</li>
                       <li>Gallon (gal)</li>
-                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Űrmértékegységek:</li>
                       <li>Milliliter (ml)</li>
                       <li>Centiliter (cl)</li>
                       <li>Deciliter (dl)</li>
@@ -142,14 +259,14 @@
                   </div>
                 </div>
                 <button class="torles_gomb">
-                  <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                  <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
                 </button>
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
                   <input type="text" name="ingredient[]" id="ingredientInput2" class="ingredient_input_style_name"
                     onkeyup="searchFunction('ingredientInput2')" onfocus="showResults('ingredientsResults2')"
-                    placeholder="Cukor">
+                    onblur="hideResults('ingredientsResults2')" placeholder="Cukor">
                   <div id="ingredientsResults2" class="ingredientsResults">
                     <ul>
                     </ul>
@@ -161,23 +278,23 @@
                 <div class="ingredient_measurement">
                   <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
                     id="measurementInput2" onkeyup="searchFunction('measurementInput2')"
-                    onfocus="showResults('measurementResults2')" placeholder="Evőkanál" />
+                    onfocus="showResults('measurementResults2')" onblur="hideResults('measurementResults2')"
+                    placeholder="Evőkanál" />
                   <div id="measurementResults2" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
-                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
-                      <li>Teáskanál (tsp)</li>
-                      <li>Evőkanál (tbsp)</li>
-                      <li>Fluidumuncia (fl oz)</li>
+                      <li class="nonclickable">Térfogatmértékegységek:</li>
+                      <li>Teáskanál (tk)</li>
+                      <li>Evőkanál (ek)</li>
                       <li>Csésze (cup)</li>
                       <li>Pint (pt)</li>
-                      <li>Quartz (qt)</li>
+                      <li>Kvart (qt)</li>
                       <li>Gallon (gal)</li>
-                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Űrmértékegységek:</li>
                       <li>Milliliter (ml)</li>
                       <li>Centiliter (cl)</li>
                       <li>Deciliter (dl)</li>
@@ -186,14 +303,14 @@
                   </div>
                 </div>
                 <button class="torles_gomb">
-                  <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                  <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
                 </button>
               </div>
               <div class="ingredient">
                 <div class="ingredient_name">
                   <input type="text" name="ingredient[]" id="ingredientInput3" class="ingredient_input_style_name"
                     onkeyup="searchFunction('ingredientInput3')" onfocus="showResults('ingredientsResults3')"
-                    placeholder="Cukor">
+                    onblur="hideResults('ingredientsResults3')" placeholder="Cukor">
                   <div id="ingredientsResults3" class="ingredientsResults">
                     <ul>
                     </ul>
@@ -205,23 +322,23 @@
                 <div class="ingredient_measurement">
                   <input type="text" class="ingredient_input_style_measurement" name="measurement[]"
                     id="measurementInput3" onkeyup="searchFunction('measurementInput3')"
-                    onfocus="showResults('measurementResults3')" placeholder="Evőkanál" />
+                    onfocus="showResults('measurementResults3')" onblur="hideResults('measurementResults3')"
+                    placeholder="Evőkanál" />
                   <div id="measurementResults3" class="measurementsResults">
                     <ul>
-                      <li>Tömegmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Tömegmértékegységek:</li>
                       <li>Milligramm (mg)</li>
                       <li>Gramm (g)</li>
                       <li>Dekagramm (dkg)</li>
                       <li>Kilogramm (kg)</li>
-                      <li>Térfogatmértékegységek:</li> <!-- ez csak az elválasztó -->
-                      <li>Teáskanál (tsp)</li>
-                      <li>Evőkanál (tbsp)</li>
-                      <li>Fluidumuncia (fl oz)</li>
+                      <li class="nonclickable">Térfogatmértékegységek:</li>
+                      <li>Teáskanál (tk)</li>
+                      <li>Evőkanál (ek)</li>
                       <li>Csésze (cup)</li>
                       <li>Pint (pt)</li>
-                      <li>Quartz (qt)</li>
+                      <li>Kvart (qt)</li>
                       <li>Gallon (gal)</li>
-                      <li>Űrmértékegységek:</li> <!-- ez csak az elválasztó -->
+                      <li class="nonclickable">Űrmértékegységek:</li>
                       <li>Milliliter (ml)</li>
                       <li>Centiliter (cl)</li>
                       <li>Deciliter (dl)</li>
@@ -230,14 +347,14 @@
                   </div>
                 </div>
                 <button class="torles_gomb">
-                  <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                  <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
                 </button>
               </div>
             </div>
           </div>
           <button id="add_ingredient" class="add_element_button">
             <div class="add_element_button_text">Hozzávaló felvétele</div>
-            <img src="../images/recipiesuploadPage/plussz-icon.svg" class="plus-square">
+            <img src="../images/recipeUpload_Images/plussz-icon.svg" class="plus-square">
           </button>
         </div>
         <div class="divider_line"></div>
@@ -258,45 +375,46 @@
             <div class="instruction">
               <div id="instruction_title1" class="instruction_title"></div>
               <div class="instruction_container">
-                <img src="../images/recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
-                <input class="instruction_input" id="instructionInput1"
-                  placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
+                <img src="../images/recipeUpload_Images/leirasboximage.svg" class="instruction_design_icon">
+                <textarea class="instruction_input" id="instructionInput1"
+                  placeholder="Írja le mi a következő lépés receptjének elkészítésében."></textarea>
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+              <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
             </button>
           </div>
           <div class="steps">
             <div class="instruction">
               <div id="instruction_title2" class="instruction_title"></div>
               <div class="instruction_container">
-                <img src="../images/recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
-                <input class="instruction_input" id="instructionInput2"
-                  placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
+                <img src="../images/recipeUpload_Images/leirasboximage.svg" class="instruction_design_icon">
+                <textarea class="instruction_input" id="instructionInput2"
+                  placeholder="Írja le mi a következő lépés receptjének elkészítésében."></textarea>
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+              <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
             </button>
           </div>
           <div class="steps">
             <div class="instruction">
               <div id="instruction_title3" class="instruction_title"></div>
               <div class="instruction_container">
-                <img src="../images/recipiesuploadPage/leirasboximage.svg" class="instruction_design_icon">
-                <input class="instruction_input" id="instructionInput3"
-                  placeholder="Írja le mi a következő lépés receptjének elkészítésében." />
+                <img src="../images/recipeUpload_Images/leirasboximage.svg" class="instruction_design_icon">
+                <textarea class="instruction_input" id="instructionInput3"
+                  placeholder="Írja le mi a következő lépés receptjének elkészítésében."
+                  oninput="autoResize(this)"></textarea>
               </div>
             </div>
             <button class="torles_gomb">
-              <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+              <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
             </button>
           </div>
         </div>
         <button id="add_instruction" class="add_element_button">
           <div class="add_element_button_text">Lépés hozzáadása</div>
-          <img src="../images/recipiesuploadPage/plussz-icon.svg" class="plus-square" alt="">
+          <img src="../images/recipeUpload_Images/plussz-icon.svg" class="plus-square" alt="">
         </button>
         <div class="divider_line"></div>
       </div>
@@ -317,7 +435,7 @@
                 <option>Áztatás</option>
                 <option>Pihentetés</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown_">
               <div class="preparation_div_row_type_small">
                 <input id="prepTimeInput1" class="preparation_div_row_type_small_input" type="number" min="0"
                   value="0" />
@@ -327,9 +445,9 @@
                 <option value="óra">óra</option>
                 <option value="nap">nap</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown">
               <button class="torles_gomb">
-                <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
               </button>
             </div>
             <div class="preparation_div_row">
@@ -345,7 +463,7 @@
                 <option>Áztatás</option>
                 <option>Pihentetés</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown_">
               <div class="preparation_div_row_type_small">
                 <input id="prepTimeInput2" class="preparation_div_row_type_small_input" type="number" min="0"
                   value="0" />
@@ -355,9 +473,9 @@
                 <option value="óra" selected>óra</option>
                 <option value="nap">nap</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown">
               <button class="torles_gomb">
-                <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
               </button>
             </div>
             <div class="preparation_div_row">
@@ -372,7 +490,7 @@
                 <option>Keltés</option>
                 <option>Áztatás</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown_">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown_">
               <div class="preparation_div_row_type_small">
                 <input id="prepTimeInput3" class="preparation_div_row_type_small_input" type="number" min="0"
                   value="0" />
@@ -382,9 +500,9 @@
                 <option value="óra">óra</option>
                 <option value="nap" selected>nap</option>
               </select>
-              <img src="../images/recipiesuploadPage/kicsilefelenyil.svg" class="chevrondown">
+              <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown">
               <button class="torles_gomb">
-                <img src="../images/recipiesuploadPage/kukaimage.svg" class="kuka">
+                <img src="../images/recipeUpload_Images/kukaimage.svg" class="kuka">
               </button>
             </div>
           </div>
@@ -394,7 +512,7 @@
           </div>
           <button id="add_prep_time" class="add_element_button">
             <div class="add_element_button_text">Idő hozzáadása</div>
-            <img src="../images/recipiesuploadPage/plussz-icon.svg" class="plus-square">
+            <img src="../images/recipeUpload_Images/plussz-icon.svg" class="plus-square">
           </button>
         </div>
       </div>
@@ -404,28 +522,12 @@
           <div class="serving_div_text">Felszolgálási adag:</div>
           <div class="serving_div_buttons">
             <button class="serving_button" onclick="decreaseServing()">
-              <img src="../images/recipiesuploadPage/minus.svg" class="minus-icon">
+              <img src="../images/recipeUpload_Images/minus.svg" class="minus-icon">
             </button>
             <div id="serving_size" class="serving_size_number">1</div>
             <button class="serving_button" onclick="increaseServing()">
-              <img src="../images/recipiesuploadPage/plusz.svg" class="plus_square_button">
+              <img src="../images/recipeUpload_Images/plusz.svg" class="plus_square_button">
             </button>
-
-            <script>
-              function decreaseServing() {
-                var servingSize = document.getElementById("serving_size");
-                var currentSize = parseInt(servingSize.innerHTML);
-                if (currentSize > 1) {
-                  servingSize.innerHTML = currentSize - 1;
-                }
-              }
-
-              function increaseServing() {
-                var servingSize = document.getElementById("serving_size");
-                var currentSize = parseInt(servingSize.innerHTML);
-                servingSize.innerHTML = currentSize + 1;
-              }
-            </script>
           </div>
           <div class="serving_div_text">fő részére</div>
         </div>
@@ -440,7 +542,7 @@
               <option value="kozepes">Közepesen nehéz elkészíteni</option>
               <option value="nehez">Nehéz elkészíteni</option>
             </select>
-            <img src="../images/recipiesuploadPage/nagylefelenyil.svg" class="chevrondown_2">
+            <img src="../images/recipeUpload_Images/nagylefelenyil.svg" class="chevrondown_2">
           </div>
         </div>
         <div class="divider_line"></div>
@@ -470,7 +572,7 @@
             <option value="Turmixok_Shakek">Turmixok és Shakek</option>
             <option value="Vegetarianus">Vegetárianus</option>
           </select>
-          <img src="../images/recipiesuploadPage/nagylefelenyil.svg" class="chevrondown_2 ">
+          <img src="../images/recipeUpload_Images/nagylefelenyil.svg" class="chevrondown_2 ">
         </div>
       </div>
       <div class="button_div">
@@ -486,7 +588,7 @@
         </button>
       </div>
     </div>
-    <img class="background_image_bottom" src="../images/recipiesuploadPage/image-91.png" />
+    <img class="background_image_bottom" src="../images/recipeUpload_Images/image-91.png" />
     <div class="footer">
       <div class="footer_div">
         <a class="footer_div_maintitle">FoodHub</a>
@@ -494,11 +596,11 @@
       </div>
       <div class="footer_div_gmail">foodhub@gmail.com</div>
       <img class="footer_div_foodhub_logo_trasnparent"
-        src="../images/recipiesuploadPage/foodhub-logo-trasnparent-10.png" />
+        src="../images/recipeUpload_Images/foodhub-logo-trasnparent-10.png" />
       <div class="footer_div_social_div">
-        <img src="../images/recipiesuploadPage/facebook.svg" class="footer_div_social_div_facebook">
-        <img src="../images/recipiesuploadPage/twitter.svg" class="footer_div_social_div_twitter">
-        <img src="../images/recipiesuploadPage/instagram.svg" class="footer_div_social_div_instagram">
+        <img src="../images/recipeUpload_Images/facebook.svg" class="footer_div_social_div_facebook">
+        <img src="../images/recipeUpload_Images/twitter.svg" class="footer_div_social_div_twitter">
+        <img src="../images/recipeUpload_Images/instagram.svg" class="footer_div_social_div_instagram">
       </div>
     </div>
   </div>
@@ -512,6 +614,13 @@
   <script src="../js/preparation/changePrepTime.js"></script>
   <script src="../js/uploadRecipe.js"></script>
   <script src="../js/displayImage.js"></script>
+  <script src="../js/recipeUpload_JS/desszertekDropdown.js"></script>
+  <script src="../js/recipeUpload_JS/kategoriakDropdown.js"></script>
+  <script src="../js/recipeUpload_JS/foetelekDropdown.js"></script>
+  <script src="../js/recipeUpload_JS/navbar.js"></script>
+  <script src="../js/recipeUpload_JS/searchbar.js"></script>
+  <script src="../js/recipeUpload_JS/servingNumber.js"></script>
+  <script src="../js/recipeUpload_JS/autoresizeTextarea.js"></script>
 </body>
 
 </html>

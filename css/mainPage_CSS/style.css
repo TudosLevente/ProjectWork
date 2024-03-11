@@ -184,6 +184,10 @@
   display: flex;
   justify-self: center;
   align-items: center;
+
+  button {
+    outline: none;
+  }
 }
 
 .honap_legjobb_backgroundimage {
@@ -227,6 +231,7 @@
   left: 1555px;
   top: 978px;
   transition: transform 0.3s ease;
+  outline: none;
 }
 
 .honap_legjobb_button_div:hover {
@@ -246,7 +251,7 @@
   height: 104px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
 .honap_legjobb_description {
@@ -333,6 +338,31 @@
   justify-content: center;
   align-self: center;
 }
+
+.kategoria_search_div_buttonleft,
+.kategoria_search_div_buttonright {
+  border: none;
+  outline: none;
+}
+
+.kategoria_search_div_buttonleft:focus,
+.kategoria_search_div_buttonleft:active,
+.kategoria_search_div_buttonright:focus,
+.kategoria_search_div_buttonright:active {
+  outline: none;
+  animation: scaleAnimation 0.2s alternate ease-in-out;
+}
+
+@keyframes scaleAnimation {
+  from {
+    transform: scale(100%);
+  }
+
+  to {
+    transform: scale(104%);
+  }
+}
+
 
 .buttonleft {
   flex-shrink: 0;

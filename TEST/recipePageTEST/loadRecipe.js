@@ -4,22 +4,72 @@ var loggedInUserId;
 var loggedInUserBool;
 
 document.addEventListener('DOMContentLoaded', function () {
-    getData('/getLoggedInUserData').then((response) => {
-        console.log(response);
-        loggedInUserId = response.user_id;
-        loggedInUserBool = response.loggedIn;
-    }).catch((error) => {
-        console.error('Error:', error);
-    });
-
     const urlParams = new URLSearchParams(window.location.search);
     recipeId = urlParams.get('id');
 
     console.log(recipeId);
 
-    getData('/api/recipe/' + recipeId).then((response) => {
+    getData('/getLoggedInUserData').then((response) => {
         console.log(response);
+        loggedInUserId = response.user_id;
+        loggedInUserBool = response.loggedIn;
 
+        if (response.loggedIn) {
+            console.log("logged in");
+
+            const login_or_profil_div = document.getElementById('login_or_profil');
+
+            const addedProfil = document.createElement('div');
+            addedProfil.className = "dropdown_profil dropdown";
+
+            addedProfil.innerHTML = `
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                    <a href="../../html/profilePage.html" onclick="showAdataim()">Adataim<img
+                            src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
+                    <a href="../../html/recipeUpload.html" onclick="showRecepjeim()">Recept feltöltése<img
+                            src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
+                    <a href="#" onclick="logout()">Kijelentkezés<img
+                            src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
+                </div>
+            `;
+
+            login_or_profil_div.appendChild(addedProfil);
+        }
+        else if (!response.loggedIn) {
+            console.log("not logged in");
+
+            const login_or_profil_div = document.getElementById('login_or_profil');
+
+            const addedLogin = document.createElement('div');
+            addedLogin.className = "login-div";
+
+            addedLogin.innerHTML = `
+                <a href="../html/loginPage.html" class="login-text">Bejelentkezés</a>
+            `;
+
+            login_or_profil_div.appendChild(addedLogin);
+        }
+    }).then((response) => {
+        if (loggedInUserBool) {
+            getData(`http://localhost:8000/api/getFavorites/${loggedInUserId}`).then((response) => {
+                if (response[0].length != 0) {
+                    if (response[0][0].Recipe_ID == recipeId) {
+                        console.log("ez a recept kedvenc");
+                        var heartIcon = document.getElementById("heartIcon");
+                        heartIcon.src = "./red_heart_icon.png";
+                    }
+                }
+            }).catch((error) => {
+                console.error('Error:', error);
+            })
+        }
+    }
+    ).catch((error) => {
+        console.error('Error:', error);
+    });
+
+    getData('/api/recipe/' + recipeId).then((response) => {
         document.getElementById('title').innerHTML = response[0][0].Recipes_Title;
         document.getElementById('description').innerHTML = response[0][0].Recipes_Description;
 
@@ -66,24 +116,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         insertIngredientsIntoHTML(response[0][0].Recipe_Ingredients);
 
-        //prep_time --> id
-
-
     }).then(
-        // getData(`/api/user/${recipe_user}`).then((response) => {
-        //     console.log(response);
-
-        //     document.getElementById('username').innerHTML = `Feltöltötte:<br/>${response.username}`;
-        // })
-    ).then(
         getData(`/api/getComment/${recipeId}`).then((response) => {
-            console.log(response);
-            console.log(response[0].length);
-
             for (let i = 0; i < response[0].length; i++) {
                 insertCommentsIntoHTML(response[0][i].Comment_Text, response[0][i].Date_Posted, response[0][i].Username);
             }
         })
+    ).then((response) => {
+        getData(`/api/user/${recipe_user}`).then((response) => {
+            document.getElementById('username').innerHTML = `Feltöltötte:<br/>${response[0][0].Username}`;
+        })
+    }
     ).catch((error) => {
         console.error('Error:', error);
     });
@@ -163,24 +206,6 @@ function insertCookingTimeIntoHTML(text) {
 
 function insertCommentsIntoHTML(Comment_Text, Date_Posted, username) {
     let commentContainer = document.querySelector(".recipe-comments-commentcontainer");
-
-    // <div class="recipe-comments-commentcontainer-1">
-    //     <div class="recipe-comments-commentcontainer-1-title">
-    //         <div class="recipe-comments-commentcontainer-1-title-username">
-    //             Tamas12345
-    //         </div>
-    //         <div class="recipe-comments-commentcontainer-1-title-date">
-    //             2023.11.20
-    //         </div>
-    //     </div>
-    //     <div class="recipe-comments-commentcontainer-1-comment">
-    //         Ez a recept még számomra is könnyen elkészíthető volt, aki két
-    //         bal kezes
-    //         <br />
-    //         a konyhában. Köszönöm szépen a receptet.
-    //     </div>
-    //     <div class="recipe-comments-commentcontainer-1-line"></div>
-    // </div>
 
     let mainDiv = document.createElement("div");
     mainDiv.className = "recipe-comments-commentcontainer-1";
@@ -274,6 +299,43 @@ function sendMessage() {
             .catch((err) => {
                 console.log(err);
             });
+    }
+    else {
+        //ide kéne hogy legyen egy felugró ablak ami közli, hogy a kommenteléshez be kell jelentkezni vagy regisztrálni.
+    }
+}
+
+function addToFavorites() {
+    var heartIcon = document.getElementById("heartIcon");
+    var currentSrc = heartIcon.src;
+
+    if (loggedInUserBool) {
+        var favoriteData = {
+            recipe_id: recipeId,
+            user_id: loggedInUserId
+        };
+
+        if (currentSrc.includes("uncolored")) {
+            postData('http://localhost:8000/api/addFavorite', favoriteData)
+                .then((res) => {
+                    console.log(res);
+                    console.log("Recept sikeresen felvéve a kedvencekhez!")
+                    heartIcon.src = "./red_heart_icon.png";
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            deleteData('http://localhost:8000/api/removeFavorite', favoriteData)
+                .then((res) => {
+                    console.log(res);
+                    console.log("Recept sikeresen törölve a kedvencekből!")
+                    heartIcon.src = "./uncolored_heart_icon.png";
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     }
     else {
         //ide kéne hogy legyen egy felugró ablak ami közli, hogy a kommenteléshez be kell jelentkezni vagy regisztrálni.

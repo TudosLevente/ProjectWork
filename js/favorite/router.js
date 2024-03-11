@@ -3,6 +3,6 @@ var router = require('express').Router();
 
 router.get('/getFavorites/:id', favorite_model.getFavorites);
 router.post('/addFavorite', favorite_model.addFavorite);
-//router.post('/removeFavorite', favorite_model.removeFavorite);
+router.delete('/removeFavorite', favorite_model.removeFavorite);
 
 module.exports = router

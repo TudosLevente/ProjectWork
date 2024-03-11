@@ -265,28 +265,32 @@ SELECT
     Recipes.Serving AS Recipes_Serving,
     Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
     Recipes.Date_Created AS Recipes_Date_Created,
-    GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients,
-    GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
+    Recipe_Ingredients,
+    Recipe_Time
 FROM 
     Recipes
-INNER JOIN 
-    Recipe_Ingredients ON Recipes.Recipe_ID = Recipe_Ingredients.Recipe_ID
-INNER JOIN 
-    `Time` ON `Time`.Recipe_ID = Recipes.Recipe_ID 
-INNER JOIN 
-    Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
+INNER JOIN (
+    SELECT 
+        Recipe_Ingredients.Recipe_ID,
+        GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients
+    FROM 
+        Recipe_Ingredients
+    INNER JOIN 
+        Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
+    GROUP BY 
+        Recipe_Ingredients.Recipe_ID
+) AS Ingredients ON Recipes.Recipe_ID = Ingredients.Recipe_ID
+INNER JOIN (
+    SELECT 
+        `Time`.Recipe_ID,
+        GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
+    FROM 
+        `Time`
+    GROUP BY 
+        `Time`.Recipe_ID
+) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
 WHERE 
-    Recipes.Recipe_ID = recipeID
-GROUP BY 
-    Recipes.User_ID,
-    Recipes.Picture_data,
-    Recipes.Title,
-    Recipes.Description,
-    Recipes.Instructions,
-    Recipes.Serving,
-    Recipes.Difficulty_Level,
-    Recipes.Date_Created;
-
+    Recipes.Recipe_ID = recipeID;
 END;
 //
 delimiter ;
@@ -316,7 +320,6 @@ BEGIN
 END;
 //
 delimiter ;
-
 
 -- getIngredients procedure
 DROP PROCEDURE if exists getIngredients;
@@ -369,3 +372,40 @@ GROUP BY
     Recipes.Serving,
     Recipes.Difficulty_Level,
     Recipes.Date_Created;
+
+
+SELECT 
+    Recipes.User_ID AS Recipes_User_ID,
+    Recipes.Picture_data AS Recipes_Picture_data,
+    Recipes.Title AS Recipes_Title,
+    Recipes.Description AS Recipes_Description,
+    Recipes.Instructions AS Recipes_Instructions,
+    Recipes.Serving AS Recipes_Serving,
+    Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
+    Recipes.Date_Created AS Recipes_Date_Created,
+    Recipe_Ingredients,
+    Recipe_Time
+FROM 
+    Recipes
+INNER JOIN (
+    SELECT 
+        Recipe_Ingredients.Recipe_ID,
+        GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients
+    FROM 
+        Recipe_Ingredients
+    INNER JOIN 
+        Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
+    GROUP BY 
+        Recipe_Ingredients.Recipe_ID
+) AS Ingredients ON Recipes.Recipe_ID = Ingredients.Recipe_ID
+INNER JOIN (
+    SELECT 
+        `Time`.Recipe_ID,
+        GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
+    FROM 
+        `Time`
+    GROUP BY 
+        `Time`.Recipe_ID
+) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
+WHERE 
+    Recipes.Recipe_ID = 33;

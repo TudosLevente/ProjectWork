@@ -21,6 +21,19 @@ async function postData(url = "", data = {}) {
     return response;
 };
 
+async function deleteData(url = "", data = {}) {
+    const response = await fetch(url, {
+        method: "DELETE", // POST, PUT, DELETE ...       
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    console.log(response);
+    return response;
+};
+
+
 async function postFormData(url = "", data = {}) {
     const response = await fetch(url, {
         method: "POST", // POST, PUT, DELETE ... 

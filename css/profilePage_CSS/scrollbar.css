@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+  overflow: scroll;
+  width: 10px;
+  height: 10px;
+  z-index: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, orange, yellow);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, orange, yellow);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body {
+  overflow: overlay;
+  overflow-x: hidden;
+}

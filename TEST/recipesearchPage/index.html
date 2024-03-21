@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./footer.css">
+  <link rel="stylesheet" href="./navbar.css">
+  <link rel="stylesheet" href="./loadingscreen.css">
+  <link rel="stylesheet" href="./websidecookies.css">
+  <link rel="stylesheet" href="./dropdownfoetel.css">
+  <link rel="stylesheet" href="./dropdowndesszert.css">
+  <link rel="stylesheet" href="./dropdownkategoriak.css">
+  <link rel="icon" href="../../images/logo-removebg-preview.png" type="image/png">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title id="recipesearchCategoryNameTitle"></title>
+</head>
+
+<body>
+  <div class="recipecategory_maindiv">
+    <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
+      <div class="loading_screen_body_div">
+        <div class="loading_screen_pizza">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+          <img class="loading_screen_slice" src="./pizzaslice.png">
+        </div>
+      </div>
+    </div>
+    <div class="navbar_div">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <div class="row col-12">
+            <div class="col-lg-4 d-flex align-items-center justify-content-start">
+              <div class="navbar_logo" onclick="redirectToMainPage()">
+                <img src="./logo-removebg-preview.png" class="logo">
+                <img src="./FoodHub.png" class="navbar_foobhub_logo_text">
+              </div>
+            </div>
+            <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+              <div class="input-group">
+                <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
+                  aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
+              </div>
+              <div id="search-results-container" class="mt-2 fixed-top"></div>
+              <div class="menuitems_row row justify-content-center ">
+                <div class="navmenuitems">
+                  <ul class="navbarmenulist navbar-nav">
+                    <li class="divider"></li>
+                    <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelekDropdown()"
+                      onmouseout="hideFoetelekDropdown()">
+                      <a class="nav-link dropdown" id="dropdownfoetel">
+                        Főételek
+                      </a>
+                      <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertekDropdown()"
+                      onmouseout="hideDesszertekDropdown()">
+                      <a class="nav-link dropdown" id="dropdowndesszert" href="#">
+                        Desszertek
+                      </a>
+                      <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Levesek</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Saláták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Tészták</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
+                      onmouseout="hideKategoriakDropdown()">
+                      <a class="nav-link dropdown" id="dropdownkategoriak" href="#">
+                        Kategóriák
+                      </a>
+                      <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
+                        id="dropdown_content_kategoriak">
+                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
+                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
+                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
+                        <li><a class="dropdown-item" href="#">Saláták</a></li>
+                        <li><a class="dropdown-item" href="#">Levesek</a></li>
+                        <li><a class="dropdown-item" href="#">Tészták</a></li>
+                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
+                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                        <li><a class="dropdown-item" href="#">Szószok</a></li>
+                        <li><a class="dropdown-item" href="#">Torták</a></li>
+                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
+                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
+                        <li><a class="dropdown-item" href="#">Snackek</a></li>
+                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
+                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
+                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
+                        <li><a class="dropdown-item" href="#">Piték</a></li>
+                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
+                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                      </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ajánlatunk</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Rólunk</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
+              <img src="./user.svg" style="width: 7%; margin-right: 5px;">
+              <div id="login_or_profil" class="login_div">
+                <!-- <div class="dropdown_profil dropdown">
+              <a href="#" class="navbar_profil_text" onclick="showDropdown()">
+                Profil
+              </a>
+              <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                <a href="#" onclick="showAdataim()">
+                  Adataim
+                  <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
+                <a href="#" onclick="showRecepjeim()">
+                  Recept feltöltése
+                  <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
+                <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                              src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
+                <a href="#" onclick="logout()">
+                  Kijelentkezés
+                  <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                </a>
+              </div>
+            </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="recept_kategoria">
+      <div class="recept_kategoria__recept_title" id="recipesearchCategoryName">Kategória Név</div>
+      <div class="recept_kategoria__kategoriak">
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="recept_kategoria__div">
+            <img class="recept_kategoria__div_image" src="image-210.png" />
+            <div class="recept_kategoria__div_title">Recept 1</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="footer_container">
+      <div class="footer_main_div">
+        <div class="footer_column_1">
+          <button class="footer_foodhub">FoodHub</button>
+          <a class="footer_termsofuse">Felhasználási feltételek</a>
+        </div>
+        <div class="footer_column_2">
+          <button class="footer_email">foodhub@gmail.com</button>
+        </div>
+        <div class="footer_column_3">
+          <img class="footer_logo_pic" src="./logo-removebg-preview.png" />
+        </div>
+        <div class="footer_column_4">
+          <a href="#"><img class="footer_facebook" src="./facebook.svg" /></a>
+          <a href="#"><img class="footer_twitter" src="./twitter.svg" /></a>
+          <a href="#"><img class="footer_intagram" src="./instagram.svg" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="./loadingscreen.js"></script>
+  <script src="./navbar.js"></script>
+  <script src="./searchbar.js"></script>
+  <script src="./foetelekDropdown.js"></script>
+  <script src="./desszertekDropdown.js"></script>
+  <script src="./kategoriakDropdown.js"></script>
+  <script src="./websidesookiesHandle.js"></script>
+
+  <script src="./recipesearchPage_CategoryID&NameSetter.js"></script>
+</body>
+
+</html>

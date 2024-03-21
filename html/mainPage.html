@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="../images/logo-removebg-preview.png" type="image/png">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/mainPage_CSS/navbar.css">
   <link rel="stylesheet" href="../css/mainPage_CSS/dropdowndesszert.css">
   <link rel="stylesheet" href="../css/mainPage_CSS/dropdownkategoriak.css">
@@ -17,8 +16,9 @@
   <link rel="stylesheet" href="../css/mainPage_CSS/loadingscreen.css">
   <link rel="stylesheet" href="../css/mainPage_CSS/websidecookies.css">
   <link rel="stylesheet" href="../css/mainPage_CSS/footer.css">
-  <link rel="stylesheet" href="../css/mainPage_CSS/slowSlideShow.css">
+  <!-- <link rel="stylesheet" href="../css/mainPage_CSS/slowSlideShow.css"> -->
   <link rel="stylesheet" href="../css/mainPage_CSS/ajanlatainkSlider.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <title>Főoldal</title>
 </head>
 
@@ -90,8 +90,8 @@
             <div class="row col-12">
               <div class="col-lg-4 d-flex align-items-center justify-content-start">
                 <div class="navbar_logo" onclick="redirectToMainPage()">
-                  <img src="../images/mainPage_Image/logo-removebg-preview.png" class="logo">
-                  <img src="../images/mainPage_Image/FoodHub.png" class="navbar_foobhub_logo_text">
+                  <img src="../images/mainPage_Image/logo-removebg-preview.png" class="logo" />
+                  <img src="../images/mainPage_Image/FoodHub.png" class="navbar_foobhub_logo_text" />
                 </div>
               </div>
               <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
@@ -100,7 +100,7 @@
                     aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
                 </div>
                 <div id="search-results-container" class="mt-2 fixed-top"></div>
-                <div class="menuitems_row row justify-content-center ">
+                <div class="menuitems_row row justify-content-center">
                   <div class="navmenuitems">
                     <ul class="navbarmenulist navbar-nav">
                       <li class="divider"></li>
@@ -110,13 +110,41 @@
                           Főételek
                         </a>
                         <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
-                          <li><a class="dropdown-item" href="#">Burgerek</a></li>
-                          <li><a class="dropdown-item" href="#">Pizzák</a></li>
-                          <li><a class="dropdown-item" href="#">Saláták</a></li>
-                          <li><a class="dropdown-item" href="#">Levesek</a></li>
-                          <li><a class="dropdown-item" href="#">Tészták</a></li>
-                          <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
-                          <li><a class="dropdown-item" href="#">Köretek</a></li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel1"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel1">Burgerek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel3"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel3">Pizzák</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel4"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel4">Saláták</span></a>
+                          </li>                        
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel5"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel5">Levesek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel6"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel6">Tészták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel7"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel7">Tenger gyümölcsei</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_foetel8"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_foetel8">Köretek</span></a>
+                          </li>
                         </ul>
                       </li>
                       <li class="divider"></li>
@@ -126,90 +154,202 @@
                           Desszertek
                         </a>
                         <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
-                          <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
-                          <li><a class="dropdown-item" href="#">Snackek</a></li>
-                          <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
-                          <li><a class="dropdown-item" href="#">Palacsinták</a></li>
-                          <li><a class="dropdown-item" href="#">Piték</a></li>
-                          <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert12"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert12">Jégkrémek és Fagylaltok</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert13"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert13">Snackek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert14"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert14">Muffinok és Pogácsák</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert16"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert16">Palacsinták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert17"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert17">Piték</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_desszert18"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_desszert18">Kekszek és Sütemények</span></a>
+                          </li>
                         </ul>
                       </li>
                       <li class="divider"></li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Levesek</a>
+                        <a class="nav-link" id="navRecipeLink_navbar5"
+                        href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                          id="navRecept_kategoria__div_title_navbar5">Levesek</span></a>
+  
                       </li>
                       <li class="divider"></li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Saláták</a>
+                        <a class="nav-link" id="navRecipeLink_navbar4"
+                        href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                          id="navRecept_kategoria__div_title_navbar4">Saláták</span></a>
                       </li>
                       <li class="divider"></li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Tészták</a>
+                        <a class="nav-link" id="navRecipeLink_navbar6"
+                        href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                          id="navRecept_kategoria__div_title_navbar6">Tészták</span></a>
                       </li>
                       <li class="divider"></li>
                       <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
                         onmouseout="hideKategoriakDropdown()">
-                        <a class="nav-link dropdown" id="dropdownkategoriak" href="#">
+                        <a class="nav-link dropdown" id="dropdownkategoriak"
+                          href="http://127.0.0.1:5500/TEST/categoryPage/index.html">
                           Kategóriák
                         </a>
                         <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
                           id="dropdown_content_kategoriak">
-                          <li><a class="dropdown-item" href="#">Burgerek</a></li>
-                          <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
-                          <li><a class="dropdown-item" href="#">Pizzák</a></li>
-                          <li><a class="dropdown-item" href="#">Saláták</a></li>
-                          <li><a class="dropdown-item" href="#">Levesek</a></li>
-                          <li><a class="dropdown-item" href="#">Tészták</a></li>
-                          <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
-                          <li><a class="dropdown-item" href="#">Köretek</a></li>
-                          <li><a class="dropdown-item" href="#">Szószok</a></li>
-                          <li><a class="dropdown-item" href="#">Torták</a></li>
-                          <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
-                          <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
-                          <li><a class="dropdown-item" href="#">Snackek</a></li>
-                          <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
-                          <li><a class="dropdown-item" href="#">Kenyerek</a></li>
-                          <li><a class="dropdown-item" href="#">Palacsinták</a></li>
-                          <li><a class="dropdown-item" href="#">Piték</a></li>
-                          <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
-                          <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
-                          <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak1"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak1">Burgerek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak2"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak2">Szendvicsek és Wrappok</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak3"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak3">Pizzák</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak4"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak4">Saláták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak5"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak5">Levesek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak6"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak6">Tészták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak7"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak7">Tenger gyümölcsei</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak8"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak8">Köretek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak9"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak9">Szószok</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak10"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak10">Torták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak11"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak11">Italok és Koktélok</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak12"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak12">Jégkrémek és Fagylaltok</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak13"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak13">Snackek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak14"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak14">Muffinok és Pogácsák</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak15"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak15">Kenyerek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak16"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak16">Palacsinták</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak17"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak17">Piték</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak18"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak18">Kekszek és Sütemények</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak19"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak19">Turmixok és Shakek</span></a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" id="navRecipeLink_kategoriak20"
+                              href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                id="navRecept_kategoria__div_title_kategoriak20">Vegetárianus</span></a>
+                          </li>
                         </ul>
                       </li>
                       <li class="divider"></li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Ajánlatunk</a>
                       </li>
-                      <li class="divider"></li>
+                      <!-- <li class="divider"></li>
                       <li class="nav-item">
                         <a class="nav-link" href="#">Rólunk</a>
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-                <img src="../images/mainPage_Image/user.svg" style="width: 7%; margin-right: 5px;">
+              <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px">
+                <img src="../images/mainPage_Image/user.svg" style="width: 7%; margin-right: 5px" />
                 <div id="login_or_profil" class="login_div">
                   <!-- <div class="dropdown_profil dropdown">
-                  <a href="#" class="navbar_profil_text" onclick="showDropdown()">
-                    Profil
+                <a href="#" class="navbar_profil_text" onclick="showDropdown()">
+                  Profil
+                </a>
+                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                  <a href="#" onclick="showAdataim()">
+                    Adataim
+                    <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
+                  <a href="#" onclick="showRecepjeim()">
+                    Recept feltöltése
+                    <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
+                  <a href="#" onclick="logout()">
+                    Kijelentkezés
+                    <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
                   </a>
-                  <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                    <a href="#" onclick="showAdataim()">
-                      Adataim
-                      <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
-                    <a href="#" onclick="showRecepjeim()">
-                      Recept feltöltése
-                      <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
-                    <a href="#" onclick="showKedvenceim()">Kedvenceim<img
-                                  src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
-                    <a href="#" onclick="logout()">
-                      Kijelentkezés
-                      <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
-                    </a>
-                  </div>
-                </div> -->
+                </div>
+              </div> -->
                 </div>
               </div>
             </div>
@@ -445,40 +585,16 @@
         </div>
         <div class="kategoria_search_div">
           <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
+            <button class="kategoria_search_div_buttonleft carousel-control-prev" type="button"
+              data-bs-target="#carouselExample" data-bs-slide="prev" style="position: relative; width: 0px;">
+              <img src="../images/mainPage_Image/buttonleft.svg" class="buttonleft">
+            </button>
+            <div class="carousel-inner" style="width: 70%;">
               <div class="carousel-item active">
                 <div class="kategoria_search_div_inner" id="innerdiv1">
                   <div class="kategoria_search_div_categorydiv">
                     <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">B1urgerek</div>
-                  </div>
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
                     <div class="categorydiv_eclipselayout_title">Burgerek</div>
-                  </div>
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
-                  </div>
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
-                  </div>
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
-                  </div>
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="kategoria_search_div_inner" id="innerdiv1">
-                  <div class="kategoria_search_div_categorydiv">
-                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">B2urgerek</div>
                   </div>
                   <div class="kategoria_search_div_categorydiv">
                     <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
@@ -503,10 +619,38 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="kategoria_search_div_inner" id="innerdiv1">
+                <div class="kategoria_search_div_inner" id="innerdiv2">
                   <div class="kategoria_search_div_categorydiv">
                     <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-                    <div class="categorydiv_eclipselayout_title">B3urgerek</div>
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="kategoria_search_div_inner" id="innerdiv3">
+                  <div class="kategoria_search_div_categorydiv">
+                    <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
+                    <div class="categorydiv_eclipselayout_title">Burgerek</div>
                   </div>
                   <div class="kategoria_search_div_categorydiv">
                     <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
@@ -531,105 +675,13 @@
                 </div>
               </div>
             </div>
-            <button class="kategoria_search_div_buttonleft carousel-control-prev " type="button"
-              data-bs-target="#carouselExample" data-bs-slide="prev">
-              <img src="../images/mainPage_Image/buttonleft.svg" class="buttonleft">
-            </button>
             <button class="kategoria_search_div_buttonright carousel-control-next " type="button"
-              data-bs-target="#carouselExample" data-bs-slide="next">
+              data-bs-target="#carouselExample" data-bs-slide="next" style="position: relative; width: 0px;">
               <img src="../images/mainPage_Image/buttonright.svg" class="buttonright">
             </button>
           </div>
-          <!-- <button class="kategoria_search_div_buttonleft" type="button">
-            <img src="../images/mainPage_Image/buttonleft.svg" class="buttonleft">
-          </button>
-
-          <div class="kategoria_search_div_inner" id="innerdiv1">
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-          </div>
-
-          <div class="kategoria_search_div_inner" id="innerdiv2">
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-          </div>
-
-          <div class="kategoria_search_div_inner" id="innerdiv3">
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">Burgerek</div>
-            </div>
-            <div class="kategoria_search_div_categorydiv">
-              <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/ellipse-30.png" />
-              <div class="categorydiv_eclipselayout_title">K</div>
-            </div>
-          </div>
-          <button class="kategoria_search_div_buttonright" type="button">
-            <img src="../images/mainPage_Image/buttonright.svg" class="buttonright">
-          </button> -->
         </div>
       </div>
-
       <div class="signup_newspaper_container">
         <div class="signup_newspaper_container_background"></div>
         <div class="signup_newspaper_div">
@@ -813,8 +865,8 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="../js/script.js"></script>
   <script src="../js/mainPage_JS/newspaperSignup.js"></script>
   <script src="../js/mainPage_JS/mainPage.js"></script>
@@ -826,6 +878,7 @@
   <script src="../js/mainPage_JS/websidesookiesHandle.js"></script>
   <script src="../js/mainPage_JS/slowSlideShow.js"></script>
   <script src="../js/mainPage_JS/navbar.js"></script>
+  <script src="../js/mainPage_JS/CategoryIDSenderNavbar.js"></script>
 
 </body>
 

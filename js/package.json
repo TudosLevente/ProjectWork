@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --delay 1000ms App/App.js"
+    "start": "nodemon --delay 1000ms App/App.js" 
   },
   "keywords": [],
   "author": "",

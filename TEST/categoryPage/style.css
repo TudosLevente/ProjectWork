@@ -1,0 +1,134 @@
+.recipecategory_maindiv {
+  zoom: 55%;
+}
+
+.recept_kategoria {
+  background: #d7bf9c;
+  /* height: 181.0625rem; */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* zoom: 90%; */
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.recept_kategoria__kategoriak {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0.3125rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90rem;
+  position: relative;
+  padding-bottom: 10rem;
+}
+
+.recept_kategoria__div {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 5px;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 24.375rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.recept_kategoria__div:hover {
+  background-color: orangered;
+  border: orangered;
+  scale: calc(102%);
+
+  .recept_kategoria__div_title {
+    color: gainsboro;
+  }
+}
+
+
+.recept_kategoria__div_title {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recept_kategoria__div_image {
+  border-radius: 0.3125rem;
+  flex-shrink: 0;
+  width: 17.5rem;
+  height: 17.5rem;
+  position: relative;
+  object-fit: cover;
+}
+
+.recept_kategoria__recept_title {
+  background: var(--lemon-greater-orange-greater-red-linear,
+      linear-gradient(180deg,
+        rgba(238, 163, 37, 1) 0%,
+        rgba(255, 96, 0, 1) 51.5625%,
+        rgba(255, 0, 0, 1) 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 5rem;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rem;
+}
+
+a {
+  border: none;
+  outline: none;
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, orange, yellow);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -227,7 +227,7 @@ BEGIN
 END;
 //
 DELIMITER ;
-SELECT felhTokenFrissites (1,generateTokenProcedure );
+-- SELECT felhTokenFrissites (1, generateTokenProcedure );
 
 -- getAllUserInfos procedure
 DROP PROCEDURE if exists getAllUserInfos;
@@ -293,9 +293,10 @@ WHERE
     Recipes.Recipe_ID = recipeID;
 END;
 //
-delimiter ;
+delimiter ; 
 
-
+drop procedure if exists loadRecipeInfos;
+Delimiter //
 CREATE PROCEDURE loadRecipeInfos(IN recipeID int)
 BEGIN
     SELECT * FROM Recipes WHERE Recipe_ID = recipeID;

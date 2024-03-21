@@ -359,10 +359,23 @@
   }
 
   to {
-    transform: scale(104%);
+    transform: scale(102%);
   }
 }
 
+.carousel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  transition: none !important;
+  transition: none !important;
+  transition: none !important;
+}
 
 .buttonleft {
   flex-shrink: 0;
@@ -371,7 +384,6 @@
   position: relative;
   overflow: visible;
   bottom: 20px;
-  right: 200px;
 }
 
 .buttonright {
@@ -381,13 +393,11 @@
   position: relative;
   overflow: visible;
   bottom: 20px;
-  left: 200px;
 }
 
 .kategoria_search_div_inner {
   display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 50px;

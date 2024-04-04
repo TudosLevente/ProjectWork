@@ -353,6 +353,7 @@ WHERE
 END;
 //
 delimiter ; 
+-- CALL getRecipeInfos(2)
 
 drop procedure if exists loadRecipeInfos;
 Delimiter //
@@ -476,6 +477,3 @@ INNER JOIN (
 ) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
 WHERE 
     Recipes.Recipe_ID = 33;
-
-
-    CALL getRecipeInfos(33)

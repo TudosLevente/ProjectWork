@@ -1,3 +1,5 @@
+var userid;
+
 function toggleInputs() {
     var containers = document.querySelectorAll("#username_input, #password_input, #email_input, #input_edit_icon");
     containers.forEach(function (container) {
@@ -51,4 +53,30 @@ function SaveButton() {
     if (modifybutton.style.display === 'flex') {
         buttonlayout.style.display = 'none';
     }
+
+    var username_input = document.getElementById('username_input').value;
+    var email_input = document.getElementById('email_input').value;
+
+    var userinfos = {
+        user_id: userid,
+        new_username: username_input,
+        new_email: email_input,
+    };
+    getData('/getLoggedInUserData').then((response) => {
+        console.log(response);
+        userinfos.user_id = response.user_id;
+        console.log(userinfos.user_id)
+    }).then(response => {
+        putData("http://localhost:8000/api/updateUser", userinfos)
+            .then((res) => {
+                console.log(res);
+                console.log("Felhasználói adatok mentve!");
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+
 }

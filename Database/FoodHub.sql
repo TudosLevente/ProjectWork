@@ -417,3 +417,29 @@ INNER JOIN (
 ) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
 WHERE 
     Recipes.Recipe_ID = 33;
+
+
+DROP PROCEDURE `UpdateUser`;
+DELIMITER //
+
+CREATE PROCEDURE UpdateUser(IN userId INT, IN new_username VARCHAR(255), IN new_email VARCHAR(255))
+BEGIN
+    UPDATE Users
+    SET Username = new_username, Email = new_email
+    WHERE User_ID = userId;
+END;
+//
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE getAllUserRecipes(IN userId INT)
+BEGIN
+    SELECT Recipe_ID, Title, Picture_data 
+    FROM Recipes 
+    WHERE User_ID = userId;
+END;
+//
+DELIMITER ;
+
+CALL getAllUserRecipes(7)

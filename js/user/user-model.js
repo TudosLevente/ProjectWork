@@ -28,6 +28,36 @@ function getUserDataFromId(req, res) {
     })
 }
 
+function getUserRecipes(req, res) {
+    var con = mysql.createConnection(config.database);
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log('sikeres csatlakozás');
+    })
+    con.query('CALL getAllUserRecipes(?) ', [req.params['id']], (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    })
+}
+
+function updateUser(req, res) {
+    var con = mysql.createConnection(config.database);
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
+    })
+
+    const sql = 'CALL UpdateUser(?,?,?)';
+
+    con.query(sql, [req.body.user_id, req.body.new_username, req.body.new_email], (err, result) => {
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log('Sikeres feltöltés!');
+            console.log(result)
+        })
+    })
+}
+
 // Ez a függvény regisztrál egy új felhasználót és lementi az adatbázisba
 async function regUser(req, res) {
 
@@ -73,5 +103,7 @@ async function regUser(req, res) {
 }
 
 exports.getAllUserInfos = getAllUserInfos
+exports.getUserRecipes = getUserRecipes
 exports.getUserDataFromId = getUserDataFromId
 exports.regUser = regUser
+exports.updateUser = updateUser

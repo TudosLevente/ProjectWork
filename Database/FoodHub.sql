@@ -353,6 +353,7 @@ WHERE
 END;
 //
 delimiter ; 
+-- CALL getRecipeInfos(2)
 
 drop procedure if exists loadRecipeInfos;
 Delimiter //

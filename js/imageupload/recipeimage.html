@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+</head>
+<body>
+  <h2>Upload Image</h2>
+  <form id="uploadForm" enctype="multipart/form-data" action="/upload" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title">
+    <br>
+    <label for="fileToUpload">Select image:</label>
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <br>
+    <button type="button" onclick="uploadFile()">Upload Image</button>
+  </form>
+
+  <script>
+    function uploadFile() {
+      const formData = new FormData();
+      const fileInput = document.getElementById('fileToUpload');
+      const titleInput = document.getElementById('title');
+
+      // Check if both file and title inputs are provided
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const title = titleInput.value.trim();
+        const extension = file.name.split('.').pop(); // Get file extension
+
+        // Rename the file with the title and extension
+        const newFileName = title.replace(/\s+/g, '-');
+        
+        // Append the renamed file and title to FormData
+        formData.append('fileToUpload', file);    
+        formData.append('title', newFileName);
+
+        // Make a fetch request to upload the file and title
+        fetch('/upload', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          console.log(response);
+          if (!response.ok) {
+            throw new Error('Failed to upload image');
+          }
+          return response.text();
+        })
+        .then(data => {
+          // Handle the response data, e.g., display a message or update UI
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

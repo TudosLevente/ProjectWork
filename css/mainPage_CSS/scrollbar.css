@@ -1,25 +1,24 @@
 ::-webkit-scrollbar {
-  overflow: scroll;
-  width: 10px;
-  height: 10px;
-  z-index: 0;
+  width: 25px;
+  overflow-y: scroll;
+  position: fixed;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, orange, yellow);
-  border-radius: 15px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, orange, yellow);
-  border-radius: 15px;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../../images/mainPage_Image/hotdogscrollbarimage.png');
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background-color: #f0d8b5;
 }
 
-body {
-  overflow: overlay;
-  overflow-x: hidden;
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
 }

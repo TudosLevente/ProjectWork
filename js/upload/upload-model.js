@@ -1,80 +1,47 @@
-const uploadFile = require("./upload");
-const config = require("../App/config");
-var fs = require('fs');
+const upload = require("./upload");
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 
-const upload = async (req, res) => {
-    try {
-        await uploadFile(req, res);
-        console.log(req.body);
-        console.log(req.body.picture_data);
-        console.log(req.file);
+const app = express();
 
-        if (req.file == undefined) {
-            return res.status(400).send({ message: "Please upload a file!" });
-        }
-
-        const image = req.file.filename;
-        const sql = 'UPDATE Recipes SET Picture_data = ? WHERE Recipe_id = ?';
-
-        var con = mysql.createConnection(config.database);
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log('Felkészülés a kép feltöltéséhez!');
-        })
-
-        con.query(sql, [image, recipe_id], (err, result) => {
-            if (err) throw err;
-            console.log(result);
-        });
-
-        res.status(200).send({
-            message: "Uploaded the file successfully: " + req.file,
-        });
-    } catch (err) {
-        res.status(500).send({
-            message: `Could not upload the file: ${req.file}. ${err}`,
-        });
-    }
-};
-
-const getListFiles = (req, res) => {
-    const directoryPath = __basedir + "/uploads/";
-
-    fs.readdir(directoryPath, function (err, files) {
+// Route for file upload
+function uploadPicture(req, res) {
+    upload(req, res, (err) => {
         if (err) {
-            res.status(500).send({
-                message: "Unable to scan files!",
-            });
-        }
+            res.status(400).send(err);
+        } else {
+            const title = req.body.title;
+            let filename = req.file.filename; // original filename
 
-        let fileInfos = [];
+            if (!title || !filename) {
+                res.status(400).send('Error: No File Selected!');
+            } else {
+                const originalExtension = path.extname(req.file.originalname); // Get original extension
+                const titleWithoutSpaces = title.replace(/\s+/g, '-'); // Replace spaces in title
 
-        files.forEach((file) => {
-            fileInfos.push({
-                name: file,
-                url: "http://localhost:8000/api/files/" + file,
-            });
-        });
+                // Get current date
+                const currentDate = new Date();
+                const year = currentDate.getFullYear();
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const day = String(currentDate.getDate()).padStart(2, '0');
 
-        res.status(200).send(fileInfos);
-    });
-};
+                // Construct filename
+                filename = `${titleWithoutSpaces}-${year}.${month}.${day}${originalExtension}`;
 
-const download = (req, res) => {
-    const fileName = req.params.name;
-    const directoryPath = __basedir + "/uploads/";
+                const newPath = path.join(req.file.destination, filename);
 
-    res.download(directoryPath + fileName, fileName, (err) => {
-        if (err) {
-            res.status(500).send({
-                message: "Could not download the file. " + err,
-            });
+                fs.rename(req.file.path, newPath, (err) => {
+                    if (err) {
+                        res.status(500).send('Error: File Rename Failed!');
+                    } else {
+                        res.send('File Uploaded Successfully!' + filename);
+                    }
+                });
+            }
         }
     });
 };
 
-module.exports = {
-    upload,
-    getListFiles,
-    download,
-};
+exports.uploadPicture = uploadPicture;

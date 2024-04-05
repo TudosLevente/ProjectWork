@@ -93,7 +93,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function uploadFile() {
+    const formData = new FormData();
+    const fileInput = document.getElementById('picture_data');
+    const titleInput = document.getElementById('title');
+
+    // Check if both file and title inputs are provided
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const title = titleInput.value.trim();
+        const extension = file.name.split('.').pop(); // Get file extension
+
+        // Rename the file with the title and extension
+        const newFileName = title.replace(/\s+/g, '-');
+
+        // Append the renamed file and title to FormData
+        formData.append('picture_data', file);
+        formData.append('title', newFileName);
+
+        // Make a fetch request to upload the file and title
+        fetch('http://localhost:8000/api/upload', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                console.log(response);
+                if (!response.ok) {
+                    throw new Error('Failed to upload image');
+                }
+                return response.text();
+            })
+            .then(data => {
+                // Handle the response data, e.g., display a message or update UI
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+}
+
 function uploadRecipe() {
+    uploadFile();
     var picture_data_input = document.getElementById('picture_data');
     var title_input = document.getElementById('title');
     var description_input = document.getElementById('description');

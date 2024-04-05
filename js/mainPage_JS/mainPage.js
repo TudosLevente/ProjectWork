@@ -116,21 +116,3 @@ function adjustMouseScroll(event) {
 }
 
 window.addEventListener('wheel', adjustMouseScroll);
-
-function sendFeedback() {
-    var feedback_name = document.getElementById('feedback_name');
-    var feedback_email = document.getElementById('feedback_email');
-    var feedback_text = document.getElementById('feedback_text');
-
-    var feedback_infos = {
-        user_email: feedback_email.value,
-        user_name: feedback_name.value,
-        text: feedback_text.value,
-    };
-
-    if (feedback_name !== null && feedback_email !== null && feedback_text !== null) {
-        postData("http://localhost:8000/sendfeedback", feedback_infos).then((response) => {
-            console.log(response);
-        })
-    }
-}

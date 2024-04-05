@@ -2,19 +2,37 @@ const util = require("util");
 const multer = require("multer");
 const path = require("path");
 
-let storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "../../images/uploads/");
+// Set storage engine
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../../images/uploads/');
     },
-    filename: (req, file, cb) => {
-        console.log(file);
-        cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname));
-    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
 });
 
-let uploadFile = multer({
-    storage: storage
-}).single("picture_data");
+// Check file type
+function checkFileType(file, cb) {
+    const filetypes = /jpeg|jpg|png|gif/;
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = filetypes.test(file.mimetype);
 
-let uploadFileMiddleware = util.promisify(uploadFile);
+    if (mimetype && extname) {
+        return cb(null, true);
+    } else {
+        cb('Error: Images only!');
+    }
+}
+
+// Initialize multer middleware
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 1000000 },
+    fileFilter: function (req, file, cb) {
+        checkFileType(file, cb);
+    }
+}).single('picture_data');
+
+let uploadFileMiddleware = util.promisify(upload);
 module.exports = uploadFileMiddleware;

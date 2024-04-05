@@ -44,34 +44,3 @@ app.get('/', (req, res) => {
 app.listen(config.port, () => {
     console.log(`A szerver fut | http://localhost:${config.port}`);
 })
-
-const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-    host: 'smtp.mailersend.net',
-    port: 587,
-    secure: false,
-    auth: {
-        user: 'MS_XqGaJW@trial-o65qngkv85jlwr12.mlsender.net',
-        pass: 'XSrjoCJGHUnRFL4a'
-    }
-});
-
-app.post('/sendfeedback', (req, res) => {
-    const mailOptions = {
-        from: 'MS_XqGaJW@trial-o65qngkv85jlwr12.mlsender.net',
-        to: 'foodhub.noreply.hu@gmail.com',
-        subject: 'Feedback from ' + req.body.user_email,
-        text: 'Feedback from: ' + req.body.user_email + '\n\n' + req.body.text
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log('Hiba:', error.message);
-            res.status(500).send('Hiba a feedback küldésekor!');
-        } else {
-            res.status(200);
-            console.log('Email sikeresen elküldve!');
-        }
-    });
-});

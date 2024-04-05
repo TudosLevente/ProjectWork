@@ -58,7 +58,15 @@ app.post('/upload', (req, res) => {
       } else {
         const originalExtension = path.extname(req.file.originalname); // Get original extension
         const titleWithoutSpaces = title.replace(/\s+/g, '-'); // Replace spaces in title
-        filename = titleWithoutSpaces + '-' + Date.now() + originalExtension ; // Concatenate title with original extension
+
+        // Get current date
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+        const day = String(currentDate.getDate()).padStart(2, '0');
+
+        // Construct filename
+        filename = `${titleWithoutSpaces}-${year}.${month}.${day}${originalExtension}`;
 
         const newPath = path.join(req.file.destination, filename);
 

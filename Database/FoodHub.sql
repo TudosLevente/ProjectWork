@@ -478,8 +478,6 @@ INNER JOIN (
 WHERE 
     Recipes.Recipe_ID = 33;
 
-
-<<<<<<< HEAD
 DROP PROCEDURE `UpdateUser`;
 DELIMITER //
 
@@ -503,7 +501,4 @@ END;
 //
 DELIMITER ;
 
-CALL getAllUserRecipes(7)
-=======
-    CALL getRecipeInfos(33)
->>>>>>> 3bf2c301938bd93bd135822c3a81f322231f7860
+CALL getAllUserRecipes(7);

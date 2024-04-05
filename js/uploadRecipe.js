@@ -112,10 +112,7 @@ function uploadFile() {
         formData.append('title', newFileName);
 
         // Make a fetch request to upload the file and title
-        fetch('http://localhost:8000/api/upload', {
-            method: 'POST',
-            body: formData
-        })
+        postFormData('http://localhost:8000/api/upload', formData)
             .then(response => {
                 console.log(response);
                 if (!response.ok) {
@@ -175,16 +172,6 @@ function uploadRecipe() {
                 throw new Error("Failed to upload recipe.");
             }
             return res.json();
-        })
-        .then((data) => {
-            return postFormData('http://localhost:8000/api/uploadPicture', pictureData);
-        })
-        .then((response) => {
-            console.log(response.json());
-            if (!response.ok) {
-                throw new Error("Failed to upload picture.");
-            }
-            console.log(response.json());
         })
         .catch((error) => {
             console.error('Error:', error);

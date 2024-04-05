@@ -1,4 +1,4 @@
--- Active: 1708009143398@@127.0.0.1@3306@foodhub
+-- Active: 1701981789402@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -353,7 +353,7 @@ WHERE
 END;
 //
 delimiter ; 
--- CALL getRecipeInfos(2)
+ CALL getRecipeInfos(2)
 
 drop procedure if exists loadRecipeInfos;
 Delimiter //
@@ -410,37 +410,6 @@ SELECT * FROM Favorites;
 SELECT * FROM Comments;
 SELECT * FROM Ingredients;
 
-SELECT 
-    Recipes.User_ID AS Recipes_User_ID,
-    Recipes.Picture_data AS Recipes_Picture_data,
-    Recipes.Title AS Recipes_Title,
-    Recipes.Description AS Recipes_Description,
-    Recipes.Instructions AS Recipes_Instructions,
-    Recipes.Serving AS Recipes_Serving,
-    Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
-    Recipes.Date_Created AS Recipes_Date_Created,
-    GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients,
-    GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
-FROM 
-    Recipes
-INNER JOIN 
-    Recipe_Ingredients ON Recipes.Recipe_ID = Recipe_Ingredients.Recipe_ID
-INNER JOIN 
-    `Time` ON `Time`.Recipe_ID = Recipes.Recipe_ID 
-INNER JOIN 
-    Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
-WHERE 
-    Recipes.Recipe_ID = 33
-GROUP BY 
-    Recipes.User_ID,
-    Recipes.Picture_data,
-    Recipes.Title,
-    Recipes.Description,
-    Recipes.Instructions,
-    Recipes.Serving,
-    Recipes.Difficulty_Level,
-    Recipes.Date_Created;
-
 
 SELECT 
     Recipes.User_ID AS Recipes_User_ID,
@@ -476,9 +445,9 @@ INNER JOIN (
         `Time`.Recipe_ID
 ) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
 WHERE 
-    Recipes.Recipe_ID = 33;
+    Recipes.Recipe_ID = 1;
 
-DROP PROCEDURE `UpdateUser`;
+DROP PROCEDURE IF EXISTS `UpdateUser`;
 DELIMITER //
 
 CREATE PROCEDURE UpdateUser(IN userId INT, IN new_username VARCHAR(255), IN new_email VARCHAR(255))
@@ -502,3 +471,17 @@ END;
 DELIMITER ;
 
 CALL getAllUserRecipes(7);
+
+INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES
+(1, 1, 1, "Milligram"),
+(1, 2, 2, "Gramm"),
+(1, 2, 3, "Dekagramm"),
+(1, 2, 4, "Milligram"),
+(1, 1, 5, "Milligram"),
+(1, 1, 6, "Milligram");
+
+INSERT INTO Time (Recipe_ID,Time_Prep_Type,Time_Quantity,Time_Type) VALUES
+(1, "Előkészület", 15, "perc"),
+(1, "Pihentetés", 35, "perc"),
+(1, "Sütés", 1, "óra"),
+(1, "Marinálás", 1, "nap");

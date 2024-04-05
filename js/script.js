@@ -46,14 +46,22 @@ async function putData(url = "", data = {}) {
 };
 
 
-async function postFormData(url = "", data = {}) {
-    const response = await fetch(url, {
-        method: "POST", // POST, PUT, DELETE ... 
-        headers: {
-            'Content-Type': 'multipart/form-data; boundary=' + data.boundary,
-        },
-        body: data
-    })
-    console.log(response);
-    return response;
+async function postFormData(url = "", formData = {}) {
+    try {
+        const response = await fetch(url, {
+            method: "POST", // POST, PUT, DELETE ... 
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+        return responseData;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error; // rethrow the error for the caller to handle
+    }
 };

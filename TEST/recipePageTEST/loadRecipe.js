@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     getData('/api/recipe/' + recipeId).then((response) => {
+        console.log(response);
         document.getElementById('title').innerHTML = response[0][0].Recipes_Title;
         document.getElementById('description').innerHTML = response[0][0].Recipes_Description;
 
@@ -80,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="recipe-details-difficulty-title">Nehézség:</div>
             <img class="star-1" src="star-filled.svg" />
             <img class="star-2" src="star-empty.svg" />
-            <img class="star-3" src="star-emtpy.svg" />
+            <img class="star-2" src="star-empty.svg" />
+
             `;
         }
         else if (response[0][0].Recipes_Difficulty_Level === 'Közepesen nehéz elkészíteni') {
@@ -249,8 +251,7 @@ function insertIngredientsIntoHTML(text) {
         let stepParts = step.split(" ");
         let stepIngredientQuantity = stepParts[0].trim();
         let stepMeasurement = stepParts[1].trim();
-        let stepMeasurementShortened = stepParts[2].trim(); //we dont need this now
-        let stepIngredient = stepParts[3].trim();
+        let stepIngredient = stepParts[2].trim();
 
         let mainDiv = document.createElement("div");
         mainDiv.className = "recipe-details-cooking-ingredients-1";

@@ -1,6 +1,6 @@
 ::-webkit-scrollbar {
-  width: 25px;
-  overflow-y: scroll;
+  /* width: 25px; */
+  overflow-y: overlay;
   position: fixed;
 }
 

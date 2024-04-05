@@ -816,23 +816,26 @@
                 <div class="feedback_name">
                   <h1 class="feedback_name_title">Név:</h1>
                   <div class="feedback_name_input_div">
-                    <input type="text" class="feedback_name_input" placeholder="Pl.: Példa Tamás" required />
+                    <input id="feedback_name" type="text" class="feedback_name_input" placeholder="Pl.: Példa Tamás"
+                      required />
                   </div>
                 </div>
                 <div class="feedback_email">
                   <h1 class="feedback_email_title">E-mail cím:</h1>
                   <div class="feedback_email_input_div">
-                    <input type="email" class="feedback_email_input" placeholder="Pl.: peldatamas@gmail.com" required />
+                    <input id="feedback_email" type="email" class="feedback_email_input"
+                      placeholder="Pl.: peldatamas@gmail.com" required />
                   </div>
                 </div>
                 <div class="feedback_message">
                   <h1 class="feedback_message_title">Üzenet:</h1>
                   <div class="feedback_message_input_div">
-                    <textarea class="feedback_message_input" placeholder="Írja ide üzenetét..."></textarea>
+                    <textarea id="feedback_text" class="feedback_message_input"
+                      placeholder="Írja ide üzenetét..."></textarea>
                   </div>
                 </div>
                 <div class="feedback_error">Kérjük töltse ki az adatokat!</div>
-                <button type="submit" class="feedback_sendbutton">
+                <button type="submit" class="feedback_sendbutton" onclick="sendFeedback()">
                   <span class="feedback_sendbutton_text">Küldés</span>
                 </button>
               </div>

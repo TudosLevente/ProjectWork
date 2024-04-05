@@ -15,7 +15,7 @@
   justify-content: center;
   position: relative;
   zoom: 55%;
-  padding-left: 30px;
+  /* padding-left: 30px; */
 }
 
 .fooldal_layout {
@@ -403,7 +403,7 @@
 
 .kategoria_search_div_inner {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   gap: 50px;
@@ -412,15 +412,18 @@
 .kategoria_search_div_categorydiv {
   border-radius: 10px;
   flex-shrink: 0;
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 370px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .categorydiv_eclipselayout {
   border-radius: 50%;
-  width: 250px;
+  width: 270px;
   height: 250px;
   position: relative;
   top: 0px;
@@ -433,9 +436,7 @@
   font-family: 'Inter-ExtraBold', sans-serif;
   font-size: 40px;
   font-weight: 800;
-  position: absolute;
-  left: calc(50% - 98px);
-  bottom: 0px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1095,4 +1096,15 @@
   position: relative;
   width: 20%;
   height: 20%;
+}
+
+.kategoria_search_div_inner_href,
+.kategoria_search_div_inner_href:hover,
+.kategoria_search_div_inner_href:active,
+.kategoria_search_div_inner_href:visited {
+  outline: none;
+  border: none;
+  appearance: none;
+  color: none;
+  text-decoration: none;
 }

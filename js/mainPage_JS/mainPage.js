@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             addedProfil.className = "dropdown_profil dropdown";
 
             addedProfil.innerHTML = `
-                <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
+                <a href="../../html/profilePage.html" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
                 <div class="dropdown_content_profil dropdown-content" id="myDropdown">
                     <a href="../../html/profilePage.html" onclick="showAdataim()">Adataim<img
                             src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
@@ -130,10 +130,14 @@ function sendEmail() {
 
     postData('/sendEmail', emailData)
         .then((response) => {
-            console.log(response);
+            //console.log(response);
         });
 
     document.getElementById('sender_name').value = '';
     document.getElementById('sender_email').value = '';
     document.getElementById('sender_text').value = '';
+}
+
+function signupForNL() {
+    document.getElementById('newsletter_email').value = '';
 }

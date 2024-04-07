@@ -85,6 +85,4 @@ document.getElementById('add_ingredient').addEventListener('click', function () 
         .catch(error => {
             console.error("Error occurred:", error);
         });
-
-
 });

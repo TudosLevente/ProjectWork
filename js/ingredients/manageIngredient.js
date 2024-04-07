@@ -40,6 +40,8 @@ function createIngredientInput(count) {
                 <li>Centiliter (cl)</li>
                 <li>Deciliter (dl)</li>
                 <li>Liter (l)</li>
+                <li class="nonclickable">További</li>
+                <li>Darab (db)</li>
             </ul>
             </div>
         </div>

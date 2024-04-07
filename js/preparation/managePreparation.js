@@ -14,7 +14,8 @@ function createPreparationInput(count) {
             <option>Pihentetés</option>
             <option>Keltés</option>
             <option>Áztatás</option>
-            <option>Pihentetés</option>
+            <option>Pirítás</option>
+            <option>Párolás</option>
         </select>
         <img src="../images/recipeUpload_Images/kicsilefelenyil.svg" class="chevrondown_">
         <div class="preparation_div_row_type_small">

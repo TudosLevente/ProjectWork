@@ -9,13 +9,9 @@ function sendMessage() {
     var textarea = document.querySelector('.recipe-comments-input');
     var message = textarea.value.trim();
     if (message !== "") {
-        console.log("Sending message:", message);
-
         textarea.value = "";
         textarea.style.height = 'auto';
     }
-
-    console.log(message);
 
     var commentData = {
         comment_text: message,
@@ -26,7 +22,7 @@ function sendMessage() {
     postData('http://localhost:8000/api/uploadComment', commentData)
         .then((res) => {
             console.log(res);
-            console.log("Recept feltölve!")
+            console.log("Komment feltölve!")
         })
         .catch((err) => {
             console.log(err);

@@ -142,83 +142,113 @@ CREATE TABLE IF NOT EXISTS Comments (
         REFERENCES Recipes (Recipe_ID)
 );
 
--- INSERT UTASÍTÁSOK
-INSERT INTO Recipes (Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category) 
-Values 
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel'),
-('kep.jpg','Kacsa','Frissen sült ropogós kacsa','1. Süssük meg; 2. Együk meg',3,'Könnyen elkészíthető','Főétel');
-
 INSERT INTO Ingredients (Ingredient_Name, Ingredient_Category) 
-VALUES('Liszt', 'Szénhidrátok'),
+VALUES
+('Liszt', 'Szénhidrátok'),
 ('Tojás', 'Fehérjék'),
 ('Cukor', 'Édesítőszerek'),
 ('Vaj', 'Zsírok'),
 ('Tej', 'Fehérjék'),
 ('Só', 'Fűszerek'),
 ('Bors', 'Fűszerek'),
-('Sütőpor', 'Egyéb');
-INSERT INTO Users (Username, Email, Password) VALUES ('Levi', 'levi@gmail.com', 'levi123');
-INSERT INTO Users (Username, Email, Password) VALUES ('Bence', 'bence@gmail.com', 'bb123');
-INSERT INTO Favorites (Favorite_ID, User_ID, Recipe_ID)
-VALUES (1,1,1);
-INSERT INTO Comments (Comment_ID, User_ID, Recipe_ID, Comment_Text, Date_Posted)
-VALUES (NULL, 1, 1, "Nagyon finom volt ez az étel!", "2024.02.01");
+('Sütőpor', 'Egyéb'),
+('Sertéshús', 'Fehérjék'),
+('Csirkehús', 'Fehérjék'),
+('Marhahús', 'Fehérjék'),
+('Lazac', 'Fehérjék'),
+('Tészta', 'Szénhidrátok'),
+('Rizs', 'Szénhidrátok'),
+('Barna cukor', 'Édesítőszerek'),
+('Méz', 'Édesítőszerek'),
+('Olívaolaj', 'Zsírok'),
+('Szalonna', 'Zsírok'),
+('Kókusztej', 'Fehérjék'),
+('Fahéj', 'Fűszerek'),
+('Szegfűszeg', 'Fűszerek'),
+('Currypor', 'Fűszerek'),
+('Élesztő', 'Egyéb'),
+('Paradicsom', 'Zöldségek'),
+('Hagyma', 'Zöldségek'),
+('Burgonya', 'Zöldségek'),
+('Répa', 'Zöldségek'),
+('Brokkoli', 'Zöldségek'),
+('Cukkini', 'Zöldségek'),
+('Paprika', 'Zöldségek'),
+('Uborka', 'Zöldségek'),
+('Zeller', 'Zöldségek'),
+('Karfiol', 'Zöldségek'),
+('Alma', 'Gyümölcsök'),
+('Banán', 'Gyümölcsök'),
+('Narancs', 'Gyümölcsök'),
+('Kivi', 'Gyümölcsök'),
+('Eper', 'Gyümölcsök'),
+('Szilva', 'Gyümölcsök'),
+('Mangó', 'Gyümölcsök'),
+('Ananász', 'Gyümölcsök'),
+('Datolya', 'Gyümölcsök'),
+('Málna', 'Gyümölcsök'),
+('Tofu', 'Fehérjék'),
+('Fasírt', 'Fehérjék'),
+('Quinoa', 'Szénhidrátok'),
+('Couscous', 'Szénhidrátok'),
+('Bulgur', 'Szénhidrátok'),
+('Makaróni', 'Szénhidrátok'),
+('Kukorica', 'Szénhidrátok'),
+('Lencse', 'Szénhidrátok'),
+('Fehérbab', 'Szénhidrátok'),
+('Fasírozott paradicsom', 'Édesítőszerek'),
+('Sztívia', 'Édesítőszerek'),
+('Agavészirup', 'Édesítőszerek'),
+('Édesburgonya', 'Szénhidrátok'),
+('Kókuszliszt', 'Szénhidrátok'),
+('Tönkölyliszt', 'Szénhidrátok'),
+('Rizsliszt', 'Szénhidrátok'),
+('Zabliszt', 'Szénhidrátok'),
+('Szezámmag', 'Zsírok'),
+('Dió', 'Zsírok'),
+('Mogyoró', 'Zsírok'),
+('Mandula', 'Zsírok'),
+('Paradicsomszósz', 'Egyéb'),
+('Tárkony', 'Fűszerek'),
+('Majoránna', 'Fűszerek'),
+('Oregánó', 'Fűszerek'),
+('Koriander', 'Fűszerek'),
+('Bazsalikom', 'Fűszerek'),
+('Kapribogyó', 'Zöldségek'),
+('Sárgarépa', 'Zöldségek'),
+('Fejes saláta', 'Zöldségek'),
+('Karalábé', 'Zöldségek'),
+('Kókuszdió', 'Gyümölcsök'),
+('Avokádó', 'Gyümölcsök'),
+('Mandula', 'Gyümölcsök'),
+('Paradicsomlé', 'Gyümölcsök'),
+('Hummusz', 'Fehérjék'),
+('Fehér bab', 'Fehérjék'),
+('Lencse', 'Fehérjék'),
+('Tofu', 'Fehérjék'),
+('Quinoa', 'Szénhidrátok'),
+('Bulgur', 'Szénhidrátok'),
+('Kuszkusz', 'Szénhidrátok'),
+('Tarhonya', 'Szénhidrátok'),
+('Barna rizs', 'Szénhidrátok'),
+('Méz', 'Édesítőszerek'),
+('Nyírfacukor', 'Édesítőszerek'),
+('Xilit', 'Édesítőszerek'),
+('Datolya szirup', 'Édesítőszerek'),
+('Kókuszolaj', 'Zsírok'),
+('Lenmagolaj', 'Zsírok'),
+('Dióolaj', 'Zsírok'),
+('Avokádóolaj', 'Zsírok'),
+('Rizsliszt', 'Szénhidrátok'),
+('Kukoricaliszt', 'Szénhidrátok'),
+('Tönkölybúza', 'Szénhidrátok'),
+('Árpa', 'Szénhidrátok'),
+('Köles', 'Szénhidrátok'),
+('Kókuszreszelék', 'Szénhidrátok'),
+('Kurkuma', 'Fűszerek'),
+('Kömény', 'Fűszerek'),
+('Csípős paprika', 'Fűszerek'),
+('Mustár', 'Fűszerek');
 
 DROP PROCEDURE IF EXISTS generateTokenProcedure;
 DELIMITER //
@@ -239,7 +269,6 @@ BEGIN
 END;
 //
 DELIMITER ;
-CALL `felhBejelentkezes` ('bencebudai2004@gmail.com','Asdfg123');
 
 -- -- felhBejelentkezes function
 DROP FUNCTION IF EXISTS felhBejelentkezes;
@@ -261,8 +290,6 @@ BEGIN
 END
 //
 DELIMITER ;
-SELECT felhBejelentkezes ('levi@gmail.com','levi123');
-SELECT felhBejelentkezes ('bence@gmail.com','bb123');
 
 -- felhTokenFrissites procedure
 drop PROCEDURE if exists felhTokenFrissites;
@@ -286,7 +313,6 @@ BEGIN
 END;
 //
 DELIMITER ;
--- SELECT felhTokenFrissites (1, generateTokenProcedure );
 
 -- getAllUserInfos procedure
 DROP PROCEDURE if exists getAllUserInfos;
@@ -298,7 +324,6 @@ END;
 //
 delimiter ;
 
-
 -- felhBejelentkezes procedure
 drop procedure if exists adminBejelentkezes;
 DELIMITER //
@@ -308,7 +333,6 @@ BEGIN
 END;
 //
 DELIMITER ;
-
 
 -- getRecipeInfos procedure
 DROP PROCEDURE if exists getRecipeInfos;
@@ -353,7 +377,6 @@ WHERE
 END;
 //
 delimiter ; 
- CALL getRecipeInfos(2)
 
 drop procedure if exists loadRecipeInfos;
 Delimiter //
@@ -363,7 +386,6 @@ BEGIN
 END;
 //
 delimiter ;
-
 
 -- getCommentContent procedure
 DROP PROCEDURE if exists getCommentContent;
@@ -377,7 +399,6 @@ BEGIN
 END;
 //
 delimiter ;
-
 
 -- getFavorites procedure
 DROP PROCEDURE if exists getFavorites;
@@ -410,43 +431,6 @@ SELECT * FROM Favorites;
 SELECT * FROM Comments;
 SELECT * FROM Ingredients;
 
-
-SELECT 
-    Recipes.User_ID AS Recipes_User_ID,
-    Recipes.Picture_data AS Recipes_Picture_data,
-    Recipes.Title AS Recipes_Title,
-    Recipes.Description AS Recipes_Description,
-    Recipes.Instructions AS Recipes_Instructions,
-    Recipes.Serving AS Recipes_Serving,
-    Recipes.Difficulty_Level AS Recipes_Difficulty_Level,
-    Recipes.Date_Created AS Recipes_Date_Created,
-    Recipe_Ingredients,
-    Recipe_Time
-FROM 
-    Recipes
-INNER JOIN (
-    SELECT 
-        Recipe_Ingredients.Recipe_ID,
-        GROUP_CONCAT(CONCAT(Recipe_Ingredients.Quantity, ' ', Recipe_Ingredients.Measurement, ' ', Ingredients.Ingredient_Name) SEPARATOR ';') AS Recipe_Ingredients
-    FROM 
-        Recipe_Ingredients
-    INNER JOIN 
-        Ingredients ON Recipe_Ingredients.Ingredient_ID = Ingredients.Ingredient_ID
-    GROUP BY 
-        Recipe_Ingredients.Recipe_ID
-) AS Ingredients ON Recipes.Recipe_ID = Ingredients.Recipe_ID
-INNER JOIN (
-    SELECT 
-        `Time`.Recipe_ID,
-        GROUP_CONCAT(CONCAT(`Time`.Time_Quantity, ' ', `Time`.Time_Type, ' ', `Time`.Time_Prep_Type) SEPARATOR ';') AS Recipe_Time
-    FROM 
-        `Time`
-    GROUP BY 
-        `Time`.Recipe_ID
-) AS TimeData ON Recipes.Recipe_ID = TimeData.Recipe_ID
-WHERE 
-    Recipes.Recipe_ID = 124;
-
 DROP PROCEDURE IF EXISTS `UpdateUser`;
 DELIMITER //
 
@@ -469,19 +453,3 @@ BEGIN
 END;
 //
 DELIMITER ;
-
-CALL getAllUserRecipes(7);
-
-INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES
-(1, 1, 1, "Milligram"),
-(1, 2, 2, "Gramm"),
-(1, 2, 3, "Dekagramm"),
-(1, 2, 4, "Milligram"),
-(1, 1, 5, "Milligram"),
-(1, 1, 6, "Milligram");
-
-INSERT INTO Time (Recipe_ID,Time_Prep_Type,Time_Quantity,Time_Type) VALUES
-(1, "Előkészület", 15, "perc"),
-(1, "Pihentetés", 35, "perc"),
-(1, "Sütés", 1, "óra"),
-(1, "Marinálás", 1, "nap");

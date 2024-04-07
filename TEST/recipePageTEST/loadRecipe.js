@@ -274,45 +274,6 @@ function insertIngredientsIntoHTML(text) {
     });
 }
 
-function handleTextarea(event) {
-    var textarea = event.target;
-    var sendButtonHeight = document.querySelector('.send-button').offsetHeight;
-    textarea.style.height = 'auto';
-    textarea.style.height = ((textarea.scrollHeight) + sendButtonHeight) + 'px';
-}
-
-function sendMessage() {
-    var textarea = document.querySelector('.recipe-comments-input');
-    var message = textarea.value.trim();
-    if (message !== "") {
-        console.log("Sending message:", message);
-
-        textarea.value = "";
-        textarea.style.height = 'auto';
-    }
-
-    var commentData = {
-        comment_text: message,
-        recipe_id: recipeId,
-        user_id: loggedInUserId
-    };
-
-
-    if (loggedInUserBool) {
-        postData('http://localhost:8000/api/uploadComment', commentData)
-            .then((res) => {
-                console.log(res);
-                console.log("Recept komment elküldve!")
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
-    else {
-        //ide kéne hogy legyen egy felugró ablak ami közli, hogy a kommenteléshez be kell jelentkezni vagy regisztrálni.
-    }
-}
-
 function addToFavorites() {
     var heartIcon = document.getElementById("heartIcon");
     var currentSrc = heartIcon.src;

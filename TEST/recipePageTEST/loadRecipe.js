@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('description').innerHTML = response[0][0].Recipes_Description;
 
         var picture = document.getElementById('picture_data');
-        picture.src = response[0][0].Picture_data;
+        picture.src = response[0][0].Recipes_Picture_data;
         if (response[0][0].Recipes_Difficulty_Level === 'Könnyű elkészíteni') {
             document.getElementById('difficulty').innerHTML = `
             <div class="recipe-details-difficulty-title">Nehézség:</div>
@@ -106,10 +106,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         recipe_user = response[0][0].Recipes_User_ID;
 
+        const isoDate = response[0][0].Recipes_Date_Created;
+        const date = new Date(isoDate);
+
+        const options = { timeZone: 'Europe/Budapest', year: 'numeric', month: '2-digit', day: '2-digit' };
+        const formattedDate = date.toLocaleString('hu-HU', options);
+
         document.getElementById('date').innerHTML = `
-        Feltöltve:
-        <br />
-        ${response[0][0].Recipes_Date_Created}
+            Feltöltve:
+            <br />
+            ${formattedDate}
         `;
 
         insertStepsIntoHTML(response[0][0].Recipes_Instructions);
@@ -251,7 +257,8 @@ function insertIngredientsIntoHTML(text) {
         let stepParts = step.split(" ");
         let stepIngredientQuantity = stepParts[0].trim();
         let stepMeasurement = stepParts[1].trim();
-        let stepIngredient = stepParts[2].trim();
+        let stepMeasurementShort = stepParts[2].trim();
+        let stepIngredient = stepParts[3].trim();
 
         let mainDiv = document.createElement("div");
         mainDiv.className = "recipe-details-cooking-ingredients-1";

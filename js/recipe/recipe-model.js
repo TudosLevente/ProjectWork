@@ -48,7 +48,7 @@ async function uploadRecipe(req, res) {
         null //ez a feltöltési dátum ideje
     );
 
-    if (!(/*recipe.picture_data &&*/ recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
+    if (!(recipe.picture_data && recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
@@ -58,7 +58,7 @@ async function uploadRecipe(req, res) {
         console.log('Csatlakozva a recept feltöltéshez.');
     })
 
-    const sql = 'INSERT INTO Recipes (User_ID,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?)';
+    const sql = 'INSERT INTO Recipes (User_ID,Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?,?)';
 
     function concatenatedTitlesAndInputs(array) {
         var concatenatedStrings = array.map(function (obj) {
@@ -78,7 +78,7 @@ async function uploadRecipe(req, res) {
 
     recipe.date_created = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 
-    con.query(sql, [recipe.user_id, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, recipe.date_created], (err, result) => {
+    con.query(sql, [recipe.user_id, req.body.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, recipe.date_created], (err, result) => {
         if (err) throw err;
         recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
 
@@ -90,6 +90,7 @@ async function uploadRecipe(req, res) {
                     const result = await new Promise((resolve, reject) => {
                         con.query('SELECT Ingredient_ID FROM Ingredients WHERE Ingredient_Name = ?', [recipe.ingredient_name[i]], (err, result) => {
                             if (err) reject(err);
+                            resolve(result);
                         });
                     });
 
@@ -102,6 +103,7 @@ async function uploadRecipe(req, res) {
                     const insertResult = await new Promise((resolve, reject) => {
                         con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity[i], recipe.ingredient_measurement[i]], (err, result) => {
                             if (err) reject(err);
+                            resolve(result)
                         });
                     });
 

@@ -16,7 +16,7 @@ function uploadPicture(req, res) {
             let filename = req.file.filename; // original filename
 
             if (!title || !filename) {
-                res.status(400).send('Error: No File Selected!');
+                res.status(400).send("Error: No File Selected!");
             } else {
                 const originalExtension = path.extname(req.file.originalname); // Get original extension
                 const titleWithoutSpaces = title.replace(/\s+/g, '-'); // Replace spaces in title
@@ -34,9 +34,9 @@ function uploadPicture(req, res) {
 
                 fs.rename(req.file.path, newPath, (err) => {
                     if (err) {
-                        res.status(500).send('Error: File Rename Failed!');
+                        res.status(500).send(JSON.stringify("Error: File Rename Failed!"));
                     } else {
-                        res.send('File Uploaded Successfully!' + filename);
+                        res.status(200).send(JSON.stringify(newPath));
                     }
                 });
             }

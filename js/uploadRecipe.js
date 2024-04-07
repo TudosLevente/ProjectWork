@@ -87,52 +87,53 @@ var userID = null;
 document.addEventListener('DOMContentLoaded', function () {
     getData('/getLoggedInUserData').then((response) => {
         console.log(response);
+        if (!response.loggedIn) {
+            window.location.href = '/';
+        }
         userID = response.user_id;
     }).catch((error) => {
         console.error('Error:', error);
     });
 });
 
+var picture_data_after_upload = "";
+
 function uploadFile() {
-    const formData = new FormData();
-    const fileInput = document.getElementById('picture_data');
-    const titleInput = document.getElementById('title');
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const formData = new FormData();
+            const fileInput = document.getElementById('picture_data');
+            const titleInput = document.getElementById('title');
 
-    // Check if both file and title inputs are provided
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const title = titleInput.value.trim();
-        const extension = file.name.split('.').pop(); // Get file extension
+            // Check if both file and title inputs are provided
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const title = titleInput.value.trim();
+                const extension = file.name.split('.').pop(); // Get file extension
 
-        // Rename the file with the title and extension
-        const newFileName = title.replace(/\s+/g, '-');
+                // Rename the file with the title and extension
+                const newFileName = title.replace(/\s+/g, '-');
 
-        // Append the renamed file and title to FormData
-        formData.append('picture_data', file);
-        formData.append('title', newFileName);
+                // Append the renamed file and title to FormData
+                formData.append('picture_data', file);
+                formData.append('title', newFileName);
 
-        // Make a fetch request to upload the file and title
-        postFormData('http://localhost:8000/api/upload', formData)
-            .then(response => {
-                console.log(response);
-                if (!response.ok) {
-                    throw new Error('Failed to upload image');
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Handle the response data, e.g., display a message or update UI
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
+                // Make a fetch request to upload the file and title
+                postFormData('http://localhost:8000/api/upload', formData)
+                    .then(response => {
+                        picture_data_after_upload = response;
+                        resolve();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        }, 2000);
+    });
 }
 
 function uploadRecipe() {
-    uploadFile();
-    var picture_data_input = document.getElementById('picture_data');
+    var picture_path = ".." + picture_data_after_upload.substring(14)
     var title_input = document.getElementById('title');
     var description_input = document.getElementById('description');
     var ingredients_input = retrieveIngredients();
@@ -147,7 +148,7 @@ function uploadRecipe() {
     var food_category_input = document.getElementById('food_category');
 
     var recipeData = {
-        picture_data: picture_data_input.files[0],
+        picture_data: picture_path,
         title: title_input.value,
         description: description_input.value,
         ingredient_name: ingredients_input,
@@ -163,19 +164,26 @@ function uploadRecipe() {
         user_id: userID
     };
 
-    var pictureData = new FormData();
-    pictureData.append('picture_data', picture_data_input.files[0]);
-
     postData('http://localhost:8000/api/uploadRecipe', recipeData)
         .then((res) => {
+            console.log(res);
             if (!res.ok) {
                 throw new Error("Failed to upload recipe.");
             }
-            return res.json();
+            //window.location.href = '/';
         })
         .catch((error) => {
             console.error('Error:', error);
         });
+}
+
+async function uploadProcess() {
+    try {
+        await uploadFile();
+        uploadRecipe();
+    } catch (error) {
+        console.error("Error uploading file:", error);
+    }
 }
 
 function cancelUpload() {

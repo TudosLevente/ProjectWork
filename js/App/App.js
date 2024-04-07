@@ -2,6 +2,8 @@ const express = require('express');
 const app = require('./index');
 const config = require('./config')
 const path = require('path')
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
 const publicDirectoryPath = path.join(__dirname, '../../../ProjectWork');
 
@@ -44,3 +46,34 @@ app.get('/', (req, res) => {
 app.listen(config.port, () => {
     console.log(`A szerver fut | http://localhost:${config.port}`);
 })
+
+app.post('/sendEmail', (req, res) => {
+    const { to, subject, body } = req.body;
+
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.mailersend.net',
+        port: 587,
+        secure: false,
+        auth: {
+            user: 'MS_XqGaJW@trial-o65qngkv85jlwr12.mlsender.net',
+            pass: 'XSrjoCJGHUnRFL4a'
+        }
+    });
+
+    const mailOptions = {
+        from: "MS_XqGaJW@trial-o65qngkv85jlwr12.mlsender.net",
+        to: to,
+        subject: subject,
+        text: body
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Az emailt nem sikerült elküldeni.' + error.message);
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.status(200).send('Email sikeresen elküldve!');
+        }
+    });
+});

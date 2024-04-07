@@ -116,3 +116,24 @@ function adjustMouseScroll(event) {
 }
 
 window.addEventListener('wheel', adjustMouseScroll);
+
+function sendEmail() {
+    var name = document.getElementById('sender_name').value;
+    var email = document.getElementById('sender_email').value;
+    var text = document.getElementById('sender_text').value;
+
+    var emailData = {
+        to: "foodhub.noreply.hu@gmail.com",
+        subject: "Visszajelzés " + name + "-tól/től. Email-cím: " + email,
+        body: text
+    };
+
+    postData('/sendEmail', emailData)
+        .then((response) => {
+            console.log(response);
+        });
+
+    document.getElementById('sender_name').value = '';
+    document.getElementById('sender_email').value = '';
+    document.getElementById('sender_text').value = '';
+}

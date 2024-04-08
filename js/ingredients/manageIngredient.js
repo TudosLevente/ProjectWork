@@ -42,6 +42,7 @@ function createIngredientInput(count) {
                 <li>Liter (l)</li>
                 <li class="nonclickable">További</li>
                 <li>Darab (db)</li>
+                <li>Csomag (cs)</li>
             </ul>
             </div>
         </div>

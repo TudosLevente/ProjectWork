@@ -1,0 +1,44 @@
+email: "katica85@example.com"
+jelszó: "Macska123"
+
+email: "vandorbarna@mail.hu"
+jelszó: "Természet567"
+
+email: "eszterlanc@fiktiv.hu"
+jelszó: "TitkosTitok789"
+
+email: "zoltan.kalandor@gmail.com"
+jelszó: "Kaland1234"
+
+email: "szivarvany.mese@fikcio.com"
+jelszó: "Varázslat567"
+
+email: "reka.csillag@mail.hu"
+jelszó: "CsillagosÉg123"
+
+email: "gergo.kalandozo@example.com"
+jelszó: "KalandVár456"
+
+email: "aniko.mesemondo@fiktiv.hu"
+jelszó: "Mesevilág789"
+
+email: "norbi.utazo@mail.com"
+jelszó: "Utazás2023"
+
+email: "szilvi.szerelem@gmail.com"
+jelszó: "TitkosSzerelem11"
+
+email: "peter.kalandkereso@example.com"
+jelszó: "KeresemAZAranyat1"
+
+email: "bogi.meses@mail.hu"
+jelszó: "Varázslatos123"
+
+email: "marci.setalo@fikcio.hu"
+jelszó: "Sétáló1234"
+
+email: "kitti.almodo@example.com"
+jelszó: "ÁlomVilág567"
+
+email: "laci.vandor@mail.com"
+jelszó: "Vándor123"

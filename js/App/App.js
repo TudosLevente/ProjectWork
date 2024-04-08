@@ -4,20 +4,10 @@ const config = require('./config')
 const path = require('path')
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
 
 const publicDirectoryPath = path.join(__dirname, '../../../ProjectWork');
 
 app.use(express.static(publicDirectoryPath));
-
-// app.use(cookieParser());
-
-// app.use(session({
-//     secret: 'secret',
-//     resave: true,
-//     saveUninitialized: true
-// }));
 
 var loggedInUserData = {
     loggedIn: false,

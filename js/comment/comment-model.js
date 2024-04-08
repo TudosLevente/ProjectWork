@@ -50,35 +50,35 @@ async function uploadComment(req, res) {
                 return;
             }
 
-            if (checkForSwearWords(comment.comment_text, data)) {
-                //felugró ablak, hogy a komment káromkodást tartalmaz így az nem elküldhető
-                console.log("káromkodás");
+            if (!checkForSwearWords(comment.comment_text, data)) {
+                var con = mysql.createConnection(config.database);
+
+                const date = new Date();
+
+                comment.date_posted = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
+
+                const sql = 'INSERT INTO Comments (User_ID,Recipe_ID,Comment_Text,Date_Posted) Values (?,?,?,?)';
+
+                con.query(sql, [comment.user_id, comment.recipe_id, comment.comment_text, comment.date_posted], (err, result) => {
+                    con.connect(function (err) {
+                        if (err) throw err;
+                        if (result === undefined) {
+                            return;
+                        }
+                        res.send(comment);
+                    });
+
+                    con.end(function (err) {
+                        if (err) throw err;
+                    });
+                });
                 return;
             }
+
         });
-
-        var con = mysql.createConnection(config.database);
-
-        const date = new Date();
-
-        comment.date_posted = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
-
-        const sql = 'INSERT INTO Comments (User_ID,Recipe_ID,Comment_Text,Date_Posted) Values (?,?,?,?)';
-
-        con.query(sql, [comment.user_id, comment.recipe_id, comment.comment_text, comment.date_posted], (err, result) => {
-            con.connect(function (err) {
-                if (err) throw err;
-                if (result === undefined) {
-                    return;
-                }
-                res.send(comment);
-            });
-
-            con.end(function (err) {
-                if (err) throw err;
-            });
-        });
-    } catch (err) { }
+    } catch (err) {
+        console.log("Error:" + err);
+    }
 
 }
 

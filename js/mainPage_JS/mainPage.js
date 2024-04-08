@@ -49,6 +49,22 @@ function loadRecipes() {
             })(i, j);
         }
     }
+
+    for (var i = 1; i < 19; i++) {
+        getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
+            var ajanlat = document.getElementById(`ajanlat_id_${i}`);
+            if (ajanlat) {
+                ajanlat.src = recipeData[0][0].Picture_data;;
+                var uj_set_id = ajanlat.parentElement;
+                console.log(uj_set_id);
+                uj_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
+            } else {
+                console.error("Error");
+            }
+        }).catch((error) => {
+            console.error("Error occurred:", error);
+        });
+    }
 }
 
 var loggedInUserData = {

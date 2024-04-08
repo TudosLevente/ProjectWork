@@ -105,20 +105,16 @@ function uploadFile() {
             const fileInput = document.getElementById('picture_data');
             const titleInput = document.getElementById('title');
 
-            // Check if both file and title inputs are provided
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
                 const title = titleInput.value.trim();
-                const extension = file.name.split('.').pop(); // Get file extension
+                const extension = file.name.split('.').pop();
 
-                // Rename the file with the title and extension
                 const newFileName = title.replace(/\s+/g, '-');
 
-                // Append the renamed file and title to FormData
                 formData.append('picture_data', file);
                 formData.append('title', newFileName);
 
-                // Make a fetch request to upload the file and title
                 postFormData('http://localhost:8000/api/upload', formData)
                     .then(response => {
                         picture_data_after_upload = response;
@@ -170,7 +166,7 @@ function uploadRecipe() {
             if (!res.ok) {
                 throw new Error("Failed to upload recipe.");
             }
-            //window.location.href = '/';
+            window.location.href = '/';
         })
         .catch((error) => {
             console.error('Error:', error);

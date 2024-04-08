@@ -32,6 +32,15 @@ app.post('/getLoginInfo', (req, res) => {
     console.log(loggedInUserData.email);
 })
 
+app.get('/logout', (req, res) => {
+    loggedInUserData.loggedIn = false;
+    loggedInUserData.user_id = null;
+    loggedInUserData.username = "";
+    loggedInUserData.email = "";
+
+    res.send(loggedInUserData);
+});
+
 app.get('/', (req, res) => {
     if (loggedInUserData.loggedIn) {
         console.log("a loggedIn főoldal fut");

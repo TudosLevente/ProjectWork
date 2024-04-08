@@ -248,7 +248,12 @@ VALUES
 ('Kurkuma', 'Fűszerek'),
 ('Kömény', 'Fűszerek'),
 ('Csípős paprika', 'Fűszerek'),
-('Mustár', 'Fűszerek');
+('Mustár', 'Fűszerek'),
+('Túró', 'Egyéb'),
+('Vaníliás cukor', 'Édesítőszerek'),
+('Sütőpor', 'Egyéb'),
+('Olaj', 'Egyéb'),
+('Csokoládédarabok', 'Egyéb');
 
 DROP PROCEDURE IF EXISTS generateTokenProcedure;
 DELIMITER //

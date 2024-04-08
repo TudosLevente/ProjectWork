@@ -7,22 +7,38 @@ function loadRecipes() {
     for (var i = 1; i < 3; i++) {
         for (var j = 1; j < 5; j++) {
             (function (i, j) {
-                var id = 33;
+                var id = generateNumber();
 
                 getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
                     if (recipeData) {
-                        var element = document.getElementById(`r${i}c${j}`);
-                        if (element) {
-                            element.src = recipeData[0][0].Picture_data;
+                        var uj_element = document.getElementById(`r${i}c${j}`);
+                        if (uj_element) {
+                            uj_element.src = recipeData[0][0].Picture_data;
                         } else {
                             console.error(`Az következő elemre ezzel az id-val nincs találat: 'r${i}c${j}'!`);
                         }
 
-                        var element_name = document.getElementById(`name_r${i}c${j}`);
-                        if (element_name) {
-                            element_name.innerHTML = recipeData[0][0].Title;
-                            var set_id = element_name.nextElementSibling;
-                            set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
+                        var uj_element_name = document.getElementById(`name_r${i}c${j}`);
+                        if (uj_element_name) {
+                            uj_element_name.innerHTML = recipeData[0][0].Title;
+                            var uj_set_id = uj_element_name.nextElementSibling;
+                            uj_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
+                        } else {
+                            console.error(`Az következő elemre ezzel az id-val nincs találat: 'name_r${i}c${j}'!`);
+                        }
+
+                        var kedveltek_element = document.getElementById(`kedveltek_r${i}c${j}`);
+                        if (kedveltek_element) {
+                            kedveltek_element.src = recipeData[0][0].Picture_data;
+                        } else {
+                            console.error(`Az következő elemre ezzel az id-val nincs találat: 'r${i}c${j}'!`);
+                        }
+
+                        var kedveltek_element_name = document.getElementById(`kedveltek_name_r${i}c${j}`);
+                        if (kedveltek_element_name) {
+                            kedveltek_element_name.innerHTML = recipeData[0][0].Title;
+                            var kedveltek_set_id = kedveltek_element_name.nextElementSibling;
+                            kedveltek_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
                         } else {
                             console.error(`Az következő elemre ezzel az id-val nincs találat: 'name_r${i}c${j}'!`);
                         }

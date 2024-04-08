@@ -7,7 +7,7 @@ function adminLogin(req, res) {
 
     try {
         const { email, password } = req.body;
-        console.log(req.body); 
+        console.log(req.body);
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
@@ -100,7 +100,7 @@ function login(req, res) {
                     loggedInUserData.logged_username = result[0].Username;
                     loggedInUserData.logged_email = result[0].Email;
 
-                    con.query('SELECT felhTokenFrissites(?,?)', [matches[0].replace(/'/g, ''), token], (err, result, fields) => {
+                    con.query('SELECT felhTokenFrissites(?,?)', [loggedInUserData.logged_user_id, token], (err, result, fields) => {
                         if (err) throw err;
 
                         userLoggedIn = true;

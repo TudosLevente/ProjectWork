@@ -5,7 +5,7 @@
       rgba(255, 0, 0, 1) 100%);
 }
 
-body{
+body {
   background-color: #D7BF9C;
   background-image: url(../images/registrationPage/image-3.png);
   background-repeat: no-repeat;
@@ -13,8 +13,8 @@ body{
   background-position: left;
   background-attachment: fixed;
   margin: 0;
-  padding-top: 40px;
-  padding-right: 200px; 
+  padding-top: 70px;
+  padding-right: 200px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -66,9 +66,10 @@ body{
   height: 101px;
   position: relative;
   object-fit: cover;
-  background-image: url("../images/logo.png");
+  background-image: url("../images/logo-removebg-preview.png");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .food-hub-stroke {
@@ -242,4 +243,86 @@ input[type="text"],
 input[type="password"] {
   border: none;
   outline: none;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 375px) {
+  body {
+    /* background-color: turquoise; */
+    background-image: none;
+    padding-right: 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    .logo {
+      position: absolute;
+      top: -130px;
+      background-position: center;
+    }
+
+    .border {
+      border: none;
+    };
+  }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+  body {
+    /* background-color: violet; */
+    background-image: none;
+    padding-right: 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    
+
+    .logo {
+      position: absolute;
+      top: -130px;
+      background-position: center;
+    }
+  }
+}
+
+@media (min-width: 425px) and (max-width: 721px) {
+  body {
+    /* background-color: blue; */
+    background-image: none;
+    padding-right: 5px;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 768px) {
+  body {
+    /* background-color: red; */
+    background-position: -500px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  body {
+    /* background-color: green; */
+    background-position: -500px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  body {
+    /* background-color: yellow; */
+    background-position: -200px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    /* background-color: purple; */
+    padding-right: 60px;
+  }
 }

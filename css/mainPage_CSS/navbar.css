@@ -1,12 +1,18 @@
 .navbar,
 .navbar_menu {
-    /* background: #bb5a00; */
     background-color: #B02000;
     opacity: 0.96;
+    padding: 9px 0px 9px 0px;
+    display: flex;
     gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    /* margin-left: 30px; */
+    z-index: 1;
+    zoom: 55%;
 }
 
 .navbar_profil_text {
@@ -26,9 +32,7 @@
 
 .search-container {
     position: relative;
-    /* Change position to relative */
     margin-top: 10px;
-    /* Add margin to separate search bar from navbar */
 }
 
 #search-results-container {
@@ -39,7 +43,6 @@
     transform: translateX(-50%);
     z-index: 1;
     background-color: white;
-    /* border: 4px solid #ff9900; */
     border-top: none !important;
     width: calc(100% - 45px);
     max-height: 420px;
@@ -49,22 +52,18 @@
     font-size: 30px !important;
 }
 
-/* Width */
 #search-results-container::-webkit-scrollbar {
     width: 20px;
 }
 
-/* Track */
 #search-results-container::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
-/* Handle */
 #search-results-container::-webkit-scrollbar-thumb {
     background: #ff9900;
 }
 
-/* Handle on hover */
 #search-results-container::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
@@ -152,13 +151,14 @@ a:hover {
     top: 107px;
 }
 
-
-
-
-
 .dropdown_profil {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .dropdown_content_profil {
@@ -179,6 +179,7 @@ a:hover {
     padding: 10px;
     opacity: 0;
     right: -100px;
+    top: 70px;
     transition: opacity 0.3s ease;
     text-align: center;
 }
@@ -208,3 +209,87 @@ a:hover {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+
+.usersvg {
+    width: auto;
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    body {
+      /* background-color: turquoise; */
+      background-image: none;
+      padding-right: 0px;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+  
+      .logo {
+        position: absolute;
+        top: -130px;
+        background-position: center;
+      }
+  
+      .border {
+        border: none;
+      };
+    }
+  }
+  
+  @media (min-width: 375px) and (max-width: 425px) {
+    body {
+      /* background-color: violet; */
+      background-image: none;
+      padding-right: 0px;
+      flex-wrap: wrap;
+      align-items: center;
+      align-content: center;
+      
+  
+      .logo {
+        position: absolute;
+        top: -130px;
+        background-position: center;
+      }
+    }
+  }
+  
+  @media (min-width: 425px) and (max-width: 721px) {
+    body {
+      /* background-color: blue; */
+      background-image: none;
+      padding-right: 5px;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (min-width: 721px) and (max-width: 768px) {
+    body {
+      /* background-color: red; */
+      background-position: -500px;
+      padding-right: 50px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 992px) {
+    body {
+      /* background-color: green; */
+      background-position: -500px;
+      padding-right: 100px;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    body {
+      /* background-color: yellow; */
+      background-position: -200px;
+      padding-right: 100px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    body {
+      /* background-color: purple; */
+      padding-right: 60px;
+    }
+  }

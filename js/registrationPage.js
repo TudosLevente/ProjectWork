@@ -36,11 +36,11 @@ function RegButton() {
 
     })
 
-    var button = document.querySelector('.regisztralas');
-    button.style.fontSize = '31px';
+    var button = document.querySelector('.regButton-frame');
+    button.style.fontSize = '20px';
     button.innerText = 'Sikeres regisztráció';
     button.style.borderColor = 'green';
-    button.style.backgroundColor = 'green';
+    button.style.backgroundColor = 'green'
 
     setTimeout(function () {
         window.location.href = '../html/loginPage.html';

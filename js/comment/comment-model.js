@@ -52,6 +52,7 @@ async function uploadComment(req, res) {
 
             if (checkForSwearWords(comment.comment_text, data)) {
                 //felugró ablak, hogy a komment káromkodást tartalmaz így az nem elküldhető
+                console.log("káromkodás");
                 return;
             }
         });

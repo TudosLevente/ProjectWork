@@ -3,7 +3,6 @@ function generateNumber() {
 }
 
 function loadRecipes() {
-    console.log("function is running");
     for (var i = 1; i < 3; i++) {
         for (var j = 1; j < 5; j++) {
             (function (i, j) {
@@ -49,21 +48,28 @@ function loadRecipes() {
             })(i, j);
         }
     }
+}
 
-    for (var i = 1; i < 19; i++) {
-        getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
-            var ajanlat = document.getElementById(`ajanlat_id_${i}`);
-            if (ajanlat) {
-                ajanlat.src = recipeData[0][0].Picture_data;;
-                var uj_set_id = ajanlat.parentElement;
-                console.log(uj_set_id);
-                uj_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
-            } else {
-                console.error("Error");
-            }
-        }).catch((error) => {
-            console.error("Error occurred:", error);
-        });
+function loadAjanlat() {
+    for (var k = 1; k < 19; k++) {
+        (function (k) {
+            var id = generateNumber();
+            getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
+                if (recipeData) {
+                    var ajanlat = document.getElementById(`ajanlat_id_${k}`);
+                    if (ajanlat) {
+                        ajanlat.src = recipeData[0][0].Picture_data;;
+                        var uj_set_id = ajanlat.parentElement;
+                        uj_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
+                        console.log(uj_set_id);
+                    } else {
+                        console.error("Error");
+                    }
+                }
+            }).catch((error) => {
+                console.error("Error occurred:", error);
+            });
+        })(k);
     }
 }
 
@@ -163,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error('Error:', error);
     });
     loadRecipes();
+    loadAjanlat();
 });
 
 function goToRecipe(buttondId) {

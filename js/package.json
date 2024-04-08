@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --delay 1000ms App/App.js" 
+    "start": "nodemon --delay 1000ms App/App.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "config": "^3.3.9",
     "cors": "^2.8.5",
+    "cypress": "^13.7.2",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",

@@ -5,14 +5,19 @@ const Comment = require("./comment");
 
 function getCommentContent(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
-    })
+    });
+
     con.query('CALL getCommentContent(?)', [req.params['id']], (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 function checkForSwearWords(message, swearWordsData) {
@@ -47,19 +52,11 @@ async function uploadComment(req, res) {
 
             if (checkForSwearWords(comment.comment_text, data)) {
                 //felugró ablak, hogy a komment káromkodást tartalmaz így az nem elküldhető
-                console.log("Csúnya szó!");
                 return;
-            }
-            else {
-                console.log("Hurrá nincs csúnya szó!");
             }
         });
 
         var con = mysql.createConnection(config.database);
-        con.connect(function (err) {
-            if (err) throw err;
-            console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
-        })
 
         const date = new Date();
 
@@ -73,11 +70,13 @@ async function uploadComment(req, res) {
                 if (result === undefined) {
                     return;
                 }
-                console.log('Sikeres komment feltöltés!');
-                console.log(result)
                 res.send(comment);
-            })
-        })
+            });
+
+            con.end(function (err) {
+                if (err) throw err;
+            });
+        });
     } catch (err) { }
 
 }

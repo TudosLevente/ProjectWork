@@ -6,24 +6,33 @@ function getRecipeInfos(req, res) {
     var con = mysql.createConnection(config.database);
     con.connect(function (err) {
         if (err) throw err;
-        console.log('A recept adatok lekérése sikeres.\n');
-    })
+    });
+
     con.query('CALL getRecipeInfos(?) ', [req.params['id']], (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 function loadRecipeInfos(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('A recept adatok lekérése sikeres.\n');
-    })
+    });
+
     con.query('CALL loadRecipeInfos(?) ', [req.params['id']], (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 async function uploadRecipe(req, res) {
@@ -55,8 +64,7 @@ async function uploadRecipe(req, res) {
     var con = mysql.createConnection(config.database);
     con.connect(function (err) {
         if (err) throw err;
-        console.log('Csatlakozva a recept feltöltéshez.');
-    })
+    });
 
     const sql = 'INSERT INTO Recipes (User_ID,Picture_data,Title,Description,Instructions,Serving,Difficulty_Level,Food_Category,Date_Created) Values (?,?,?,?,?,?,?,?,?)';
 
@@ -94,11 +102,7 @@ async function uploadRecipe(req, res) {
                         });
                     });
 
-                    console.log(result[0].Ingredient_ID);
                     ingredient_id = result[0].Ingredient_ID;
-
-                    console.log(recipe.ingredient_measurement[i]);
-                    console.log(recipe.ingredient_quantity[i]);
 
                     const insertResult = await new Promise((resolve, reject) => {
                         con.query('INSERT INTO Recipe_Ingredients (Recipe_ID,Ingredient_ID,Quantity,Measurement) VALUES (?,?,?,?)', [recipe.recipe_id, ingredient_id, recipe.ingredient_quantity[i], recipe.ingredient_measurement[i]], (err, result) => {
@@ -106,8 +110,6 @@ async function uploadRecipe(req, res) {
                             resolve(result)
                         });
                     });
-
-                    console.log(insertResult);
                 } catch (err) {
                     console.error(err);
                 }
@@ -122,17 +124,14 @@ async function uploadRecipe(req, res) {
 
             con.query('INSERT INTO Time (Recipe_ID,Time_Prep_Type,Time_Quantity,Time_Type) VALUES (?,?,?,?)', [recipe.recipe_id, timePrepType, timeQuantity, timeType], (err, result) => {
                 if (err) throw err;
-
             });
         };
 
         con.connect(function (err) {
             if (err) throw err;
-            console.log('Sikeres feltöltés!');
-            console.log(result)
             res.status(200).send(recipe);
-        })
-    })
+        });
+    });
 }
 
 exports.getRecipeInfos = getRecipeInfos;

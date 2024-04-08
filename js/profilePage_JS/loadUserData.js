@@ -3,7 +3,6 @@ var email_response = "";
 
 document.addEventListener('DOMContentLoaded', function () {
     getData('/getLoggedInUserData').then((response) => {
-        console.log(response);
         if (response.loggedIn === false) {
             window.location.href = '/';
         }

@@ -25,11 +25,6 @@ app.post('/getLoginInfo', (req, res) => {
     loggedInUserData.user_id = req.body.user_id;
     loggedInUserData.username = req.body.username;
     loggedInUserData.email = req.body.email;
-
-    console.log(loggedInUserData.loggedIn);
-    console.log(loggedInUserData.user_id);
-    console.log(loggedInUserData.username);
-    console.log(loggedInUserData.email);
 })
 
 app.get('/logout', (req, res) => {
@@ -43,7 +38,6 @@ app.get('/logout', (req, res) => {
 
 app.get('/', (req, res) => {
     if (loggedInUserData.loggedIn) {
-        console.log("a loggedIn főoldal fut");
         //res.send(loggedInUserData);
         res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));
     }
@@ -81,7 +75,6 @@ app.post('/sendEmail', (req, res) => {
             console.error(error);
             res.status(500).send('Az emailt nem sikerült elküldeni.' + error.message);
         } else {
-            console.log('Email sent: ' + info.response);
             res.status(200).send('Email sikeresen elküldve!');
         }
     });

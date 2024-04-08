@@ -58,9 +58,6 @@ var loggedInUserData = {
     email: "",
 };
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     getData('/getLoggedInUserData').then((response) => {
         if (response.loggedIn) {
@@ -71,38 +68,78 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (loggedInUserData.loggedIn) {
-            console.log("logged in");
 
             const login_or_profil_div = document.getElementById('login_or_profil');
 
             const addedProfil = document.createElement('div');
             addedProfil.className = "dropdown_profil dropdown";
 
-            addedProfil.innerHTML = `
-                <a href="../../html/profilePage.html" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
-                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                    <a href="../../html/profilePage.html" onclick="showAdataim()">Adataim<img
-                            src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
-                    <a href="../../html/recipeUpload.html" onclick="showRecepjeim()">Recept feltöltése<img
-                            src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
-                    <a href="#" onclick="logout()">Kijelentkezés<img
-                            src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
-                </div>
-            `;
+            const profilText = document.createElement('a');
+            profilText.href = "../../html/profilePage.html";
+            profilText.className = "navbar_profil_text";
+            profilText.onclick = "showDropdown();";
+            profilText.innerHTML = "Profil";
+
+            addedProfil.appendChild(profilText);
+
+            const dropdownDiv = document.createElement('div');
+            dropdownDiv.className = "dropdown_content_profil dropdown-content";
+            dropdownDiv.id = "myDropdown";
+
+            const profilGearIcon = document.createElement('img');
+            profilGearIcon.src = "../images/profilePage_Images/gear.svg";
+            profilGearIcon.className = "gear_icon";
+
+            const adataimLink = document.createElement('a');
+            adataimLink.href = "../../html/profilePage.html";
+            adataimLink.onclick = "showAdataim();";
+            adataimLink.innerHTML = "Adataim";
+
+            adataimLink.appendChild(profilGearIcon);
+
+            const recipeGearIcon = document.createElement('img');
+            recipeGearIcon.src = "../images/profilePage_Images/recipebook.svg";
+            recipeGearIcon.className = "gear_icon";
+
+            const receptFeltoltes = document.createElement('a');
+            receptFeltoltes.href = "../../html/recipeUpload.html";
+            receptFeltoltes.onclick = "showRecepjeim();";
+            receptFeltoltes.innerHTML = "Recept feltöltése";
+
+            receptFeltoltes.appendChild(recipeGearIcon);
+
+            const logoutGearIcon = document.createElement('img');
+            logoutGearIcon.src = "../images/profilePage_Images/logout.svg";
+            logoutGearIcon.className = "logout_icon";
+
+            const logout = document.createElement('a');
+            logout.href = "#";
+            logout.onclick = "logout();";
+            logout.innerHTML = "Kijelentkezés";
+
+            logout.appendChild(logoutGearIcon);
+
+            dropdownDiv.appendChild(adataimLink);
+            dropdownDiv.appendChild(receptFeltoltes);
+            dropdownDiv.appendChild(logout);
+
+            addedProfil.appendChild(dropdownDiv);
 
             login_or_profil_div.appendChild(addedProfil);
         }
         else if (!loggedInUserData.loggedIn) {
-            console.log("not logged in");
 
             const login_or_profil_div = document.getElementById('login_or_profil');
 
             const addedLogin = document.createElement('div');
             addedLogin.className = "login-div";
 
-            addedLogin.innerHTML = `
-                <a href="../html/loginPage.html" class="login-text">Bejelentkezés</a>
-            `;
+            const bejelentkezes = document.createElement('a');
+            bejelentkezes.href = "../html/loginPage.html";
+            bejelentkezes.className = "login-text";
+            bejelentkezes.innerHTML = "Bejelentkezés";
+
+            addedLogin.appendChild(bejelentkezes);
 
             login_or_profil_div.appendChild(addedLogin);
         }

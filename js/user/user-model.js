@@ -6,56 +6,74 @@ const User = require("./user");
 // ez a függvény visszaadja az összes felhasználó adatát
 function getAllUserInfos(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('sikeres csatlakozás');
-    })
+    });
+
     con.query('select * from Users', (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 function getUserDataFromId(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
         console.log('sikeres csatlakozás');
-    })
+    });
+
     con.query('CALL getAllUserInfos(?) ', [req.params['id']], (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 function getUserRecipes(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('sikeres csatlakozás');
-    })
+    });
+
     con.query('CALL getAllUserRecipes(?) ', [req.params['id']], (err, result) => {
         if (err) throw err;
         res.send(result);
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 function updateUser(req, res) {
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('Sikeres csatlakozás az adatbázishoz!\nJó szórakozást!');
-    })
+    });
 
     const sql = 'CALL UpdateUser(?,?,?)';
 
     con.query(sql, [req.body.user_id, req.body.new_username, req.body.new_email], (err, result) => {
         con.connect(function (err) {
             if (err) throw err;
-            console.log('Sikeres feltöltés!');
-            console.log(result)
         })
-    })
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
 }
 
 // Ez a függvény regisztrál egy új felhasználót és lementi az adatbázisba
@@ -70,10 +88,10 @@ async function regUser(req, res) {
     //ecryptedPw = await bcrypt.hash(password,10);       
 
     var con = mysql.createConnection(config.database);
+
     con.connect(function (err) {
         if (err) throw err;
-        console.log('sikeres csatlakozás');
-    })
+    });
 
     const sql = 'INSERT INTO Users (Username,Email,Password) values (?,?,?)';
     con.query(sql, [req.body.username, req.body.email, req.body.password], (err, result) => {
@@ -89,17 +107,16 @@ async function regUser(req, res) {
             });
         user.token = "regeltFelh";
         user.user_id = result.insertId;
-        console.log(user.user_id)
+
         con.connect(function (err) {
             if (err) throw err;
-            console.log('sikeres csatlakozás');
-        })
+        });
+
         con.query('call felhTokenFrissites(?,?)', [user.user_id, token], (err, result, fields) => {
             if (err) throw err;
-            console.log(user.token)
             res.send(user);
-        })
-    })
+        });
+    });
 }
 
 exports.getAllUserInfos = getAllUserInfos

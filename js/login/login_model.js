@@ -4,19 +4,17 @@ const jwt = require("jsonwebtoken");
 var userLoggedIn = false;
 
 function adminLogin(req, res) {
-
     try {
         const { email, password } = req.body;
-        console.log(req.body);
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
+
         var con = mysql.createConnection(config.database);
 
         con.connect(function (err) {
             if (err) throw err;
-            console.log('sikeres csatlakozás');
-        })
+        });
 
         const sql = 'CALL adminBejelentkezes(?,?)';
 
@@ -42,7 +40,11 @@ function adminLogin(req, res) {
             else {
                 res.status(401).send("nem engedélyezett");
             }
-        })
+        });
+
+        con.end(function (err) {
+            if (err) throw err;
+        });
     } catch (error) {
 
     }
@@ -50,27 +52,21 @@ function adminLogin(req, res) {
 
 
 function login(req, res) {
-
     try {
-        console.log(req.body);
         const { email, password } = req.body;
-        console.log(email);
-        console.log(password);
         if (!(email && password)) {
             res.status(400).send("Töltsd ki az összes adatot!");
         }
         var con = mysql.createConnection(config.database);
+
         con.connect(function (err) {
             if (err) throw err;
-            console.log('sikeres csatlakozás (login)');
-        })
+        });
 
         const sql = 'SELECT felhBejelentkezes(?,?)';
         con.query(sql, [email, password], (err, result) => {
             if (err) throw err;
-            console.log('result:', result);
             if (result.length > 0 && Object.values(result[0])[0] > 0) {
-                console.log('call-on belül nincs error');
 
                 const functionResult = result[0];
                 const functionCall = Object.keys(functionResult)[0];
@@ -93,8 +89,6 @@ function login(req, res) {
 
                 con.query(getUserDataQuery, [matches[0].replace(/'/g, '')], (err, result, fields) => {
                     if (err) throw err;
-                    console.log(result);
-                    console.log(result[0].User_ID, result[0].Username, result[0].Email);
 
                     loggedInUserData.logged_user_id = result[0].User_ID;
                     loggedInUserData.logged_username = result[0].Username;
@@ -112,8 +106,8 @@ function login(req, res) {
                             email: loggedInUserData.logged_email
                         };
                         res.status(200).send(resData);
-                    })
-                })
+                    });
+                });
             }
             else {
                 res.status(401).send("Nem engedélyezett");

@@ -17,7 +17,7 @@ async function postData(url = "", data = {}) {
         },
         body: JSON.stringify(data),
     })
-    console.log(response);
+    //console.log(response);
     return response;
 };
 
@@ -29,7 +29,7 @@ async function deleteData(url = "", data = {}) {
         },
         body: JSON.stringify(data),
     })
-    console.log(response);
+    //console.log(response);
     return response;
 };
 
@@ -41,7 +41,7 @@ async function putData(url = "", data = {}) {
         },
         body: JSON.stringify(data),
     })
-    console.log(response);
+    //console.log(response);
     return response;
 };
 
@@ -58,7 +58,7 @@ async function postFormData(url = "", formData = {}) {
         }
 
         const responseData = await response.json();
-        console.log(responseData);
+        //console.log(responseData);
         return responseData;
     } catch (error) {
         console.error('Error:', error);

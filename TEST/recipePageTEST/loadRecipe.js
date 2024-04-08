@@ -22,17 +22,56 @@ document.addEventListener('DOMContentLoaded', function () {
             const addedProfil = document.createElement('div');
             addedProfil.className = "dropdown_profil dropdown";
 
-            addedProfil.innerHTML = `
-                <a href="#" class="navbar_profil_text" onclick="showDropdown()">Profil</a>
-                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                    <a href="../../html/profilePage.html" onclick="showAdataim()">Adataim<img
-                            src="../images/profilePage_Images/gear.svg" class="gear_icon"></a>
-                    <a href="../../html/recipeUpload.html" onclick="showRecepjeim()">Recept feltöltése<img
-                            src="../images/profilePage_Images/recipebook.svg" class="gear_icon"></a>
-                    <a href="#" onclick="logout()">Kijelentkezés<img
-                            src="../images/profilePage_Images/logout.svg" class="logout_icon"></a>
-                </div>
-            `;
+            const profilText = document.createElement('a');
+            profilText.href = "../../html/profilePage.html";
+            profilText.className = "navbar_profil_text";
+            profilText.onclick = "showDropdown();";
+            profilText.innerHTML = "Profil";
+
+            addedProfil.appendChild(profilText);
+
+            const dropdownDiv = document.createElement('div');
+            dropdownDiv.className = "dropdown_content_profil dropdown-content";
+            dropdownDiv.id = "myDropdown";
+
+            const profilGearIcon = document.createElement('img');
+            profilGearIcon.src = "../images/profilePage_Images/gear.svg";
+            profilGearIcon.className = "gear_icon";
+
+            const adataimLink = document.createElement('a');
+            adataimLink.href = "../../html/profilePage.html";
+            adataimLink.onclick = "showAdataim();";
+            adataimLink.innerHTML = "Adataim";
+
+            adataimLink.appendChild(profilGearIcon);
+
+            const recipeGearIcon = document.createElement('img');
+            recipeGearIcon.src = "../images/profilePage_Images/recipebook.svg";
+            recipeGearIcon.className = "gear_icon";
+
+            const receptFeltoltes = document.createElement('a');
+            receptFeltoltes.href = "../../html/recipeUpload.html";
+            receptFeltoltes.onclick = "showRecepjeim();";
+            receptFeltoltes.innerHTML = "Recept feltöltése";
+
+            receptFeltoltes.appendChild(recipeGearIcon);
+
+            const logoutGearIcon = document.createElement('img');
+            logoutGearIcon.src = "../images/profilePage_Images/logout.svg";
+            logoutGearIcon.className = "logout_icon";
+
+            const logout = document.createElement('a');
+            logout.href = "#";
+            logout.onclick = "logout();";
+            logout.innerHTML = "Kijelentkezés";
+
+            logout.appendChild(logoutGearIcon);
+
+            dropdownDiv.appendChild(adataimLink);
+            dropdownDiv.appendChild(receptFeltoltes);
+            dropdownDiv.appendChild(logout);
+
+            addedProfil.appendChild(dropdownDiv);
 
             login_or_profil_div.appendChild(addedProfil);
         }
@@ -44,9 +83,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const addedLogin = document.createElement('div');
             addedLogin.className = "login-div";
 
-            addedLogin.innerHTML = `
-                <a href="../html/loginPage.html" class="login-text">Bejelentkezés</a>
-            `;
+            const bejelentkezes = document.createElement('a');
+            bejelentkezes.href = "../html/loginPage.html";
+            bejelentkezes.className = "login-text";
+            bejelentkezes.innerHTML = "Bejelentkezés";
+
+            addedLogin.appendChild(bejelentkezes);
 
             login_or_profil_div.appendChild(addedLogin);
         }
@@ -55,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
             getData(`http://localhost:8000/api/getFavorites/${loggedInUserId}`).then((response) => {
                 if (response[0].length != 0) {
                     if (response[0][0].Recipe_ID == recipeId) {
-                        console.log("ez a recept kedvenc");
                         var heartIcon = document.getElementById("heartIcon");
                         heartIcon.src = "./red_heart_icon.png";
                     }
@@ -70,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     getData('/api/recipe/' + recipeId).then((response) => {
-        console.log(response);
         document.getElementById('title').innerHTML = response[0][0].Recipes_Title;
         document.getElementById('description').innerHTML = response[0][0].Recipes_Description;
 
@@ -127,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).then(
         getData(`/api/getComment/${recipeId}`).then((response) => {
             for (let i = 0; i < response[0].length; i++) {
-                insertCommentsIntoHTML(response[0][i].Comment_Text, response[0][i].Date_Posted, response[0][i].Username);
+                insertCommentsIntoHTML(response[0][i].Comment_Text, response[0][i].Date_Posted, response[0][i].Username, response[0][i].Comment_ID);
             }
         })
     ).then((response) => {
@@ -212,11 +252,16 @@ function insertCookingTimeIntoHTML(text) {
     });
 }
 
-function insertCommentsIntoHTML(Comment_Text, Date_Posted, username) {
+function insertCommentsIntoHTML(Comment_Text, Date_Posted, username, Comment_ID) {
+    if (document.getElementById("comment_" + Comment_ID)) {
+        return;
+    }
+
     let commentContainer = document.querySelector(".recipe-comments-commentcontainer");
 
     let mainDiv = document.createElement("div");
     mainDiv.className = "recipe-comments-commentcontainer-1";
+    mainDiv.id = "comment_" + Comment_ID;
 
     let titleDiv = document.createElement("div");
     titleDiv.className = "recipe-comments-commentcontainer-1-title";
@@ -246,7 +291,6 @@ function insertCommentsIntoHTML(Comment_Text, Date_Posted, username) {
     mainDiv.appendChild(lineDiv);
 
     commentContainer.appendChild(mainDiv);
-
 }
 
 function insertIngredientsIntoHTML(text) {
@@ -287,8 +331,6 @@ function addToFavorites() {
         if (currentSrc.includes("uncolored")) {
             postData('http://localhost:8000/api/addFavorite', favoriteData)
                 .then((res) => {
-                    console.log(res);
-                    console.log("Recept sikeresen felvéve a kedvencekhez!")
                     heartIcon.src = "./red_heart_icon.png";
                 })
                 .catch((err) => {
@@ -297,8 +339,6 @@ function addToFavorites() {
         } else {
             deleteData('http://localhost:8000/api/removeFavorite', favoriteData)
                 .then((res) => {
-                    console.log(res);
-                    console.log("Recept sikeresen törölve a kedvencekből!")
                     heartIcon.src = "./uncolored_heart_icon.png";
                 })
                 .catch((err) => {

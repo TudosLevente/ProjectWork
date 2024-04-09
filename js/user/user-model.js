@@ -83,8 +83,6 @@ async function regUser(req, res) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
-    //ecryptedPw = await bcrypt.hash(password,10);       
-
     var con = mysql.createConnection(config.database);
 
     con.connect(function (err) {
@@ -131,7 +129,6 @@ async function deleteUser(req, res) {
         await new Promise((resolve, reject) => {
             con.query('DELETE FROM users WHERE email = ?', [req.body.email], (err, result) => {
                 if (err) reject(err);
-                // console.log('Deleted user with email:', req.body.email);
                 resolve(result);
             });
         });
@@ -139,7 +136,6 @@ async function deleteUser(req, res) {
         await new Promise((resolve, reject) => {
             con.end((err) => {
                 if (err) reject(err);
-                // console.log('Database connection closed');
                 resolve();
             });
         });

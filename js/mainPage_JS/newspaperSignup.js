@@ -4,7 +4,6 @@ function signUpnewspaper() {
     var newspapersignup_form_email_input = document.querySelector('#newspapersignup_form_email_input');
 
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // var emailRegex = /^[^\s@]+@?[^\s@]+\.[^\s@]+\.[^\s@]+$/;
 
     if (newspapersignup_form_email_input.value.trim().length > 0 && emailRegex.test(newspapersignup_form_email_input.value.trim())) {
         newspapersignup_form.style.display = 'none';

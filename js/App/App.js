@@ -38,7 +38,6 @@ app.get('/logout', (req, res) => {
 
 app.get('/', (req, res) => {
     if (loggedInUserData.loggedIn) {
-        //res.send(loggedInUserData);
         res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));
     }
     else {

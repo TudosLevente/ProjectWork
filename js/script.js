@@ -1,6 +1,6 @@
 async function getData(url = "") {
     const response = await fetch(url, {
-        method: "GET", // POST, PUT, DELETE ...       
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer <token>"
@@ -11,37 +11,34 @@ async function getData(url = "") {
 
 async function postData(url = "", data = {}) {
     const response = await fetch(url, {
-        method: "POST", // POST, PUT, DELETE ...       
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
     })
-    //console.log(response);
     return response;
 };
 
 async function deleteData(url = "", data = {}) {
     const response = await fetch(url, {
-        method: "DELETE", // POST, PUT, DELETE ...       
+        method: "DELETE",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
     })
-    //console.log(response);
     return response;
 };
 
 async function putData(url = "", data = {}) {
     const response = await fetch(url, {
-        method: "PUT", // POST, PUT, DELETE ...       
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
     })
-    //console.log(response);
     return response;
 };
 
@@ -49,7 +46,7 @@ async function putData(url = "", data = {}) {
 async function postFormData(url = "", formData = {}) {
     try {
         const response = await fetch(url, {
-            method: "POST", // POST, PUT, DELETE ... 
+            method: "POST",
             body: formData
         });
 
@@ -58,10 +55,9 @@ async function postFormData(url = "", formData = {}) {
         }
 
         const responseData = await response.json();
-        //console.log(responseData);
         return responseData;
     } catch (error) {
         console.error('Error:', error);
-        throw error; // rethrow the error for the caller to handle
+        throw error;
     }
 };

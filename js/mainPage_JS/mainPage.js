@@ -61,7 +61,6 @@ function loadAjanlat() {
                         ajanlat.src = recipeData[0][0].Picture_data;;
                         var uj_set_id = ajanlat.parentElement;
                         uj_set_id.setAttribute('id', recipeData[0][0].Recipe_ID);
-                        console.log(uj_set_id);
                     } else {
                         console.error("Error");
                     }
@@ -187,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function adjustMouseScroll(event) {
-    // console.log('user scrolling')
     event.deltaY *= 0.1;
 }
 
@@ -206,7 +204,6 @@ function sendEmail() {
 
     postData('/sendEmail', emailData)
         .then((response) => {
-            //console.log(response);
         });
 
     document.getElementById('sender_name').value = '';

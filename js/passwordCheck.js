@@ -1,5 +1,3 @@
-// var containsSpecialChar = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(inputValue.value);
-
 function checkLength(styleName, inputLength) {
     if (inputLength >= 5) {
         styleName.style.backgroundColor = "green";

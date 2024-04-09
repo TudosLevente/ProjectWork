@@ -37,8 +37,8 @@ function loadRecipeInfos(req, res) {
 
 async function uploadRecipe(req, res) {
     const recipe = new Recipe(
-        null, //recept id, ami feltöltéskor adodik majd hozzá
-        null, //user id, az éppen bejelentkezett user-nek az id-je
+        null,
+        null,
         req.body.picture_data,
         req.body.title,
         req.body.description,
@@ -54,7 +54,7 @@ async function uploadRecipe(req, res) {
         req.body.serving,
         req.body.difficulty_level,
         req.body.food_category,
-        null //ez a feltöltési dátum ideje
+        null
     );
 
     if (!(recipe.picture_data && recipe.title && recipe.description && recipe.instructions && recipe.ingredient_name && recipe.ingredient_quantity && recipe.ingredient_measurement && recipe.time_prep_type && recipe.time_quantity && recipe.time_type && recipe.serving && recipe.difficulty_level && recipe.food_category)) {
@@ -80,7 +80,7 @@ async function uploadRecipe(req, res) {
 
     var concatenatedInstructions = concatenatedTitlesAndInputs(recipe.instructions);
 
-    recipe.user_id = req.body.user_id; //le kell kérni majd a szerverről
+    recipe.user_id = req.body.user_id;
 
     const date = new Date();
 
@@ -88,7 +88,7 @@ async function uploadRecipe(req, res) {
 
     con.query(sql, [recipe.user_id, req.body.picture_data, req.body.title, req.body.description, concatenatedInstructions, req.body.serving, req.body.difficulty_level, req.body.food_category, recipe.date_created], (err, result) => {
         if (err) throw err;
-        recipe.recipe_id = result.insertId; //ez majd a létrehozott id-nek kell lennie
+        recipe.recipe_id = result.insertId;
 
         var ingredient_id = null;
 

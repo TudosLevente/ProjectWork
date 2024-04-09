@@ -6,15 +6,14 @@ module.exports = class Recipe {
     description = "";
     instructions = "";
 
-    //hozzávaló adatok
-    ingredient_name = {}; //pl. Cukor
-    ingredient_quantity = ""; //pl. 1
-    ingredient_measurement = ""; //pl. g, dkg, kg
+    ingredient_name = {};
+    ingredient_quantity = "";
+    ingredient_measurement = "";
 
-    //idő adatok
-    time_prep_type = ""; //pl. előkészület
-    time_quantity = ""; //pl. 1
-    time_type = ""; //pl. óra, perc, nap
+
+    time_prep_type = "";
+    time_quantity = "";
+    time_type = "";
 
     serving = 0;
     difficulty_level = "";

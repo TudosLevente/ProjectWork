@@ -214,101 +214,146 @@ a:hover {
     width: auto;
 }
 
-@media (max-width: 992px) {
-    .navbar_searchbar {
-        font-size: 23px;
-        height: 70px;
+@media (min-width: 375px) and (max-width: 425px) {
+    .navbar_foobhub_logo_text {
+        display: none;
     }
 
-    .navbar_logo {
+    .navbar-nav {
+        flex-direction: row !important;
         display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        position: relative;
-        gap: 10px;
-        width: 100px;
+    }
+}
 
-        .logo {
-            width: 100px;
-            height: auto;
-        }
+@media (min-width: 425px) and (max-width: 721px) {
 
-        .navbar_foobhub_logo_text {
-            display: none;
-        }
+    .navbar_searchbar {
+        font-size: 35px;
     }
 
     .menuitems_row {
-        /* #navRecipeLink_navbar4_navitem,
-        #navRecipeLink_navbar5_navitem,
-        #navRecipeLink_navbar6_navitem,
-        #navRecipeLink_ajánlatunk
-        {
-            display: none;
-        } */
+        display: none !important;
     }
 
-    .navbarmenulist {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 10px;
-    }
-
-    .profil_text {
-        top: 100px !important;
-    }
-
-    .menu_div {
-        width: 70%
-    }
-
-    .main_div {
-        width: 70%
-    }
-
-    .my_data_div {
-        padding: 20px
+    .dropdown_content_kategoriak {
+        display: none !important;
     }
 
     .navbar_profil_text {
         display: none;
     }
-}
 
-@media (max-width: 1340px) {
-    .navbar_foobhub_logo_text {
-        width: 200px;
-    }
-
-    .navbar_searchbar {
-        font-size: 23px;
-        height: 70px;
-    }
-
-    .profil_text {
-        top: 120px;
-    }
-
-    .menu_div {
-        width: 90%
-    }
-
-    .main_div {
-        width: 90%
-    }
-
-    .my_data_div {
-        padding: 20px
-    }
-
-    .data_div_container {
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
         justify-content: space-between;
+        align-content: center;
         align-items: center;
-        top: 100px;
+    }
+
+    .navbar_profil_login {
+        width: 15% !important;
+        position: relative;
+    }
+
+    /* .justify-content-end {
+        justify-content: none !important;
+    } */
+
+    .navbar_middle {
+        width: 50% !important;
+    }
+
+    .navbarlogo {
+        width: 25% !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
     }
 }
 
-.login_div {
+@media (min-width: 721px) and (max-width: 768px) {
+
+    .dropdown_content_kategoriak {
+        display: none !important;
+    }
+
+    .navbar_profil_text {
+        display: none;
+    }
+
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    .navbar_profil_login {
+        width: 50px !important;
+    }
+
+    .justify-content-end {
+        justify-content: none !important;
+    }
+
+    .navbar_middle {
+        width: 700px !important;
+    }
+
+    .navbarlogo {
+        width: 200px !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
 
 }
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar_profil_text {
+        display: none;
+    }
+
+    .navbarlogo {
+        width: 200px !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {}
+
+@media (min-width: 1200px) {}

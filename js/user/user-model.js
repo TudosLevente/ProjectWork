@@ -83,6 +83,8 @@ async function regUser(req, res) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
+    //ecryptedPw = await bcrypt.hash(password,10);       
+
     var con = mysql.createConnection(config.database);
 
     con.connect(function (err) {
@@ -115,8 +117,44 @@ async function regUser(req, res) {
     });
 }
 
+async function deleteUser(req, res) {
+    const con = mysql.createConnection(config.database);
+
+    try {
+        await new Promise((resolve, reject) => {
+            con.connect((err) => {
+                if (err) reject(err);
+                resolve();
+            });
+        });
+
+        await new Promise((resolve, reject) => {
+            con.query('DELETE FROM users WHERE email = ?', [req.body.email], (err, result) => {
+                if (err) reject(err);
+                // console.log('Deleted user with email:', req.body.email);
+                resolve(result);
+            });
+        });
+
+        await new Promise((resolve, reject) => {
+            con.end((err) => {
+                if (err) reject(err);
+                // console.log('Database connection closed');
+                resolve();
+            });
+        });
+
+        res.status(200).send('User deleted successfully');
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('An error occurred while deleting the user');
+    }
+}
+
+
 exports.getAllUserInfos = getAllUserInfos
 exports.getUserRecipes = getUserRecipes
 exports.getUserDataFromId = getUserDataFromId
 exports.regUser = regUser
 exports.updateUser = updateUser
+exports.deleteUser = deleteUser

@@ -7,5 +7,6 @@ router.get('/userRecipes/:id', user_model.getUserRecipes)
 router.get('/user/:id', user_model.getUserDataFromId);
 router.post('/regUser', user_model.regUser);
 router.put('/updateUser', user_model.updateUser);
+router.delete('/deleteUser', user_model.deleteUser);
 
 module.exports = router

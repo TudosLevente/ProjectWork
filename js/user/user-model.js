@@ -3,7 +3,6 @@ const config = require("../App/config");
 const jwt = require("jsonwebtoken");
 const User = require("./user");
 
-// ez a függvény visszaadja az összes felhasználó adatát
 function getAllUserInfos(req, res) {
     var con = mysql.createConnection(config.database);
 
@@ -76,7 +75,6 @@ function updateUser(req, res) {
     });
 }
 
-// Ez a függvény regisztrál egy új felhasználót és lementi az adatbázisba
 async function regUser(req, res) {
 
     const user = new User(null, req.body.username, req.body.email, null);
@@ -84,8 +82,6 @@ async function regUser(req, res) {
     if (!(user.username && user.email && req.body.password)) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
-
-    //ecryptedPw = await bcrypt.hash(password,10);       
 
     var con = mysql.createConnection(config.database);
 

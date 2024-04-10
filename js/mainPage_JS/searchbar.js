@@ -1,14 +1,14 @@
 const items = [
-    { title: "Apple", image: "./food 1.png", link: "#" },
-    { title: "Banana", image: "./food 1.png", link: "#" },
-    { title: "Orange", image: "./food 1.png", link: "#" },
-    { title: "Mango", image: "./food 1.png", link: "#" },
-    { title: "Grapes", image: "./food 1.png", link: "#" },
-    { title: "Pineapple", image: "./food 1.png", link: "#" },
-    { title: "Strawberry", image: "./food 1.png", link: "#" },
-    { title: "Watermelon", image: "./food 1.png", link: "#" },
-    { title: "Peach", image: "./food 1.png", link: "#" },
-    { title: "Kiwi", image: "./food 1.png", link: "#" }
+    { title: "Apple", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Banana", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Orange", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Mango", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Grapes", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Pineapple", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Strawberry", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Watermelon", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Peach", image: "../images/logo-removebg-preview.png", link: "#" },
+    { title: "Kiwi", image: "../images/logo-removebg-preview.png", link: "#" }
 ];
 let searching = false;
 function updateSearchResults(query) {
@@ -89,8 +89,10 @@ function updateSearchResults(query) {
 
             const image = document.createElement('img');
             image.src = item.image;
+            console.log(image.image);
             image.alt = item.title;
             image.style.maxWidth = '55px';
+            image.style.Width = 'auto';
             image.style.maxHeight = 'auto';
             image.style.marginRight = '20px';
 

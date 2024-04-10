@@ -1,3 +1,10 @@
+:root {
+    --lemon-greater-orange-greater-red-linear: linear-gradient(180deg,
+            rgba(238, 163, 37, 1) 0%,
+            rgba(255, 96, 0, 1) 51.5625%,
+            rgba(255, 0, 0, 1) 100%);
+}
+
 .navbar,
 .navbar_menu {
     background-color: #B02000;
@@ -53,19 +60,28 @@
 }
 
 #search-results-container::-webkit-scrollbar {
-    width: 20px;
-}
-
-#search-results-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    /* width: 25px; */
+    /* overflow-y: overlay; */
+    position: fixed;
 }
 
 #search-results-container::-webkit-scrollbar-thumb {
-    background: #ff9900;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../images/mainPage_Image/hotdogscrollbarimage.png');
 }
 
-#search-results-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+#search-results-container::-webkit-scrollbar-track {
+    background-color: #f0d8b5;
+}
+
+#search-results-container::-webkit-scrollbar-button {
+    display: none;
+}
+
+#search-results-container::-webkit-scrollbar-corner {
+    display: none;
 }
 
 .navbar_searchbar {
@@ -214,146 +230,66 @@ a:hover {
     width: auto;
 }
 
-@media (min-width: 375px) and (max-width: 425px) {
-    .navbar_foobhub_logo_text {
-        display: none;
-    }
+.hamburgermenudropdown {
+    position: relative;
+    display: inline-block;
+}
 
-    .navbar-nav {
-        flex-direction: row !important;
-        display: flex;
+.hamburgermenudropdown_content {
+    display: none;
+    position: fixed;
+    top: 130px;
+    right: 0;
+    min-width: max-content;
+    width: 200px;
+    height: max-content;
+    background-color: #B02000;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    align-content: flex-end;
+
+    .nav-link {
+        padding: 0;
     }
 }
 
-@media (min-width: 425px) and (max-width: 721px) {
-
-    .navbar_searchbar {
-        font-size: 35px;
-    }
-
-    .menuitems_row {
-        display: none !important;
-    }
-
-    .dropdown_content_kategoriak {
-        display: none !important;
-    }
-
-    .navbar_profil_text {
-        display: none;
-    }
-
-    .navbar_layout {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-    }
-
-    .navbar_profil_login {
-        width: 15% !important;
-        position: relative;
-    }
-
-    /* .justify-content-end {
-        justify-content: none !important;
-    } */
-
-    .navbar_middle {
-        width: 50% !important;
-    }
-
-    .navbarlogo {
-        width: 25% !important;
-    }
-
-    .navbar_foobhub_logo_text {
-        display: none;
-    }
-
-    .navbar-nav {
-        flex-direction: row !important;
-        display: flex;
-        gap: 10px;
-    }
-
-    .navbar_foobhub_logo_text {
-        display: none;
-    }
-
-    .navbar-nav {
-        flex-direction: row !important;
-        display: flex;
-    }
+.hamburgermenudropdown_content li {
+    list-style-type: none;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
 }
 
-@media (min-width: 721px) and (max-width: 768px) {
-
-    .dropdown_content_kategoriak {
-        display: none !important;
-    }
-
-    .navbar_profil_text {
-        display: none;
-    }
-
-    .navbar_layout {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-    }
-
-    .navbar_profil_login {
-        width: 50px !important;
-    }
-
-    .justify-content-end {
-        justify-content: none !important;
-    }
-
-    .navbar_middle {
-        width: 700px !important;
-    }
-
-    .navbarlogo {
-        width: 200px !important;
-    }
-
-    .navbar_foobhub_logo_text {
-        display: none;
-    }
-
-    .navbar-nav {
-        flex-direction: row !important;
-        display: flex;
-        gap: 10px;
-    }
-
+.hamburgermenudropdown_content a {
+    color: black;
+    font-size: 30px;
+    text-align: right !important;
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-    .navbar_profil_text {
-        display: none;
-    }
-
-    .navbarlogo {
-        width: 200px !important;
-    }
-
-    .navbar_foobhub_logo_text {
-        display: none;
-    }
-
-    .navbar-nav {
-        flex-direction: row !important;
-        display: flex;
-        gap: 10px;
-    }
+.hamburgermenudropdown_content img {
+    width: 50px;
+    margin-right: 10px;
+    z-index: 2;
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {}
+.dropdown_content_foetel_hamburgermenu {
+    display: none;
+}
 
-@media (min-width: 1200px) {}
+#hamburgermenudropdownicon {
+    transition: transform 0.3s ease;
+}
+
+.rotate-icon {
+    transform: rotate(90deg);
+}
+

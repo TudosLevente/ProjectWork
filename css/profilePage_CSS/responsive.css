@@ -1,0 +1,1144 @@
+@media (min-width: 320px) and (max-width: 375px) {
+
+    .my_data_div_button_layout {
+        justify-content: center !important;
+    }
+
+    .my_data_div {
+        top: 0px !important;
+        height: 700px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        img {
+            display: none;
+        }
+
+        .my_data_div_inputs {
+            zoom: 140%;
+            align-items: center;
+        }
+    }
+
+    .my_data_div,
+    .my_recipes_div,
+    .my_favorites_div {
+        zoom: 60%;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100%;
+        padding-bottom: 100px;
+    }
+
+    .my_recipes_div_row_container,
+    .my_favorites_div_row_container {
+        zoom: 90%;
+    }
+
+    .div_body {
+        top: 3rem !important;
+        display: flex;
+        zoom: 70%;
+    }
+
+    .main_div {
+        min-height: 700px;
+        height: max-content;
+        align-content: flex-start;
+    }
+
+    .menu_div {
+        zoom: 80%;
+    }
+
+    .data_div_container {
+        top: 9rem;
+        align-items: flex-start;
+        zoom: 97%;
+        height: 100vh;
+    }
+
+
+    #search-results-container {
+        font-size: 25px !important;
+
+        img {
+            display: none !important;
+        }
+    }
+
+    .navbar_searchbar {
+        font-size: 25px;
+    }
+
+    .menuitems_row {
+        font-size: 25px;
+
+
+        .dropdown_foetel,
+        .dropdown_desszert,
+        .dropdown_kategoriak,
+        #navRecipeLink_navbar5_navitem,
+        #navRecipeLink_navbar4_navitem,
+        #navRecipeLink_navbar6_navitem,
+        #navRecipeLink_ajánlatunk {
+            display: none !important;
+        }
+
+        #dropdown_kategoriak {
+            display: flex !important;
+        }
+    }
+
+    .dropdown_content_kategoriak {
+        display: none !important;
+    }
+
+    .hamburgermenudropdown {
+        .navbar_profil_text {
+            display: flex;
+            font-size: 25px !important;
+            padding-left: 10px !important;
+            position: relative;
+            color: white !important;
+
+            .justify-content-end {
+                justify-content: space-between !important;
+            }
+        }
+
+        .usersvg {
+            position: relative;
+            left: 50px;
+            content: url(../../images/menu-symbol.svg);
+            width: 70px;
+            filter: brightness(0) invert(1);
+        }
+
+        #dropdownprofilhamburgermenu,
+        #dropdownfoetelhamburgermenu,
+        #dropdowndesszertekhamburgermenu,
+        #dropdownkategoriak {
+            color: white !important;
+
+            .nav-link {
+                padding: 0px !important;
+            }
+        }
+
+        .dropdown_content_profil_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 153px !important;
+            bottom: -167px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+            li {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+                font-size: 25px;
+            }
+
+            /* 
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+                font-size: 25px;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            } */
+        }
+
+        .dropdown_content_foetel_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 163px !important;
+            bottom: -462px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+                font-size: 25px;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_desszertek_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 170px !important;
+            bottom: -393px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+                font-size: 25px;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+    }
+
+    .navbar_profil_text {
+        font-size: 30px !important;
+        padding-left: 10px !important;
+        position: relative;
+        color: white !important;
+        display: none;
+
+        .justify-content-end {
+            justify-content: space-between !important;
+        }
+    }
+
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    .navbar_profil_login {
+        width: 10% !important;
+        position: relative;
+        gap: 0px !important;
+    }
+
+    .navbar_middle {
+        width: 40% !important;
+        left: 30px;
+    }
+
+    .navbarlogo {
+        width: 10% !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+
+    .my_data_div_button_layout {
+        justify-content: center !important;
+    }
+
+    .my_data_div {
+        top: 0px !important;
+        height: 700px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        img {
+            display: none;
+        }
+
+        .my_data_div_inputs {
+            zoom: 140%;
+            align-items: center;
+        }
+    }
+
+    .my_data_div,
+    .my_recipes_div,
+    .my_favorites_div {
+        zoom: 60%;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100%;
+        padding-bottom: 100px;
+    }
+
+    .my_recipes_div_row_container,
+    .my_favorites_div_row_container {
+        zoom: 90%;
+    }
+
+    .div_body {
+        display: flex;
+        zoom: 80%;
+    }
+
+    .main_div {
+        min-height: 700px;
+        height: max-content;
+        align-content: flex-start;
+    }
+
+    .menu_div {
+        zoom: 80%;
+    }
+
+    .data_div_container {
+        top: 9rem;
+        align-items: flex-start;
+        zoom: 97%;
+        height: 100vh;
+    }
+
+
+    .navbar_searchbar {
+        font-size: 20px;
+    }
+
+    .menuitems_row {
+        font-size: 25px;
+
+
+        .dropdown_foetel,
+        .dropdown_desszert,
+        .dropdown_kategoriak,
+        #navRecipeLink_navbar5_navitem,
+        #navRecipeLink_navbar4_navitem,
+        #navRecipeLink_navbar6_navitem,
+        #navRecipeLink_ajánlatunk {
+            display: none !important;
+        }
+
+        #dropdown_kategoriak {
+            display: flex !important;
+        }
+    }
+
+    .dropdown_content_kategoriak {
+        display: none !important;
+    }
+
+    .hamburgermenudropdown {
+        .navbar_profil_text {
+            display: flex;
+            font-size: 30px !important;
+            padding-left: 10px !important;
+            position: relative;
+            color: white !important;
+
+            .justify-content-end {
+                justify-content: space-between !important;
+            }
+        }
+
+        .usersvg {
+            position: relative;
+            left: 50px;
+            content: url(../../images/menu-symbol.svg);
+            width: 70px;
+            filter: brightness(0) invert(1);
+        }
+
+        #dropdownprofilhamburgermenu,
+        #dropdownfoetelhamburgermenu,
+        #dropdowndesszertekhamburgermenu,
+        #dropdownkategoriak {
+            color: white !important;
+
+            .nav-link {
+                padding: 0px !important;
+            }
+        }
+
+        .dropdown_content_profil_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 153px !important;
+            bottom: -167px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_foetel_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 163px !important;
+            bottom: -462px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_desszertek_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 170px !important;
+            bottom: -393px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+    }
+
+    .navbar_profil_text {
+        font-size: 30px !important;
+        padding-left: 10px !important;
+        position: relative;
+        color: white !important;
+        display: none;
+
+        .justify-content-end {
+            justify-content: space-between !important;
+        }
+    }
+
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    .navbar_profil_login {
+        width: 10% !important;
+        position: relative;
+        gap: 0px !important;
+    }
+
+    .navbar_middle {
+        width: 60% !important;
+        left: 30px;
+    }
+
+    .navbarlogo {
+        width: 10% !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 721px) {
+    .my_data_div_button_layout {
+        justify-content: center !important;
+    }
+
+    .my_data_div {
+        top: 0px !important;
+        height: 700px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        img {
+            display: none;
+        }
+
+        .my_data_div_inputs {
+            zoom: 140%;
+            align-items: center;
+        }
+    }
+
+    .my_data_div,
+    .my_recipes_div,
+    .my_favorites_div {
+        zoom: 60%;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100%;
+        padding-bottom: 100px;
+    }
+
+    .my_recipes_div_row_container,
+    .my_favorites_div_row_container {
+        zoom: 90%;
+    }
+
+    .div_body {
+        display: flex;
+        zoom: 80%;
+    }
+
+    .main_div {
+        min-height: 700px;
+        height: max-content;
+        align-content: flex-start;
+    }
+
+    .menu_div {
+        zoom: 80%;
+    }
+
+    .data_div_container {
+        top: 9rem;
+        align-items: flex-start;
+        zoom: 97%;
+        height: 100vh;
+    }
+
+    .navbar_searchbar {
+        font-size: 20px;
+    }
+
+    .menuitems_row {
+        font-size: 25px;
+
+
+        .dropdown_foetel,
+        .dropdown_desszert,
+        .dropdown_kategoriak,
+        #navRecipeLink_navbar5_navitem,
+        #navRecipeLink_navbar4_navitem,
+        #navRecipeLink_navbar6_navitem,
+        #navRecipeLink_ajánlatunk {
+            display: none !important;
+        }
+
+        #dropdown_kategoriak {
+            display: flex !important;
+        }
+    }
+
+    .dropdown_content_kategoriak {
+        display: none !important;
+    }
+
+    .hamburgermenudropdown {
+        .navbar_profil_text {
+            display: flex;
+            font-size: 30px !important;
+            padding-left: 10px !important;
+            position: relative;
+            color: white !important;
+
+            .justify-content-end {
+                justify-content: space-between !important;
+            }
+        }
+
+        .usersvg {
+            position: relative;
+            left: 50px;
+            content: url(../../images/menu-symbol.svg);
+            width: 70px;
+            filter: brightness(0) invert(1);
+        }
+
+        #dropdownprofilhamburgermenu,
+        #dropdownfoetelhamburgermenu,
+        #dropdowndesszertekhamburgermenu,
+        #dropdownkategoriak {
+            color: white !important;
+
+            .nav-link {
+                padding: 0px !important;
+            }
+        }
+
+        .dropdown_content_profil_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 153px !important;
+            bottom: -167px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_foetel_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 163px !important;
+            bottom: -462px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_desszertek_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 170px !important;
+            bottom: -393px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+    }
+
+    .navbar_profil_text {
+        font-size: 30px !important;
+        padding-left: 10px !important;
+        position: relative;
+        color: white !important;
+        display: none;
+
+        .justify-content-end {
+            justify-content: space-between !important;
+        }
+    }
+
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    .navbar_profil_login {
+        width: 10% !important;
+        position: relative;
+        gap: 0px !important;
+    }
+
+    .navbar_middle {
+        width: 60% !important;
+        left: 30px;
+    }
+
+    .navbarlogo {
+        width: 10% !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 768px) {
+
+    .my_recipes_div_row_container,
+    .my_favorites_div_row_container {
+        zoom: 90%;
+    }
+
+    .div_body {
+        display: flex;
+        zoom: 90%;
+    }
+
+    .menu_div {
+        font-size: 20px;
+    }
+
+    .my_data_div,
+    .my_recipes_div,
+    .my_favorites_div {
+        width: 800px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .data_div_container {
+        width: 100%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        top: 5rem;
+    }
+
+    .profil_text {
+        top: 110px;
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+
+    .hamburgermenudropdown {
+        .navbar_profil_text {
+            display: flex;
+            font-size: 30px !important;
+            padding-left: 10px !important;
+            position: relative;
+            color: white !important;
+
+            .justify-content-end {
+                justify-content: space-between !important;
+            }
+        }
+
+        .usersvg {
+            position: relative;
+            left: 50px;
+            content: url(../../images/menu-symbol.svg);
+            width: 70px;
+            filter: brightness(0) invert(1);
+        }
+
+        #dropdownprofilhamburgermenu,
+        #dropdownfoetelhamburgermenu,
+        #dropdowndesszertekhamburgermenu,
+        #dropdownkategoriak {
+            color: white !important;
+
+            .nav-link {
+                padding: 0px !important;
+            }
+        }
+
+        .dropdown_content_profil_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 153px !important;
+            bottom: -167px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_foetel_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 163px !important;
+            bottom: -462px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+        .dropdown_content_desszertek_hamburgermenu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 170px !important;
+            bottom: -393px !important;
+            background-color: #B02000;
+            z-index: 2;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            align-items: flex-end;
+            padding: 10px;
+            box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 15px !important;
+            text-align: right !important;
+            width: max-content;
+
+
+            li a span {
+                color: inherit;
+                appearance: none !important;
+                text-decoration: none !important;
+                background-color: transparent !important;
+            }
+
+            a,
+            a:focus,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+                background-color: inherit !important;
+            }
+        }
+
+    }
+
+    .dropdown_content_kategoriak {
+        display: none !important;
+    }
+
+    .navbar_profil_text {
+        font-size: 30px !important;
+        padding-left: 10px !important;
+        position: relative;
+        color: white !important;
+        display: none;
+
+        .justify-content-end {
+            justify-content: space-between !important;
+        }
+    }
+
+    .navbar_layout {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    .navbar_profil_login {
+        width: 50px !important;
+    }
+
+    .justify-content-end {
+        justify-content: none !important;
+    }
+
+    .navbar_middle {
+        width: 700px !important;
+    }
+
+    .navbarlogo {
+        width: 200px !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+
+    .div_body {
+        display: flex;
+    }
+
+
+    .my_data_div,
+    .my_recipes_div,
+    .my_favorites_div {
+        width: 870px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .data_div_container {
+        width: 100%;
+        align-content: center;
+        flex-wrap: wrap;
+        top: 5rem;
+    }
+
+    .profil_text {
+        top: 110px;
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    #hamburgermenudropdownicon {
+        pointer-events: none;
+    }
+
+    .navbarlogo {
+        width: 200px !important;
+    }
+
+    .navbar_foobhub_logo_text {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row !important;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .profil_text {
+        top: 120px;
+    }
+
+    .data_div_container {
+        top: 6rem;
+    }
+
+    #hamburgermenudropdownicon {
+        pointer-events: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    #hamburgermenudropdownicon {
+        pointer-events: none;
+    }
+}

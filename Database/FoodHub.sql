@@ -1,4 +1,4 @@
--- Active: 1707314970079@@127.0.0.1@3306@foodhub
+-- Active: 1701981789402@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -386,9 +386,9 @@ delimiter ;
 
 drop procedure if exists loadRecipeInfosAdmin;
 Delimiter //
-CREATE PROCEDURE loadRecipeInfosAdmin(IN recipeID int)
+CREATE PROCEDURE loadRecipeInfosAdmin()
 BEGIN
-    SELECT * FROM Recipes WHERE Recipe_ID = recipeID AND IsVerified = FALSE;
+    SELECT * FROM Recipes WHERE IsVerified = FALSE;
 END;
 //
 delimiter ;
@@ -459,3 +459,95 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+drop procedure if exists giveAdminRole;
+Delimiter //
+CREATE PROCEDURE giveAdminRole(IN user_email VARCHAR(255))
+BEGIN
+    UPDATE Users SET IsAdmin = TRUE WHERE Users.Email = user_email;
+END;
+//
+delimiter ;
+
+drop procedure if exists deleteAdminRole;
+Delimiter //
+CREATE PROCEDURE deleteAdminRole(IN user_email VARCHAR(255))
+BEGIN
+    UPDATE Users SET IsAdmin = FALSE WHERE Users.Email = user_email;
+END;
+//
+delimiter ;
+
+drop procedure if exists getAdmins;
+Delimiter //
+CREATE PROCEDURE getAdmins(IN user_email VARCHAR(255))
+BEGIN
+    SELECT Users.Email FROM Users WHERE IsAdmin = TRUE;
+END;
+//
+delimiter ;
+
+drop procedure if exists uploadIngredient;
+Delimiter //
+CREATE PROCEDURE uploadIngredient(IN ingredientName VARCHAR(255), IN ingredientCategory VARCHAR(255))
+BEGIN
+    INSERT INTO Ingredients (Ingredient_Name, Ingredient_Category) 
+    VALUES (ingredientName, ingredientCategory);
+END;
+//
+delimiter ;
+
+drop procedure if exists removeIngredient;
+Delimiter //
+CREATE PROCEDURE removeIngredient(IN ingredient_id INT)
+BEGIN
+    DELETE FROM Ingredients WHERE Ingredients.Ingredient_ID = ingredient_id;
+END;
+//
+delimiter ;
+
+drop procedure if exists updateIngredient;
+Delimiter //
+CREATE PROCEDURE updateIngredient(IN ingredient_id INT, IN ingredientName VARCHAR(255))
+BEGIN
+    UPDATE Ingredients SET Ingredients.Ingredient_Name = ingredientName WHERE Ingredients.Ingredient_ID = ingredient_id;
+END;
+//
+delimiter ;
+
+drop procedure if exists verifyRecipe;
+Delimiter //
+CREATE PROCEDURE verifyRecipe(IN recipeid INT)
+BEGIN
+    UPDATE Recipes SET IsVerified = TRUE WHERE Recipes.Recipe_ID = recipeid;
+END;
+//
+delimiter ;
+
+
+drop procedure if exists deleteFromRecipe;
+Delimiter //
+CREATE PROCEDURE deleteFromRecipe(IN recipeid INT)
+BEGIN
+    DELETE FROM Recipes WHERE Recipes.Recipe_ID = recipeid;
+END;
+//
+delimiter ;
+
+drop procedure if exists deleteFromTime;
+Delimiter //
+CREATE PROCEDURE deleteFromTime(IN recipeid INT)
+BEGIN
+    DELETE FROM Time WHERE Time.Recipe_ID = recipeid;
+END;
+//
+delimiter ;
+
+drop procedure if exists deleteFromRecipe_Ingredients;
+Delimiter //
+CREATE PROCEDURE deleteFromRecipe_Ingredients(IN recipeid INT)
+BEGIN
+    DELETE FROM Recipe_Ingredients WHERE Time.Recipe_ID = recipeid;
+END;
+//
+delimiter ;

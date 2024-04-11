@@ -16,6 +16,7 @@
   position: relative;
   zoom: 55%;
   /* padding-left: 30px; */
+  gap: 20px;
 }
 
 .fooldal_layout {

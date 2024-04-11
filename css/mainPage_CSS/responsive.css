@@ -1,6 +1,6 @@
 @media (min-width: 320px) and (max-width: 375px) {
 
-    .login_div{
+    .login_div {
         display: none !important;
     }
 
@@ -303,7 +303,7 @@
 
 @media (min-width: 375px) and (max-width: 425px) {
 
-    .login_div{
+    .login_div {
         display: none !important;
     }
 
@@ -584,7 +584,7 @@
 
 @media (min-width: 425px) and (max-width: 721px) {
 
-    .login_div{
+    .login_div {
         display: none !important;
     }
 
@@ -899,7 +899,7 @@
         margin-bottom: 20px;
     }
 
-    .login_div{
+    .login_div {
         display: none !important;
     }
 
@@ -1139,6 +1139,29 @@
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+    .kategoria_search_div{
+
+    }
+
+    .websidecookies{
+        width: 100%;
+        .websidecookies-layout{
+            left: 0px !important;
+        }
+    }
+
+    .uj_recpetjeink_etel_galeria,
+    .customersfavorite_etel_galeria,
+    .signup_newspaper_container,
+    .ajanlataink,
+    .honap_legjobb_div,
+    .feedback_footer{
+        zoom: 90%;
+    }
+
+    .title {
+        top: 400px !important;
+    }
 
     .profil_text {
         top: 120px;

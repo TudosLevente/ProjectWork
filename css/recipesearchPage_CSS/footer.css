@@ -1,6 +1,6 @@
 .footer_container {
     background: #B02000;
-    height: 300px;
+    /* height: 300px; */
     position: relative;
     overflow: hidden;
     display: flex;

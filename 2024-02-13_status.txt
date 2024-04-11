@@ -1,5 +1,0 @@
-Dokumentáció és Tesztelés: 30%-ból 5% van meg
-Tervezés: 30%-ból 30% van meg
-Program elkészítése: 30%-ból 20% van meg
-    Frontend: 100%-ból 70% van meg
-    Backend: 100%-ból 40% van meg

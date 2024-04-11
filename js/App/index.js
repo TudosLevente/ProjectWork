@@ -11,5 +11,6 @@ app.use('/api', require("../comment/router"));
 app.use('/api', require("../favorite/router"));
 app.use('/api', require("../ingredient/router"));
 app.use('/api', require("../upload/router"));
+app.use('/api', require("../admin/router"));
 
 module.exports = app

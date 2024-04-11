@@ -13,7 +13,7 @@ body {
   background-position: left;
   background-attachment: fixed;
   margin: 0;
-  padding-top: 70px;
+  /* padding-top: 70px; */
   padding-right: 200px;
   overflow-x: hidden;
   display: flex;

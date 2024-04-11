@@ -103,6 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (loggedInUserData.loggedIn) {
 
+            var loginhamburger = document.getElementById("loginhamburger");
+            loginhamburger.style.display = 'none';
+
+            var profilhamburger = document.getElementById("dropdownprofilhamburgermenu");
+            profilhamburger.style.display = 'flex';
+
             const login_or_profil_div = document.getElementById('login_or_profil');
 
             const addedProfil = document.createElement('div');
@@ -162,6 +168,12 @@ document.addEventListener("DOMContentLoaded", function () {
             login_or_profil_div.appendChild(addedProfil);
         }
         else if (!loggedInUserData.loggedIn) {
+
+            var loginhamburger = document.getElementById("loginhamburger");
+            loginhamburger.style.display = 'block';
+
+            var profilhamburger = document.getElementById("dropdownprofilhamburgermenu");
+            profilhamburger.style.display = 'none';
 
             const login_or_profil_div = document.getElementById('login_or_profil');
 

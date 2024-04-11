@@ -270,7 +270,7 @@ a:hover {
 }
 
 .hamburgermenudropdown_content a {
-    color: black;
+    color: white;
     font-size: 30px;
     text-align: right !important;
 }
@@ -292,4 +292,3 @@ a:hover {
 .rotate-icon {
     transform: rotate(90deg);
 }
-

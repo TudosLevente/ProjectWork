@@ -375,9 +375,6 @@
                                     <li class="nav-item" id="navRecipeLink_ajánlatunk">
                                         <a class="nav-link" href="#">Ajánlatunk</a>
                                     </li>
-                                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Rólunk</a>
-                      </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -431,14 +428,26 @@
                                             <ul class="dropdown_content_profil_hamburgermenu dropdown-content"
                                                 aria-labelledby="dropdownprofilhamburgermenu"
                                                 id="dropdown_content_profil_hamburgermenu">
+
                                                 <li>
-                                                    Adataim
+                                                    <a href="#" onclick="showAdataim()">
+                                                        Adataim
+                                                        <img src="../images/mainPage_Image/gear.svg" class="gear_icon">
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    Recept feltoltes
+                                                    <a href="./recipeUpload.html">
+                                                        Recept feltöltése
+                                                        <img src="../images/mainPage_Image/recipebook.svg"
+                                                            class="recipe_icon">
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    Kijelentkezés
+                                                    <a href="/" onclick="logout()">
+                                                        Kijelentkezés
+                                                        <img src="../images/mainPage_Image/logout.svg"
+                                                            class="logout_icon">
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -588,7 +597,7 @@
                                 <a href="#" class="navbar_profil_text" onclick="showDropdown()">
                                     Profil
                                 </a>
-                                <!-- <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
                                     <a href="#" onclick="showAdataim()">
                                         Adataim
                                         <img src="../images/mainPage_Image/gear.svg" class="gear_icon">
@@ -599,12 +608,12 @@
                                     </a>
                                     <a href="#" onclick="showKedvenceim()">Kedvenceim<img
                                             src="../images/profilePage_Images/heart.svg" class="recipe_icon">
-                                        < </a>
-                                            <a href="/" onclick="logout()">
-                                                Kijelentkezés
-                                                <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
-                                            </a>
-                                </div> -->
+                                    </a>
+                                    <a href="/" onclick="logout()">
+                                        Kijelentkezés
+                                        <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

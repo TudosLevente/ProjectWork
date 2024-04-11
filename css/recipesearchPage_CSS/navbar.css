@@ -1,6 +1,12 @@
+:root {
+    --lemon-greater-orange-greater-red-linear: linear-gradient(180deg,
+            rgba(238, 163, 37, 1) 0%,
+            rgba(255, 96, 0, 1) 51.5625%,
+            rgba(255, 0, 0, 1) 100%);
+}
+
 .navbar,
 .navbar_menu {
-    /* background: #bb5a00; */
     background-color: #B02000;
     opacity: 0.96;
     padding: 9px 0px 9px 0px;
@@ -13,6 +19,7 @@
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    /* zoom: 55%; */
 }
 
 .navbar_profil_text {
@@ -32,9 +39,7 @@
 
 .search-container {
     position: relative;
-    /* Change position to relative */
     margin-top: 10px;
-    /* Add margin to separate search bar from navbar */
 }
 
 #search-results-container {
@@ -45,7 +50,6 @@
     transform: translateX(-50%);
     z-index: 1;
     background-color: white;
-    /* border: 4px solid #ff9900; */
     border-top: none !important;
     width: calc(100% - 45px);
     max-height: 420px;
@@ -55,24 +59,29 @@
     font-size: 30px !important;
 }
 
-/* Width */
 #search-results-container::-webkit-scrollbar {
-    width: 20px;
+    /* width: 25px; */
+    /* overflow-y: overlay; */
+    position: fixed;
 }
 
-/* Track */
-#search-results-container::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
 #search-results-container::-webkit-scrollbar-thumb {
-    background: #ff9900;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../images/mainPage_Image/hotdogscrollbarimage.png');
 }
 
-/* Handle on hover */
-#search-results-container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+#search-results-container::-webkit-scrollbar-track {
+    background-color: #f0d8b5;
+}
+
+#search-results-container::-webkit-scrollbar-button {
+    display: none;
+}
+
+#search-results-container::-webkit-scrollbar-corner {
+    display: none;
 }
 
 .navbar_searchbar {
@@ -158,13 +167,14 @@ a:hover {
     top: 107px;
 }
 
-
-
-
-
 .dropdown_profil {
     position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .dropdown_content_profil {
@@ -185,6 +195,7 @@ a:hover {
     padding: 10px;
     opacity: 0;
     right: -100px;
+    top: 70px;
     transition: opacity 0.3s ease;
     text-align: center;
 }
@@ -213,4 +224,71 @@ a:hover {
     flex-direction: column;
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+.usersvg {
+    width: auto;
+}
+
+.hamburgermenudropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburgermenudropdown_content {
+    display: none;
+    position: fixed;
+    top: 130px;
+    right: 0;
+    min-width: max-content;
+    width: 200px;
+    height: max-content;
+    background-color: #B02000;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    align-content: flex-end;
+
+    .nav-link {
+        padding: 0;
+    }
+}
+
+.hamburgermenudropdown_content li {
+    list-style-type: none;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.hamburgermenudropdown_content a {
+    color: white;
+    font-size: 30px;
+    text-align: right !important;
+}
+
+.hamburgermenudropdown_content img {
+    width: 50px;
+    margin-right: 10px;
+    z-index: 2;
+}
+
+.dropdown_content_foetel_hamburgermenu {
+    display: none;
+}
+
+#hamburgermenudropdownicon {
+    transition: transform 0.3s ease;
+}
+
+.rotate-icon {
+    transform: rotate(90deg);
 }

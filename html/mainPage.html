@@ -38,20 +38,35 @@
       </div>
     </div>
     <div class="websidecookies">
-      <div class="websidecookies-layout">
-        <div class="websidecookies-description">
-          <div class="websidecookies-description-text">
+      <div class="websidecookies__websidecookies-layout">
+        <div class="websidecookies__websidecookies-description">
+          <div class="websidecookies__websidecookies-description-text">
             <span>
-              Ez a weboldal sütiket használ annak érdekében, hogy a legjobb
-              élményt nyújtsa Önnek. A weboldal további böngészésével Ön
-              beleegyezik a sütik használatába. További információkért kattintson
-              <a href="">IDE</a>!
+              Ez a weboldal sütiket használ annak érdekében, hogy a legjobb élményt
+              nyújtsa Önnek. A weboldal további böngészésével Ön beleegyezik a sütik
+              használatába. További információkért kattintson <a href="#">IDE</a></>🍪!
             </span>
+            <script>
+              if (window.matchMedia("(min-width: 768px) and (max-width: 992px)").matches) {
+                var spanElement = document.querySelector('.websidecookies__websidecookies-description-text span');
+                spanElement.innerHTML = 'Ez a weboldal sütiket használ annak érdekében, hogy a legjobb élményt nyújtsa Önnek. <br> A weboldal további böngészésével Ön beleegyezik a sütik használatába🍪!';
+              }
+              if (window.matchMedia("(min-width: 992px)").matches) {
+                var spanElement = document.querySelector('.websidecookies__websidecookies-description-text span');
+                spanElement.innerHTML = '<span> Ez a weboldal sütiket használ annak érdekében, hogy a legjobb élményt nyújtsa Önnek. A weboldal további böngészésével Ön beleegyezik a sütik használatába. További információkért kattintson <a href="#">IDE</a></>🍪! </span>';
+              }
+              if (window.matchMedia("(min-width: 425px) and (max-width: 721px)").matches) {
+                var spanElement = document.querySelector('.websidecookies__websidecookies-description-text span');
+                spanElement.innerHTML = '<span> Ez a weboldal sütiket használ. <br> További információkért kattintson <a href="#">IDE</a></>🍪! </span>';
+              }
+            </script>
           </div>
         </div>
-        <button type="button" class="websidecookies-agreebutton" onclick="handleAcceptCookies()">
-          <span class="websidecookies-agreebutton-text">Megértettem</span>
-        </button>
+        <div class="websidecookies__websidecookies-agreebutton">
+          <div class="websidecookies__websidecookies-agreebutton-text">
+            Megértettem
+          </div>
+        </div>
       </div>
     </div>
     <div class="fooldal">
@@ -92,38 +107,38 @@
                           <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel1"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel1">Burgerek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel3"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel3">Pizzák</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel4"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel4">Saláták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel5"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel5">Levesek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel6"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel6">Tészták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel7"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel7">Tenger
                                   gyümölcsei</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_foetel8"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_foetel8">Köretek</span></a>
                             </li>
                           </ul>
@@ -136,39 +151,39 @@
                           <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert12"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert12">Jégkrémek és
                                   Fagylaltok</span>
                               </a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert13"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert13">Snackek</span>
                               </a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert14"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert14">Muffinok és
                                   Pogácsák</span>
                               </a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert16"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert16">Palacsinták</span>
                               </a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert17"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert17">Piték</span>
                               </a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_desszert18"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_desszert18">Kekszek és
                                   Sütemények</span>
                               </a>
@@ -177,135 +192,135 @@
                         </li>
                         <li class="nav-item" id="navRecipeLink_navbar5_navitem">
                           <a class="nav-link" id="navRecipeLink_navbar5"
-                            href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                            href="http://localhost:8000/html/recipesearchPage/index.html"><span
                               id="navRecept_kategoria__div_title_navbar5">Levesek</span>
                           </a>
                         </li>
                         <li class="nav-item" id="navRecipeLink_navbar4_navitem">
                           <a class="nav-link" id="navRecipeLink_navbar4"
-                            href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                            href="http://localhost:8000/html/recipesearchPage/index.html"><span
                               id="navRecept_kategoria__div_title_navbar4">Saláták</span>
                           </a>
                         </li>
                         <li class="nav-item" id="navRecipeLink_navbar6_navitem">
                           <a class="nav-link" id="navRecipeLink_navbar6"
-                            href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                            href="http://localhost:8000/html/recipesearchPage/index.html"><span
                               id="navRecept_kategoria__div_title_navbar6">Tészták</span>
                           </a>
                         </li>
                         <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
                           onmouseout="hideKategoriakDropdown()">
                           <a class="nav-link dropdown" id="dropdownkategoriak"
-                            href="http://127.0.0.1:5500/TEST/categoryPage/index.html">
+                            href="http://localhost:8000/html/categoryPage/index.html">
                             Kategóriák
                           </a>
                           <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
                             id="dropdown_content_kategoriak">
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak1"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak1">Burgerek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak2"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak2">Szendvicsek és
                                   Wrappok</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak3"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak3">Pizzák</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak4"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak4">Saláták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak5"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak5">Levesek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak6"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak6">Tészták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak7"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak7">Tenger
                                   gyümölcsei</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak8"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak8">Köretek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak9"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak9">Szószok</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak10"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak10">Torták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak11"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak11">Italok és
                                   Koktélok</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak12"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak12">Jégkrémek és
                                   Fagylaltok</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak13"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak13">Snackek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak14"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak14">Muffinok és
                                   Pogácsák</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak15"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak15">Kenyerek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak16"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak16">Palacsinták</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak17"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak17">Piték</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak18"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak18">Kekszek és
                                   Sütemények</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak19"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak19">Turmixok és
                                   Shakek</span></a>
                             </li>
                             <li>
                               <a class="dropdown-item" id="navRecipeLink_kategoriak20"
-                                href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html"><span
+                                href="http://localhost:8000/html/recipesearchPage/index.html"><span
                                   id="navRecept_kategoria__div_title_kategoriak20">Vegetárianus</span></a>
                             </li>
                           </ul>
@@ -558,8 +573,8 @@
                 </div>
               </div>
             </div>
+          </nav>
         </div>
-        </nav>
       </div>
       <img class="background_image" src="../images/mainPage_Image/backgorund-image0.png" />
       <div class="title">
@@ -800,14 +815,14 @@
               <div class="carousel-item active">
                 <div class="kategoria_search_div_inner" id="innerdiv1">
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=1">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=1">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/burgerek.png" />
                       <div class="categorydiv_eclipselayout_title">Burgerek</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=2">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=2">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/szendvics.png" />
                       <div class="categorydiv_eclipselayout_title">Szendvicsek
@@ -816,21 +831,21 @@
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=3">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=3">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/pizza.png" />
                       <div class="categorydiv_eclipselayout_title">Pizzák</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=4">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=4">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/salata.png" />
                       <div class="categorydiv_eclipselayout_title">Saláták</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=5">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=5">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/leves.png" />
                       <div class="categorydiv_eclipselayout_title">Levesek</div>
@@ -841,35 +856,35 @@
               <div class="carousel-item">
                 <div class="kategoria_search_div_inner" id="innerdiv2">
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=6">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=6">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/teszta.png" />
                       <div class="categorydiv_eclipselayout_title">Tészták</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=7">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=7">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/tenger.png" />
                       <div class="categorydiv_eclipselayout_title">Tenger gyümölcsei</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=8">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=8">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/koretek.png" />
                       <div class="categorydiv_eclipselayout_title">Köretek</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=9">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=9">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/szoszok.png" />
                       <div class="categorydiv_eclipselayout_title">Szószok</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=10">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=10">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category//torta.png" />
                       <div class="categorydiv_eclipselayout_title">Torták</div>
@@ -880,35 +895,35 @@
               <div class="carousel-item">
                 <div class="kategoria_search_div_inner" id="innerdiv3">
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=11">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=11">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/italok.png" />
                       <div class="categorydiv_eclipselayout_title">Italok és Koktélok</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=12">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=12">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/snackek.png" />
                       <div class="categorydiv_eclipselayout_title">Snackek</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=13">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=13">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/muffin.png" />
                       <div class="categorydiv_eclipselayout_title">Muffinok és Pogácsák</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=14">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=14">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/kenyerek.png" />
                       <div class="categorydiv_eclipselayout_title">Kenyerek</div>
                     </div>
                   </a>
                   <a class="kategoria_search_div_inner_href"
-                    href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=15">
+                    href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=15">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/palacsinta.png" />
                       <div class="categorydiv_eclipselayout_title">Palacsinták</div>
@@ -919,32 +934,32 @@
 
               <div class="carousel-item">
                 <div class="kategoria_search_div_inner" id="innerdiv3">
-                  <a href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=16">
+                  <a href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=16">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/pitek.png" />
                       <div class="categorydiv_eclipselayout_title">Piték</div>
                     </div>
                   </a>
-                  <a href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=17">
+                  <a href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=17">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image//category/kekszek.png" />
                       <div class="categorydiv_eclipselayout_title">Kekszek és Sütemények</div>
                     </div>
                   </a>
-                  <a href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=18">
+                  <a href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=18">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/turmix.png" />
                       <div class="categorydiv_eclipselayout_title">Turmixok és Shakek</div>
                     </div>
                   </a>
-                  <a href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=19">
+                  <a href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=19">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/fagylalt.png" />
                       <div class="categorydiv_eclipselayout_title">Jégkrémek és
                         Fagylaltok</div>
                     </div>
                   </a>
-                  <a href="http://127.0.0.1:5500/TEST/recipesearchPage/index.html?categoryID=20">
+                  <a href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=20">
                     <div class="kategoria_search_div_categorydiv">
                       <img class="categorydiv_eclipselayout" src="../images/mainPage_Image/category/vegetarianus.png" />
                       <div class="categorydiv_eclipselayout_title">Vegetárianus</div>

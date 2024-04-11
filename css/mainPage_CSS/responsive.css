@@ -1,5 +1,9 @@
 @media (min-width: 320px) and (max-width: 375px) {
 
+    .login_div{
+        display: none !important;
+    }
+
     .my_data_div_button_layout {
         justify-content: center !important;
     }
@@ -299,6 +303,10 @@
 
 @media (min-width: 375px) and (max-width: 425px) {
 
+    .login_div{
+        display: none !important;
+    }
+
     .my_data_div_button_layout {
         justify-content: center !important;
     }
@@ -575,6 +583,11 @@
 }
 
 @media (min-width: 425px) and (max-width: 721px) {
+
+    .login_div{
+        display: none !important;
+    }
+
     .my_data_div_button_layout {
         justify-content: center !important;
     }
@@ -886,6 +899,9 @@
         margin-bottom: 20px;
     }
 
+    .login_div{
+        display: none !important;
+    }
 
     .hamburgermenudropdown {
         .navbar_profil_text {

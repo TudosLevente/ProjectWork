@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS Users (
     Username VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL UNIQUE,
     Password VARCHAR(255) NOT NULL,
+    IsAdmin BOOLEAN DEFAULT FALSE,
     Token TEXT
 );
 
@@ -89,6 +90,7 @@ CREATE TABLE IF NOT EXISTS Recipes (
 	Difficulty_Level VARCHAR(30),
 	Food_Category VARCHAR(30),
 	Date_Created DATE,
+    IsVerified BOOLEAN DEFAULT FALSE,
 	FOREIGN KEY (User_ID)
 		REFERENCES Users (User_ID)
 );
@@ -329,16 +331,6 @@ END;
 //
 delimiter ;
 
--- felhBejelentkezes procedure
-drop procedure if exists adminBejelentkezes;
-DELIMITER //
-CREATE PROCEDURE adminBejelentkezes(IN mail Varchar(50), jlsz varchar(50))
-BEGIN
-    SELECT User_ID, Username, Email FROM Users WHERE Users.Email = mail And Users.Password = jlsz;
-END;
-//
-DELIMITER ;
-
 -- getRecipeInfos procedure
 DROP PROCEDURE if exists getRecipeInfos;
 delimiter //
@@ -387,7 +379,16 @@ drop procedure if exists loadRecipeInfos;
 Delimiter //
 CREATE PROCEDURE loadRecipeInfos(IN recipeID int)
 BEGIN
-    SELECT * FROM Recipes WHERE Recipe_ID = recipeID;
+    SELECT * FROM Recipes WHERE Recipe_ID = recipeID AND IsVerified = TRUE;
+END;
+//
+delimiter ;
+
+drop procedure if exists loadRecipeInfosAdmin;
+Delimiter //
+CREATE PROCEDURE loadRecipeInfosAdmin(IN recipeID int)
+BEGIN
+    SELECT * FROM Recipes WHERE Recipe_ID = recipeID AND IsVerified = FALSE;
 END;
 //
 delimiter ;

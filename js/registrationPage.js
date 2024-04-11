@@ -1,3 +1,5 @@
+var passwordIsCorrect = false;
+
 function RegButton() {
     var usernameInput = document.getElementById("username");
     var emailInput = document.getElementById("email");
@@ -9,42 +11,49 @@ function RegButton() {
         return;
     }
 
-    // var passNotMatching = document.getElementById("show-pass-not-matching");
+    var passNotMatching = document.getElementById("show-pass-not-matching");
+    var passwordMatching = false;
 
-    // if (passwordInput.value.trim() !== passwordAgainInput.value.trim()) {
-    //     passNotMatching.style.display = 'block';
-    //     passNotMatching.style.visibility = 'visible';
-    //     return;
-    // }
-    // else {
-    //     passNotMatching.style.display = 'none';
-    // }
+    if (passwordInput.value.trim() !== passwordAgainInput.value.trim()) {
+        passNotMatching.style.display = 'block';
+        passNotMatching.style.visibility = 'visible';
+        return false;
+    }
+    else {
+        passNotMatching.style.display = 'none';
+        passwordMatching = true;
+    }
 
-    const form = document.getElementById('regisztracio');
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        new FormData(form);
-    })
-
-    form.addEventListener("formdata", () => {
+    if (passwordIsCorrect && passwordMatching) {
         const data = {
             username: usernameInput.value,
             email: emailInput.value,
             password: passwordInput.value
         };
-        postData("http://localhost:8000/api/regUser", data);
+        postData("http://localhost:8000/api/regUser", data).then((response) => {
+            if (response.status === 200) {
+                var button = document.querySelector('.regButton-frame');
+                button.style.fontSize = '20px';
+                button.innerText = 'Sikeres regisztráció';
+                button.style.borderColor = 'green';
+                button.style.backgroundColor = 'green'
 
-    })
+                setTimeout(function () {
+                    window.location.href = '../html/loginPage.html';
+                }, 1500);
+            }
+            else if (response.status === 400) {
+                alert("Kérjük használjon megfelelő formátumú email címet!");
+            }
+            else if (response.status === 409) {
+                alert("Ezzel az email címmel már van regisztrált felhasználó!");
+            }
+        });
+    }
+    else {
+        alert("A jelszó nem felel meg a követelményeknek!");
+    }
 
-    var button = document.querySelector('.regButton-frame');
-    button.style.fontSize = '20px';
-    button.innerText = 'Sikeres regisztráció';
-    button.style.borderColor = 'green';
-    button.style.backgroundColor = 'green'
-
-    setTimeout(function () {
-        window.location.href = '../html/loginPage.html';
-    }, 1500);
 }
 
 function togglePassword() {
@@ -67,6 +76,7 @@ function togglePasswordAgain() {
 
 document.addEventListener('DOMContentLoaded', function (event) {
     var inputValue = document.getElementById("password");
+    var inputEmailValue = document.getElementById("email");
 
     inputValue.addEventListener("input", function () {
         var showPassReq = document.getElementById("show-pass-req");
@@ -91,7 +101,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 checkUpperCase(prCase, inputValue.value),
                 checkLowerCase(lwrCase, inputValue.value),
                 checkForNumber(numLength, inputValue.value)
-            );
+            )
+
+            if (showPasswordRequirement(showPassReq, checkLength(chrLength, inputLength), checkUpperCase(prCase, inputValue.value), checkLowerCase(lwrCase, inputValue.value), checkForNumber(numLength, inputValue.value))) {
+                passwordIsCorrect = true;
+            }
 
         }
 

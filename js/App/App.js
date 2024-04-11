@@ -13,7 +13,8 @@ var loggedInUserData = {
     loggedIn: false,
     user_id: null,
     username: "",
-    email: ""
+    email: "",
+    isAdmin: null
 };
 
 app.get('/getLoggedInUserData', (req, res) => {
@@ -25,6 +26,7 @@ app.post('/getLoginInfo', (req, res) => {
     loggedInUserData.user_id = req.body.user_id;
     loggedInUserData.username = req.body.username;
     loggedInUserData.email = req.body.email;
+    loggedInUserData.isAdmin = req.body.isAdmin;
 })
 
 app.get('/logout', (req, res) => {
@@ -39,6 +41,15 @@ app.get('/logout', (req, res) => {
 app.get('/', (req, res) => {
     if (loggedInUserData.loggedIn) {
         res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));
+    }
+    else {
+        res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));
+    }
+})
+
+app.get('/adminPage', (req, res) => {
+    if (loggedInUserData.loggedIn) {
+        res.sendFile(path.join(publicDirectoryPath, '/html/adminPage.html'));
     }
     else {
         res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));

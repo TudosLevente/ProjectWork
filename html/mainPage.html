@@ -38,7 +38,6 @@
       </div>
     </div>
     <div class="websidecookies">
-      <!-- <img class="websidecookies-backgroundimage" src="./websidecookies.jpeg" /> -->
       <div class="websidecookies-layout">
         <div class="websidecookies-description">
           <div class="websidecookies-description-text">
@@ -53,30 +52,6 @@
         <button type="button" class="websidecookies-agreebutton" onclick="handleAcceptCookies()">
           <span class="websidecookies-agreebutton-text">Megértettem</span>
         </button>
-        <!-- npm install express cookie-parser 
-          
-          // Require the necessary modules
-          const express = require('express');
-          const cookieParser = require('cookie-parser');
-  
-          // Create an Express app
-          const app = express();
-  
-          // Use cookie-parser middleware
-          app.use(cookieParser());
-  
-          // Serve static files
-          app.use(express.static('public'));
-  
-          // Define a route to handle the cookie acceptance
-          app.post('/accept-cookies', (req, res) => {
-            // Set a cookie indicating that the user has accepted cookies
-            res.cookie('cookies_accepted', 'true', { expires: new Date(Date.now() + 31536000000) }); // Cookie expires in one year
-  
-            // Send a response
-            res.send('Cookies accepted');
-          });
-        -->
       </div>
     </div>
     <div class="fooldal">

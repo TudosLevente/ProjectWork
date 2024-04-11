@@ -194,6 +194,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     loadRecipes();
     loadAjanlat();
+
+    getData('/check-cookies')
+        .then((data) => {
+            if (data.message === "Cookies accepted") {
+                var cookies = document.querySelector('.websidecookies');
+                cookies.style.display = 'none';
+            }
+            else {
+                var cookies = document.querySelector('.websidecookies');
+                cookies.style.display = 'flex';
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
 });
 
 function goToRecipe(buttondId) {

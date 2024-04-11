@@ -4,6 +4,7 @@ const config = require('./config')
 const path = require('path')
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cookieParser = require('cookie-parser');
 
 const publicDirectoryPath = path.join(__dirname, '../../../ProjectWork');
 
@@ -88,4 +89,19 @@ app.post('/sendEmail', (req, res) => {
             res.status(200).send('Email sikeresen elküldve!');
         }
     });
+});
+
+app.use(cookieParser());
+
+app.post('/accept-cookies', (req, res) => {
+    res.cookie('cookies_accepted', 'true', { httpOnly: true });
+    res.status(200).send('Cookies accepted');
+});
+
+app.get('/check-cookies', (req, res) => {
+    if (req.cookies.cookies_accepted === 'true') {
+        res.status(200).json({ message: "Cookies accepted" });
+    } else {
+        res.status(400).json({ message: "Cookies not accepted" });
+    }
 });

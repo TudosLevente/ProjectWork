@@ -45,6 +45,9 @@ function RegButton() {
             else if (response.status === 400) {
                 alert("Kérjük használjon megfelelő formátumú email címet!");
             }
+            else if (response.status === 409) {
+                alert("Ezzel az email címmel már van regisztrált felhasználó!");
+            }
         });
     }
     else {

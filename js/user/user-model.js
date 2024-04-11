@@ -96,27 +96,31 @@ async function regUser(req, res) {
 
             const sql = 'INSERT INTO Users (Username,Email,Password) values (?,?,?)';
             con.query(sql, [req.body.username, req.body.email, req.body.password], (err, result) => {
-                if (err) throw err;
-                const token = jwt.sign(
-                    {
-                        user_id: result.insertId,
-                        email: user.email
-                    },
-                    config.TokenKey,
-                    {
-                        expiresIn: "2h",
+                if (err) {
+                    res.status(409).send('Ezzel az email címmel már van regisztrált felhasználó!');
+                }
+                else {
+                    const token = jwt.sign(
+                        {
+                            user_id: result.insertId,
+                            email: user.email
+                        },
+                        config.TokenKey,
+                        {
+                            expiresIn: "2h",
+                        });
+                    user.token = "regeltFelh";
+                    user.user_id = result.insertId;
+
+                    con.connect(function (err) {
+                        if (err) throw err;
                     });
-                user.token = "regeltFelh";
-                user.user_id = result.insertId;
 
-                con.connect(function (err) {
-                    if (err) throw err;
-                });
-
-                con.query('call felhTokenFrissites(?,?)', [user.user_id, token], (err, result, fields) => {
-                    if (err) throw err;
-                    res.send(user);
-                });
+                    con.query('call felhTokenFrissites(?,?)', [user.user_id, token], (err, result, fields) => {
+                        if (err) throw err;
+                        res.send(user);
+                    });
+                }
             });
         }
         catch (error) {

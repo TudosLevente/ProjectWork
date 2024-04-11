@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS Users (
     Username VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL UNIQUE,
     Password VARCHAR(255) NOT NULL,
+    IsAdmin BOOLEAN DEFAULT FALSE,
     Token TEXT
 );
 
@@ -89,6 +90,7 @@ CREATE TABLE IF NOT EXISTS Recipes (
 	Difficulty_Level VARCHAR(30),
 	Food_Category VARCHAR(30),
 	Date_Created DATE,
+    IsVerified BOOLEAN DEFAULT FALSE,
 	FOREIGN KEY (User_ID)
 		REFERENCES Users (User_ID)
 );
@@ -386,6 +388,15 @@ delimiter ;
 drop procedure if exists loadRecipeInfos;
 Delimiter //
 CREATE PROCEDURE loadRecipeInfos(IN recipeID int)
+BEGIN
+    SELECT * FROM Recipes WHERE Recipe_ID = recipeID AND IsVerified = TRUE;
+END;
+//
+delimiter ;
+
+drop procedure if exists loadRecipeInfosAdmin;
+Delimiter //
+CREATE PROCEDURE loadRecipeInfosAdmin(IN recipeID int)
 BEGIN
     SELECT * FROM Recipes WHERE Recipe_ID = recipeID;
 END;

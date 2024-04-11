@@ -1,0 +1,472 @@
+.recept-verify-page,
+.recept-verify-page * {
+  box-sizing: border-box;
+}
+.recept-verify-page {
+  background: #d7bf9c;
+  height: 181.0625rem;
+  position: relative;
+  overflow: hidden;
+}
+.recept-verify-page__kategoriak {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0.3125rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: row;
+  gap: 3.125rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 87.5rem;
+  position: absolute;
+  left: 16.25rem;
+  top: 18.625rem;
+}
+.recept-verify-page__recipes {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 0.1875rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 24.375rem;
+  position: relative;
+  overflow: hidden;
+}
+.recept-verify-page__recipes-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__admins {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 0.1875rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 24.375rem;
+  position: relative;
+  overflow: hidden;
+}
+.recept-verify-page__add-admins-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__ingredients {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 0.1875rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 24.375rem;
+  position: relative;
+  overflow: hidden;
+}
+.recept-verify-page__add-ingredients-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__recipe {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 0.1875rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: row;
+  gap: 31.25rem;
+  align-items: center;
+  justify-content: center;
+  width: 106.25rem;
+  height: 18.75rem;
+  position: absolute;
+  left: calc(50% - 53.125rem);
+  top: 80.9375rem;
+  overflow: hidden;
+}
+.recept-verify-page__frame-224 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.recept-verify-page__recipe-title-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__rectangle-16 {
+  background: #d9d9d9;
+  flex-shrink: 0;
+  width: 12.5rem;
+  height: 12.5rem;
+  position: relative;
+}
+.recept-verify-page__frame-223 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.recept-verify-page__frame-225 {
+  background: #66a1f9;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 1rem 0.9375rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.recept-verify-page__eye-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.recept-verify-page__frame-226 {
+  background: #64d452;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 1.25rem 0.9375rem 1.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.recept-verify-page__check-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.recept-verify-page__frame-227 {
+  background: #d33939;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 2.1875rem 0.9375rem 2.1875rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.recept-verify-page__trash-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.recept-verify-page__admin-text {
+  position: absolute;
+  inset: 0;
+}
+.recept-verify-page__admin-text-inner {
+  background: var(
+    --lemon-greater-orange-greater-red-linear,
+    linear-gradient(
+      180deg,
+      rgba(238, 163, 37, 1) 0%,
+      rgba(255, 96, 0, 1) 51.5625%,
+      rgba(255, 0, 0, 1) 100%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 400;
+  position: absolute;
+  right: 0rem;
+  left: 0rem;
+  bottom: 162.4375rem;
+  top: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__frame-228 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 96.5rem;
+  top: 0rem;
+}
+.recept-verify-page__kijelentkez-s {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 2.1875rem;
+  font-weight: 400;
+  position: relative;
+  width: 23.5rem;
+  height: 4.5625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recept-verify-page__log-out-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: absolute;
+  left: 2.25rem;
+  top: calc(50% - 1.09375rem);
+  overflow: visible;
+}
+
+.frame-229,
+.frame-229 * {
+  box-sizing: border-box;
+}
+.frame-229 {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6875rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.frame-229__recipe {
+  border-radius: 0.625rem;
+  border-style: solid;
+  border-color: #ff9900;
+  border-width: 0.1875rem;
+  padding: 0.625rem;
+  display: flex;
+  flex-direction: row;
+  gap: 31.25rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 106.25rem;
+  height: 18.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.frame-229__frame-224 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-229__recipe-title-text {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame-229__rectangle-16 {
+  background: #d9d9d9;
+  flex-shrink: 0;
+  width: 12.5rem;
+  height: 12.5rem;
+  position: relative;
+}
+.frame-229__frame-223 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-229__frame-225 {
+  background: #66a1f9;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 1rem 0.9375rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-229__eye-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__frame-226 {
+  background: #64d452;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 1.25rem 0.9375rem 1.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-229__check-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__frame-227 {
+  background: #d33939;
+  border-radius: 0.9375rem;
+  padding: 0.9375rem 2.1875rem 0.9375rem 2.1875rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.frame-229__trash-1 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__eye-12 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__check-12 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__trash-12 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__eye-13 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__check-13 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__trash-13 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__eye-14 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__check-14 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}
+.frame-229__trash-14 {
+  flex-shrink: 0;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  position: relative;
+  overflow: visible;
+}

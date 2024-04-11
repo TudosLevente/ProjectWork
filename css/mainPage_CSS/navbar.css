@@ -12,7 +12,7 @@
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    zoom: 55%;
+    /* zoom: 55%; */
 }
 
 .navbar_profil_text {
@@ -213,10 +213,10 @@ a:hover {
 .usersvg {
     width: auto;
 }
-
+/* 
 @media (min-width: 320px) and (max-width: 375px) {
     body {
-      /* background-color: turquoise; */
+      // background-color: turquoise; 
       background-image: none;
       padding-right: 0px;
       flex-wrap: wrap;
@@ -237,7 +237,7 @@ a:hover {
   
   @media (min-width: 375px) and (max-width: 425px) {
     body {
-      /* background-color: violet; */
+      // background-color: violet; 
       background-image: none;
       padding-right: 0px;
       flex-wrap: wrap;
@@ -255,7 +255,7 @@ a:hover {
   
   @media (min-width: 425px) and (max-width: 721px) {
     body {
-      /* background-color: blue; */
+      // background-color: blue;
       background-image: none;
       padding-right: 5px;
       align-content: center;
@@ -265,7 +265,7 @@ a:hover {
   
   @media (min-width: 721px) and (max-width: 768px) {
     body {
-      /* background-color: red; */
+      // background-color: red;
       background-position: -500px;
       padding-right: 50px;
     }
@@ -273,7 +273,7 @@ a:hover {
   
   @media (min-width: 768px) and (max-width: 992px) {
     body {
-      /* background-color: green; */
+      // background-color: green;
       background-position: -500px;
       padding-right: 100px;
     }
@@ -281,7 +281,7 @@ a:hover {
   
   @media (min-width: 992px) and (max-width: 1200px) {
     body {
-      /* background-color: yellow; */
+      // background-color: yellow;
       background-position: -200px;
       padding-right: 100px;
     }
@@ -289,7 +289,7 @@ a:hover {
   
   @media (min-width: 1200px) {
     body {
-      /* background-color: purple; */
+      // background-color: purple;
       padding-right: 60px;
     }
-  }
+  }  */

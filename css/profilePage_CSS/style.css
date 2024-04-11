@@ -547,6 +547,7 @@ button:active {
   position: relative;
   margin-bottom: 20px;
   justify-content: center;
+ width: 100%;
 }
 
 .my_recipes_div_row_container {
@@ -557,7 +558,7 @@ button:active {
   justify-content: center;
   flex-shrink: 0;
   width: 213px;
-  height: 302px;
+  height: 356px;
   position: relative;
 }
 
@@ -581,7 +582,7 @@ button:active {
 
 .my_recipes_div_row_container_title {
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-family: "Inter-Regular", sans-serif;
   font-size: 27px;
   font-weight: 400;
@@ -684,7 +685,7 @@ button:active {
 
 .my_favorites_div_row_container_title {
   color: #000000;
-  text-align: left;
+  text-align: center;
   font-family: "Inter-Regular", sans-serif;
   font-size: 27px;
   font-weight: 400;

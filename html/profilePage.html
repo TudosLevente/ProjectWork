@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/profilePage_CSS/navbar.css">
     <link rel="stylesheet" href="../css/profilePage_CSS/scrollbar.css">
     <link rel="stylesheet" href="../css/profilePage_CSS/websidecookies.css">
+    <link rel="stylesheet" href="../css/profilePage_CSS/responsive.css">
     <script src="../js/profilePage_JS/navbar_dropdown.js"></script>
     <title>Profil</title>
 </head>
@@ -99,18 +100,8 @@
                     </div>
                     <img class="image-8" src="../images/profilePage_Images/image-80.png" />
                 </div>
-                <div class="my_recipes_div" style="display: none;" id="my_recipes_div" data-simplebar>
+                <div class="my_recipes_div" style="display: none;" id="my_recipes_div">
                     <div id="user_recipes_div" class="my_recipes_div_row">
-                        <!-- <div class="my_recipes_div_row_container">
-                            <div class="my_recipes_div_row_container_img_div">
-                                <img class="my_recipes_div_row_container_img"
-                                    src="../images/profilePage_Images/food 1.png" />
-                            </div>
-                            <div class="my_recipes_div_row_container_title">Példa kaja</div>
-                            <button class="my_recipes_div_row_container_button_div">
-                                <div class="my_recipes_div_row_container_button_text">Megtekintés</div>
-                            </button>
-                        </div> -->
 
                     </div>
                 </div>
@@ -138,6 +129,15 @@
                         <div class="input-group">
                             <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
                                 aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
+                            <script>
+                                window.addEventListener('DOMContentLoaded', function () {
+                                    var searchInput = document.getElementById('search-input');
+                                    if (window.matchMedia('(min-width: 320px) and (max-width: 375px)').matches) {
+                                        searchInput.placeholder = 'Keressen itt...';
+                                    }
+                                });
+
+                            </script>
                         </div>
                         <div id="search-results-container" class="mt-2 fixed-top"></div>
                         <div class="menuitems_row row">
@@ -384,26 +384,227 @@
                     </div>
                     <div class="navbar_profil_login col-lg-4 col-md-3 d-flex align-items-center justify-content-end"
                         style="right: 40px; gap: 20px;">
-                        <img src="../images/mainPage_Image/user.svg" class="usersvg" />
+                        <div class="hamburgermenudropdown">
+                            <img src="../images/mainPage_Image/user.svg" class="usersvg" id="hamburgermenudropdownicon"
+                                onclick="toggleDropdownHamburMenu()" />
+                            <script>
+                                function toggleDropdownHamburMenu() {
+                                    var dropdownContent = document.getElementById("dropdownContent");
+                                    var dropdown_content_foetel_hamburgermenu = document.getElementById("dropdown_content_foetel_hamburgermenu");
+                                    var dropdown_content_desszertek_hamburgermenu = document.getElementById("dropdown_content_desszertek_hamburgermenu");
+                                    var dropdown_content_profil_hamburgermenu = document.getElementById("dropdown_content_profil_hamburgermenu");
+                                    var hamburgermenudropdownicon = document.getElementById("hamburgermenudropdownicon");
+                                    dropdownContent.style.display = dropdownContent.style.display === "flex" ? "none" : "flex";
+                                    hamburgermenudropdownicon.classList.toggle("rotate-icon"); dropdown_content_foetel_hamburgermenu.style.display = 'none';
+                                    dropdown_content_desszertek_hamburgermenu.style.display = 'none';
+                                    dropdown_content_profil_hamburgermenu.style.display = 'none';
+                                }
+
+                                function HideDropdownHamburgerMenu() {
+                                    var dropdownContent = document.getElementById("dropdownContent");
+                                    dropdownContent.style.display = "none";
+                                }
+                            </script>
+                            <div class="hamburgermenudropdown_content" id="dropdownContent">
+                                <li>
+                                    <script>
+                                        function toggleDropdownProfilHamburgerMenu() {
+                                            var dropdownprofile = document.getElementById("dropdown_content_profil_hamburgermenu");
+                                            var dropdownfoetel = document.getElementById("dropdown_content_foetel_hamburgermenu");
+                                            var dropdowndesszertek = document.getElementById("dropdown_content_desszertek_hamburgermenu");
+                                            if (dropdownprofile.style.display === "none") {
+                                                dropdownprofile.style.display = "flex";
+
+                                                dropdowndesszertek.style.display = "none";
+                                                dropdownfoetel.style.display = "none";
+                                            } else {
+                                                dropdownprofile.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+                                    <div class="login_div">
+                                        <div class="dropdown_profil dropdown">
+                                            <a class="nav-link dropdown" id="dropdownprofilhamburgermenu"
+                                                onclick="toggleDropdownProfilHamburgerMenu()">
+                                                Profil
+                                            </a>
+                                            <ul class="dropdown_content_profil_hamburgermenu dropdown-content"
+                                                aria-labelledby="dropdownprofilhamburgermenu"
+                                                id="dropdown_content_profil_hamburgermenu">
+                                                <li>
+                                                    Adataim
+                                                </li>
+                                                <li>
+                                                    Recept feltoltes
+                                                </li>
+                                                <li>
+                                                    Kijelentkezés
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown_foetel nav-item dropdown">
+                                    <script>
+                                        function toggleDropdownFoetelHamburgerMenu() {
+                                            var dropdownfoetel = document.getElementById("dropdown_content_foetel_hamburgermenu");
+                                            var dropdowndesszertek = document.getElementById("dropdown_content_desszertek_hamburgermenu");
+                                            var dropdownprofile = document.getElementById("dropdown_content_profil_hamburgermenu");
+                                            if (dropdownfoetel.style.display === "none") {
+                                                dropdownfoetel.style.display = "flex";
+
+                                                dropdowndesszertek.style.display = "none";
+                                                dropdownprofile.style.display = "none";
+                                            } else {
+                                                dropdownfoetel.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+                                    <a class="nav-link dropdown" id="dropdownfoetelhamburgermenu"
+                                        onclick="toggleDropdownFoetelHamburgerMenu()">
+                                        Főételek
+                                    </a>
+                                    <ul class="dropdown_content_foetel_hamburgermenu dropdown-content"
+                                        aria-labelledby="dropdownfoetelhamburgermenu"
+                                        id="dropdown_content_foetel_hamburgermenu">
+                                        <li>
+                                            <a class="dropdown-item nav-link"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=1">
+                                                <span>Burgerek</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=3">
+                                                <span>Pizzák</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=4">
+                                                <span>Salaták</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=5">
+                                                <span>Levesek</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=6">
+                                                <span>Teszták</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=7">
+                                                <span>Tenger gyümölcsei</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=8">
+                                                <span>Köretek</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown_desszertek nav-item dropdown">
+                                    <script>
+                                        function toggleDropdownDesszertekHamburgerMenu() {
+                                            var dropdowndesszertek = document.getElementById("dropdown_content_desszertek_hamburgermenu");
+                                            var dropdownfoetel = document.getElementById("dropdown_content_foetel_hamburgermenu");
+                                            var dropdownprofile = document.getElementById("dropdown_content_profil_hamburgermenu");
+                                            if (dropdowndesszertek.style.display === "none") {
+                                                dropdowndesszertek.style.display = "flex";
+
+                                                dropdownfoetel.style.display = "none";
+                                                dropdownprofile.style.display = "none";
+                                            } else {
+                                                dropdowndesszertek.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+                                    <a class="nav-link dropdown" id="dropdowndesszertekhamburgermenu"
+                                        onclick="toggleDropdownDesszertekHamburgerMenu()">
+                                        Desszertek
+                                    </a>
+                                    <ul class="dropdown_content_desszertek_hamburgermenu dropdown-content"
+                                        aria-labelledby="dropdowndesszertekhamburgermenu"
+                                        id="dropdown_content_desszertek_hamburgermenu">
+                                        <li>
+                                            <a class="dropdown-item nav-link"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=12">
+                                                <span>Jégkrémek és
+                                                    Fagylaltok</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=13">
+                                                <span>Snackek</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=14">
+                                                <span>Muffinok és
+                                                    Pogácsák</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=16">
+                                                <span>Palacsinták</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=17">
+                                                <span>Piték</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="http://localhost:8000/html/recipesearchPage/index.html?categoryID=18">
+                                                <span>Kekszek és
+                                                    Sütemények</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown_kategoriak nav-item dropdown">
+                                    <a class="nav-link dropdown" id="dropdownkategoriak"
+                                        href="http://localhost:8000/html/categoryPage/index.html">
+                                        Kategóriák
+                                    </a>
+                                </li>
+                            </div>
+                        </div>
                         <div id="login_or_profil" class="login_div">
                             <div class="dropdown_profil dropdown">
                                 <a href="#" class="navbar_profil_text" onclick="showDropdown()">
                                     Profil
                                 </a>
-                                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                                <!-- <div class="dropdown_content_profil dropdown-content" id="myDropdown">
                                     <a href="#" onclick="showAdataim()">
                                         Adataim
-                                        <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
+                                        <img src="../images/mainPage_Image/gear.svg" class="gear_icon">
+                                    </a>
                                     <a href="./recipeUpload.html">
                                         Recept feltöltése
-                                        <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
-                                    <a href="#" onclick="showKedvenceim()">Kedvenceim<img
-                                            src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
-                                    <a href="/" onclick="logout()">
-                                        Kijelentkezés
-                                        <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                                        <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon">
                                     </a>
-                                </div>
+                                    <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                            src="../images/profilePage_Images/heart.svg" class="recipe_icon">
+                                        < </a>
+                                            <a href="/" onclick="logout()">
+                                                Kijelentkezés
+                                                <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                                            </a>
+                                </div> -->
                             </div>
                         </div>
                     </div>

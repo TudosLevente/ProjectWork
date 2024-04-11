@@ -83,36 +83,48 @@ async function regUser(req, res) {
         res.status(400).send("Töltsd ki az adatatokat rendesen!");
     }
 
-    var con = mysql.createConnection(config.database);
+    if (!user.email.includes('@')) {
+        res.status(400).send("Email cím formátuma nem megfelelő!");
+    }
+    else {
+        try {
+            var con = mysql.createConnection(config.database);
 
-    con.connect(function (err) {
-        if (err) throw err;
-    });
-
-    const sql = 'INSERT INTO Users (Username,Email,Password) values (?,?,?)';
-    con.query(sql, [req.body.username, req.body.email, req.body.password], (err, result) => {
-        if (err) throw err;
-        const token = jwt.sign(
-            {
-                user_id: result.insertId,
-                email: user.email
-            },
-            config.TokenKey,
-            {
-                expiresIn: "2h",
+            con.connect(function (err) {
+                if (err) throw err;
             });
-        user.token = "regeltFelh";
-        user.user_id = result.insertId;
 
-        con.connect(function (err) {
-            if (err) throw err;
-        });
+            const sql = 'INSERT INTO Users (Username,Email,Password) values (?,?,?)';
+            con.query(sql, [req.body.username, req.body.email, req.body.password], (err, result) => {
+                if (err) throw err;
+                const token = jwt.sign(
+                    {
+                        user_id: result.insertId,
+                        email: user.email
+                    },
+                    config.TokenKey,
+                    {
+                        expiresIn: "2h",
+                    });
+                user.token = "regeltFelh";
+                user.user_id = result.insertId;
 
-        con.query('call felhTokenFrissites(?,?)', [user.user_id, token], (err, result, fields) => {
-            if (err) throw err;
-            res.send(user);
-        });
-    });
+                con.connect(function (err) {
+                    if (err) throw err;
+                });
+
+                con.query('call felhTokenFrissites(?,?)', [user.user_id, token], (err, result, fields) => {
+                    if (err) throw err;
+                    res.send(user);
+                });
+            });
+        }
+        catch (error) {
+            console.error('Error:', error);
+            res.status(500).send('An error occurred while registering the user');
+        }
+    }
+
 }
 
 async function deleteUser(req, res) {

@@ -2,6 +2,19 @@ function generateNumber() {
     return Math.floor(Math.random() * 3) + 1;
 }
 
+function logout() {
+    getData('/logout').then((response) => {
+        if (response.loggedIn) {
+            window.location.href = '/';
+        }
+        else if (!response.loggedIn) {
+            window.location.href = '/';
+        }
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
 function loadRecipes() {
     for (var i = 1; i < 3; i++) {
         for (var j = 1; j < 5; j++) {
@@ -133,16 +146,16 @@ document.addEventListener("DOMContentLoaded", function () {
             logoutGearIcon.src = "../images/profilePage_Images/logout.svg";
             logoutGearIcon.className = "logout_icon";
 
-            const logout = document.createElement('a');
-            logout.href = "#";
-            logout.onclick = "logout();";
-            logout.innerHTML = "Kijelentkezés";
+            const logoutText = document.createElement('a');
+            logoutText.href = "#";
+            logoutText.addEventListener('click', logout);
+            logoutText.innerHTML = "Kijelentkezés";
 
-            logout.appendChild(logoutGearIcon);
+            logoutText.appendChild(logoutGearIcon);
 
             dropdownDiv.appendChild(adataimLink);
             dropdownDiv.appendChild(receptFeltoltes);
-            dropdownDiv.appendChild(logout);
+            dropdownDiv.appendChild(logoutText);
 
             addedProfil.appendChild(dropdownDiv);
 

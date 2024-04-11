@@ -75,9 +75,11 @@ function checkForNumber(styleName, inputValue) {
 function showPasswordRequirement(show_pass_req, checkLength, checkUpperCase, checkLowerCase, checkForNumber) {
     if (checkLength && checkUpperCase && checkLowerCase && checkForNumber) {
         show_pass_req.style.display = 'none';
+        return true;
     }
     else {
         show_pass_req.style.display = 'block';
         show_pass_req.style.visibility = 'visible';
+        return false;
     }
 }

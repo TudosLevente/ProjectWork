@@ -1,0 +1,97 @@
+.error-page,
+.error-page * {
+  box-sizing: border-box;
+}
+
+.error-page {
+  zoom: 40%;
+  background: #d7bf9c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-page__error-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem;
+  align-items: center;
+  justify-content: flex-start;
+  /* position: absolute; */
+  left: 10.1875rem;
+  top: 102.625rem;
+  height: max-content;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  zoom: 90%;
+}
+
+.error-page__error-title {
+  background: var(--lemon-greater-orange-greater-red-linear,
+      linear-gradient(180deg,
+        rgba(238, 163, 37, 1) 0%,
+        rgba(255, 96, 0, 1) 51.5625%,
+        rgba(255, 0, 0, 1) 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  position: relative;
+  width: 99.6875rem;
+  height: 6.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.error-page__error-description {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 2.0625rem;
+  font-weight: 800;
+  position: relative;
+  width: 99.6875rem;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.error-description-span {
+  color: #000000;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 33px;
+  font-weight: 800;
+}
+
+.error-description-span2 {
+  color: #000000;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 33px;
+  font-weight: 800;
+}
+
+.error-description-span3 {
+  color: #000000;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 33px;
+  font-weight: 800;
+}
+
+.error-page__errorimage-1 {
+  width: 62.5rem;
+  height: 62.5rem;
+  /* position: absolute; */
+  left: calc(50% - 31.25rem);
+  top: 32.9375rem;
+  object-fit: cover;
+}

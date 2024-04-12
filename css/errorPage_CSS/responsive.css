@@ -1,5 +1,11 @@
 @media (min-width: 320px) and (max-width: 375px) {
 
+    .error-page__error-layout{
+        zoom: 48%;
+        padding-top: 820px;
+        padding-bottom: 400px;
+    }
+
     .footer_container {
         height: max-content !important;
 
@@ -33,11 +39,6 @@
             height: max-content !important;
             padding-bottom: 20px !important;
         }
-    }
-
-    .recept_kategoria__kategoriak {
-        zoom: 60%;
-        width: 60rem;
     }
 
     .login_div {
@@ -268,9 +269,13 @@
 
 @media (min-width: 375px) and (max-width: 425px) {
 
+    .error-page__error-layout{
+        zoom: 55%;
+        padding-top: 600px;
+    }
 
     .footer_container {
-        height: max-content;
+        height: max-content !important;
 
         .footer_main_div {
             flex-direction: column;
@@ -302,11 +307,6 @@
             height: max-content !important;
             padding-bottom: 20px !important;
         }
-    }
-
-    .recept_kategoria__kategoriak {
-        zoom: 50%;
-        width: 70rem;
     }
 
     .login_div {
@@ -533,9 +533,14 @@
 
 @media (min-width: 425px) and (max-width: 721px) {
 
+    .error-page__error-layout{
+        zoom: 60%;
+        padding-top: 500px;
+    }
+
 
     .footer_container {
-        height: max-content;
+        height: max-content !important;
 
         .footer_main_div {
             flex-direction: column;
@@ -567,11 +572,6 @@
             height: max-content !important;
             padding-bottom: 20px !important;
         }
-    }
-
-    .recept_kategoria__kategoriak {
-        zoom: 60%;
-        width: 70rem;
     }
 
     .login_div {
@@ -797,38 +797,6 @@
 
 @media (min-width: 721px) and (max-width: 768px) {
 
-    .footer_container {
-        height: max-content;
-
-        .footer_main_div {
-            /* flex-direction: row; */
-            display: flex;
-            gap: 26px !important;
-        }
-
-        .footer_main_div * {
-            gap: 0px !important;
-            padding: 0px !important;
-        }
-
-        .footer_column_1 {
-            height: 140px !important;
-        }
-
-        .footer_column_2 {
-            height: 20px !important;
-        }
-
-        .footer_column_4 {
-            height: max-content !important;
-            padding-bottom: 20px !important;
-        }
-    }
-
-    .recept_kategoria__kategoriak {
-        zoom: 70%;
-    }
-
     .hamburgermenudropdown {
         .navbar_profil_text {
             display: flex;
@@ -1018,38 +986,6 @@
 
 @media (min-width: 768px) and (max-width: 992px) {
 
-    .footer_container {
-        height: max-content;
-
-        .footer_main_div {
-            /* flex-direction: row; */
-            display: flex;
-            gap: 26px !important;
-        }
-
-        .footer_main_div * {
-            gap: 0px !important;
-            padding: 0px !important;
-        }
-
-        .footer_column_1 {
-            height: 140px !important;
-        }
-
-        .footer_column_2 {
-            height: 20px !important;
-        }
-
-        .footer_column_4 {
-            height: max-content !important;
-            padding-bottom: 20px !important;
-        }
-    }
-
-    .recept_kategoria__kategoriak {
-        zoom: 80%;
-    }
-
     .login-div {
         display: none !important;
     }
@@ -1217,6 +1153,7 @@
     #hamburgermenudropdownicon {
         pointer-events: none;
     }
+
 }
 
 @media (min-width: 1200px) {

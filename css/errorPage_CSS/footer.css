@@ -1,0 +1,147 @@
+.footer_container {
+    background: #B02000;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.footer_main_div {
+    display: flex;
+    flex-direction: row;
+    gap: 66px;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.footer_column_1 {
+    padding: 0px 0px 70px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 251px;
+    position: relative;
+}
+
+.footer_foodhub {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 55px;
+    font-weight: 400;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.footer_termsofuse {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer_termsofuse:hover {
+    text-decoration: none;
+}
+
+.footer_column_2 {
+    padding: 29px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 251px;
+    position: relative;
+}
+
+.footer_email {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.footer_column_3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 350px;
+    position: relative;
+}
+
+.footer_logo_pic {
+    flex: 1;
+    width: 150px;
+    height: auto;
+    position: relative;
+    object-fit: contain;
+}
+
+.footer_column_4 {
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 251px;
+    position: relative;
+}
+
+.footer_facebook {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.footer_twitter {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+
+.footer_intagram {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}

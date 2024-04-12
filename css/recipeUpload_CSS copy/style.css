@@ -12,6 +12,78 @@ body {
   position: relative;
 }
 
+/* 
+.navbar,
+.navbar_menu {
+  background: #bb5a00;
+  opacity: 0.97;
+  padding: 9px 0px 9px 0px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_profil_text {
+  color: #ffffff;
+  text-align: left;
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+}
+
+.login_div a {
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar_searchbar {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #ffffff21;
+  border-width: 2px;
+  flex-shrink: 0;
+  width: 905px;
+  height: 65px;
+  position: relative;
+  overflow: hidden;
+  font-size: 22px;
+  text-align: left;
+  padding-left: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.navbar_foobhub_logo_text {
+  font-family: 'Inter-Regular', sans-serif;
+  font-size: 60px;
+  left: 40px;
+  position: relative;
+  background: linear-gradient(#FF0000, #FF6000, #EEA325);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.navbar_foobhub_logo_text:hover {
+  background: linear-gradient(#FF0000, #FF6000, #EEA325);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transform: scale(1.3);
+}
+
+.navbar a {
+  text-decoration: none;
+} */
+
 .main_div {
   background: #ffffff;
   border-style: solid;
@@ -27,7 +99,7 @@ body {
   width: 1079px;
   height: auto;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
+  /* overflow: hidden; */
   align-content: center;
   max-width: 100%;
   margin: 0 auto;
@@ -1130,23 +1202,124 @@ body {
   text-align: center;
 }
 
-.background-img-top {
-  align-self: stretch;
-  flex-shrink: 0;
+.background_image_top {
+  /* image-9 */
   width: 100%;
-  height: 300px;
-  position: sticky;
+  height: 160px;
+  position: relative;
+  object-fit: cover;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.background_image_bottom {
+  /* image-92 */
+  width: 100%;
+  height: 200px;
+  position: relative;
   object-fit: cover;
 }
 
-.background-img-bottom {
-  align-self: stretch;
-  flex-shrink: 0;
+.footer {
+  background: #bb5a00;
+  padding: 15px 281px 15px 281px;
+  display: flex;
+  flex-direction: row;
+  gap: 66px;
   width: 100%;
-  height: 300px;
-  position: sticky;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.footer_div {
+  flex-shrink: 0;
+  width: 385px;
+  height: 213px;
+  position: relative;
+}
+
+.footer_div_maintitle {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 55px;
+  font-weight: 400;
+  position: relative;
+  width: 237px;
+  height: 153.7px;
+}
+
+.footer_div_TermsofUse {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  position: relative;
+  width: 385px;
+  height: 129px;
+}
+
+.footer_div_gmail {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  width: 291px;
+  height: 214px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_div_foodhub_logo_trasnparent {
+  flex-shrink: 0;
+  width: 268px;
+  height: 214px;
+  position: relative;
   object-fit: cover;
-  /* margin-top: 235px; */
+}
+
+.footer_div_social_div {
+  display: flex;
+  flex-direction: row;
+  gap: 34px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 188px;
+  height: 213px;
+  position: relative;
+}
+
+.footer_div_social_div_facebook {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.footer_div_social_div_twitter {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: visible;
+}
+
+.footer_div_social_div_instagram {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: visible;
 }
 
 .ingredientsResults {

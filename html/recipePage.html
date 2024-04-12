@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/recipePage_CSS/vars.css" />
   <link rel="stylesheet" href="../css/recipePage_CSS/style.css" />
   <link rel="stylesheet" href="../css/recipePage_CSS/loadingscreen.css">
   <link rel="stylesheet" href="../css/recipePage_CSS/footer.css">
   <link rel="stylesheet" href="../css/recipePage_CSS/navbar.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/responsive.css">
   <link rel="stylesheet" href="../css/recipePage_CSS/dropdowndesszert.css">
   <link rel="stylesheet" href="../css/recipePage_CSS/dropdownfoetel.css">
   <link rel="stylesheet" href="../css/recipePage_CSS/dropdownkategoriak.css">
@@ -35,129 +36,419 @@
     <div class="navbar_div">
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-          <div class="row col-12">
-            <div class="col-lg-4 d-flex align-items-center justify-content-start">
+          <div class="navbar_layout row col-12">
+            <div class="navbarlogo col-lg-4 col-md-3 d-flex align-items-center justify-content-start">
               <div class="navbar_logo" onclick="redirectToMainPage()">
-                <img src="../images/recipePage_Image/logo-removebg-preview.png" class="logo">
-                <img src="../images/recipePage_Image/FoodHub.png" class="navbar_foobhub_logo_text">
+                <img src="../images/mainPage_Image/logo-removebg-preview.png" class="logo" />
+                <img src="../images/mainPage_Image/FoodHub.png" class="navbar_foobhub_logo_text" />
               </div>
             </div>
-            <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
+            <div class="navbar_middle col-lg-4 col-md-6 d-flex align-items-center justify-content-center">
               <div class="input-group">
                 <input type="text" class="navbar_searchbar" placeholder="Keressen receptjeink között ..."
                   aria-label="Search" aria-describedby="basic-addon2" id="search-input" />
               </div>
               <div id="search-results-container" class="mt-2 fixed-top"></div>
-              <div class="menuitems_row row justify-content-center ">
+              <div class="menuitems_row row">
                 <div class="navmenuitems">
                   <ul class="navbarmenulist navbar-nav">
-                    <li class="divider"></li>
                     <li class="dropdown_foetel nav-item dropdown" onmouseover="showFoetelekDropdown()"
                       onmouseout="hideFoetelekDropdown()">
                       <a class="nav-link dropdown" id="dropdownfoetel">
                         Főételek
                       </a>
                       <ul class="dropdown_content_foetel dropdown-content" aria-labelledby="dropdownfoetel">
-                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
-                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
-                        <li><a class="dropdown-item" href="#">Saláták</a></li>
-                        <li><a class="dropdown-item" href="#">Levesek</a></li>
-                        <li><a class="dropdown-item" href="#">Tészták</a></li>
-                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
-                        <li><a class="dropdown-item" href="#">Köretek</a></li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel1"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel1">Burgerek</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel3"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel3">Pizzák</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel4"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel4">Saláták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel5"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel5">Levesek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel6"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel6">Tészták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel7"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel7">Tenger
+                              gyümölcsei</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_foetel8"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_foetel8">Köretek</span></a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="divider"></li>
                     <li class="dropdown_desszert nav-item dropdown" onmouseover="showDesszertekDropdown()"
                       onmouseout="hideDesszertekDropdown()">
                       <a class="nav-link dropdown" id="dropdowndesszert" href="#">
                         Desszertek
                       </a>
                       <ul class="dropdown_content_desszert dropdown-content" aria-labelledby="dropdowndesszert">
-                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
-                        <li><a class="dropdown-item" href="#">Snackek</a></li>
-                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
-                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
-                        <li><a class="dropdown-item" href="#">Piték</a></li>
-                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert12"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert12">Jégkrémek és
+                              Fagylaltok</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert13"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert13">Snackek</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert14"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert14">Muffinok és
+                              Pogácsák</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert16"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert16">Palacsinták</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert17"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert17">Piték</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_desszert18"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_desszert18">Kekszek és
+                              Sütemények</span>
+                          </a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="divider"></li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Levesek</a>
+                    <li class="nav-item" id="navRecipeLink_navbar5_navitem">
+                      <a class="nav-link" id="navRecipeLink_navbar5"
+                        href="http://localhost:8000/html/recipesearchPage.html"><span
+                          id="navRecept_kategoria__div_title_navbar5">Levesek</span>
+                      </a>
                     </li>
-                    <li class="divider"></li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Saláták</a>
+                    <li class="nav-item" id="navRecipeLink_navbar4_navitem">
+                      <a class="nav-link" id="navRecipeLink_navbar4"
+                        href="http://localhost:8000/html/recipesearchPage.html"><span
+                          id="navRecept_kategoria__div_title_navbar4">Saláták</span>
+                      </a>
                     </li>
-                    <li class="divider"></li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Tészták</a>
+                    <li class="nav-item" id="navRecipeLink_navbar6_navitem">
+                      <a class="nav-link" id="navRecipeLink_navbar6"
+                        href="http://localhost:8000/html/recipesearchPage.html"><span
+                          id="navRecept_kategoria__div_title_navbar6">Tészták</span>
+                      </a>
                     </li>
-                    <li class="divider"></li>
                     <li class="dropdown_kategoriak nav-item dropdown" onmouseover="showKategoriakDropdown()"
                       onmouseout="hideKategoriakDropdown()">
-                      <a class="nav-link dropdown" id="dropdownkategoriak" href="#">
+                      <a class="nav-link dropdown" id="dropdownkategoriak"
+                        href="http://localhost:8000/html/categoryPage.html">
                         Kategóriák
                       </a>
                       <ul class="dropdown_content_kategoriak dropdown-content" aria-labelledby="dropdownkategoriak"
                         id="dropdown_content_kategoriak">
-                        <li><a class="dropdown-item" href="#">Burgerek</a></li>
-                        <li><a class="dropdown-item" href="#">Szendvicsek és Wrappok</a></li>
-                        <li><a class="dropdown-item" href="#">Pizzák</a></li>
-                        <li><a class="dropdown-item" href="#">Saláták</a></li>
-                        <li><a class="dropdown-item" href="#">Levesek</a></li>
-                        <li><a class="dropdown-item" href="#">Tészták</a></li>
-                        <li><a class="dropdown-item" href="#">Tenger gyümölcsei</a></li>
-                        <li><a class="dropdown-item" href="#">Köretek</a></li>
-                        <li><a class="dropdown-item" href="#">Szószok</a></li>
-                        <li><a class="dropdown-item" href="#">Torták</a></li>
-                        <li><a class="dropdown-item" href="#">Italok és Koktélok</a></li>
-                        <li><a class="dropdown-item" href="#">Jégkrémek és Fagylaltok</a></li>
-                        <li><a class="dropdown-item" href="#">Snackek</a></li>
-                        <li><a class="dropdown-item" href="#">Muffinok és Pogácsák</a></li>
-                        <li><a class="dropdown-item" href="#">Kenyerek</a></li>
-                        <li><a class="dropdown-item" href="#">Palacsinták</a></li>
-                        <li><a class="dropdown-item" href="#">Piték</a></li>
-                        <li><a class="dropdown-item" href="#">Kekszek és Sütemények</a></li>
-                        <li><a class="dropdown-item" href="#">Turmixok és Shakek</a></li>
-                        <li><a class="dropdown-item" href="#">Vegetárianus</a></li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak1"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak1">Burgerek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak2"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak2">Szendvicsek és
+                              Wrappok</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak3"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak3">Pizzák</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak4"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak4">Saláták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak5"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak5">Levesek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak6"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak6">Tészták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak7"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak7">Tenger
+                              gyümölcsei</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak8"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak8">Köretek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak9"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak9">Szószok</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak10"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak10">Torták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak11"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak11">Italok és
+                              Koktélok</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak12"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak12">Jégkrémek és
+                              Fagylaltok</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak13"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak13">Snackek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak14"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak14">Muffinok és
+                              Pogácsák</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak15"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak15">Kenyerek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak16"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak16">Palacsinták</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak17"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak17">Piték</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak18"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak18">Kekszek és
+                              Sütemények</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak19"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak19">Turmixok és
+                              Shakek</span></a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" id="navRecipeLink_kategoriak20"
+                            href="http://localhost:8000/html/recipesearchPage.html"><span
+                              id="navRecept_kategoria__div_title_kategoriak20">Vegetárianus</span></a>
+                        </li>
                       </ul>
                     </li>
-                    <li class="divider"></li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Ajánlatunk</a>
+
+                    <li class="nav-item" id="navRecipeLink_ajánlatunk">
+                      <a class="nav-link" href="http://localhost:8000">Ajánlatunk</a>
                     </li>
-                    <li class="divider"></li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link" href="#">Rólunk</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-              <img src="../images/recipePage_Image/user.svg" style="width: 7%; margin-right: 5px;">
+            <div class="navbar_profil_login col-lg-4 col-md-3 d-flex align-items-center justify-content-end"
+              style="right: 40px; gap: 20px;">
+              <div class="hamburgermenudropdown">
+                <img src="../images/mainPage_Image/user.svg" class="usersvg" id="hamburgermenudropdownicon"
+                  onclick="toggleDropdownHamburMenu()" />
+                <div class="hamburgermenudropdown_content" id="dropdownContent">
+                  <li>
+                    <div class="login_div_hamburger">
+                      <div class="dropdown_profil dropdown">
+                        <a href="../html/loginPage.html" class="login-text" id="loginhamburger">
+                          Bejelentkezés
+                        </a>
+                        <a class="nav-link dropdown" id="dropdownprofilhamburgermenu"
+                          onclick="toggleDropdownProfilHamburgerMenu()">
+                          Profil
+                        </a>
+                        <ul class="dropdown_content_profil_hamburgermenu dropdown-content"
+                          aria-labelledby="dropdownprofilhamburgermenu" id="dropdown_content_profil_hamburgermenu">
+                          <li>
+                            <a href="./html/profilePage.html" onclick="showAdataim()">
+                              Adataim
+                              <img src="../images/mainPage_Image/gear.svg" class="gear_icon">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="./html/recipeUpload.html">
+                              Recept feltöltése
+                              <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/" onclick="logout()">
+                              Kijelentkezés
+                              <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown_foetel nav-item dropdown">
+                    <a class="nav-link dropdown" id="dropdownfoetelhamburgermenu"
+                      onclick="toggleDropdownFoetelHamburgerMenu()">
+                      Főételek
+                    </a>
+                    <ul class="dropdown_content_foetel_hamburgermenu dropdown-content"
+                      aria-labelledby="dropdownfoetelhamburgermenu" id="dropdown_content_foetel_hamburgermenu">
+                      <li>
+                        <a class="dropdown-item nav-link"
+                          href="http://localhost:8000/html/recipesearchPage.html?categoryID=1">
+                          <span>Burgerek</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=3">
+                          <span>Pizzák</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=4">
+                          <span>Salaták</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=5">
+                          <span>Levesek</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=6">
+                          <span>Teszták</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=7">
+                          <span>Tenger gyümölcsei</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=8">
+                          <span>Köretek</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown_desszertek nav-item dropdown">
+                    <a class="nav-link dropdown" id="dropdowndesszertekhamburgermenu"
+                      onclick="toggleDropdownDesszertekHamburgerMenu()">
+                      Desszertek
+                    </a>
+                    <ul class="dropdown_content_desszertek_hamburgermenu dropdown-content"
+                      aria-labelledby="dropdowndesszertekhamburgermenu" id="dropdown_content_desszertek_hamburgermenu">
+                      <li>
+                        <a class="dropdown-item nav-link"
+                          href="http://localhost:8000/html/recipesearchPage.html?categoryID=12">
+                          <span>Jégkrémek és
+                            Fagylaltok</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=13">
+                          <span>Snackek</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=14">
+                          <span>Muffinok és
+                            Pogácsák</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=16">
+                          <span>Palacsinták</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=17">
+                          <span>Piték</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="http://localhost:8000/html/recipesearchPage.html?categoryID=18">
+                          <span>Kekszek és
+                            Sütemények</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown_kategoriak nav-item dropdown">
+                    <a class="nav-link dropdown" id="dropdownkategoriak"
+                      href="http://localhost:8000/html/categoryPage.html">
+                      Kategóriák
+                    </a>
+                  </li>
+                </div>
+              </div>
               <div id="login_or_profil" class="login_div">
                 <!-- <div class="dropdown_profil dropdown">
-                <a href="#" class="navbar_profil_text" onclick="showDropdown()">
-                  Profil
-                </a>
-                <div class="dropdown_content_profil dropdown-content" id="myDropdown">
-                  <a href="#" onclick="showAdataim()">
-                    Adataim
-                    <img src="../images/mainPage_Image/gear.svg" class="gear_icon"></a>
-                  <a href="#" onclick="showRecepjeim()">
-                    Recept feltöltése
-                    <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon"></a>
-                  <a href="#" onclick="showKedvenceim()">Kedvenceim<img
-                                src="../images/profilePage_Images/heart.svg" class="recipe_icon"></a>
-                  <a href="#" onclick="logout()">
-                    Kijelentkezés
-                    <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                  <a href="#" class="navbar_profil_text" onclick="showDropdown()">
+                    Profil
                   </a>
-                </div>
-              </div> -->
+                   <div class="dropdown_content_profil dropdown-content" id="myDropdown">
+                                  <a href="#" onclick="showAdataim()">
+                                      Adataim
+                                      <img src="../images/mainPage_Image/gear.svg" class="gear_icon">
+                                  </a>
+                                  <a href="./recipeUpload.html">
+                                      Recept feltöltése
+                                      <img src="../images/mainPage_Image/recipebook.svg" class="recipe_icon">
+                                  </a>
+                                  <a href="#" onclick="showKedvenceim()">Kedvenceim<img
+                                          src="../images/profilePage_Images/heart.svg" class="recipe_icon">
+                                      < </a>
+                                          <a href="/" onclick="logout()">
+                                              Kijelentkezés
+                                              <img src="../images/mainPage_Image/logout.svg" class="logout_icon">
+                                          </a>
+                              </div> -->
               </div>
             </div>
           </div>
@@ -269,39 +560,39 @@
         </div>
       </div>
     </div>
-    <div style="width: 100%;">
-      <img class="background-img-bottom" src="../images/recipePage_Image/background-img-bottom0.png" />
-      <div class="footer_container">
-        <div class="footer_main_div">
-          <div class="footer_column_1">
-            <button class="footer_foodhub">FoodHub</button>
-            <a class="footer_termsofuse">Felhasználási feltételek</a>
-          </div>
-          <div class="footer_column_2">
-            <button class="footer_email">foodhub@gmail.com</button>
-          </div>
-          <div class="footer_column_3">
-            <img class="footer_logo_pic" src="../images/recipePage_Image/logo-removebg-preview.png" />
-          </div>
-          <div class="footer_column_4">
-            <a href="https://www.facebook.com/profile.php?id=61558057840547"><img class="footer_facebook"
-                src="../images/recipePage_Image/facebook.svg" /></a>
-            <a href="https://twitter.com/FoodHub_HU"><img class="footer_twitter"
-                src="../images/recipePage_Image/twitter.svg" /></a>
-            <a href="https://www.instagram.com/foodhub_hu/"><img class="footer_intagram"
-                src="../images/recipePage_Image/instagram.svg" /></a>
-          </div>
+
+    <img class="background-img-bottom" src="../images/recipePage_Image/background-img-bottom0.png" />
+    <div class="footer_container">
+      <div class="footer_main_div">
+        <div class="footer_column_1">
+          <button class="footer_foodhub">FoodHub</button>
+          <a class="footer_termsofuse">Felhasználási feltételek</a>
+        </div>
+        <div class="footer_column_2">
+          <button class="footer_email">foodhub@gmail.com</button>
+        </div>
+        <div class="footer_column_3">
+          <img class="footer_logo_pic" src="../images/categoryPage_Image/logo-removebg-preview.png" />
+        </div>
+        <div class="footer_column_4">
+          <a href="https://www.facebook.com/profile.php?id=61558057840547"><img class="footer_facebook"
+              src="../images/categoryPage_Image/facebook.svg" /></a>
+          <a href="https://twitter.com/FoodHub_HU"><img class="footer_twitter"
+              src="../images/categoryPage_Image/twitter.svg" /></a>
+          <a href="https://www.instagram.com/foodhub_hu/"><img class="footer_intagram"
+              src="../images/categoryPage_Image/instagram.svg" /></a>
         </div>
       </div>
     </div>
   </div>
-  </div>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="../js/recipePage_JS/loadingscreen.js"></script>
+  <script src="../js/recipePage_JS/hamburgMenu.js"></script>
   <script src="../../js/script.js"></script>
   <script src="../js/recipePage_JS/commentsInput.js"></script>
   <script src="../js/recipePage_JS/loadRecipe.js"></script>

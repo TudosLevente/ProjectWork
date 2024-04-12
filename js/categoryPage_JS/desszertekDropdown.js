@@ -1,21 +1,22 @@
-var foetelekHovered = false;
+var desszertekHovered = false;
 
-function showFoetelekDropdown() {
-    foetelekHovered = true;
-    var dropdownContent = document.querySelector('.dropdown_content_foetel');
+function showDesszertekDropdown() {
+    desszertekHovered = true;
+    var dropdownContent = document.querySelector('.dropdown_content_desszert');
     dropdownContent.style.display = 'flex';
     dropdownContent.style.animationName = 'fadeIn';
     dropdownContent.style.animationDuration = '0.3s';
     dropdownContent.style.animationFillMode = 'forwards';
 }
 
-function hideFoetelekDropdown() {
-    foetelekHovered = false;
-    if (foetelekHovered === false) {
-        var dropdownContent = document.querySelector('.dropdown_content_foetel');
+function hideDesszertekDropdown() {
+    desszertekHovered = false;
+    if (desszertekHovered === false) {
+        var dropdownContent = document.querySelector('.dropdown_content_desszert');
         dropdownContent.style.animationName = 'fadeOut';
         dropdownContent.style.animationDuration = '0.3s';
         dropdownContent.style.animationFillMode = 'forwards';
         dropdownContent.style.display = 'none';
     }
 }
+

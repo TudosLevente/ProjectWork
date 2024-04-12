@@ -6,39 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./vars.css" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./loadingscreen.css">
-  <link rel="stylesheet" href="./footer.css">
-  <link rel="stylesheet" href="./navbar.css">
-  <link rel="stylesheet" href="./dropdowndesszert.css">
-  <link rel="stylesheet" href="./dropdownfoetel.css">
-  <link rel="stylesheet" href="./dropdownkategoriak.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/vars.css" />
+  <link rel="stylesheet" href="../css/recipePage_CSS/style.css" />
+  <link rel="stylesheet" href="../css/recipePage_CSS/loadingscreen.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/footer.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/navbar.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/dropdowndesszert.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/dropdownfoetel.css">
+  <link rel="stylesheet" href="../css/recipePage_CSS/dropdownkategoriak.css">
   <link rel="stylesheet" href="../../css/scrollbar.css">
-
-
-  <style>
-    a,
-    button,
-    input,
-    select,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      border: none;
-      text-decoration: none;
-      appearance: none;
-      background: none;
-
-      -webkit-font-smoothing: antialiased;
-    }
-  </style>
   <title>Recept</title>
 </head>
 
@@ -46,12 +22,12 @@
   <div class="loading_screen_blur" style="display: flex;" id="loading_screen">
     <div class="loading_screen_body_div">
       <div class="loading_screen_pizza">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
-        <img class="loading_screen_slice" src="./pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
+        <img class="loading_screen_slice" src="../images/recipePage_Image/pizzaslice.png">
       </div>
     </div>
   </div>
@@ -62,8 +38,8 @@
           <div class="row col-12">
             <div class="col-lg-4 d-flex align-items-center justify-content-start">
               <div class="navbar_logo" onclick="redirectToMainPage()">
-                <img src="./logo-removebg-preview.png" class="logo">
-                <img src="./FoodHub.png" class="navbar_foobhub_logo_text">
+                <img src="../images/recipePage_Image/logo-removebg-preview.png" class="logo">
+                <img src="../images/recipePage_Image/FoodHub.png" class="navbar_foobhub_logo_text">
               </div>
             </div>
             <div class="navbar_middle col-lg-4 d-flex align-items-center justify-content-center">
@@ -161,7 +137,7 @@
               </div>
             </div>
             <div class="col-lg-4 d-flex align-items-center justify-content-end" style="right: 40px;">
-              <img src="./user.svg" style="width: 7%; margin-right: 5px;">
+              <img src="../images/recipePage_Image/user.svg" style="width: 7%; margin-right: 5px;">
               <div id="login_or_profil" class="login_div">
                 <!-- <div class="dropdown_profil dropdown">
                 <a href="#" class="navbar_profil_text" onclick="showDropdown()">
@@ -188,7 +164,7 @@
         </div>
       </nav>
     </div>
-    <img class="background-img-top" src="background-img-top0.png" />
+    <img class="background-img-top" src="../images/recipePage_Image/background-img-top0.png" />
     <div class="recipe-display-main-div">
       <div class="recipe-display-layout">
         <div class="recipe-title">
@@ -203,14 +179,14 @@
         </div>
         <div class="recipe-img-and-details">
           <div class="recipe-img-div">
-            <img id="picture_data" src="./food 1.png" alt="" class="recipe-img-display">
+            <img id="picture_data" src="../images/recipePage_Image/food 1.png" alt="" class="recipe-img-display">
           </div>
           <div class="recipe-details">
             <div id="difficulty" class="recipe-details-difficulty">
               <div class="recipe-details-difficulty-title">Nehézség:</div>
-              <img class="star-1" src="star-filled.svg" />
-              <img class="star-2" src="star-empty.svg" />
-              <img class="star-3" src="star-empty.svg" />
+              <img class="star-1" src="../images/recipePage_Image/star-filled.svg" />
+              <img class="star-2" src="../images/recipePage_Image/star-empty.svg" />
+              <img class="star-3" src="../images/recipePage_Image/star-empty.svg" />
             </div>
             <div class="recipe-details-data">
               <div id="username" class="recipe-details-data-username">
@@ -229,7 +205,8 @@
               <div class="recipe-details-favoritebutton-text">
                 Recept mentése
               </div>
-              <img class="recipe-details-favoritebutton-hearticon" id="heartIcon" src="./uncolored_heart_icon.png" />
+              <img class="recipe-details-favoritebutton-hearticon" id="heartIcon"
+                src="../images/recipePage_Image/uncolored_heart_icon.png" />
             </button>
           </div>
         </div>
@@ -293,7 +270,7 @@
       </div>
     </div>
     <div style="width: 100%;">
-      <img class="background-img-bottom" src="background-img-bottom0.png" />
+      <img class="background-img-bottom" src="../images/recipePage_Image/background-img-bottom0.png" />
       <div class="footer_container">
         <div class="footer_main_div">
           <div class="footer_column_1">
@@ -304,12 +281,15 @@
             <button class="footer_email">foodhub@gmail.com</button>
           </div>
           <div class="footer_column_3">
-            <img class="footer_logo_pic" src="./logo-removebg-preview.png" />
+            <img class="footer_logo_pic" src="../images/recipePage_Image/logo-removebg-preview.png" />
           </div>
           <div class="footer_column_4">
-            <a href="#"><img class="footer_facebook" src="./facebook.svg" /></a>
-            <a href="#"><img class="footer_twitter" src="./twitter.svg" /></a>
-            <a href="#"><img class="footer_intagram" src="./instagram.svg" /></a>
+            <a href="https://www.facebook.com/profile.php?id=61558057840547"><img class="footer_facebook"
+                src="../images/recipePage_Image/facebook.svg" /></a>
+            <a href="https://twitter.com/FoodHub_HU"><img class="footer_twitter"
+                src="../images/recipePage_Image/twitter.svg" /></a>
+            <a href="https://www.instagram.com/foodhub_hu/"><img class="footer_intagram"
+                src="../images/recipePage_Image/instagram.svg" /></a>
           </div>
         </div>
       </div>
@@ -321,15 +301,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <script src="./loadingscreen.js"></script>
+  <script src="../js/recipePage_JS/loadingscreen.js"></script>
   <script src="../../js/script.js"></script>
-  <script src="commentsInput.js"></script>
-  <script src="./loadRecipe.js"></script>
-  <script src="./searchbar.js"></script>
-  <script src="./desszertekDropdown.js"></script>
-  <script src="./foetelekDropdown.js"></script>
-  <script src="./kategoriakDropdown.js"></script>
-  <script src="./navbar.js"></script>
+  <script src="../js/recipePage_JS/commentsInput.js"></script>
+  <script src="../js/recipePage_JS/loadRecipe.js"></script>
+  <script src="../js/recipePage_JS/searchbar.js"></script>
+  <script src="../js/recipePage_JS/desszertekDropdown.js"></script>
+  <script src="../js/recipePage_JS/foetelekDropdown.js"></script>
+  <script src="../js/recipePage_JS/kategoriakDropdown.js"></script>
+  <script src="../js/recipePage_JS/navbar.js"></script>
 </body>
 
 </html>

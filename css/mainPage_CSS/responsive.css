@@ -137,14 +137,6 @@
         zoom: 80%;
     }
 
-    .data_div_container {
-        top: 9rem;
-        align-items: flex-start;
-        zoom: 97%;
-        height: 100vh;
-    }
-
-
     #search-results-container {
         font-size: 25px !important;
 
@@ -1265,32 +1257,6 @@
         display: none !important;
     }
 
-    .div_body {
-        display: flex;
-    }
-
-
-    .my_data_div,
-    .my_recipes_div,
-    .my_favorites_div {
-        width: 870px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .data_div_container {
-        width: 100%;
-        align-content: center;
-        flex-wrap: wrap;
-        top: 5rem;
-    }
-
-    .profil_text {
-        top: 110px;
-        font-size: 45px;
-        margin-bottom: 20px;
-    }
-
     .hamburgermenudropdown {
         .navbar_profil_text {
             display: flex;
@@ -1474,14 +1440,6 @@
 
     .title {
         top: 400px !important;
-    }
-
-    .profil_text {
-        top: 120px;
-    }
-
-    .data_div_container {
-        top: 6rem;
     }
 
     .hamburgermenudropdown_content {

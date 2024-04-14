@@ -3,23 +3,23 @@ describe('Login Page Tests', () => {
     cy.visit('http://localhost:8000/html/loginPage.html')
   });
 
-  it('displays login form', () => {
+  it('Bejelentkezési űrlapot jelenít meg', () => {
     cy.get('#bejelentkezes').should('exist');
   });
 
-  it('displays email input', () => {
+  it('Megjeleníti az email bemenetet', () => {
     cy.get('#email').should('exist').should('have.attr', 'type', 'email');
   });
 
-  it('displays password input', () => {
+  it('Megjeleníti a jelszó bevitelét', () => {
     cy.get('#password').should('exist').should('have.attr', 'type', 'password');
   });
 
-  it('displays show password button', () => {
+  it('Megjeleníti a Jelszó megjelenítése gombot', () => {
     cy.get('.gomb-style').should('exist').should('contain.text', 'Mutasd');
   });
 
-  it('toggles password visibility', () => {
+  it('Jelszó láthatóságának tesztelése', () => {
     cy.get('#password').should('have.attr', 'type', 'password');
     cy.get('.gomb-style').click();
     cy.get('#password').should('have.attr', 'type', 'text');
@@ -27,16 +27,16 @@ describe('Login Page Tests', () => {
     cy.get('#password').should('have.attr', 'type', 'password');
   });
 
-  it('has registration link', () => {
+  it('Van regisztrációs link', () => {
     cy.get('.logTOregText-span-a a').should('exist').should('have.attr', 'href', '../html/registrationPage.html');
   });
 
-  it('navigates to registration page', () => {
+  it('Navigálás a regisztrációs oldalra', () => {
     cy.get('.logTOregText-span-a a').click();
     cy.url().should('eq', 'http://localhost:8000/html/registrationPage.html');
   });
 
-  it('reg new user and login', () => {
+  it(' Új felhasználó regisztrálásés bejelentkezés', () => {
     const newuseremail = 'newuser@example.com';
 
     cy.request({
@@ -81,7 +81,7 @@ describe('Login Page Tests', () => {
     });
   });
 
-  it('wrong user login', () => {
+  it('Rossz felhasználói bejelentkezés', () => {
     cy.get('#email').type('newuserexample.com');
     cy.get('#password').type('newPassword123');
     cy.get('.logButton-frame').click();
@@ -92,12 +92,12 @@ describe('Login Page Tests', () => {
 
 
 
-describe('Responsive Design Tests', () => {
+describe('Reszponzivitás tesztelés', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000/html/loginPage.html')
   });
 
-  it('320-375px: Absolute logo, no border', () => {
+  it('320-375px', () => {
     cy.viewport(350, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
@@ -106,7 +106,7 @@ describe('Responsive Design Tests', () => {
     cy.get('.border').should('have.css', 'border', '0px none rgb(0, 0, 0)');
   });
 
-  it('375-425px: Absolute logo', () => {
+  it('375-425px', () => {
     cy.viewport(400, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
@@ -114,27 +114,27 @@ describe('Responsive Design Tests', () => {
     cy.get('.logo').should('have.css', 'background-position', '50% 50%');
   });
 
-  it('425-721px: Padding-right: 5px', () => {
+  it('425-721px', () => {
     cy.viewport(600, 800);
     cy.get('body').should('have.css', 'padding-right', '5px');
   });
 
-  it('721-768px: Padding-right: 50px', () => {
+  it('721-768px', () => {
     cy.viewport(750, 800);
     cy.get('body').should('have.css', 'padding-right', '50px');
   });
 
-  it('768-992px: Padding-right: 100px', () => {
+  it('768-992px', () => {
     cy.viewport(800, 800);
     cy.get('body').should('have.css', 'padding-right', '100px');
   });
 
-  it('992-1200px: Padding-right: 100px', () => {
+  it('992-1200px', () => {
     cy.viewport(1100, 800);
     cy.get('body').should('have.css', 'padding-right', '100px');
   });
 
-  it('1200px and above: Padding-right: 60px', () => {
+  it('1200px és felette', () => {
     cy.viewport(1300, 800);
     cy.get('body').should('have.css', 'padding-right', '60px');
   });

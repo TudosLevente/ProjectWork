@@ -38,6 +38,7 @@ function handleRecipesMenu() {
             adminsMenu.style.display = "none";
         } else {
             recipesMenu.style.display = "none";
+            recipesButtonText.classList.remove("orangeColoredText");
 
             ingredientsMenu.style.display = "none";
             usersMenu.style.display = "none";
@@ -72,6 +73,7 @@ function handleIngredientsMenu() {
             adminsMenu.style.display = "none";
         } else {
             ingredientsMenu.style.display = "none";
+            ingredientsButtonText.classList.remove("orangeColoredText");
 
             recipesMenu.style.display = "none";
             usersMenu.style.display = "none";
@@ -107,6 +109,7 @@ function handleUsersMenu() {
             adminsMenu.style.display = "none";
         } else {
             usersMenu.style.display = "none";
+            usersButtonText.classList.remove("orangeColoredText");
 
             recipesMenu.style.display = "none";
             ingredientsMenu.style.display = "none";
@@ -141,6 +144,7 @@ function handleAdminsMenu() {
             usersMenu.style.display = "none";
         } else {
             adminsMenu.style.display = "none";
+            adminsButtonText.classList.remove("orangeColoredText");
 
             recipesMenu.style.display = "none";
             ingredientsMenu.style.display = "none";

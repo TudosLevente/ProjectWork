@@ -7,7 +7,7 @@
 
 body {
   background-color: #D7BF9C;
-  background-image: url(../images/registrationPage/image-3.png);
+  background-image: url('../../images/loginPage/image-3.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left;
@@ -45,8 +45,9 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-shrink: 0;
-  height: 153px;
+  /* height: 153px; */
   position: relative;
+  margin-bottom: 30px;
 }
 
 .frame-3 {
@@ -62,10 +63,10 @@ body {
 .logo {
   border-radius: 10px;
   flex-shrink: 0;
-  width: 128px;
-  height: 101px;
+  width: 150px;
+  height: 150px;
   position: relative;
-  object-fit: cover;
+  object-fit: contain;
   background-image: url("../images/logo-removebg-preview.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -243,86 +244,4 @@ input[type="text"],
 input[type="password"] {
   border: none;
   outline: none;
-}
-
-
-
-@media (min-width: 320px) and (max-width: 375px) {
-  body {
-    /* background-color: turquoise; */
-    background-image: none;
-    padding-right: 0px;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-
-    .logo {
-      position: absolute;
-      top: -130px;
-      background-position: center;
-    }
-
-    .border {
-      border: none;
-    };
-  }
-}
-
-@media (min-width: 375px) and (max-width: 425px) {
-  body {
-    /* background-color: violet; */
-    background-image: none;
-    padding-right: 0px;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    
-
-    .logo {
-      position: absolute;
-      top: -130px;
-      background-position: center;
-    }
-  }
-}
-
-@media (min-width: 425px) and (max-width: 721px) {
-  body {
-    /* background-color: blue; */
-    background-image: none;
-    padding-right: 5px;
-    align-content: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (min-width: 721px) and (max-width: 768px) {
-  body {
-    /* background-color: red; */
-    background-position: -500px;
-    padding-right: 50px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-  body {
-    /* background-color: green; */
-    background-position: -500px;
-    padding-right: 100px;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  body {
-    /* background-color: yellow; */
-    background-position: -200px;
-    padding-right: 100px;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    /* background-color: purple; */
-    padding-right: 60px;
-  }
 }

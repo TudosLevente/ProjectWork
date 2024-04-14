@@ -28,19 +28,21 @@ async function sendMessage() {
         textarea.style.height = 'auto';
     }
 
-    var commentData = {
-        comment_text: message,
-        recipe_id: recipeId,
-        user_id: loggedInUserId
-    };
+    if (loggedInUserId !== null) {
+        var commentData = {
+            comment_text: message,
+            recipe_id: recipeId,
+            user_id: loggedInUserId
+        };
 
-    return new Promise((resolve, reject) => {
-        postData('http://localhost:8000/api/uploadComment', commentData)
-            .then((res) => {
-                resolve();
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    });
+        return new Promise((resolve, reject) => {
+            postData('http://localhost:8000/api/uploadComment', commentData)
+                .then((res) => {
+                    resolve();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        });
+    }
 }

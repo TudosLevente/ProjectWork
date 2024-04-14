@@ -44,6 +44,8 @@ function verifyRecipe(buttondId) {
         recipeid: recipe_id
     }
     putData('/api/verifyRecipe', data).then((data) => {
+        recipesForVerifyDiv.innerHTML = "";
+        createRecipeForVerifyDiv();
     }).catch((error) => {
         console.error(error);
     });
@@ -55,6 +57,8 @@ function deleteRecipe(buttondId) {
         recipeid: recipe_id
     }
     deleteData('/api/deleteRecipe', data).then((data) => {
+        recipesForVerifyDiv.innerHTML = "";
+        createRecipeForVerifyDiv();
     }).catch((error) => {
         console.error(error);
     });

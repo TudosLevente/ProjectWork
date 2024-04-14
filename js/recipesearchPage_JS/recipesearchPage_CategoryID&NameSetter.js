@@ -39,5 +39,36 @@ const recipesearchCategoryNameTitle = document.getElementById('recipesearchCateg
 
 if (categoryName && categoryNameElement) {
     categoryNameElement.innerHTML = categoryName;
-    recipesearchCategoryNameTitle.innerHTML = categoryName;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log(categoryName);
+    getData(`/api/getRecipesByCategory/${categoryName}`).then((data) => {
+        const mainRecipesDiv = document.getElementById('recipesByCategory');
+
+        console.log(data);
+        for (let i = 1; i <= data[0].length; i++) {
+            const createRecipeA = document.createElement('a');
+            createRecipeA.setAttribute('id', data[0][i - 1].Recipe_ID);
+            createRecipeA.setAttribute('onclick', `goToRecipe(${data[0][i - 1].Recipe_ID})`);
+            createRecipeA.innerHTML = `
+                <div class="recept_kategoria__div">
+                <img class="recept_kategoria__div_image" src="${data[0][i - 1].Picture_data}" />
+                <div class="recept_kategoria__div_title">${data[0][i - 1].Title}</div>
+                </div>
+            `;
+
+            mainRecipesDiv.appendChild(createRecipeA);
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+});
+
+function goToRecipe(buttondId) {
+    var recipe_id = parseInt(document.getElementById(buttondId).getAttribute('id'));
+    console.log(recipe_id);
+    window.location.href = `../../html/recipePage.html?id=${recipe_id}`;
 }

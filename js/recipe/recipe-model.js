@@ -151,7 +151,24 @@ function getAllRecipeInfos(req, res) {
     });
 }
 
+function getRecipesByCategory(req, res) {
+    var con = mysql.createConnection(config.database);
+    con.connect(function (err) {
+        if (err) throw err;
+    });
+
+    con.query('CALL getRecipesByCategory(?)', [req.params['name']], (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
+}
+
 exports.getRecipeInfos = getRecipeInfos;
 exports.uploadRecipe = uploadRecipe;
 exports.loadRecipeInfos = loadRecipeInfos;
 exports.getAllRecipeInfos = getAllRecipeInfos;
+exports.getRecipesByCategory = getRecipesByCategory;

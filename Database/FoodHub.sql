@@ -533,3 +533,13 @@ BEGIN
 END;
 //
 delimiter ;
+
+drop procedure if exists getRecipesByCategory;
+
+DELIMITER //
+CREATE PROCEDURE getRecipesByCategory(IN category VARCHAR(150))
+BEGIN
+    SELECT Recipes.Recipe_ID, Recipes.Title, Recipes.Picture_data, Recipes.Food_Category FROM Recipes WHERE Recipes.Food_Category = category;
+END;
+//
+DELIMITER //

@@ -1110,8 +1110,8 @@
 
         .usersvg {
             position: relative;
-            left: 50px;
-            content: url(../../images/menu-symbol.svg);
+            /* left: 50px;
+            content: url(../../images/menu-symbol.svg); */
             width: 70px;
             filter: brightness(0) invert(1);
         }

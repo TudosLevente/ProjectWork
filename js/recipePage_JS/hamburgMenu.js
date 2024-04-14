@@ -5,7 +5,8 @@ function toggleDropdownHamburMenu() {
     var dropdown_content_profil_hamburgermenu = document.getElementById("dropdown_content_profil_hamburgermenu");
     var hamburgermenudropdownicon = document.getElementById("hamburgermenudropdownicon");
     dropdownContent.style.display = dropdownContent.style.display === "flex" ? "none" : "flex";
-    hamburgermenudropdownicon.classList.toggle("rotate-icon"); dropdown_content_foetel_hamburgermenu.style.display = 'none';
+    hamburgermenudropdownicon.classList.toggle("rotate-icon"); 
+    dropdown_content_foetel_hamburgermenu.style.display = 'none';
     dropdown_content_desszertek_hamburgermenu.style.display = 'none';
     dropdown_content_profil_hamburgermenu.style.display = 'none';
 }

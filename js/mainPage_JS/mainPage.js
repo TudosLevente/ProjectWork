@@ -22,7 +22,7 @@ function loadRecipes() {
                 var id = generateNumber();
 
                 getData(`http://localhost:8000/api/loadrecipe/${id}`).then((recipeData) => {
-                    console.log(recipeData);
+                    // console.log(recipeData);
                     if (recipeData) {
                         var uj_element = document.getElementById(`r${i}c${j}`);
                         if (uj_element) {

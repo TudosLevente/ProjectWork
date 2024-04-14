@@ -292,3 +292,11 @@ a:hover {
 .rotate-icon {
   transform: rotate(90deg);
 }
+
+.logout_icon,
+.gear_icon,
+.recipe_icon {
+  position: relative;
+  width: 20%;
+  height: 20%;
+}

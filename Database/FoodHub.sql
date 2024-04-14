@@ -303,6 +303,16 @@ END;
 //
 delimiter ;
 
+-- getAllRecipeInfos procedure
+DROP PROCEDURE if exists getAllRecipeInfos;
+delimiter //
+CREATE PROCEDURE getAllRecipeInfos()
+BEGIN
+    SELECT * FROM Recipes;
+END;
+//
+delimiter ;
+
 -- getRecipeInfos procedure
 DROP PROCEDURE if exists getRecipeInfos;
 delimiter //

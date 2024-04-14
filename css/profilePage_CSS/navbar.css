@@ -51,7 +51,7 @@
     z-index: 1;
     background-color: white;
     border-top: none !important;
-    width: calc(100% - 45px);
+    width: calc(100% - 30px);
     max-height: 420px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -291,4 +291,12 @@ a:hover {
 
 .rotate-icon {
     transform: rotate(90deg);
+}
+
+.logout_icon,
+.gear_icon,
+.recipe_icon {
+  position: relative;
+  width: 20%;
+  height: 20%;
 }

@@ -134,6 +134,24 @@ async function uploadRecipe(req, res) {
     });
 }
 
+
+function getAllRecipeInfos(req, res) {
+    var con = mysql.createConnection(config.database);
+    con.connect(function (err) {
+        if (err) throw err;
+    });
+
+    con.query('CALL getAllRecipeInfos()', (err, result) => {
+        if (err) throw err;
+        res.send(result);
+    });
+
+    con.end(function (err) {
+        if (err) throw err;
+    });
+}
+
 exports.getRecipeInfos = getRecipeInfos;
 exports.uploadRecipe = uploadRecipe;
 exports.loadRecipeInfos = loadRecipeInfos;
+exports.getAllRecipeInfos = getAllRecipeInfos;

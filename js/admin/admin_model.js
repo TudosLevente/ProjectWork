@@ -142,7 +142,10 @@ function uploadIngredient(req, res) {
 
     const sql = 'CALL uploadIngredient(?,?)';
     con.query(sql, [req.body.ingredient_name, req.body.ingredient_category], (err, result) => {
-        if (err) throw err;
+        if (err) {
+            console.error(err);
+            res.status(409).send('Ilyen hozzávaló már létezik!');
+        }
         res.status(200).send(result);
     });
 

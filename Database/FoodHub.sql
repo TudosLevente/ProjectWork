@@ -74,7 +74,7 @@ DELIMITER ;
 -- Ingredients table
 CREATE TABLE IF NOT EXISTS Ingredients (
     Ingredient_ID INT AUTO_INCREMENT PRIMARY KEY,
-    Ingredient_Name VARCHAR(255) NOT NULL,
+    Ingredient_Name VARCHAR(255) NOT NULL UNIQUE,
     Ingredient_Category VARCHAR(30)
 );
 
@@ -482,7 +482,7 @@ drop procedure if exists getAdmins;
 Delimiter //
 CREATE PROCEDURE getAdmins(IN user_email VARCHAR(255))
 BEGIN
-    SELECT Users.Email FROM Users WHERE IsAdmin = TRUE;
+    SELECT Users.Email, Users.Username, Users.User_ID FROM Users WHERE IsAdmin = TRUE;
 END;
 //
 delimiter ;

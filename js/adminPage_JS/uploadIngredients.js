@@ -8,8 +8,13 @@ function uploadIngredient() {
     }
 
     postData("/api/uploadIngredient", data).then((data) => {
-        ingredient_name.value = '';
-        ingredient_category.value = '';
+        if (data.status === 200) {
+            ingredient_name.value = '';
+            ingredient_category.value = '';
+        }
+        else if (response.status === 409) {
+            alert("Ilyen hozzávaló már létezik!");
+        }
     }).catch((err) => {
         console.error(err);
     });
@@ -44,7 +49,7 @@ function loadIngredients() {
                     <!-- <div class="ingredients-layout__category-input">Kategória</div> -->
             </div>
             <div class="ingredients-layout__button-layout">
-                <button id="deleteIngredient_${i}" onclick="modifyIngredient(this.id)" class="ingredients-layout__delete-button">
+                <button id="deleteIngredient_${i}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
                     <div class="ingredients-layout__delete-text">Törlés</div>
                 </button>
                 <button id="modifyIngredient_${i}" onclick="modifyIngredient(this.id)" class="ingredients-layout__modify-button">
@@ -62,20 +67,57 @@ function loadIngredients() {
 
 loadIngredients();
 
+var stored_ingredient_name = "";
+
 function modifyIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
-    console.log(ingredient_id);
 
     const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
     name_input.readOnly = false;
+    stored_ingredient_name = name_input.value;
+}
 
-    const category_input = document.getElementById(`ingredient_category_${ingredient_id}`);
-    category_input.readOnly = false;
+function saveIngredient() {
+    var ingredient_id = document.getElementById(buttonId).getAttribute('id');
+    ingredient_id = ingredient_id.split('_')[1];
+
+    const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
+
+    const data = {
+        ingredient_id: ingredient_id,
+        ingredientName: name_input.value
+    }
+
+    putData("/api/updateIngredient", data).then((response) => {
+        console.log(response);
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+function cancelModifyIngredient() {
+    var ingredient_id = document.getElementById(buttonId).getAttribute('id');
+    ingredient_id = ingredient_id.split('_')[1];
+
+    const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
+
+    name_input.value = stored_ingredient_name;
+    name_input.readOnly = true;
+    stored_ingredient_name = "";
 }
 
 function deleteIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
-    console.log(ingredient_id);
+
+    const data = {
+        ingredient_id: ingredient_id
+    }
+
+    deleteData("/api/removeIngredient", data).then((response) => {
+        console.log(response);
+    }).catch((error) => {
+        console.error(error);
+    });
 }

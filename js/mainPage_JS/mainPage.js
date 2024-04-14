@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function goToRecipe(buttondId) {
     var recipe_id = parseInt(document.getElementById(buttondId).getAttribute('id'));
     console.log(recipe_id);
-    window.location.href = `../TEST/recipePageTEST/index.html?id=${recipe_id}`;
+    window.location.href = `../../html/recipePage.html?id=${recipe_id}`;
 }
 
 

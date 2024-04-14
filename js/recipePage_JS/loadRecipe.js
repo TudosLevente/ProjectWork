@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log(recipeId);
 
+    if (recipeId === "NaN") {
+        window.location.href = "../../html/errorPage.html";
+    }
+
     getData('/getLoggedInUserData').then((response) => {
         console.log(response);
         loggedInUserId = response.user_id;
@@ -98,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response[0].length != 0) {
                     if (response[0][0].Recipe_ID == recipeId) {
                         var heartIcon = document.getElementById("heartIcon");
-                        heartIcon.src = "./red_heart_icon.png";
+                        heartIcon.src = "../../images/recipePage_Image/red_heart_icon.png";
                     }
                 }
             }).catch((error) => {
@@ -119,26 +123,26 @@ document.addEventListener('DOMContentLoaded', function () {
         if (response[0][0].Recipes_Difficulty_Level === 'Könnyű elkészíteni') {
             document.getElementById('difficulty').innerHTML = `
             <div class="recipe-details-difficulty-title">Nehézség:</div>
-            <img class="star-1" src="star-filled.svg" />
-            <img class="star-2" src="star-empty.svg" />
-            <img class="star-2" src="star-empty.svg" />
+            <img class="star-1" src="../../images/recipePage_Image/star-filled.svg" />
+            <img class="star-2" src="../../images/recipePage_Image/star-empty.svg" />
+            <img class="star-2" src="../../images/recipePage_Image/star-empty.svg" />
 
             `;
         }
         else if (response[0][0].Recipes_Difficulty_Level === 'Közepesen nehéz elkészíteni') {
             document.getElementById('difficulty').innerHTML = `
             <div class="recipe-details-difficulty-title">Nehézség:</div>
-            <img class="star-1" src="star-filled.svg" />
-            <img class="star-2" src="star-filled.svg" />
-            <img class="star-3" src="star-empty.svg" />
+            <img class="star-1" src="../../images/recipePage_Image/star-filled.svg" />
+            <img class="star-2" src="../../images/recipePage_Image/star-filled.svg" />
+            <img class="star-3" src="../../images/recipePage_Image/star-empty.svg" />
             `;
         }
         else if (response[0][0].Recipes_Difficulty_Level === 'Nehéz elkészíteni') {
             document.getElementById('difficulty').innerHTML = `
             <div class="recipe-details-difficulty-title">Nehézség:</div>
-            <img class="star-1" src="star-filled.svg" />
-            <img class="star-2" src="star-filled.svg" />
-            <img class="star-3" src="star-filled.svg" />
+            <img class="star-1" src="../../images/recipePage_Image/star-filled.svg" />
+            <img class="star-2" src="../../images/recipePage_Image/star-filled.svg" />
+            <img class="star-3" src="../../images/recipePage_Image/star-filled.svg" />
             `;
         }
 
@@ -331,7 +335,7 @@ function addToFavorites() {
         if (currentSrc.includes("uncolored")) {
             postData('http://localhost:8000/api/addFavorite', favoriteData)
                 .then((res) => {
-                    heartIcon.src = "./red_heart_icon.png";
+                    heartIcon.src = "../../images/recipePage_Image/red_heart_icon.png";
                 })
                 .catch((err) => {
                     console.log(err);
@@ -339,7 +343,7 @@ function addToFavorites() {
         } else {
             deleteData('http://localhost:8000/api/removeFavorite', favoriteData)
                 .then((res) => {
-                    heartIcon.src = "./uncolored_heart_icon.png";
+                    heartIcon.src = "../../images/recipePage_Image/uncolored_heart_icon.png";
                 })
                 .catch((err) => {
                     console.log(err);

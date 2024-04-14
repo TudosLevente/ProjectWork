@@ -1,5 +1,4 @@
 function handleAcceptCookies() {
-    var button = document.querySelector('.websidecookies-agreebutton');
     var accepted = document.querySelector('.websidecookies');
     accepted.style.display = 'none';
 

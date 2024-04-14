@@ -24,12 +24,12 @@
         <img class="admin-page__icon" src="../images/adminPage_Image/icon0.svg" />
         <div class="admin-page__loggedinas-layout-frame">
           <div class="admin-page__text">Bejelentkezve:</div>
-          <div class="admin-page__text-username">admin</div>
+          <div id="loggedin_username" class="admin-page__text-username">admin</div>
         </div>
       </div>
       <div class="admin-page__logout-layout">
         <img class="admin-page__icon2" src="../images/adminPage_Image/icon1.svg" />
-        <button class="admin-page__text2">Kijelentkezés</button>
+        <button type="button" onclick="logout()" class="admin-page__text2">Kijelentkezés</button>
       </div>
     </div>
     <div class="admin-page__adminpage-maindiv">
@@ -57,28 +57,8 @@
           <div class="indicators__picture">Kép</div>
           <div class="indicators__name">Név</div>
         </div>
-        <div class="recipe-layout__recipe-div-main">
-          <div class="recipe-layout__recipe-data-div">
-            <div class="recipe-layout__recipe-data-layout">
-              <div class="recipe-layout__recipe-id">1</div>
-              <img src="../images/logo-removebg-preview.png" class="recipe-layout__recipe-image" />
-              <div class="recipe-layout__recipe-title">Kecske sajt</div>
-            </div>
-            <div class="recipe-layout__button-layout">
-              <button class="recipe-layout__watch-button">
-                <img class="recipe-layout__icon" src="../images/adminPage_Image/icon3.svg" />
-                <div class="recipe-layout__text">Megtekintés</div>
-              </button>
-              <button class="recipe-layout__ok-button">
-                <img class="recipe-layout__icon" src="../images/adminPage_Image/icon4.svg" />
-                <div class="recipe-layout__text">Jóváhagyás</div>
-              </button>
-              <button class="recipe-layout__delete-button">
-                <img class="recipe-layout__icon" src="../images/adminPage_Image/icon5.svg" />
-                <div class="recipe-layout__text">Törlés</div>
-              </button>
-            </div>
-          </div>
+        <div id="recipesforverify" class="recipe-layout__recipe-div-main">
+
         </div>
       </div>
 
@@ -87,14 +67,17 @@
           <div class="ingredients-layout__title">Hozzávaló felvétele</div>
           <div class="ingredients-layout__ingredient-data-div">
             <div class="ingredients-layout__ingredient-data-div-input-layout">
-              <input type="text" class="ingredients-layout__name" placeholder="Hozzávaló név" />
-              <input type="text" class="ingredients-layout__catergory" placeholder="Kategória" />
+              <input id="ingredient_name" type="text" class="ingredients-layout__name" placeholder="Hozzávaló név" />
+              <!-- <div class="ingredients-layout__name-input"></div> -->
+              <input id="ingredient_category" type="text" class="ingredients-layout__catergory"
+                placeholder="Kategória" />
+              <!-- <div class="ingredients-layout__catergory-input"></div> -->
             </div>
             <div class="ingredients-layout__button-layout">
-              <button class="ingredients-layout__add-button">
+              <button type="button" onclick="uploadIngredient()" class="ingredients-layout__add-button">
                 <div class="ingredients-layout__add-text">Hozzáad</div>
               </button>
-              <button class="ingredients-layout__nevermind-button">
+              <button type="button" onclick="cancelUpload()" class="ingredients-layout__nevermind-button">
                 <div class="ingredients-layout__nevermind-text">Mégse</div>
               </button>
             </div>
@@ -102,22 +85,8 @@
         </div>
         <div class="ingredients-layout__manage-ingredients">
           <div class="ingredients-layout__title">Hozzávalók kezelése</div>
-          <div class="ingredients-layout__manage-ingredients-recipe-div-main">
-            <div class="ingredients-layout__manage-ingredient-data-div">
-              <div class="ingredients-layout__input-layout">
-                <input readonly type="text" class="ingredients-layout__input-layout-id" placeholder="ID">
-                <input readonly type="text" class="ingredients-layout__input-layout-name" placeholder="Hozzávaló név">
-                <input readonly type="text" class="ingredients-layout__input-layout-category" placeholder="Kategória">
-              </div>
-              <div class="ingredients-layout__button-layout">
-                <button class="ingredients-layout__delete-button">
-                  <div class="ingredients-layout__delete-text">Törlés</div>
-                </button>
-                <button class="ingredients-layout__modify-button">
-                  <div class="ingredients-layout__modify-text">Módosítás</div>
-                </button>
-              </div>
-            </div>
+          <div id="ingredients" class="ingredients-layout__manage-ingredients-recipe-div-main">
+
           </div>
         </div>
       </div>
@@ -127,15 +96,18 @@
           <div class="users-layout__title">Felhasználó felvétele</div>
           <div class="users-layout__users-data-div">
             <div class="users-layout__input-layout">
-              <input type="text" class="users-layout__name" placeholder="Felhasználó név" />
-              <input type="email" class="users-layout__email" placeholder="Email cím" />
-              <input type="text" class="users-layout__password" placeholder="Jelszó" />
+              <input id="username" type="text" class="users-layout__name" placeholder="Felhasználó név" />
+              <!-- <div class="users-layout__input">Felhasználó név</div> -->
+              <input id="email" type="email" class="users-layout__email" placeholder="Email cím" />
+              <!-- <div class="users-layout__input2">Email cím</div> -->
+              <input id="password" type="text" class="users-layout__password" placeholder="Jelszó" />
+              <!-- <div class="users-layout__input3">Jelszó</div> -->
             </div>
             <div class="users-layout__button-layout">
-              <button class="users-layout__add-button">
+              <button type="button" onclick="addUser()" class="users-layout__add-button">
                 <div class="users-layout__text">Hozzáad</div>
               </button>
-              <button class="users-layout__nevermind-button">
+              <button type="button" onclick="cancelAddUser()" class="users-layout__nevermind-button">
                 <div class="users-layout__text">Mégse</div>
               </button>
             </div>
@@ -143,22 +115,8 @@
         </div>
         <div class="users-layout__manage-users">
           <div class="users-layout__title">Felhasználók kezelése</div>
-          <div class="users-layout__manage-users-data-main">
-            <div class="users-layout__manage-users-data-div">
-              <div class="users-layout__input-layout">
-                <input readonly class="users-layout__id" placeholder="ID">
-                <input readonly class="users-layout__name2" placeholder="Felhasználó név">
-                <input readonly class="users-layout__email" placeholder="Email cím">
-              </div>
-              <div class="users-layout__button-layout">
-                <button class="users-layout__delete-button">
-                  <div class="users-layout__text">Törlés</div>
-                </button>
-                <button class="users-layout__modify-button">
-                  <div class="users-layout__text">Módosítás</div>
-                </button>
-              </div>
-            </div>
+          <div id="users" class="users-layout__manage-users-data-main">
+
           </div>
         </div>
       </div>
@@ -168,15 +126,18 @@
           <div class="admin-layout__title">Admin felvétele</div>
           <div class="admin-layout__admins-data-div">
             <div class="admin-layout__input-layout">
-              <input type="text" class="admin-layout__name" placeholder="Admin név" />
-              <input type="email" class="admin-layout__email" placeholder="Email cím" />
-              <input type="text" class="admin-layout__password" placeholder="Jelszó" />
+              <!-- <input type="text" class="admin-layout__name" placeholder="Admin név" /> -->
+              <!-- <div class="admin-layout__input">Admin név</div> -->
+              <input id="admin_email" type="email" class="admin-layout__email" placeholder="Email cím" />
+              <!-- <div class="admin-layout__input2">Email cím</div> -->
+              <!-- <input type="text" class="admin-layout__password" placeholder="Jelszó" /> -->
+              <!-- <div class="admin-layout__input3">Jelszó</div> -->
             </div>
             <div class="admin-layout__button-layout">
-              <button class="admin-layout__add-button">
+              <button type="button" onclick="uploadAdmin()" class="admin-layout__add-button">
                 <div class="admin-layout__text">Hozzáad</div>
               </button>
-              <button class="admin-layout__nevermind-button">
+              <button type="button" onclick="cancelAdminUpload()" class="admin-layout__nevermind-button">
                 <div class="admin-layout__text">Mégse</div>
               </button>
             </div>
@@ -184,22 +145,8 @@
         </div>
         <div class="admin-layout__manage-admins">
           <div class="admin-layout__title">Adminok kezelése</div>
-          <div class="admin-layout__manage-admins-data-main">
-            <div class="admin-layout__manage-admins-data-div">
-              <div class="admin-layout__input-layout">
-                <input readonly class="admin-layout__id" placeholder="ID">
-                <input readonly class="admin-layout__name2" placeholder="Admin név">
-                <input readonly class="admin-layout__email" placeholder="Email cím">
-              </div>
-              <div class="admin-layout__button-layout">
-                <div class="admin-layout__delete-button">
-                  <div class="admin-layout__text">Törlés</div>
-                </div>
-                <div class="admin-layout__modify-button">
-                  <div class="admin-layout__text">Módosítás</div>
-                </div>
-              </div>
-            </div>
+          <div id="admins" class="admin-layout__manage-admins-data-main">
+
           </div>
         </div>
       </div>
@@ -207,7 +154,13 @@
 
   </div>
 
+  <script src="../js/script.js"></script>
   <script src="../js/adminPage_JS/handleSelectionMenu.js"></script>
+  <script src="../js/adminPage_JS/loadRecipeForVerify.js"></script>
+  <script src="../js/adminPage_JS/uploadIngredients.js"></script>
+  <script src="../js/adminPage_JS/adminHandle.js"></script>
+  <script src="../js/adminPage_JS/adminpage.js"></script>
+  <script src="../js/adminPage_JS/handleUser.js"></script>
 </body>
 
 </html>

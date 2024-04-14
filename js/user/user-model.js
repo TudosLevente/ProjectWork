@@ -10,7 +10,7 @@ function getAllUserInfos(req, res) {
         if (err) throw err;
     });
 
-    con.query('select * from Users', (err, result) => {
+    con.query('SELECT Users.User_ID, Users.Username, Users.Email FROM Users', (err, result) => {
         if (err) throw err;
         res.send(result);
     });

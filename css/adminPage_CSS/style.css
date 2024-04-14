@@ -135,7 +135,7 @@ body {
 .admin-page__admin-navbar {
   display: flex;
   flex-direction: row;
-  gap: 62.1875rem;
+  /* gap: 62.1875rem; */
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;

@@ -120,6 +120,11 @@ CREATE TABLE IF NOT EXISTS Comments (
         REFERENCES Recipes (Recipe_ID)
 );
 
+INSERT INTO Users (Username, Email, Password, IsAdmin) VALUES
+("Admin", "admin@gmail.com", "admin123", 1),
+("Levi", "levi@gmail.com", "levi123", 1),
+("Bence", "bence@gmail.com", "bence123", 1);
+
 INSERT INTO Ingredients (Ingredient_Name, Ingredient_Category) 
 VALUES
 ('Liszt', 'Szénhidrátok'),

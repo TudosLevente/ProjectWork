@@ -1,10 +1,10 @@
 describe('Registration Page', () => {
   beforeEach(() => {
-    cy.wait(2000);
+    cy.wait(1000);
     cy.visit('http://localhost:8000/html/registrationPage.html');
   });
 
-  it('dont allow registration with a invalid email', () => {
+  it('Ellenőrizze a regisztrálás közben megadott emailt', () => {
     cy.get('#username').type('FoodHub');
     cy.get('#email').type('invalidemail.com');
     cy.get('#password').type('Foodhub12345');
@@ -13,10 +13,10 @@ describe('Registration Page', () => {
     cy.get('#passwordAgain').should('have.value', 'Foodhub12345');
     cy.get('.regButton-frame').click();
     cy.get('#email:invalid').should('have.attr', 'required');
-    cy.url().should('eq', 'http://localhost:8000/html/registration.html');
+    cy.url().should('eq', 'http://localhost:8000/html/registrationPage.html');
   });
 
-  it('allows registration with a valid email', () => {
+  it('Ellenőrizze ha jó emailt megadott', () => {
 
     cy.request({
       method: 'DELETE',
@@ -54,65 +54,65 @@ describe('Registration Page', () => {
     });
   });
 
-  it('can redirect to login page', () => {
+  it('Ellenőrizze a bejelentkezéshez átirányítását', () => {
     cy.get('.regTologText-span-a > a').click();
     cy.url().should('eq', 'http://localhost:8000/html/loginPage.html');
   });
 });
 
-describe('Responsive Design Tests', () => {
+describe('Reszponzivitás tesztelés', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000/html/registrationPage.html');
   });
 
-  it('320-375px: Absolute logo, no border', () => {
+  it('320-375px', () => {
     cy.viewport(350, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
-    cy.get('.logo').should('have.css', 'top', '-100px');
+    cy.get('.logo').should('have.css', 'top', '-150px');
     cy.get('.logo').should('have.css', 'background-position', '50% 50%');
     cy.get('.border').should('have.css', 'border', '0px none rgb(0, 0, 0)');
   });
 
-  it('375-425px: Absolute logo', () => {
+  it('375-425px', () => {
     cy.viewport(400, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
-    cy.get('.logo').should('have.css', 'top', '-100px');
+    cy.get('.logo').should('have.css', 'top', '-150px');
     cy.get('.logo').should('have.css', 'background-position', '50% 50%');
   });
 
-  it('425-721px: Padding-right: 5px', () => {
+  it('425-721px', () => {
     cy.viewport(600, 800);
     cy.get('body').should('have.css', 'padding-right', '5px');
   });
 
-  it('721-768px: Padding-right: 50px', () => {
+  it('721-768px', () => {
     cy.viewport(750, 800);
     cy.get('body').should('have.css', 'padding-right', '50px');
   });
 
-  it('768-992px: Padding-right: 100px', () => {
+  it('768-992px', () => {
     cy.viewport(800, 800);
     cy.get('body').should('have.css', 'padding-right', '100px');
   });
 
-  it('992-1200px: Padding-right: 100px', () => {
+  it('992-1200px', () => {
     cy.viewport(1100, 800);
     cy.get('body').should('have.css', 'padding-right', '100px');
   });
 
-  it('1200px and above: Padding-right: 60px', () => {
+  it('1200px és felette', () => {
     cy.viewport(1300, 800);
     cy.get('body').should('have.css', 'padding-right', '60px');
   });
 });
 
-describe('Input fields', () => {
+describe('Beviteli mezők', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000/html/registrationPage.html');
   });
-  it('validates input fields', () => {
+  it('Ellenőrizze a mezőket', () => {
     cy.get('.regButton-frame').click();
     cy.get('#username').should('have.attr', 'required');
     cy.get('#email').should('have.attr', 'required');
@@ -121,12 +121,12 @@ describe('Input fields', () => {
   });
 });
 
-describe('Registration Page Elements', () => {
+describe('Regisztrációs oldal elemek', () => {
   beforeEach(() => {
     cy.visit('http://localhost:8000/html/registrationPage.html');
   });
 
-  it('Page elements', () => {
+  it('Oldal elemek', () => {
     cy.get('.frame-1').should('exist');
     cy.get('.logo').should('exist');
     cy.get('.regisztralj').should('exist');

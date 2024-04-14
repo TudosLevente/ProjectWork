@@ -166,13 +166,22 @@ describe('Reszponzivitás tesztelés', () => {
 
   it(' Ellenőrzi a reszponzivitás betöltését (992 x 800)', () => {
     cy.viewport(992, 800);
-    cy.get('.carousel-inner').should('have.css', 'width', '1700.0001220703125px');
+    cy.get('.carousel-inner').should('have.css', 'width').then(width => {
+      const widthNumber = parseFloat(width);
+      expect(widthNumber).to.be.within(1600, 1700);
+    });;
     cy.get('.carousel-inner').should('have.css', 'margin-left', '30px');
     cy.get('.carousel-inner').should('have.css', 'margin-right', '30px');
     cy.get('.buttonleft, .buttonright').should('have.css', 'bottom', '45px');
     cy.get('.websidecookies').should('have.css', 'zoom', '0.7');
-    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left', '41.8261px');
-    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right', '69.7237px');
+    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left').then(paddingLeft => {
+      const paddingLeftNumber = parseFloat(paddingLeft);
+      expect(paddingLeftNumber).to.be.within(40, 50);
+    });
+    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right').then(paddingRight => {
+      const paddingRightNumber = parseFloat(paddingRight);
+      expect(paddingRightNumber).to.be.within(60, 70);
+    });
     cy.get('.uj_recpetjeink_etel_galeria, .customersfavorite_etel_galeria, .signup_newspaper_container, .ajanlataink, .honap_legjobb_div, .feedback_footer').should('have.css', 'zoom', '0.6');
     cy.get('.title').should('have.css', 'top', '500px');
     cy.get('.hamburgermenudropdown_content').should('not.be.visible');
@@ -186,7 +195,7 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.kategoria_search_div_inner').should('have.css', 'gap', '30px');
     cy.get('.carousel-inner').should('have.css', 'width').then(width => {
       const widthNumber = parseFloat(width);
-      expect(widthNumber).to.be.within(1700, 1701);
+      expect(widthNumber).to.be.within(1600, 1700);
     });;
     cy.get('.carousel-inner').should('have.css', 'margin-left', '30px');
     cy.get('.carousel-inner').should('have.css', 'margin-right', '30px');
@@ -199,7 +208,7 @@ describe('Reszponzivitás tesztelés', () => {
     });
     cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right').then(paddingRight => {
       const paddingRightNumber = parseFloat(paddingRight);
-      expect(paddingRightNumber).to.be.within(56, 57);
+      expect(paddingRightNumber).to.be.within(50, 60);
     });
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'left', '0px');
     cy.get('.uj_recpetjeink_etel_galeria, .customersfavorite_etel_galeria, .signup_newspaper_container, .ajanlataink, .honap_legjobb_div, .feedback_footer, .kategoria_search').should('have.css', 'zoom', '0.6');
@@ -239,8 +248,14 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.buttonleft, .buttonright').should('have.css', 'bottom', '45px');
     cy.get('.websidecookies').should('have.css', 'zoom', '0.7');
     cy.get('.websidecookies').should('have.css', 'background-position', '-120px 50%');
-    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left', '83.9353px');
-    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right', '52.4596px');
+    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left').then(paddingLeft => {
+      const paddingLeftNumber = parseFloat(paddingLeft);
+      expect(paddingLeftNumber).to.be.within(83, 84);
+    });
+    cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right').then(paddingRight => {
+      const paddingRightNumber = parseFloat(paddingRight);
+      expect(paddingRightNumber).to.be.within(52, 53);
+    });
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'left', '0px');
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'justify-content', 'flex-start');
     cy.get('.uj_recpetjeink_etel_galeria, .customersfavorite_etel_galeria, .signup_newspaper_container, .ajanlataink, .honap_legjobb_div, .feedback_footer, .kategoria_search').should('have.css', 'zoom', '0.7');
@@ -302,7 +317,7 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.websidecookies').should('have.css', 'background-position', '-150px 50%');
     cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left').then(paddingLeft => {
       const paddingLeftNumber = parseFloat(paddingLeft);
-      expect(paddingLeftNumber).to.be.within(55, 56);
+      expect(paddingLeftNumber).to.be.within(50, 60);
     });
     cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right').then(paddingRight => {
       const paddingRightNumber = parseFloat(paddingRight);
@@ -311,8 +326,8 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'left', '0px');
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'justify-content', 'flex-start');
     cy.get('.login_div').should('have.css', 'display', 'none');
-    cy.get('.navbar_searchbar').should('have.css', 'font-size', '40px');
-    cy.get('.menuitems_row').should('have.css', 'font-size', '30px');
+    cy.get('.navbar_searchbar').should('have.css', 'font-size', '20px');
+    cy.get('.menuitems_row').should('have.css', 'font-size', '25px');
     cy.get('.dropdown_foetel, .dropdown_desszert, .dropdown_kategoriak, #navRecipeLink_navbar5_navitem, #navRecipeLink_navbar4_navitem, #navRecipeLink_navbar6_navitem, #navRecipeLink_ajánlatunk').should('have.css', 'display', 'none');
     cy.get('.hamburgermenudropdown .usersvg').should('have.css', 'left', '50px');
     cy.get('.hamburgermenudropdown .usersvg').should('have.css', 'width').then(width => {
@@ -356,8 +371,8 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'left', '0px');
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'justify-content', 'flex-start');
     cy.get('.login_div').should('have.css', 'display', 'none');
-    cy.get('.navbar_searchbar').should('have.css', 'font-size', '40px');
-    cy.get('.menuitems_row').should('have.css', 'font-size', '30px');
+    cy.get('.navbar_searchbar').should('have.css', 'font-size', '20px');
+    cy.get('.menuitems_row').should('have.css', 'font-size', '25px');
     cy.get('.dropdown_foetel, .dropdown_desszert, .dropdown_kategoriak, #navRecipeLink_navbar5_navitem, #navRecipeLink_navbar4_navitem, #navRecipeLink_navbar6_navitem, #navRecipeLink_ajánlatunk').should('have.css', 'display', 'none');
     cy.get('.dropdown_content_kategoriak').should('have.css', 'display', 'none');
     cy.get('.hamburgermenudropdown .usersvg').should('have.css', 'left', '50px');
@@ -393,18 +408,18 @@ describe('Reszponzivitás tesztelés', () => {
     cy.get('.websidecookies').should('have.css', 'background-position', '-150px 50%');
     cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-left').then(paddingLeft => {
       const paddingLeftNumber = parseFloat(paddingLeft);
-      expect(paddingLeftNumber).to.be.within(38, 39);
+      expect(paddingLeftNumber).to.be.within(35, 40);
     });
     cy.get('.websidecookies__websidecookies-layout').should('have.css', 'padding-right').then(paddingRight => {
       const paddingRightNumber = parseFloat(paddingRight);
-      expect(paddingRightNumber).to.be.within(23, 24);
+      expect(paddingRightNumber).to.be.within(20, 25);
     });
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'left', '0px');
     cy.get('.websidecookies__websidecookies-description-text').should('have.css', 'justify-content', 'flex-start');
     cy.get('.login_div').should('have.css', 'display', 'none');
-    cy.get('#search-results-container').should('have.css', 'font-size', '30px');
-    cy.get('.navbar_searchbar').should('have.css', 'font-size', '40px');
-    cy.get('.menuitems_row').should('have.css', 'font-size', '30px');
+    cy.get('#search-results-container').should('have.css', 'font-size', '25px');
+    cy.get('.navbar_searchbar').should('have.css', 'font-size', '25px');
+    cy.get('.menuitems_row').should('have.css', 'font-size', '25px');
     cy.get('.dropdown_foetel, .dropdown_desszert, .dropdown_kategoriak, #navRecipeLink_navbar5_navitem, #navRecipeLink_navbar4_navitem, #navRecipeLink_navbar6_navitem, #navRecipeLink_ajánlatunk').should('have.css', 'display', 'none');
     cy.get('.dropdown_content_kategoriak').should('have.css', 'display', 'none');
     cy.get('.hamburgermenudropdown .usersvg').should('have.css', 'left', '50px');

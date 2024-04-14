@@ -101,7 +101,7 @@ describe('Reszponzivitás tesztelés', () => {
     cy.viewport(350, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
-    cy.get('.logo').should('have.css', 'top', '-130px');
+    cy.get('.logo').should('have.css', 'top', '-150px');
     cy.get('.logo').should('have.css', 'background-position', '50% 50%');
     cy.get('.border').should('have.css', 'border', '0px none rgb(0, 0, 0)');
   });
@@ -110,7 +110,7 @@ describe('Reszponzivitás tesztelés', () => {
     cy.viewport(400, 800);
     cy.get('body').should('have.css', 'padding-right', '0px');
     cy.get('.logo').should('have.css', 'position', 'absolute');
-    cy.get('.logo').should('have.css', 'top', '-130px');
+    cy.get('.logo').should('have.css', 'top', '-150px');
     cy.get('.logo').should('have.css', 'background-position', '50% 50%');
   });
 

@@ -235,8 +235,12 @@
 .ingredients-layout__manage-ingredients-recipe-div-main {
     flex-shrink: 0;
     width: 120rem;
-    height: 102.5rem;
+    /* height: 102.5rem; */
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .ingredients-layout__manage-ingredient-data-div {
@@ -246,7 +250,7 @@
     align-items: center;
     justify-content: center;
     width: 120rem;
-    position: absolute;
+    position: relative;
     left: 0rem;
     top: 0rem;
 }

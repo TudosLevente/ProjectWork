@@ -76,6 +76,15 @@ function modifyIngredient(buttonId) {
     const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
     name_input.readOnly = false;
     stored_ingredient_name = name_input.value;
+
+    var deleteButton = document.getElementById(`deleteIngredient_${ingredient_id}`);
+    deleteButton.id = `cancelModifyIngredient(${ingredient_id})`;
+    deleteButton.onclick = cancelModifyIngredient(ingredient_id);
+    deleteButton.innerHTML = '<div class="ingredients-layout__delete-text">Mégse</div>';
+
+    var modifyButton = document.getElementById(`modifyIngredient_${ingredient_id}`);
+    modifyButton.id = `saveIngredient(${ingredient_id})`;
+    modifyButton.innerHTML = '<div class="ingredients-layout__modify-text">Mentés</div>';
 }
 
 function saveIngredient(buttonId) {
@@ -83,7 +92,7 @@ function saveIngredient(buttonId) {
     ingredient_id = ingredient_id.split('_')[1];
 
     const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
-
+    
     const data = {
         ingredient_id: ingredient_id,
         ingredientName: name_input.value

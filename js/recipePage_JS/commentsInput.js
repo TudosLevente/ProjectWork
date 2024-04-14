@@ -45,4 +45,7 @@ async function sendMessage() {
                 });
         });
     }
+    else {
+        alert("Ahhoz, hogy kommentelni tudjon egy recept alá, be kell jelentkeznie!");
+    }
 }

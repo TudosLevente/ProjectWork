@@ -351,6 +351,6 @@ function addToFavorites() {
         }
     }
     else {
-        //ide kéne hogy legyen egy felugró ablak ami közli, hogy a kommenteléshez be kell jelentkezni vagy regisztrálni.
+        alert("Ahhoz, hogy a recepetet fel tudja venni a kedvencei közé, be kell jelentkeznie!");
     }
 }

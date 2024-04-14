@@ -45,16 +45,6 @@ function deleteRecipe(req, res) {
     });
 
     try {
-        const sql_recipe = 'CALL deleteFromRecipe(?)';
-
-        con.query(sql_recipe, [req.body.recipeid], (err, result) => {
-            if (err) throw err;
-        });
-    } catch (err) {
-        console.error(err);
-    }
-
-    try {
         const sql_time = 'CALL deleteFromTime(?)';
 
         con.query(sql_time, [req.body.recipeid], (err, result) => {
@@ -68,6 +58,16 @@ function deleteRecipe(req, res) {
         const sql_ingredients = 'CALL deleteFromRecipe_Ingredients(?)';
 
         con.query(sql_ingredients, [req.body.recipeid], (err, result) => {
+            if (err) throw err;
+        });
+    } catch (err) {
+        console.error(err);
+    }
+
+    try {
+        const sql_recipe = 'CALL deleteFromRecipe(?)';
+
+        con.query(sql_recipe, [req.body.recipeid], (err, result) => {
             if (err) throw err;
         });
     } catch (err) {

@@ -547,7 +547,7 @@ drop procedure if exists deleteFromRecipe_Ingredients;
 Delimiter //
 CREATE PROCEDURE deleteFromRecipe_Ingredients(IN recipeid INT)
 BEGIN
-    DELETE FROM Recipe_Ingredients WHERE Time.Recipe_ID = recipeid;
+    DELETE FROM Recipe_Ingredients WHERE Recipe_Ingredients.Recipe_ID = recipeid;
 END;
 //
 delimiter ;

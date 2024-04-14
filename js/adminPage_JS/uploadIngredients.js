@@ -12,7 +12,7 @@ function uploadIngredient() {
             ingredient_name.value = '';
             ingredient_category.value = '';
         }
-        else if (response.status === 409) {
+        else if (data.status === 409) {
             alert("Ilyen hozzávaló már létezik!");
         }
     }).catch((err) => {

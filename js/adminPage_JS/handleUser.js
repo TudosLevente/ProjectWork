@@ -112,7 +112,7 @@ function cancelModifyUser(buttonId) {
     stored_email = "";
 }
 
-function saveUser() {
+function saveUser(buttonId) {
     var id = document.getElementById(buttonId).getAttribute('id');
     id = id.split('_')[1];
 

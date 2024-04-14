@@ -76,6 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function goToRecipe(buttondId) {
     var recipe_id = parseInt(buttondId);
     console.log(recipe_id);
-    window.location.href = `../TEST/recipePageTEST/index.html?id=${recipe_id}`;
+    window.location.href = `../../html/recipePage.html?id=${recipe_id}`;
 }
 

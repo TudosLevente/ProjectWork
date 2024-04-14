@@ -12,7 +12,7 @@ function uploadIngredient() {
             ingredient_name.value = '';
             ingredient_category.value = '';
         }
-        else if (response.status === 409) {
+        else if (data.status === 409) {
             alert("Ilyen hozzávaló már létezik!");
         }
     }).catch((err) => {
@@ -78,7 +78,7 @@ function modifyIngredient(buttonId) {
     stored_ingredient_name = name_input.value;
 }
 
-function saveIngredient() {
+function saveIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
 
@@ -96,7 +96,7 @@ function saveIngredient() {
     });
 }
 
-function cancelModifyIngredient() {
+function cancelModifyIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
 

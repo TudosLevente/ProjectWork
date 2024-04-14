@@ -44,7 +44,6 @@ function verifyRecipe(buttondId) {
         recipeid: recipe_id
     }
     putData('/api/verifyRecipe', data).then((data) => {
-        window.location.reload();
     }).catch((error) => {
         console.error(error);
     });

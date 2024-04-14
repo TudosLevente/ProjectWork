@@ -78,7 +78,7 @@ function modifyIngredient(buttonId) {
     stored_ingredient_name = name_input.value;
 }
 
-function saveIngredient() {
+function saveIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
 
@@ -96,7 +96,7 @@ function saveIngredient() {
     });
 }
 
-function cancelModifyIngredient() {
+function cancelModifyIngredient(buttonId) {
     var ingredient_id = document.getElementById(buttonId).getAttribute('id');
     ingredient_id = ingredient_id.split('_')[1];
 

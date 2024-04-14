@@ -2,8 +2,6 @@ const usersDiv = document.getElementById('users');
 
 function loadUsers() {
     getData("/api/users").then((data) => {
-        console.log(data)
-
         for (let i = 1; i <= data.length; i++) {
             const userDiv = document.createElement("div");
             userDiv.className = "users-layout__manage-users-data-div";
@@ -77,7 +75,6 @@ function deleteUser(buttonId) {
     }
 
     deleteData("/api/deleteUser", data).then((response) => {
-        console.log(response);
     }).catch((err) => {
         console.error(err);
     });
@@ -129,7 +126,6 @@ function saveUser() {
     };
 
     putData("/api/updateUser", data).then((response) => {
-        console.log(response);
     }).catch((error) => {
         console.error(error);
     });

@@ -2,7 +2,6 @@ const adminsDiv = document.getElementById('admins');
 
 function loadAdmins() {
     getData("/api/getAdmins").then((data) => {
-        console.log(data);
         for (let i = 1; i <= data[0].length; i++) {
             const adminDiv = document.createElement("div");
             adminDiv.className = "admin-layout__manage-admins-data-div";
@@ -44,7 +43,6 @@ function uploadAdmin() {
     }
 
     putData("/api/giveAdminRole", data).then((reponse) => {
-        console.log(reponse);
         admin_email.value = '';
     }).catch((err) => {
         console.error(err);
@@ -62,7 +60,6 @@ function deleteAdmin(buttonId) {
     }
 
     deleteData("/api/deleteAdminRole", data).then((response) => {
-        console.log(response);
     }).catch((error) => {
         console.error(error);
     });

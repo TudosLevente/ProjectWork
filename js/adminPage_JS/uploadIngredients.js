@@ -50,7 +50,7 @@ function loadIngredients() {
                 placeholder="Kategória" value="${data[0][i - 1].Ingredient_Category}">
                     <!-- <div class="ingredients-layout__category-input">Kategória</div> -->
             </div>
-            <div class="ingredients-layout__button-layout">
+            <div class="ingredients-layout__button-layout" id="buttonLayout_${data[0][i - 1].Ingredient_ID}">
                 <button id="deleteIngredient_${data[0][i - 1].Ingredient_ID}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
                     <div class="ingredients-layout__delete-text">Törlés</div>
                 </button>
@@ -78,15 +78,19 @@ function modifyIngredient(buttonId) {
     const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
     name_input.readOnly = false;
     stored_ingredient_name = name_input.value;
+    console.log(stored_ingredient_name);
 
-    var deleteButton = document.getElementById(`deleteIngredient_${ingredient_id}`);
-    deleteButton.id = `cancelModifyIngredient(${ingredient_id})`;
-    deleteButton.onclick = cancelModifyIngredient(ingredient_id);
-    deleteButton.innerHTML = '<div class="ingredients-layout__delete-text">Mégse</div>';
+    var buttonLayout = document.getElementById(`buttonLayout_${ingredient_id}`);
 
-    var modifyButton = document.getElementById(`modifyIngredient_${ingredient_id}`);
-    modifyButton.id = `saveIngredient(${ingredient_id})`;
-    modifyButton.innerHTML = '<div class="ingredients-layout__modify-text">Mentés</div>';
+    buttonLayout.innerHTML = `
+    <div class="ingredients-layout__button-layout" id="buttonLayout_${ingredient_id}">
+    <button id="cancelModifyIngredient_${ingredient_id}" onclick="cancelModifyIngredient(this.id)" class="ingredients-layout__delete-button">
+        <div class="ingredients-layout__delete-text">Mégse</div>
+    </button>
+    <button id="saveIngredient_${ingredient_id}" onclick="saveIngredient(this.id)" class="ingredients-layout__modify-button">
+        <div class="ingredients-layout__modify-text">Mentés</div>
+    </button>
+    </div>`;
 }
 
 function saveIngredient(buttonId) {
@@ -105,6 +109,15 @@ function saveIngredient(buttonId) {
     }).catch((error) => {
         console.error(error);
     });
+
+    var buttonLayout = document.getElementById(`buttonLayout_${ingredient_id}`);
+    buttonLayout.innerHTML = `
+    <button id="deleteIngredient_${ingredient_id}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
+        <div class="ingredients-layout__delete-text">Törlés</div>
+    </button>
+    <button id="modifyIngredient_${ingredient_id}" onclick="modifyIngredient(this.id)" class="ingredients-layout__modify-button">
+        <div class="ingredients-layout__modify-text">Módosítás</div>
+    </button>`;
 }
 
 function cancelModifyIngredient(buttonId) {
@@ -112,10 +125,19 @@ function cancelModifyIngredient(buttonId) {
     ingredient_id = ingredient_id.split('_')[1];
 
     const name_input = document.getElementById(`ingredient_name_${ingredient_id}`);
-
+    
     name_input.value = stored_ingredient_name;
     name_input.readOnly = true;
     stored_ingredient_name = "";
+
+    var buttonLayout = document.getElementById(`buttonLayout_${ingredient_id}`);
+    buttonLayout.innerHTML = `
+    <button id="deleteIngredient_${ingredient_id}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
+        <div class="ingredients-layout__delete-text">Törlés</div>
+    </button>
+    <button id="modifyIngredient_${ingredient_id}" onclick="modifyIngredient(this.id)" class="ingredients-layout__modify-button">
+        <div class="ingredients-layout__modify-text">Módosítás</div>
+    </button>`;
 }
 
 function deleteIngredient(buttonId) {

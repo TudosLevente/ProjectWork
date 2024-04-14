@@ -14,7 +14,7 @@ function loadUsers() {
                 <input id="userEmail_${data[i - 1].User_ID}" readonly class="users-layout__email" placeholder="Email cím" value="${data[i - 1].Email}">
                 <!-- <div class="users-layout__input2">Email cím</div> -->
               </div>
-              <div class="users-layout__button-layout">
+              <div class="users-layout__button-layout" id="buttonLayout_${data[i - 1].User_ID}">
                 <button type="button" id="deleteBtn_${data[i - 1].User_ID}" onclick="deleteUser(this.id)" class="users-layout__delete-button">
                   <div class="users-layout__text">Törlés</div>
                 </button>
@@ -99,6 +99,15 @@ function modifyUser(buttonId) {
 
     stored_username = name_input.value;
     stored_email = email_input.value;
+
+    var buttonLayout = document.getElementById(`buttonLayout_${id}`);
+    buttonLayout.innerHTML = `
+    <button type="button" id="cancelModifyUser_${id}" onclick="cancelModifyUser(this.id)" class="users-layout__delete-button">
+        <div class="users-layout__text">Mégse</div>
+    </button>
+    <button type="button" id="saveUser_${id}" onclick="saveUser(this.id)" class="users-layout__modify-button">
+        <div class="users-layout__text">Mentés</div>
+    </button>`;
 }
 
 function cancelModifyUser(buttonId) {
@@ -114,6 +123,15 @@ function cancelModifyUser(buttonId) {
     email_input.readOnly = true;
     stored_username = "";
     stored_email = "";
+
+    var buttonLayout = document.getElementById(`buttonLayout_${id}`);
+    buttonLayout.innerHTML = `
+    <button type="button" id="deleteBtn_${id}" onclick="deleteUser(this.id)" class="users-layout__delete-button">
+        <div class="users-layout__text">Törlés</div>
+    </button>
+    <button type="button" id="modifyBtn_${id}" onclick="modifyUser(this.id)" class="users-layout__modify-button">
+        <div class="users-layout__text">Módosítás</div>
+    </button>`;
 }
 
 function saveUser(buttonId) {
@@ -133,6 +151,15 @@ function saveUser(buttonId) {
     }).catch((error) => {
         console.error(error);
     });
+
+    var buttonLayout = document.getElementById(`buttonLayout_${id}`);
+    buttonLayout.innerHTML = `
+    <button type="button" id="deleteBtn_${id}" onclick="deleteUser(this.id)" class="users-layout__delete-button">
+        <div class="users-layout__text">Törlés</div>
+    </button>
+    <button type="button" id="modifyBtn_${id}" onclick="modifyUser(this.id)" class="users-layout__modify-button">
+        <div class="users-layout__text">Módosítás</div>
+    </button>`;
 }
 
 loadUsers();

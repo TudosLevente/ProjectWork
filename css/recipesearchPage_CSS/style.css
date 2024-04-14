@@ -4,7 +4,7 @@
 
 .recept_kategoria {
   background: #d7bf9c;
-  /* height: 181.0625rem; */
+  min-height: 100rem;
   position: relative;
   overflow: hidden;
   display: flex;

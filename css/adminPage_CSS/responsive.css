@@ -1,0 +1,58 @@
+@media (min-width: 320px) and (max-width: 375px) {
+
+    .admin-page__admin-navbar {
+        zoom: 70%;
+    }
+
+    .admin-page__adminpage-maindiv {
+        zoom: 43%;
+    }
+
+    .admin-page__main-changing-div {
+        zoom: 34%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+
+    .admin-page__admin-navbar {
+        zoom: 70%;
+    }
+
+    .admin-page__adminpage-maindiv {
+        zoom: 51%;
+    }
+
+    .admin-page__main-changing-div {
+        zoom: 40%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 721px) {
+
+    .admin-page__admin-navbar {
+        zoom: 90%;
+    }
+
+    .admin-page__adminpage-maindiv {
+        zoom: 63%;
+    }
+
+    .admin-page__main-changing-div {
+        zoom: 49%;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 768px) {
+    .admin-page__adminpage-maindiv {
+        zoom: 90%;
+    }
+
+    .admin-page__main-changing-div {
+        zoom: 80%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {}
+
+@media (min-width: 992px) and (max-width: 1200px) {}

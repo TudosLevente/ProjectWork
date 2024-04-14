@@ -43,33 +43,9 @@ BEGIN
   DECLARE salt_value VARCHAR(255);
   SET salt_value = salt();
   SET NEW.Password = CONCAT(PASSWORD(CONCAT(NEW.Password, salt_value)), ':', salt_value);
-  -- SET NEW.Password = CONCAT(SHA2(NEW.Password,256), ':', salt_value);
 END;
 //
 DELIMITER ;
-
--- Create the desalting function
--- DROP FUNCTION IF EXISTS `VerifyPassword`;
--- DELIMITER //
--- CREATE FUNCTION VerifyPassword(mail VARCHAR(255), p_password VARCHAR(255))
--- RETURNS INT
--- BEGIN
---     DECLARE stored_password VARCHAR(255);
---     DECLARE stored_salt VARCHAR(255);
---     DECLARE hashed_password VARCHAR(255);
---     SELECT Password INTO stored_password FROM Users WHERE `Email` = mail;
---     IF stored_password IS NULL THEN
---         RETURN 0;
---     END IF;
---     SET stored_salt = SUBSTRING_INDEX(stored_password, ':', -1);
---     SET hashed_password = SHA2(p_password, 256);
---     IF hashed_password = stored_password THEN
---         RETURN 1;
---     ELSE
---         RETURN -1;
---     END IF;
--- END //
--- DELIMITER ;
 
 -- Ingredients table
 CREATE TABLE IF NOT EXISTS Ingredients (

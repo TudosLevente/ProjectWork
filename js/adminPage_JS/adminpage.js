@@ -10,3 +10,12 @@ function logout() {
         console.error('Error:', error);
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    getData('/getLoggedInUserData').then((response) => {
+        const user = document.getElementById('loggedin_username');
+        user.innerHTML = `${response.username}`
+    }).catch((error) => {
+        console.error('Error:', error);
+    });
+});

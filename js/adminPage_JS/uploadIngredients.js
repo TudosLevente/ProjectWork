@@ -11,6 +11,8 @@ function uploadIngredient() {
         if (data.status === 200) {
             ingredient_name.value = '';
             ingredient_category.value = '';
+            ingredientsDiv.innerHTML = "";
+            loadIngredients();
         }
         else if (data.status === 409) {
             alert("Ilyen hozzávaló már létezik!");
@@ -41,18 +43,18 @@ function loadIngredients() {
                 <input readonly type="text" class="ingredients-layout__input-layout-id"
                 placeholder="ID" value="${data[0][i - 1].Ingredient_ID}">
                 <!-- <div class="ingredients-layout__id-input">ID</div> -->
-                <input id="ingredient_name_${i}" readonly type="text" class="ingredients-layout__input-layout-name"
+                <input id="ingredient_name_${data[0][i - 1].Ingredient_ID}" readonly type="text" class="ingredients-layout__input-layout-name"
                 placeholder="Hozzávaló név" value="${data[0][i - 1].Ingredient_Name}">
                     <!-- <div class="ingredients-layout__name-input2">Hozzávaló név</div> -->
-                <input id="ingredient_category_${i}" readonly type="text" class="ingredients-layout__input-layout-category"
+                <input id="ingredient_category_${data[0][i - 1].Ingredient_ID}" readonly type="text" class="ingredients-layout__input-layout-category"
                 placeholder="Kategória" value="${data[0][i - 1].Ingredient_Category}">
                     <!-- <div class="ingredients-layout__category-input">Kategória</div> -->
             </div>
             <div class="ingredients-layout__button-layout">
-                <button id="deleteIngredient_${i}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
+                <button id="deleteIngredient_${data[0][i - 1].Ingredient_ID}" onclick="deleteIngredient(this.id)" class="ingredients-layout__delete-button">
                     <div class="ingredients-layout__delete-text">Törlés</div>
                 </button>
-                <button id="modifyIngredient_${i}" onclick="modifyIngredient(this.id)" class="ingredients-layout__modify-button">
+                <button id="modifyIngredient_${data[0][i - 1].Ingredient_ID}" onclick="modifyIngredient(this.id)" class="ingredients-layout__modify-button">
                     <div class="ingredients-layout__modify-text">Módosítás</div>
                 </button>
             </div>
@@ -125,7 +127,8 @@ function deleteIngredient(buttonId) {
     }
 
     deleteData("/api/removeIngredient", data).then((response) => {
-        console.log(response);
+        ingredientsDiv.innerHTML = "";
+        loadIngredients();
     }).catch((error) => {
         console.error(error);
     });

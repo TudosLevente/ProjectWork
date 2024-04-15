@@ -57,6 +57,7 @@ app.get('/adminPage', (req, res) => {
     }
 })
 
+
 app.listen(config.port, () => {
     console.log(`A szerver fut | http://localhost:${config.port}`);
 })

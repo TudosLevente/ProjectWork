@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/adminPage', (req, res) => {
-    if (loggedInUserData.loggedIn && loggedInUserData.isAdmin) {
+    if (loggedInUserData.loggedIn) {
         res.sendFile(path.join(publicDirectoryPath, '/html/adminPage.html'));
     }
     else {

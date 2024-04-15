@@ -1,4 +1,4 @@
--- Active: 1701981789402@@127.0.0.1@3306@foodhub
+-- Active: 1708009143398@@127.0.0.1@3306@foodhub
 DROP DATABASE IF EXISTS foodhub;
 
 CREATE DATABASE IF NOT EXISTS foodhub
@@ -539,7 +539,7 @@ drop procedure if exists getRecipesByCategory;
 DELIMITER //
 CREATE PROCEDURE getRecipesByCategory(IN category VARCHAR(150))
 BEGIN
-    SELECT Recipes.Recipe_ID, Recipes.Title, Recipes.Picture_data, Recipes.Food_Category FROM Recipes WHERE Recipes.Food_Category = category;
+    SELECT Recipes.Recipe_ID, Recipes.Title, Recipes.Picture_data, Recipes.Food_Category FROM Recipes WHERE Recipes.Food_Category = category AND Recipes.IsVerified = TRUE;
 END;
 //
 DELIMITER //

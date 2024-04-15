@@ -235,3 +235,9 @@
 .recipe-layout__delete-button:hover {
     transform: translateY(-2px);
 }
+
+.recipe-layout__recipe-div-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}

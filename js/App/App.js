@@ -49,11 +49,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/adminPage', (req, res) => {
-    if (loggedInUserData.loggedIn) {
+    if (loggedInUserData.loggedIn && loggedInUserData.isAdmin) {
         res.sendFile(path.join(publicDirectoryPath, '/html/adminPage.html'));
     }
     else {
-        res.sendFile(path.join(publicDirectoryPath, '/html/mainPage.html'));
+        res.sendFile(path.join(publicDirectoryPath, '/html/errorPage.html'));
     }
 })
 

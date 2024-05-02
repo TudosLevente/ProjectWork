@@ -9,7 +9,10 @@ function getRecipeInfos(req, res) {
     });
 
     con.query('CALL getRecipeInfos(?) ', [req.params['id']], (err, result) => {
-        if (err) throw err;
+        if (err) {
+            console.log(err);
+            res.status(400).send("Hibás azonosító!");
+        }
         res.send(result);
     });
 

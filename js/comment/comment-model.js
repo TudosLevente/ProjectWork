@@ -11,7 +11,10 @@ function getCommentContent(req, res) {
     });
 
     con.query('CALL getCommentContent(?)', [req.params['id']], (err, result) => {
-        if (err) throw err;
+        if (err) {
+            console.log(err);
+            res.status(400).send("Hibás azonosító!");
+        }
         res.send(result);
     });
 

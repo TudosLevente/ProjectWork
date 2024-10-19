@@ -110,12 +110,6 @@ Mindig keressük a javítási lehetőségeket, ezért bátran oszd meg velünk a
 
 ---
 
-## **Licenc** 📄
-
-Ez a projekt nyílt forráskódú és elérhető az [MIT Licenc](https://opensource.org/licenses/MIT) alatt.
-
----
-
 **Köszönjük, hogy ellátogattál a FoodHub oldalára!** 🍽️ Nyugodtan járulj hozzá a projekthez, vagy oszd meg kedvenc receptjeidet a közösséggel.
 
 ---
